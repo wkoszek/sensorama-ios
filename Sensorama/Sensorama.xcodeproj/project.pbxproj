@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
+		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
+		577DC8FE1C4CB0E700FA02B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FD1C4CB0E700FA02B7 /* ViewController.m */; };
+		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
+		577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9021C4CB0E700FA02B7 /* Assets.xcassets */; };
+		577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */; };
+		577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */; };
+		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		577DC90D1C4CB0E700FA02B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577DC8F21C4CB0E700FA02B7;
+			remoteInfo = Sensorama;
+		};
+		577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577DC8F21C4CB0E700FA02B7;
+			remoteInfo = Sensorama;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		577DC8FC1C4CB0E700FA02B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		577DC8FD1C4CB0E700FA02B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		577DC9001C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		577DC9021C4CB0E700FA02B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		577DC9051C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		577DC9071C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaTests.m; sourceTree = "<group>"; };
+		577DC9121C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaUITests.m; sourceTree = "<group>"; };
+		577DC91D1C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		577DC8F01C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9091C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9141C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		577DC8EA1C4CB0E600FA02B7 = {
+			isa = PBXGroup;
+			children = (
+				577DC8F51C4CB0E700FA02B7 /* Sensorama */,
+				577DC90F1C4CB0E700FA02B7 /* SensoramaTests */,
+				577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */,
+				577DC8F41C4CB0E700FA02B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		577DC8F41C4CB0E700FA02B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				577DC8F31C4CB0E700FA02B7 /* Sensorama.app */,
+				577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */,
+				577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		577DC8F51C4CB0E700FA02B7 /* Sensorama */ = {
+			isa = PBXGroup;
+			children = (
+				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
+				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
+				577DC8FC1C4CB0E700FA02B7 /* ViewController.h */,
+				577DC8FD1C4CB0E700FA02B7 /* ViewController.m */,
+				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
+				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
+				577DC9071C4CB0E700FA02B7 /* Info.plist */,
+				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
+			);
+			path = Sensorama;
+			sourceTree = "<group>";
+		};
+		577DC8F61C4CB0E700FA02B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				577DC8F71C4CB0E700FA02B7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		577DC90F1C4CB0E700FA02B7 /* SensoramaTests */ = {
+			isa = PBXGroup;
+			children = (
+				577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */,
+				577DC9121C4CB0E700FA02B7 /* Info.plist */,
+			);
+			path = SensoramaTests;
+			sourceTree = "<group>";
+		};
+		577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */,
+				577DC91D1C4CB0E700FA02B7 /* Info.plist */,
+			);
+			path = SensoramaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		577DC8F21C4CB0E700FA02B7 /* Sensorama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */;
+			buildPhases = (
+				577DC8EF1C4CB0E700FA02B7 /* Sources */,
+				577DC8F01C4CB0E700FA02B7 /* Frameworks */,
+				577DC8F11C4CB0E700FA02B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sensorama;
+			productName = Sensorama;
+			productReference = 577DC8F31C4CB0E700FA02B7 /* Sensorama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		577DC90B1C4CB0E700FA02B7 /* SensoramaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */;
+			buildPhases = (
+				577DC9081C4CB0E700FA02B7 /* Sources */,
+				577DC9091C4CB0E700FA02B7 /* Frameworks */,
+				577DC90A1C4CB0E700FA02B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				577DC90E1C4CB0E700FA02B7 /* PBXTargetDependency */,
+			);
+			name = SensoramaTests;
+			productName = SensoramaTests;
+			productReference = 577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		577DC9161C4CB0E700FA02B7 /* SensoramaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */;
+			buildPhases = (
+				577DC9131C4CB0E700FA02B7 /* Sources */,
+				577DC9141C4CB0E700FA02B7 /* Frameworks */,
+				577DC9151C4CB0E700FA02B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				577DC9191C4CB0E700FA02B7 /* PBXTargetDependency */,
+			);
+			name = SensoramaUITests;
+			productName = SensoramaUITests;
+			productReference = 577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		577DC8EB1C4CB0E600FA02B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Wojciech Adam Koszek";
+				TargetAttributes = {
+					577DC8F21C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3DHC3EAFWW;
+					};
+					577DC90B1C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3DHC3EAFWW;
+						TestTargetID = 577DC8F21C4CB0E700FA02B7;
+					};
+					577DC9161C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3DHC3EAFWW;
+						TestTargetID = 577DC8F21C4CB0E700FA02B7;
+					};
+				};
+			};
+			buildConfigurationList = 577DC8EE1C4CB0E600FA02B7 /* Build configuration list for PBXProject "Sensorama" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 577DC8EA1C4CB0E600FA02B7;
+			productRefGroup = 577DC8F41C4CB0E700FA02B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				577DC8F21C4CB0E700FA02B7 /* Sensorama */,
+				577DC90B1C4CB0E700FA02B7 /* SensoramaTests */,
+				577DC9161C4CB0E700FA02B7 /* SensoramaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		577DC8F11C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */,
+				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,
+				577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC90A1C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9151C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		577DC8EF1C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC8FE1C4CB0E700FA02B7 /* ViewController.m in Sources */,
+				577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */,
+				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9081C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9131C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		577DC90E1C4CB0E700FA02B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
+			targetProxy = 577DC90D1C4CB0E700FA02B7 /* PBXContainerItemProxy */;
+		};
+		577DC9191C4CB0E700FA02B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
+			targetProxy = 577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				577DC9001C4CB0E700FA02B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				577DC9051C4CB0E700FA02B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		577DC91E1C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		577DC91F1C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		577DC9211C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sensorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		577DC9221C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sensorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		577DC9241C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SensoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+			};
+			name = Debug;
+		};
+		577DC9251C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SensoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+			};
+			name = Release;
+		};
+		577DC9271C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SensoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sensorama;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		577DC9281C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SensoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sensorama;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		577DC8EE1C4CB0E600FA02B7 /* Build configuration list for PBXProject "Sensorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC91E1C4CB0E700FA02B7 /* Debug */,
+				577DC91F1C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9211C4CB0E700FA02B7 /* Debug */,
+				577DC9221C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9241C4CB0E700FA02B7 /* Debug */,
+				577DC9251C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9271C4CB0E700FA02B7 /* Debug */,
+				577DC9281C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+}
