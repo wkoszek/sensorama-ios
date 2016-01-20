@@ -3,8 +3,8 @@
 
 PROJ=Sensorama
 TOOL=xcodebuild
-if [ "x$IOSTOOL" != "x" ]; then
-	TOOL="$IOSTOOL"
+if [ "x$BUILDTOOL" != "x" ]; then
+	TOOL="$BUILDTOOL"
 fi
 
 OPTS=""
