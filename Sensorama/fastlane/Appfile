@@ -1,0 +1,7 @@
+app_identifier "com.koszek.Sensorama" # The bundle identifier of your app
+apple_id "wkoszek@freebsd.org" # Your Apple email address
+
+team_id "QQ5A9Q7C7Z"  # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/docs/Appfile.md
