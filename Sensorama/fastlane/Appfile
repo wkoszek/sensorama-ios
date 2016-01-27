@@ -1,3 +1,4 @@
+# vim: ai ts=2 sts=2 et sw=2 ft=ruby
 app_identifier "com.koszek.Sensorama"
 apple_id "wkoszek@freebsd.org"
 team_id "QQ5A9Q7C7Z"
