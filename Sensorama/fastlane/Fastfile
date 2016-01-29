@@ -9,9 +9,17 @@ platform :ios do
   end
 
   desc "Installs FixCode which disables the \"Fix Issue\" button in Xcode"
-    lane :xcode do
+  lane :xcode do
     install_xcode_plugin(
       url: "https://github.com/fastlane/FixCode/releases/download/0.2.0/FixCode.xcplugin.zip"
+    )
+  end
+
+  desc "Fetches the provisioning profiles so you can build locally and deploy to your device"
+  lane :certs do
+    match(
+      app_identifier: "com.koszek.Sensorama.develop",
+      type: "development"
     )
   end
 
