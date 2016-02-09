@@ -3,6 +3,13 @@ fastlane_version "1.52.0"
 
 default_platform :ios
 
+def build_app
+  gym(
+    workspace: "Sensorama.xcworkspace",
+    scheme: "Sensorama"
+  )
+end
+
 platform :ios do
   before_all do
     cocoapods
@@ -17,10 +24,24 @@ platform :ios do
 
   desc "Fetches the provisioning profiles so you can build locally and deploy to your device"
   lane :certs do
+    slack(message: "certs", success: true)
     match(
-      app_identifier: "com.koszek.Sensorama.develop",
-      type: "development"
+      app_identifier: "com.koszek.Sensorama",
+      type: "development",
+      git_url: ENV['FASTLANE_GIT_URL']
     )
+  end
+
+  lane :appmake do
+    slack(message: "appmake", success: true)
+    produce(
+       username: 'wkoszek@freebsd.org',
+       app_identifier: 'com.koszek.Sensorama',
+       app_name: 'Sensorama',
+       language: 'English',
+       app_version: '1.0',
+       skip_itc: true,
+     )
   end
 
   desc "Runs all the tests"
@@ -31,9 +52,11 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "Sensorama")
-    pilot
+    certs
+    sigh
+    build_app
+    deliver
+    frameit
   end
 
   desc "Deploy a new version to the App Store"
