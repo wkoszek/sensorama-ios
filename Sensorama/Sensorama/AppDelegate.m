@@ -18,9 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-#if 0
     [Fabric with:@[[CrashlyticsKit class]]];
-#endif
 
     return YES;
 }
