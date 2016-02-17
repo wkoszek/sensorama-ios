@@ -1,0 +1,21 @@
+scheme "Sensorama"
+
+devices([
+#  "iPhone 6",
+#  "iPhone 6 Plus",
+  "iPhone 5",
+#  "iPhone 4s"
+])
+
+languages([
+  "en-US",
+#  "de-DE",
+#  "es-ES"
+])
+
+#launch_arguments("-username Felix")
+
+# The directory in which the screenshots should be stored
+output_directory './screenshots'
+
+clear_previous_screenshots true
