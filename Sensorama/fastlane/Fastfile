@@ -49,13 +49,21 @@ platform :ios do
     scan
   end
 
+  desc "Deliver to Crashlytics"
+  lane :crashlytics_beta do
+    crashlytics(
+       api_token: ''
+    )
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
     certs
     sigh
     build_app
-    deliver
+    #deliver
+    crashlytics_beta
     frameit
   end
 
