@@ -52,13 +52,16 @@ platform :ios do
   desc "Deliver to Crashlytics"
   lane :crashlytics_beta do
     crashlytics(
-       api_token: ''
+       api_token: ENV['CRASHLYTICS_API_TOKEN'],
+       build_secret:  ENV['CRASHLYTICS_BUILD_SECRET'],
+       groups: 'sensorama-testers'
     )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    increment_build_number
     certs
     sigh
     build_app
