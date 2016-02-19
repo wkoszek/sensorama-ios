@@ -15,7 +15,7 @@ fi
 (
 	cd ${PROJ}
 
-	$TOOL $OPTS \
+	$TOOL $OPTS archive \
 		-workspace ${PROJ}.xcworkspace \
 		-scheme ${PROJ}
 )
