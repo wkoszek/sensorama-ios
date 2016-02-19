@@ -61,9 +61,10 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    match(type: "development")
     increment_build_number
     certs
-    sigh
+    sigh(development: true)
     build_app
     #deliver
     crashlytics_beta
