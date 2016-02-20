@@ -15,6 +15,8 @@ fi
 (
 	cd ${PROJ}
 
+	pod install
+
 	$TOOL $OPTS archive \
 		-workspace ${PROJ}.xcworkspace \
 		-scheme ${PROJ}
