@@ -8,6 +8,8 @@
 #import "AppDelegate.h"
 #import "Fabric/Fabric.h"
 #import "Crashlytics/Crashlytics.h"
+#import "SensoramaVars.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSDictionary *fabricDict = [[mainBundle infoDictionary] objectForKey:@"Fabric"];
+    NSString *fabricAPIKey = [NSString stringWithUTF8String:FABRIC_API_KEY];
+    [fabricDict setValue:fabricAPIKey forKey:@"APIKey"];
+
     // Override point for customization after application launch.
     [Fabric with:@[[CrashlyticsKit class]]];
 
