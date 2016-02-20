@@ -12,12 +12,23 @@ if [ "x${TRAVIS}" != "x" ]; then
 	OPTS='CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='
 fi
 
-(
-	cd ${PROJ}
+function build_old() {
+	(
+		cd ${PROJ}
 
-	pod install
+		pod install
 
-	$TOOL $OPTS archive \
-		-workspace ${PROJ}.xcworkspace \
-		-scheme ${PROJ}
-)
+		$TOOL $OPTS archive \
+			-workspace ${PROJ}.xcworkspace \
+			-scheme ${PROJ}
+	)
+}
+
+FASTLANE=`which fastlane`
+if [ "x$FASTNAME" != "/usr/local/bin/fastlane" ]; then
+	# New world...
+	(cd Sensorama && fastlane beta)
+else
+	# Old way of building stuff.
+	build_old
+fi
