@@ -70,6 +70,11 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="lGk-zV-ZLk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.59999999999999998" green="0.1450980392" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="e5Z-SD-48H" kind="relationship" relationship="viewControllers" id="Gao-cL-QKJ"/>
