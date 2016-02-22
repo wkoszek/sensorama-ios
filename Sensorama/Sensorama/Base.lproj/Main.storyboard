@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="DXx-Uc-OzG" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" id="DXx-Uc-OzG" userLabel="Settings"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13x-9w-W5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" systemItem="search" id="jtH-Hn-VPz" userLabel="Record"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" id="jtH-Hn-VPz" userLabel="Record"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsX-Gg-dUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,11 +99,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" systemItem="history" id="bHy-7q-zqE" userLabel="History"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Files" image="iconFiles" id="bHy-7q-zqE" userLabel="History"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJu-hd-E5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1320" y="-249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconFiles" width="24" height="24"/>
+        <image name="iconRecord" width="24" height="24"/>
+        <image name="iconSettings" width="24" height="24"/>
+    </resources>
 </document>
