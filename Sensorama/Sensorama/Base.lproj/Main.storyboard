@@ -370,7 +370,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" id="Vt4-ac-qwa"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="580" y="1259"/>
+            <point key="canvasLocation" x="580" y="1245"/>
         </scene>
     </scenes>
     <resources>
