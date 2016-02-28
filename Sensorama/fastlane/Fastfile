@@ -52,7 +52,7 @@ platform :ios do
   desc "Deliver to Crashlytics"
   lane :crashlytics_beta do
     crashlytics(
-       api_token: ENV['FABRIC_API_API'],
+       api_token: ENV['FABRIC_API_KEY'],
        build_secret:  ENV['FABRIC_BUILD_SECRET'],
        groups: 'sensorama-testers'
     )
