@@ -150,7 +150,6 @@
         <!--Settings-->
         <scene sceneID="x2Y-GR-aYG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cRn-b2-r2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="eUA-kF-p8x" userLabel="Settings" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Z50-WA-GMV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
@@ -159,7 +158,7 @@
                         <sections>
                             <tableViewSection headerTitle="Sensors" id="cgp-JV-SOf" userLabel="sensorSection">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sensorAccelerometer" id="5IU-4p-RB6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sensorAccelerometer" id="5IU-4p-RB6">
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5IU-4p-RB6" id="eFu-IB-eom">
@@ -188,7 +187,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sensorGyroscope" id="k2k-HS-aoj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sensorGyroscope" id="k2k-HS-aoj">
                                         <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k2k-HS-aoj" id="gFm-0c-S3v">
@@ -217,7 +216,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sensorPedometer" id="z1P-g6-D5T">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sensorPedometer" id="z1P-g6-D5T">
                                         <rect key="frame" x="0.0" y="202" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1P-g6-D5T" id="oxK-GI-tGW">
@@ -246,7 +245,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sensorProximity" id="ZZS-eZ-n2W">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sensorProximity" id="ZZS-eZ-n2W">
                                         <rect key="frame" x="0.0" y="246" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZS-eZ-n2W" id="uTv-rV-Nb6">
@@ -369,6 +368,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" id="Vt4-ac-qwa"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRn-b2-r2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="1245"/>
         </scene>
