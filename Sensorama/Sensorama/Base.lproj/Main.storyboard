@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsX-Gg-dUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="-216"/>
+            <point key="canvasLocation" x="548" y="-216"/>
         </scene>
         <!--Files-->
         <scene sceneID="HWB-sg-bDd">
@@ -101,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lty-yT-mKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="457"/>
+            <point key="canvasLocation" x="548" y="531"/>
         </scene>
         <!--Sensorama-->
         <scene sceneID="0hh-qf-QO2">
@@ -145,7 +145,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ0-6O-QNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="445"/>
+            <point key="canvasLocation" x="-226" y="531"/>
         </scene>
         <!--Settings-->
         <scene sceneID="x2Y-GR-aYG">
@@ -370,7 +370,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRn-b2-r2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="1245"/>
+            <point key="canvasLocation" x="548" y="1273"/>
         </scene>
     </scenes>
     <resources>
