@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" id="jtH-Hn-VPz" userLabel="Record"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" selectedImage="iconRecordActive" id="jtH-Hn-VPz" userLabel="Record"/>
                     <navigationItem key="navigationItem" title="Record" id="uaj-Zv-dtK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsX-Gg-dUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,7 +97,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Samples" image="iconFiles" id="r6e-5G-Cyv"/>
+                    <tabBarItem key="tabBarItem" title="Files" image="iconFiles" selectedImage="iconFilesActive" id="r6e-5G-Cyv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lty-yT-mKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +358,7 @@
                             <outlet property="delegate" destination="eUA-kF-p8x" id="wQR-Oq-H3Q"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" id="Vt4-ac-qwa"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" selectedImage="iconSettingsActive" id="Vt4-ac-qwa"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -480,9 +480,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconFiles" width="24" height="24"/>
-        <image name="iconRecord" width="24" height="24"/>
-        <image name="iconSettings" width="24" height="24"/>
+        <image name="iconFiles" width="30" height="30"/>
+        <image name="iconFilesActive" width="30" height="30"/>
+        <image name="iconRecord" width="30" height="30"/>
+        <image name="iconRecordActive" width="30" height="30"/>
+        <image name="iconSettings" width="30" height="30"/>
+        <image name="iconSettingsActive" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>
