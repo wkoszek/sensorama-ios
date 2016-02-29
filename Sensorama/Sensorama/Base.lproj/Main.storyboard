@@ -346,6 +346,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mKB-3m-MmM" kind="show" id="H25-og-Gpn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -409,6 +412,39 @@
             </objects>
             <point key="canvasLocation" x="1368" y="1070"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dDO-h4-LJI">
+            <objects>
+                <viewController id="mKB-3m-MmM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pfw-PV-5UY"/>
+                        <viewControllerLayoutGuide type="bottom" id="47o-Qa-RVt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BSP-nn-13M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-H0-ReD">
+                                <rect key="frame" x="20" y="72" width="560" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="top" secondItem="pfw-PV-5UY" secondAttribute="bottom" constant="8" symbolic="YES" id="8U6-gE-EpO"/>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="trailing" secondItem="BSP-nn-13M" secondAttribute="trailingMargin" id="MaH-gC-IWQ"/>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="leading" secondItem="BSP-nn-13M" secondAttribute="leadingMargin" id="Zxp-g7-zJU"/>
+                            <constraint firstItem="47o-Qa-RVt" firstAttribute="top" secondItem="6Dx-H0-ReD" secondAttribute="bottom" constant="8" symbolic="YES" id="xcN-Uk-P6K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUV-q0-eIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="2477"/>
+        </scene>
         <!--About-->
         <scene sceneID="JYU-rA-b78">
             <objects>
@@ -431,16 +467,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="top" secondItem="HwG-r5-tu8" secondAttribute="bottom" constant="8" symbolic="YES" id="NEL-gM-LA4"/>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="trailing" secondItem="afj-ta-9sW" secondAttribute="trailingMargin" id="OEU-Qr-RjL"/>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="leading" secondItem="afj-ta-9sW" secondAttribute="leadingMargin" id="Q77-Od-yxp"/>
-                            <constraint firstItem="3v7-Vp-z73" firstAttribute="top" secondItem="bES-2J-PPv" secondAttribute="bottom" constant="8" symbolic="YES" id="V3p-02-xsw"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="trailing" secondItem="afj-ta-9sW" secondAttribute="trailingMargin" id="J1Q-pB-UiM"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="leading" secondItem="afj-ta-9sW" secondAttribute="leadingMargin" id="Rxr-fd-8Zx"/>
+                            <constraint firstItem="3v7-Vp-z73" firstAttribute="top" secondItem="bES-2J-PPv" secondAttribute="bottom" constant="8" symbolic="YES" id="WGD-h9-YP3"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="top" secondItem="HwG-r5-tu8" secondAttribute="bottom" constant="8" symbolic="YES" id="oQh-9M-iad"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFf-pa-mqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1367" y="1795"/>
+            <point key="canvasLocation" x="1368" y="1729"/>
         </scene>
     </scenes>
     <resources>
