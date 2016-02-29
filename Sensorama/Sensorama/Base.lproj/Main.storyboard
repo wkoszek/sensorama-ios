@@ -122,12 +122,12 @@
             </objects>
             <point key="canvasLocation" x="-1015" y="531"/>
         </scene>
-        <!--Hello-->
+        <!--Sensorama-->
         <scene sceneID="aci-h7-Ljv">
             <objects>
                 <tabBarController id="hkd-vv-f9X" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Hello" id="WJ4-mb-Gvp"/>
+                    <navigationItem key="navigationItem" title="Sensorama" id="WJ4-mb-Gvp"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="lGk-zV-ZLk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -395,7 +395,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -484,4 +484,5 @@
         <image name="iconRecord" width="24" height="24"/>
         <image name="iconSettings" width="24" height="24"/>
     </resources>
+    <color key="tintColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>
