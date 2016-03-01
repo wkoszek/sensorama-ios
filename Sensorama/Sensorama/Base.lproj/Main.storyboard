@@ -9,7 +9,7 @@
         <!--Record-->
         <scene sceneID="jnQ-wV-NS2">
             <objects>
-                <viewController title="Record" id="e5Z-SD-48H" sceneMemberID="viewController">
+                <viewController title="Record" id="e5Z-SD-48H" customClass="RecordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yc7-qy-hzb"/>
                         <viewControllerLayoutGuide type="bottom" id="FSE-y9-S4x"/>
@@ -17,14 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="UtJ-Vs-d2X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6n-h8-zQm">
+                                <rect key="frame" x="225" y="201" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="hCi-TN-wIr"/>
+                                    <constraint firstAttribute="height" constant="150" id="ua1-2L-EAA"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="r08-hs-gan" appends="YES" id="XBv-SJ-SnQ"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z6n-h8-zQm" firstAttribute="centerX" secondItem="UtJ-Vs-d2X" secondAttribute="centerX" id="PoD-7N-2v1"/>
+                            <constraint firstItem="Z6n-h8-zQm" firstAttribute="centerY" secondItem="UtJ-Vs-d2X" secondAttribute="centerY" id="vht-4y-tEe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" selectedImage="iconRecordActive" id="jtH-Hn-VPz" userLabel="Record"/>
                     <navigationItem key="navigationItem" title="Record" id="uaj-Zv-dtK"/>
+                    <connections>
+                        <outlet property="gestureStartStop" destination="r08-hs-gan" id="5rV-bl-kH1"/>
+                        <outlet property="recordView" destination="Z6n-h8-zQm" id="FeO-nI-3QF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsX-Gg-dUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="r08-hs-gan">
+                    <connections>
+                        <action selector="doStartStop:" destination="e5Z-SD-48H" id="TNT-M9-K3A"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="548" y="-216"/>
+            <point key="canvasLocation" x="534" y="-222"/>
         </scene>
         <!--Files-->
         <scene sceneID="HWB-sg-bDd">
