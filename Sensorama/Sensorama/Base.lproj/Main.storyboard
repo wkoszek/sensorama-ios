@@ -55,7 +55,7 @@
         <!--Files-->
         <scene sceneID="HWB-sg-bDd">
             <objects>
-                <tableViewController title="Files" id="3OF-43-rtd" sceneMemberID="viewController">
+                <tableViewController title="Files" id="3OF-43-rtd" customClass="FilesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R8s-9k-SuD">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="531"/>
         </scene>
-        <!--Sensorama-->
+        <!--Navigation-->
         <scene sceneID="0hh-qf-QO2">
             <objects>
-                <navigationController title="Sensorama" id="PnA-qx-P6K" sceneMemberID="viewController">
+                <navigationController title="Sensorama" id="PnA-qx-P6K" userLabel="Navigation" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vNi-vl-36g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -176,7 +176,7 @@
         <!--Settings-->
         <scene sceneID="x2Y-GR-aYG">
             <objects>
-                <tableViewController id="eUA-kF-p8x" userLabel="Settings" sceneMemberID="viewController">
+                <tableViewController id="eUA-kF-p8x" userLabel="Settings" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Z50-WA-GMV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,10 +392,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="1273"/>
         </scene>
-        <!--privacy-->
+        <!--Frequency-->
         <scene sceneID="UYb-wB-egL">
             <objects>
-                <viewController title="privacy" id="8Ta-BC-Yc5" sceneMemberID="viewController">
+                <viewController title="privacy" id="8Ta-BC-Yc5" userLabel="Frequency" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ncy-CS-TYX"/>
                         <viewControllerLayoutGuide type="bottom" id="DGe-y4-muQ"/>
@@ -438,10 +438,10 @@
             </objects>
             <point key="canvasLocation" x="1368" y="1070"/>
         </scene>
-        <!--View Controller-->
+        <!--PrivacyPolicy-->
         <scene sceneID="dDO-h4-LJI">
             <objects>
-                <viewController id="mKB-3m-MmM" sceneMemberID="viewController">
+                <viewController id="mKB-3m-MmM" userLabel="PrivacyPolicy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pfw-PV-5UY"/>
                         <viewControllerLayoutGuide type="bottom" id="47o-Qa-RVt"/>
