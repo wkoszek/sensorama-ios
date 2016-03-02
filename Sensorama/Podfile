@@ -1,6 +1,6 @@
 use_frameworks!
 pod 'Fabric'
-pod 'Answers'
+#pod 'Answers'
 pod 'Crashlytics'
 #pod 'Parse'
 

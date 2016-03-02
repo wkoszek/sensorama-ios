@@ -24,7 +24,7 @@
 {
     NSLog(@"%s", __func__);
     [super viewDidAppear:animated];
-    [self.tabBarController.navigationItem setTitle:@"Record"];
+    [self.navigationItem setTitle:@"Record"];
 }
 
 - (void)viewDidLoad {

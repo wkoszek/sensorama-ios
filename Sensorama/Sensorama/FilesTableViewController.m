@@ -18,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tabBarController.navigationItem setTitle:@"Files"];
+    [self.navigationItem setTitle:@"Files"];
+
     [SRUsageStats eventAppFiles];
 
     // Uncomment the following line to preserve selection between presentations.
