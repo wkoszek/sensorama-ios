@@ -9,15 +9,24 @@
 #import "SettingsTableViewController.h"
 
 @interface SettingsTableViewController ()
-
+@property (weak, nonatomic) NSString *versionString;
 @end
 
 @implementation SettingsTableViewController
 
+- (NSString *)versionString {
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    return [NSString stringWithFormat:@"Sensorama %@ (build:%@)",
+                    [infoDict objectForKey:@"CFBundleShortVersionString"],
+                    [infoDict objectForKey:@"CFBundleVersion"]
+            ];
+}
+
 - (void)viewDidLoad {
+    NSLog(@"%s", __func__);
     [super viewDidLoad];
     [self.tabBarController.navigationItem setTitle:@"Settings"];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -28,6 +37,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == [self.tableView numberOfSections] - 1) {
+        return (self.versionString);
+    } else {
+        return [super tableView:tableView titleForFooterInSection:section];
+    }
 }
 
 /*
