@@ -148,12 +148,12 @@
             </objects>
             <point key="canvasLocation" x="-1015" y="531"/>
         </scene>
-        <!--Sensorama-->
+        <!--Tab Bar Controller-->
         <scene sceneID="aci-h7-Ljv">
             <objects>
                 <tabBarController id="hkd-vv-f9X" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Sensorama" id="WJ4-mb-Gvp"/>
+                    <navigationItem key="navigationItem" id="WJ4-mb-Gvp"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="lGk-zV-ZLk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
