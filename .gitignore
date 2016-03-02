@@ -3,3 +3,11 @@ Sensorama/fastlane/AppStore_com.koszek.Sensorama.mobileprovision
 Sensorama/fastlane/Development_com.koszek.Sensorama.mobileprovision
 Sensorama/fastlane/README.md
 Sensorama/fastlane/report.xml
+
+
+Sensorama/Development_com.koszek.Sensorama.mobileprovision
+Sensorama/Pods/
+Sensorama/Sensorama.app.dSYM.zip
+Sensorama/Sensorama.app.dSYM/
+Sensorama/Sensorama.ipa
+Sensorama/Sensorama.xcworkspace/xcuserdata/
