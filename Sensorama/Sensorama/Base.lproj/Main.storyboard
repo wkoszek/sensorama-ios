@@ -499,8 +499,17 @@
                             <constraint firstItem="bES-2J-PPv" firstAttribute="top" secondItem="HwG-r5-tu8" secondAttribute="bottom" constant="8" symbolic="YES" id="oQh-9M-iad"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="forceCrashButton" destination="gOC-9T-Brs" id="FwS-5f-ey7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFf-pa-mqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Force Crash" id="gOC-9T-Brs">
+                    <connections>
+                        <action selector="forceCrash:" destination="0EY-nB-hfS" id="41F-5u-xxV"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1368" y="1729"/>
         </scene>
