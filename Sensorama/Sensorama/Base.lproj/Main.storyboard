@@ -441,7 +441,7 @@
         <!--PrivacyPolicy-->
         <scene sceneID="dDO-h4-LJI">
             <objects>
-                <viewController id="mKB-3m-MmM" userLabel="PrivacyPolicy" sceneMemberID="viewController">
+                <viewController id="mKB-3m-MmM" userLabel="PrivacyPolicy" customClass="PrivacyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pfw-PV-5UY"/>
                         <viewControllerLayoutGuide type="bottom" id="47o-Qa-RVt"/>
@@ -474,7 +474,7 @@
         <!--About-->
         <scene sceneID="JYU-rA-b78">
             <objects>
-                <viewController title="About" id="0EY-nB-hfS" sceneMemberID="viewController">
+                <viewController title="About" id="0EY-nB-hfS" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HwG-r5-tu8"/>
                         <viewControllerLayoutGuide type="bottom" id="3v7-Vp-z73"/>

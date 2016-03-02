@@ -9,6 +9,7 @@
 
 #import "RecordViewController.h"
 #import "SRUtils.h"
+#import "SRUsageStats.h"
 
 @interface RecordViewController ()
 @property (weak, nonatomic) IBOutlet UIView *recordView;
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setIsRecording:false];
+    [SRUsageStats eventAppRecord];
 }
 
 - (void)setIsRecording:(BOOL)isRecording

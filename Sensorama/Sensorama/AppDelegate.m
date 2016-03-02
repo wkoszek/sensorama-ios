@@ -5,11 +5,13 @@
 //  Sensorama
 //
 
-#import "AppDelegate.h"
 #import "Fabric/Fabric.h"
 #import "Crashlytics/Crashlytics.h"
-#import "SensoramaVars.h"
 
+#import "AppDelegate.h"
+#import "SRUsageStats.h"
+
+#import "SensoramaVars.h"
 
 @interface AppDelegate ()
 
@@ -25,8 +27,8 @@
     NSString *fabricAPIKey = [NSString stringWithUTF8String:FABRIC_API_KEY];
     [fabricDict setValue:fabricAPIKey forKey:@"APIKey"];
 
-    // Override point for customization after application launch.
-    [Fabric with:@[[CrashlyticsKit class]]];
+    [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
+    [SRUsageStats eventAppOpened];
 
     return YES;
 }

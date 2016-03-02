@@ -7,6 +7,8 @@
 //
 
 #import "FilesTableViewController.h"
+#import "SRUsageStats.h"
+
 
 @interface FilesTableViewController ()
 
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tabBarController.navigationItem setTitle:@"Files"];
+    [SRUsageStats eventAppFiles];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

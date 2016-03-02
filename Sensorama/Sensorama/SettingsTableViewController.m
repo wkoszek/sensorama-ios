@@ -7,6 +7,8 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "SRUsageStats.h"
+
 
 @interface SettingsTableViewController ()
 @property (weak, nonatomic) NSString *versionString;
@@ -26,6 +28,7 @@
     NSLog(@"%s", __func__);
     [super viewDidLoad];
     [self.tabBarController.navigationItem setTitle:@"Settings"];
+    [SRUsageStats eventAppSettings];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

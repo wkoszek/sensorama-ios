@@ -20,6 +20,9 @@
 		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
 		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
 		579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */; };
+		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
+		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
+		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
 		7C149EF0D1FBD9EBD08A9706 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D4EA7FC50C4747F1D5CA47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,12 @@
 		579FAB541C86B56200E06DF9 /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUsageStats.h; sourceTree = "<group>"; };
+		579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRUsageStats.m; sourceTree = "<group>"; };
+		579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		579FAB601C86FAA600E06DF9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		5D4D1A3C5A5BE39098622F10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		650888415CA0168E8A322191 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A5D4EA7FC50C4747F1D5CA47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +164,14 @@
 				577DC8FC1C4CB0E700FA02B7 /* ViewController.h */,
 				577DC8FD1C4CB0E700FA02B7 /* ViewController.m */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
+				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
+				579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */,
+				579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */,
 				5700D5DE1C85A35B009405AC /* SRUtils.h */,
 				5700D5DF1C85A35B009405AC /* SRUtils.m */,
+				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
+				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
 				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
 				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
 				577DC9071C4CB0E700FA02B7 /* Info.plist */,
@@ -417,9 +432,12 @@
 			files = (
 				579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */,
 				5700D5E01C85A35B009405AC /* SRUtils.m in Sources */,
+				579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */,
 				577DC8FE1C4CB0E700FA02B7 /* ViewController.m in Sources */,
 				577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */,
+				579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */,
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
+				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 			);
