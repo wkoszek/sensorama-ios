@@ -18,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     [self.navigationItem setTitle:@"Files"];
+    [self.tabBarController.navigationItem setTitle:@"Files"];
+
 
     [SRUsageStats eventAppFiles];
 
