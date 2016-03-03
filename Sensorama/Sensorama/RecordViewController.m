@@ -10,12 +10,17 @@
 #import "RecordViewController.h"
 #import "SRUtils.h"
 #import "SRUsageStats.h"
+#import "SREngine.h"
 
 @interface RecordViewController ()
-@property (weak, nonatomic) IBOutlet UIView *recordView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
+@property (strong, nonatomic) SREngine *srEngine;
+
+@property (weak,   nonatomic) IBOutlet UIView *recordView;
+
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CGFloat savedCornerRadius;
+
 @end
 
 @implementation RecordViewController
@@ -30,6 +35,7 @@
     [super viewDidLoad];
     [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
+    self.srEngine = [SREngine new];
 }
 
 - (void)setIsRecording:(BOOL)isRecording
@@ -37,6 +43,11 @@
     NSLog(@"%s", __func__);
 
     [self makeStartStopTransition:isRecording];
+    if (isRecording) {
+        [self.srEngine recordingStart];
+    } else {
+        [self.srEngine recordingStop];
+    }
     _isRecording = isRecording;
 }
 
