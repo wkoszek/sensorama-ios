@@ -18,6 +18,10 @@
 @property (strong, nonatomic) NSString *pathDocuments;
 @property (strong, nonatomic) SRCfg *srCfg;
 
+@property (strong, nonatomic) NSString *startDateString;
+@property (strong, nonatomic) NSString *startTimeString;
+@property (strong, nonatomic) NSString *endTimeString;
+
 @end
 
 @implementation SREngine
@@ -52,15 +56,16 @@
     NSLog(@"%@", [self.srCfg sensoramaTimeString]);
     NSLog(@"%@", [self.srCfg sensoramaDateString]);
 
-
+    self.startDateString = [self.srCfg sensoramaDateString];
+    self.startTimeString = [self.srCfg sensoramaTimeString];
 }
 
 - (void) recordingStop {
+    self.endTimeString = [self.srCfg sensoramaTimeString];
 
+    NSString *fileName = [NSString stringWithFormat:@"%@_%@-%@", self.startDateString, self.startTimeString, self.endTimeString];
+    NSLog(@"fileName: %@", fileName);
 }
 
-- (void)sensoramaStart {
-
-}
 
 @end
