@@ -20,13 +20,10 @@
 
 @implementation RecordViewController
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     NSLog(@"%s", __func__);
     [super viewDidAppear:animated];
-
-    [self.navigationItem setTitle:@"Record"];
-    [self.tabBarController.navigationItem setTitle:@"Record"];
+    [self.tabBarController setTitle:@"Record"];
 }
 
 - (void)viewDidLoad {

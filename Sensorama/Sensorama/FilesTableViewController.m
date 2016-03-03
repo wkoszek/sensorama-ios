@@ -16,12 +16,14 @@
 
 @implementation FilesTableViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%s", __func__);
+    [super viewDidAppear:animated];
+    [self.tabBarController setTitle:@"Files"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self.navigationItem setTitle:@"Files"];
-    [self.tabBarController.navigationItem setTitle:@"Files"];
-
 
     [SRUsageStats eventAppFiles];
 
