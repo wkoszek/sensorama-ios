@@ -23,6 +23,7 @@
 		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
 		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
+		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
 		88C85754FDF99A25DA468E3A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D2D52FEFE6F52AD8E15623 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
 		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
+		57EC5FF11C88000C00243893 /* SRCfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCfg.h; sourceTree = "<group>"; };
+		57EC5FF21C88000C00243893 /* SRCfg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCfg.m; sourceTree = "<group>"; };
 		5D4D1A3C5A5BE39098622F10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		650888415CA0168E8A322191 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +166,8 @@
 				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
 				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
 				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
+				57EC5FF11C88000C00243893 /* SRCfg.h */,
+				57EC5FF21C88000C00243893 /* SRCfg.m */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
 				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
 				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
@@ -438,6 +443,7 @@
 				579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */,
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
+				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 			);

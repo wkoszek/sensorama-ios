@@ -9,10 +9,14 @@
 #import "CoreMotion/CoreMotion.h"
 
 #import "SREngine.h"
+#import "SRCfg.h"
 
 @interface SREngine ()
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
+@property (strong, nonatomic) NSFileManager *fileManager;
+@property (strong, nonatomic) NSString *pathDocuments;
+@property (strong, nonatomic) SRCfg *srCfg;
 
 @end
 
@@ -21,9 +25,15 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
-
+        self.fileManager = [NSFileManager defaultManager];
+        self.pathDocuments = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        self.srCfg = [SRCfg new];
     }
     return self;
+}
+
+- (void)storageDebug {
+
 }
 
 - (void) recordingStart {
@@ -35,6 +45,13 @@
     NSLog(@"acc act:%d avail:%d",
           self.motionManager.accelerometerActive,
           self.motionManager.accelerometerAvailable);
+
+    NSString *appFile = [self.pathDocuments stringByAppendingPathComponent:@"MyFile"];
+
+    NSLog(@"%@ %@", [self.fileManager currentDirectoryPath], appFile);
+    NSLog(@"%@", [self.srCfg sensoramaTimeString]);
+    NSLog(@"%@", [self.srCfg sensoramaDateString]);
+
 
 }
 
