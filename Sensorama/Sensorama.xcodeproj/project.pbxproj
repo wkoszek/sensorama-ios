@@ -12,7 +12,6 @@
 		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
 		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
 		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
-		577DC8FE1C4CB0E700FA02B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FD1C4CB0E700FA02B7 /* ViewController.m */; };
 		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
 		577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9021C4CB0E700FA02B7 /* Assets.xcassets */; };
 		577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,7 @@
 		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
 		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
 		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
+		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		88C85754FDF99A25DA468E3A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D2D52FEFE6F52AD8E15623 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +67,6 @@
 		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		577DC8FC1C4CB0E700FA02B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		577DC8FD1C4CB0E700FA02B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		577DC9001C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577DC9021C4CB0E700FA02B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		577DC9051C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		579FAB601C86FAA600E06DF9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
 		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
+		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
 		5D4D1A3C5A5BE39098622F10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		650888415CA0168E8A322191 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,8 +161,8 @@
 				579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */,
 				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
 				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
-				577DC8FC1C4CB0E700FA02B7 /* ViewController.h */,
-				577DC8FD1C4CB0E700FA02B7 /* ViewController.m */,
+				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
+				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
 				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
 				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
@@ -433,7 +433,7 @@
 				579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */,
 				5700D5E01C85A35B009405AC /* SRUtils.m in Sources */,
 				579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */,
-				577DC8FE1C4CB0E700FA02B7 /* ViewController.m in Sources */,
+				57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */,
 				577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */,
 				579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */,
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
@@ -582,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
