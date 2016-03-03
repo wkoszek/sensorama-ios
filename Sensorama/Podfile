@@ -1,6 +1,9 @@
-use_frameworks!
-pod 'Fabric'
-#pod 'Answers'
-pod 'Crashlytics'
-#pod 'Parse'
+target 'Sensorama' do
+  pod 'Fabric'
+  pod 'Crashlytics'
+  #pod 'Answers'
+  #pod 'Parse'
+end
 
+use_frameworks!
+platform :ios, '8.0'
