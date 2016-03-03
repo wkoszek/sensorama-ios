@@ -33,8 +33,8 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
-        self.dateFormatter = [self makeFormatterWithString:@"YYYYMMdd"];
-        self.timeFormatter = [self makeFormatterWithString:@"HHmmss"];
+        self.dateFormatter = [self makeFormatterWithString:SENSORAMA_DATE_FORMAT];
+        self.timeFormatter = [self makeFormatterWithString:SENSORAMA_TIME_FORMAT];
     }
     return self;
 }

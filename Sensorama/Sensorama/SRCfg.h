@@ -11,6 +11,9 @@
 
 @interface SRCfg : NSObject
 
+#define SENSORAMA_DATE_FORMAT @"YYYYMMdd"
+#define SENSORAMA_TIME_FORMAT @"HHmmss"
+
 - (NSString *)sensoramaTimeString;
 - (NSString *)sensoramaDateString;
 
