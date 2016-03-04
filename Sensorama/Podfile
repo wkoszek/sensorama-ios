@@ -1,8 +1,20 @@
-target 'Sensorama' do
+def mypods
   pod 'Fabric'
   pod 'Crashlytics'
   #pod 'Answers'
   #pod 'Parse'
+end
+
+target 'Sensorama' do
+  mypods
+end
+
+target 'SensoramaTests' do
+  mypods
+end
+
+target 'SensoramaUITests' do
+  mypods
 end
 
 use_frameworks!

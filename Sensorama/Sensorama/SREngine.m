@@ -7,7 +7,7 @@
 //
 
 #import "CoreMotion/CoreMotion.h"
-
+#import "UIKit/UIKit.h"
 #import "SREngine.h"
 #import "SRCfg.h"
 
@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSThread *srThread;
 @property (strong, nonatomic) NSTimer *srTimer;
 @property (strong, nonatomic) NSMutableArray *srData;
+@property (strong, nonatomic) UIDevice *srDevice;
 
 @property (strong, nonatomic) NSString *startDateString;
 @property (strong, nonatomic) NSString *startTimeString;
@@ -38,12 +39,14 @@
         self.srCfg = [SRCfg new];
         self.srThread = [NSThread new];
         self.srData = [NSMutableArray new];
+        self.srDevice = [UIDevice currentDevice];
     }
     return self;
 }
 
 - (void)storageDebug {
-
+    NSArray *dirContents = [self.fileManager contentsOfDirectoryAtPath:self.pathDocuments error:nil];
+    NSLog(@"dirContents=%@", dirContents);
 }
 
 - (void) recordingStart {
@@ -74,10 +77,22 @@
     [self.motionManager startGyroUpdates];
 }
 
+- (NSDictionary *)schemaDict {
+    NSError *error;
+    NSString *schemaFilePath = [[NSBundle mainBundle] pathForResource:@"sensorama.schema" ofType:@"json"];
+    NSData *schemaData = [NSData dataWithContentsOfFile:schemaFilePath];
+    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:schemaData
+                          options:kNilOptions
+                          error:&error];
+    NSAssert(jsonDict != nil, @"couldn't serialize JSON file");
+    return jsonDict;
+}
+
 - (void) updateData {
-    BOOL hasAccelerometer = self.motionManager.accelerometerActive && self.motionManager.accelerometerAvailable;
-    BOOL hasMagnetometer = self.motionManager.magnetometerActive && self.motionManager.magnetometerAvailable;
-    BOOL hasGyroscope = self.motionManager.gyroActive && self.motionManager.gyroAvailable;
+    BOOL isSIM = true;
+    BOOL hasAccelerometer = isSIM || (self.motionManager.accelerometerActive && self.motionManager.accelerometerAvailable);
+    BOOL hasMagnetometer = isSIM || (self.motionManager.magnetometerActive && self.motionManager.magnetometerAvailable);
+    BOOL hasGyroscope = isSIM || (self.motionManager.gyroActive && self.motionManager.gyroAvailable);
 
     NSLog(@"loop");
 
@@ -102,15 +117,28 @@
 }
 
 - (void) recordingStop {
-    self.endTimeString = [self.srCfg sensoramaTimeString];
-
-    NSString *fileName = [NSString stringWithFormat:@"%@_%@-%@", self.startDateString, self.startTimeString, self.endTimeString];
-    NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
-    NSLog(@"fileName: %@", sampleFilePath);
+    NSError *error = nil;
 
     [self.srTimer invalidate];
+    self.endTimeString = [self.srCfg sensoramaTimeString];
 
-    NSLog(@"data: %@", self.srData);
+    NSString *fileName = [NSString stringWithFormat:@"%@_%@-%@.json", self.startDateString, self.startTimeString, self.endTimeString];
+    NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
+
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
+    [dict setObject:self.srData forKey:@"points"];
+    [dict setObject:sampleFilePath forKey:@"date"];
+    [dict setObject:@"Sensorama iOS" forKey:@"desc"];
+    [dict setObject:@(250) forKey:@"interval"];
+
+    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding];
+    NSLog(@"dict=%@", jsonString);
+
+    [jsonString writeToFile:sampleFilePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:&error];
+    NSLog(@"error=%@", error);
+
+    [self storageDebug];
 }
 
 

@@ -1,0 +1,20 @@
+{
+    "name" : "user's name",
+    "date" : "YYYYMMDD_HHmmss-HHmmss",
+    "interval" : 250,
+    "device" : "device name",
+    "desc" : "description from the UI",
+    "sensors" : [
+    ],
+    "points" : [
+                {
+                    "acc" : [],
+                    "gyro" : [],
+                    "grav" : [],
+                    "mag" : [],
+                    "steps" : [],
+                    "bat" : [],
+                    "prox" : []
+                }
+    ]
+}
