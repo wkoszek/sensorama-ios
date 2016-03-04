@@ -44,11 +44,6 @@
     return self;
 }
 
-- (void)storageDebug {
-    NSArray *dirContents = [self.fileManager contentsOfDirectoryAtPath:self.pathDocuments error:nil];
-    NSLog(@"dirContents=%@", dirContents);
-}
-
 - (void) recordingStart {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -117,7 +112,10 @@
 }
 
 - (void) recordingStop {
-    NSError *error = nil;
+    if (self.startDateString == nil || self.startTimeString == nil) {
+        // didn't start yet
+        return;
+    }
 
     [self.srTimer invalidate];
     self.endTimeString = [self.srCfg sensoramaTimeString];
@@ -131,6 +129,7 @@
     [dict setObject:@"Sensorama iOS" forKey:@"desc"];
     [dict setObject:@(250) forKey:@"interval"];
 
+    NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding];
     NSLog(@"dict=%@", jsonString);
@@ -138,7 +137,15 @@
     [jsonString writeToFile:sampleFilePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:&error];
     NSLog(@"error=%@", error);
 
-    [self storageDebug];
+    NSLog(@"dirContents=%@", [self filesRecorded]);
+}
+
+- (NSString *) filesPath {
+    return self.pathDocuments;
+}
+
+- (NSArray *) filesRecorded {
+    return [self.fileManager contentsOfDirectoryAtPath:self.pathDocuments error:nil];
 }
 
 

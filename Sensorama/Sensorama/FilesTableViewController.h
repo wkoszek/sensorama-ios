@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FilesTableViewController : UITableViewController
+@interface FilesTableViewController : UITableViewController <UITableViewDataSource>
+
+@property (nonatomic) NSArray *filesList;
 
 @end

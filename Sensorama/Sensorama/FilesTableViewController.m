@@ -7,6 +7,7 @@
 //
 
 #import "FilesTableViewController.h"
+#import "SensoramaTabBarController.h"
 #import "SRUsageStats.h"
 
 
@@ -18,12 +19,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"%s", __func__);
+
     [super viewDidAppear:animated];
     [self.tabBarController setTitle:@"Files"];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
+    self.filesList = [tabController.srEngine filesRecorded];
+    NSLog(@"filelistZZZ=%@", self.filesList);
+
 
     [SRUsageStats eventAppFiles];
 
@@ -42,24 +50,32 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.filesList count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    NSLog(@"here");
+    NSString *cellName = @"filesCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
+    }
+    [cell.textLabel setText:@"wojtek"];
+
+    NSInteger capSize = [self.filesList count];
+    NSInteger rowNumber = indexPath.row;
+    NSString *srTextLabel = self.filesList[rowNumber % capSize];
+
+    NSLog(@"capSize:%d rowNumber:%d srTextLabel:%@", capSize, rowNumber, srTextLabel);
+
+    [cell.textLabel setText:srTextLabel];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

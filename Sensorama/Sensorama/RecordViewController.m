@@ -8,13 +8,15 @@
 // http://stackoverflow.com/questions/5948167/uiview-animatewithduration-doesnt-animate-cornerradius-variation
 
 #import "RecordViewController.h"
+#import "SensoramaTabBarController.h"
+#import "FilesTableViewController.h"
 #import "SRUtils.h"
 #import "SRUsageStats.h"
 #import "SREngine.h"
 
+
 @interface RecordViewController ()
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
-@property (strong, nonatomic) SREngine *srEngine;
 
 @property (weak,   nonatomic) IBOutlet UIView *recordView;
 
@@ -35,18 +37,23 @@
     [super viewDidLoad];
     [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
-    self.srEngine = [SREngine new];
 }
 
 - (void)setIsRecording:(BOOL)isRecording
 {
-    NSLog(@"%s", __func__);
+    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
+    FilesTableViewController *filesTVC = [tabController.viewControllers objectAtIndex:1];
+
+    NSLog(@"fund: %s", __func__);
+    NSLog(@"files: %@", filesTVC);
+
 
     [self makeStartStopTransition:isRecording];
     if (isRecording) {
-        [self.srEngine recordingStart];
+        [tabController.srEngine recordingStart];
     } else {
-        [self.srEngine recordingStop];
+        [tabController.srEngine recordingStop];
+        filesTVC.filesList = [tabController.srEngine filesRecorded];
     }
     _isRecording = isRecording;
 }
@@ -89,7 +96,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -97,6 +104,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
