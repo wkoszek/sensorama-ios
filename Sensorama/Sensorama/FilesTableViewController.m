@@ -9,6 +9,7 @@
 #import "FilesTableViewController.h"
 #import "SensoramaTabBarController.h"
 #import "SRUsageStats.h"
+#import "SRUtils.h"
 
 
 @interface FilesTableViewController ()
@@ -65,7 +66,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
     }
-    [cell.textLabel setText:@"wojtek"];
 
     NSInteger capSize = [self.filesList count];
     NSInteger rowNumber = indexPath.row;
@@ -73,7 +73,17 @@
 
     NSLog(@"capSize:%d rowNumber:%d srTextLabel:%@", capSize, rowNumber, srTextLabel);
 
-    [cell.textLabel setText:srTextLabel];
+    if (indexPath.row == 0) {
+        [cell.imageView setImage:[UIImage imageNamed:@"iconFileNew"]];
+        [cell.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [cell.imageView setTintColor:[SRUtils mainColor]];
+    } else {
+        [cell.imageView setImage:[UIImage imageNamed:@"iconFile"]];
+    }
+
+    [cell.textLabel setText:[NSString stringWithFormat:@"Mar 23, 2016 %@", indexPath.row == 0 ? @"[Latest!]" : @" " ]];
+    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
+
     return cell;
 }
 
