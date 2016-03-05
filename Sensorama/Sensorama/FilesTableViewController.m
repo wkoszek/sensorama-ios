@@ -10,6 +10,7 @@
 #import "SensoramaTabBarController.h"
 #import "SRUsageStats.h"
 #import "SRUtils.h"
+#import "SRFile.h"
 
 
 @interface FilesTableViewController ()
@@ -67,13 +68,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
     }
 
-    NSInteger capSize = [self.filesList count];
-    NSInteger rowNumber = indexPath.row;
-    NSString *srTextLabel = self.filesList[rowNumber % capSize];
-
-    NSLog(@"capSize:%d rowNumber:%d srTextLabel:%@", capSize, rowNumber, srTextLabel);
-
-    if (indexPath.row == 0) {
+    NSInteger howManyItems = [self.filesList count];
+    NSInteger whichItem = indexPath.row % howManyItems;
+    if (whichItem == 0) {
         [cell.imageView setImage:[UIImage imageNamed:@"iconFileNew"]];
         [cell.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [cell.imageView setTintColor:[SRUtils mainColor]];
@@ -81,8 +78,14 @@
         [cell.imageView setImage:[UIImage imageNamed:@"iconFile"]];
     }
 
-    [cell.textLabel setText:[NSString stringWithFormat:@"Mar 23, 2016 %@", indexPath.row == 0 ? @"[Latest!]" : @" " ]];
-    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
+
+    SRFile *file = self.filesList[whichItem];
+
+    NSString *itemString = [file printableLabel];
+
+    [cell.textLabel setText:itemString];
+//    [cell.textLabel setText:[NSString stringWithFormat:@"Mar 23, 2016 %@", indexPath.row == 0 ? @"[Latest!]" : @" " ]];
+//    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
 
     return cell;
 }

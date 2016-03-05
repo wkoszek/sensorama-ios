@@ -27,6 +27,7 @@
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
 		57EC5FF71C89530000243893 /* sensorama.schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 57EC5FF61C89530000243893 /* sensorama.schema.json */; };
 		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
+		57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0B7601C8AD99900833BD9 /* SRFile.m */; };
 		5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */; };
 		66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		57EC5FF61C89530000243893 /* sensorama.schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sensorama.schema.json; sourceTree = "<group>"; };
 		57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensoramaTabBarController.h; sourceTree = "<group>"; };
 		57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensoramaTabBarController.m; sourceTree = "<group>"; };
+		57F0B75F1C8AD99900833BD9 /* SRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFile.h; sourceTree = "<group>"; };
+		57F0B7601C8AD99900833BD9 /* SRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFile.m; sourceTree = "<group>"; };
 		88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +178,8 @@
 				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
 				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
 				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
+				57F0B75F1C8AD99900833BD9 /* SRFile.h */,
+				57F0B7601C8AD99900833BD9 /* SRFile.m */,
 				57EC5FF11C88000C00243893 /* SRCfg.h */,
 				57EC5FF21C88000C00243893 /* SRCfg.m */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
@@ -551,6 +556,7 @@
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
+				57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 				57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */,
@@ -696,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -713,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

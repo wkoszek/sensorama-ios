@@ -141,11 +141,25 @@
 }
 
 - (NSString *) filesPath {
+
+
     return self.pathDocuments;
 }
 
 - (NSArray *) filesRecorded {
-    return [self.fileManager contentsOfDirectoryAtPath:self.pathDocuments error:nil];
+    NSArray *filePaths = [self.fileManager contentsOfDirectoryAtPath:self.pathDocuments error:nil];
+
+
+    return filePaths;
+
+
+//
+//    NSArray *filePathsSorted = [filePaths sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+//        NSString *aStr = (NSString *)a;
+//        NSString *bStr = (NSString *)b;
+//        return false;
+//    }];
+//    return filePathsSorted;
 }
 
 
