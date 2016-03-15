@@ -79,13 +79,11 @@
     }
 
 
-    SRFile *file = self.filesList[whichItem];
-
+    SRFile *file = [[SRFile alloc] initWithFileName:self.filesList[whichItem]];
     NSString *itemString = [file printableLabel];
 
     [cell.textLabel setText:itemString];
-//    [cell.textLabel setText:[NSString stringWithFormat:@"Mar 23, 2016 %@", indexPath.row == 0 ? @"[Latest!]" : @" " ]];
-//    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
+    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
 
     return cell;
 }
