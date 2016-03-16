@@ -10,6 +10,7 @@
 #import "UIKit/UIKit.h"
 #import "SREngine.h"
 #import "SRCfg.h"
+#import "SRSync.h"
 
 @interface SREngine ()
 
@@ -135,9 +136,11 @@
     NSLog(@"dict=%@", jsonString);
 
     [jsonString writeToFile:sampleFilePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:&error];
-    NSLog(@"error=%@", error);
 
-    NSLog(@"dirContents=%@", [self filesRecorded]);
+    SRSync *syncFile = [[SRSync alloc] initWithPath:sampleFilePath];
+    [syncFile syncStart];
+
+    NSLog(@"error=%@", error);
 }
 
 - (NSString *) filesPath {
@@ -151,15 +154,6 @@
 
 
     return filePaths;
-
-
-//
-//    NSArray *filePathsSorted = [filePaths sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-//        NSString *aStr = (NSString *)a;
-//        NSString *bStr = (NSString *)b;
-//        return false;
-//    }];
-//    return filePathsSorted;
 }
 
 

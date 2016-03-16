@@ -81,9 +81,10 @@
 
     SRFile *file = [[SRFile alloc] initWithFileName:self.filesList[whichItem]];
     NSString *itemString = [file printableLabel];
+    NSString *itemStringDetails = [file printableLabelDetails];
 
     [cell.textLabel setText:itemString];
-    [cell.detailTextLabel setText:@"0.45MB, 3:23s"];
+    [cell.detailTextLabel setText:itemStringDetails];
 
     return cell;
 }

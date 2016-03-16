@@ -11,6 +11,7 @@
 		5700D5E01C85A35B009405AC /* SRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700D5DF1C85A35B009405AC /* SRUtils.m */; };
 		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
 		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
+		5735A33A1C92B83D0076F979 /* SRSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRSync.m */; };
 		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
 		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
 		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
@@ -73,6 +74,8 @@
 		5700D5DE1C85A35B009405AC /* SRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUtils.h; sourceTree = "<group>"; };
 		5700D5DF1C85A35B009405AC /* SRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRUtils.m; sourceTree = "<group>"; };
 		570103341C78171C005BA5C6 /* SensoramaVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensoramaVars.h; sourceTree = "<group>"; };
+		5735A3381C92B83D0076F979 /* SRSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSync.h; sourceTree = "<group>"; };
+		5735A3391C92B83D0076F979 /* SRSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSync.m; sourceTree = "<group>"; };
 		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
 				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
 				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				5735A3381C92B83D0076F979 /* SRSync.h */,
+				5735A3391C92B83D0076F979 /* SRSync.m */,
 				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
 				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
 				579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */,
@@ -556,6 +561,7 @@
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
+				5735A33A1C92B83D0076F979 /* SRSync.m in Sources */,
 				57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
