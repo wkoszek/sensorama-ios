@@ -1,12 +1,60 @@
 PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - AWSCognito (2.3.5):
     - AWSCore (= 2.3.5)
   - AWSCore (2.3.5)
   - AWSS3 (2.3.5):
     - AWSCore (= 2.3.5)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.6)
+  - Fabric (1.6.7)
+  - JWTDecode (1.0.0)
+  - Lock (1.22.0):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/Core (= 1.22.0)
+    - Lock/UI (= 1.22.0)
+    - Lock/WebView (= 1.22.0)
+  - Lock/Core (1.22.0):
+    - AFNetworking (~> 2.5)
+    - CocoaLumberjack (~> 2.0)
+  - Lock/CoreUI (1.22.0):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/Core
+  - Lock/UI (1.22.0):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/CoreUI
+  - Lock/WebView (1.22.0):
+    - CocoaLumberjack (~> 2.0)
+    - Lock/CoreUI
+  - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
   - AWSCognito
@@ -14,14 +62,22 @@ DEPENDENCIES:
   - AWSS3
   - Crashlytics
   - Fabric
+  - JWTDecode
+  - Lock
+  - SimpleKeychain
 
 SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AWSCognito: f12700b4781897b2913544b36d6283f04ae72a44
   AWSCore: 8022eda5778fd7b87c9182709d8a27388e1a31fb
   AWSS3: 967f4ad3c91f1ed2c9dca09a9dcf905111232a87
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
+  Lock: 44dc7465a9aae6f0a6b2eb1c3dfe082855faad5b
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
-PODFILE CHECKSUM: 00a9bb8a8234a177ad204e2eea30a924ef2984ce
+PODFILE CHECKSUM: 87d2a17f06041bcebc6c173dbaf3adb8e2ce2f2e
 
 COCOAPODS: 1.0.0.beta.5
