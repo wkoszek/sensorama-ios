@@ -7,6 +7,8 @@
 
 #import "Fabric/Fabric.h"
 #import "Crashlytics/Crashlytics.h"
+#import <AWSCore/AWSCore.h>
+
 
 #import "AppDelegate.h"
 #import "SRUsageStats.h"
@@ -28,9 +30,20 @@
     [fabricDict setValue:fabricAPIKey forKey:@"APIKey"];
 
     [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
+    [self AWSStart];
+
     [SRUsageStats eventAppOpened];
 
     return YES;
+}
+
+- (void)AWSStart {
+    NSString *CognitoPoolID = [NSString stringWithUTF8String:SENSORAMA_COGNITO_POOL_ID];
+    AWSCognitoCredentialsProvider *credentialsProvider =
+        [[AWSCognitoCredentialsProvider alloc] initWithRegionType:AWSRegionUSEast1 identityPoolId:CognitoPoolID];
+    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
+        credentialsProvider:credentialsProvider];
+    AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
