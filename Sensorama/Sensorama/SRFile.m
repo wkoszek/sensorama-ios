@@ -18,7 +18,7 @@
         __block NSError *error = nil;
 
         dispatch_once(&onceToken, ^{
-            regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{8})_(\\d{6})-(\\d{6}).json"
+            regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{4})(\\d{2})(\\d{2})_(\\d{2})(\\d{2})(\\d{2})-(\\d{2})(\\d{2})(\\d{2}).json"
                                                               options:0
                                                                 error:&error];
         });
@@ -28,40 +28,46 @@
         NSArray *matches = [regex matchesInString:fileName
                                           options:0
                                             range:NSMakeRange(0, [fileName length])];
-        if (matches == nil) {
+        if (matches == nil || ([matches count] != 1)) {
             return nil;
         }
 
         NSMutableArray *nums = [NSMutableArray new];
         for (NSTextCheckingResult *match in matches) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 1; i < 10; i++) {
                 NSRange matchRange = [match rangeAtIndex:i];
                 NSString *tmpString = [fileName substringWithRange:matchRange];
                 [nums addObject:tmpString];
             }
         }
 
-        NSLog(@"Got matches: %d", [nums count]);
-        int idx = 0;
-#if 0
-        self.year = [nums objectAtIndex:idx++];
-        self.month = [nums objectAtIndex:idx++];
-        self.day = [nums objectAtIndex:idx++];
-        self.fromHour = [nums objectAtIndex:idx++];
-        self.fromMin = [nums objectAtIndex:idx++];
-        self.fromSec = [nums objectAtIndex:idx++];
-        self.toHour = [nums objectAtIndex:idx++];
-        self.toMin = [nums objectAtIndex:idx++];
-        self.toSec = [nums objectAtIndex:idx++];
-#endif
+        NSLog(@"AR: %@", nums);
 
-        NSLog(@"File=%@", nums);
+        int idx = 0;
+        self.year = [[nums objectAtIndex:idx++] intValue];
+        self.month = [[nums objectAtIndex:idx++] intValue];
+        self.day = [[nums objectAtIndex:idx++] intValue];
+        self.fromHour = [[nums objectAtIndex:idx++] intValue];
+        self.fromMin = [[nums objectAtIndex:idx++] intValue];
+        self.fromSec = [[nums objectAtIndex:idx++] intValue];
+        self.toHour = [[nums objectAtIndex:idx++] intValue];
+        self.toMin = [[nums objectAtIndex:idx++] intValue];
+        self.toSec = [[nums objectAtIndex:idx++] intValue];
     }
     return self;
 }
 
-- (NSString *)printableLabel {
-    return [NSString stringWithFormat:@"%04d", [self.year intValue]];
+- (NSString *) printableLabelDetails {
+    return [NSString stringWithFormat:@"%04d-%02d-%02d %02d:%02d:%02d-%02d:%02d:%02d",
+            self.year, self.month, self.day, self.fromHour, self.fromMin, self.fromSec, self.toHour, self.toMin, self.toSec];
+}
+
+- (NSString *) printableLabel {
+    NSUInteger fromS = (self.fromHour * 3600) + (self.fromMin * 60) + self.fromSec;
+    NSUInteger toS = (self.toHour * 3600) + (self.toMin * 60) + self.toSec;
+    NSUInteger lengthS = toS - fromS;
+
+    return [NSString stringWithFormat:@"%ds", lengthS];
 }
 
 

@@ -11,17 +11,18 @@
 @interface SRFile : NSObject
 
 - (NSString *)printableLabel;
+- (NSString *)printableLabelDetails;
 - (instancetype) initWithFileName:(NSString *)fileName;
 
-@property (nonatomic) NSNumber *year;
-@property (nonatomic) NSNumber *month;
-@property (nonatomic) NSNumber *day;
-@property (nonatomic) NSNumber *fromHour;
-@property (nonatomic) NSNumber *fromMin;
-@property (nonatomic) NSNumber *fromSec;
-@property (nonatomic) NSNumber *toHour;
-@property (nonatomic) NSNumber *toMin;
-@property (nonatomic) NSNumber *toSec;
-@property (nonatomic) NSNumber *size;
+@property NSUInteger year;
+@property NSUInteger month;
+@property NSUInteger day;
+@property NSUInteger fromHour;
+@property NSUInteger fromMin;
+@property NSUInteger fromSec;
+@property NSUInteger toHour;
+@property NSUInteger toMin;
+@property NSUInteger toSec;
+@property NSUInteger size;
 
 @end
