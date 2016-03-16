@@ -13,16 +13,17 @@
 - (instancetype) initWithFileName:(NSString *)fileName {
     self = [super init];
     if (self) {
-        NSLog(@"fileName=%@", fileName);
-        NSError *error = NULL;
-//#_(\\d{2})(\\d{2})(\\d{2})-(\\d{2})(\\d{2})(\\d{2}).json"
+        static dispatch_once_t onceToken;
+        static NSRegularExpression *regex = nil;
+        __block NSError *error = nil;
 
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(\\d{4})(\\d{2})"
-                                                                               options:NSRegularExpressionCaseInsensitive
-                                                                                 error:&error];
-        NSNumberFormatter *numFmt = [[NSNumberFormatter alloc] init];
+        dispatch_once(&onceToken, ^{
+            regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{8})_(\\d{6})-(\\d{6}).json"
+                                                              options:0
+                                                                error:&error];
+        });
 
-
+        NSLog(@"fileName=>%@< regex=%@ error=%@", fileName, regex, error);
 
         NSArray *matches = [regex matchesInString:fileName
                                           options:0
@@ -31,19 +32,15 @@
             return nil;
         }
 
-        NSLog(@"Got matches: %d", [matches count]);
-
         NSMutableArray *nums = [NSMutableArray new];
         for (NSTextCheckingResult *match in matches) {
-            NSRange matchRange = [match rangeAtIndex:1];
-            NSString *tmpString = [fileName substringWithRange:matchRange];
-            NSLog(@"tmpString: %@", tmpString);
-
-            numFmt.numberStyle = NSNumberFormatterDecimalStyle;
-            NSNumber *myNumber = [numFmt numberFromString:tmpString];
-
-            [nums addObject:myNumber];
+            for (int i = 0; i < 3; i++) {
+                NSRange matchRange = [match rangeAtIndex:i];
+                NSString *tmpString = [fileName substringWithRange:matchRange];
+                [nums addObject:tmpString];
+            }
         }
+
         NSLog(@"Got matches: %d", [nums count]);
         int idx = 0;
 #if 0
