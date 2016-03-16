@@ -1,16 +1,27 @@
 PODS:
+  - AWSCognito (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSCore (2.3.5)
+  - AWSS3 (2.3.5):
+    - AWSCore (= 2.3.5)
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.6)
 
 DEPENDENCIES:
+  - AWSCognito
+  - AWSCore
+  - AWSS3
   - Crashlytics
   - Fabric
 
 SPEC CHECKSUMS:
+  AWSCognito: f12700b4781897b2913544b36d6283f04ae72a44
+  AWSCore: 8022eda5778fd7b87c9182709d8a27388e1a31fb
+  AWSS3: 967f4ad3c91f1ed2c9dca09a9dcf905111232a87
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
 
-PODFILE CHECKSUM: f729907ed803e5d3ae8e757e1ced7f229e78ba2c
+PODFILE CHECKSUM: 00a9bb8a8234a177ad204e2eea30a924ef2984ce
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.0.0.beta.5

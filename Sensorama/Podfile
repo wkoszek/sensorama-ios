@@ -1,8 +1,10 @@
 def mypods
   pod 'Fabric'
   pod 'Crashlytics'
-  #pod 'Answers'
-  #pod 'Parse'
+
+  pod 'AWSCore'
+  pod 'AWSS3'
+  pod 'AWSCognito'
 end
 
 target 'Sensorama' do
