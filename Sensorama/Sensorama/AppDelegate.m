@@ -8,10 +8,12 @@
 #import "Fabric/Fabric.h"
 #import "Crashlytics/Crashlytics.h"
 #import <AWSCore/AWSCore.h>
+#import <Lock/Lock.h>
 
 
 #import "AppDelegate.h"
 #import "SRUsageStats.h"
+#import "SRAuth.h"
 
 #import "SensoramaVars.h"
 
@@ -21,16 +23,29 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSDictionary *fabricDict = [[mainBundle infoDictionary] objectForKey:@"Fabric"];
+    NSDictionary *infoDict = [mainBundle infoDictionary];
+    NSDictionary *fabricDict = [infoDict objectForKey:@"Fabric"];
     NSString *fabricAPIKey = [NSString stringWithUTF8String:FABRIC_API_KEY];
+    NSString *Auth0ClientID = [NSString stringWithUTF8String:AUTH0CLIENTID];
+    NSString *Auth0Domain = [NSString stringWithUTF8String:AUTH0DOMAIN];
+    NSString *Auth0URLScheme = [NSString stringWithUTF8String:AUTH0_URLSCHEME];
+
+    // Below I replace whole bunch of secrets for 3rd party frameworks,
+    // so that everything in Sensorama can be open-sourced and actively
+    // developed, but without decreasing security.
+    [[[infoDict objectForKey:@"CFBundleURLTypes"] objectAtIndex:0] setObject:@[ Auth0URLScheme ] forKey:@"CFBundleURLSchemes"];
     [fabricDict setValue:fabricAPIKey forKey:@"APIKey"];
+    [infoDict setValue:Auth0ClientID forKey:@"Auth0ClientId"];
+    [infoDict setValue:Auth0Domain forKey:@"Auth0Domain"];
 
     [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
     [self AWSStart];
+
+    A0Lock *lock = [[SRAuth sharedInstance] lock];
+    [lock applicationLaunchedWithOptions:launchOptions];
 
     [SRUsageStats eventAppOpened];
 
@@ -44,6 +59,11 @@
     AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
         credentialsProvider:credentialsProvider];
     AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    A0Lock *lock = [[SRAuth sharedInstance] lock];
+    return [lock handleURL:url sourceApplication:sourceApplication];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

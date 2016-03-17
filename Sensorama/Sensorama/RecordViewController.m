@@ -7,12 +7,15 @@
 // Corner radius animation:
 // http://stackoverflow.com/questions/5948167/uiview-animatewithduration-doesnt-animate-cornerradius-variation
 
+#import <Lock/Lock.h>
+
 #import "RecordViewController.h"
 #import "SensoramaTabBarController.h"
 #import "FilesTableViewController.h"
 #import "SRUtils.h"
 #import "SRUsageStats.h"
 #import "SREngine.h"
+#import "SRAuth.h"
 
 
 @interface RecordViewController ()
@@ -35,6 +38,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    A0Lock *lock = [[SRAuth sharedInstance] lock];
+    A0LockViewController *controller = [lock newLockViewController];
+    controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
+        // Do something with token & profile. e.g.: save them.
+        // And dismiss the ViewController
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    [self presentViewController:controller animated:YES completion:nil];
+
+
     [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
 }

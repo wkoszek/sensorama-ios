@@ -12,6 +12,7 @@
 		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
 		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
 		5735A33A1C92B83D0076F979 /* SRSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRSync.m */; };
+		577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2B811C9953BC00B2D890 /* SRAuth.m */; };
 		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
 		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
 		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		570103341C78171C005BA5C6 /* SensoramaVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensoramaVars.h; sourceTree = "<group>"; };
 		5735A3381C92B83D0076F979 /* SRSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSync.h; sourceTree = "<group>"; };
 		5735A3391C92B83D0076F979 /* SRSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSync.m; sourceTree = "<group>"; };
+		577A2B801C9953BC00B2D890 /* SRAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAuth.h; sourceTree = "<group>"; };
+		577A2B811C9953BC00B2D890 /* SRAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAuth.m; sourceTree = "<group>"; };
 		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
 				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
 				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				577A2B801C9953BC00B2D890 /* SRAuth.h */,
+				577A2B811C9953BC00B2D890 /* SRAuth.m */,
 				5735A3381C92B83D0076F979 /* SRSync.h */,
 				5735A3391C92B83D0076F979 /* SRSync.m */,
 				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
@@ -263,15 +268,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */;
 			buildPhases = (
-				DDE48401AC51A3EC5EF8BFC6 /* Check Pods Manifest.lock */,
+				DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */,
 				570103321C76EFAC005BA5C6 /* ShellScript */,
 				570103331C771B98005BA5C6 /* CopyFiles */,
 				577DC8EF1C4CB0E700FA02B7 /* Sources */,
 				577DC8F01C4CB0E700FA02B7 /* Frameworks */,
 				577DC8F11C4CB0E700FA02B7 /* Resources */,
 				5782D4221C747FAB00627263 /* Run Script */,
-				322707BDD69736227C915617 /* Embed Pods Frameworks */,
-				E0E010AFED24FBE34024912E /* Copy Pods Resources */,
+				322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */,
+				E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,12 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */;
 			buildPhases = (
-				17E920D71639B1100E29D5F3 /* Check Pods Manifest.lock */,
+				17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */,
 				577DC9081C4CB0E700FA02B7 /* Sources */,
 				577DC9091C4CB0E700FA02B7 /* Frameworks */,
 				577DC90A1C4CB0E700FA02B7 /* Resources */,
-				4E12B395E4A080C43F83A96F /* Embed Pods Frameworks */,
-				DF0A20BA250F9C4ECFFA50A9 /* Copy Pods Resources */,
+				4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */,
+				DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,11 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */;
 			buildPhases = (
-				C009B5E5CCED947A9BEBF0A5 /* Check Pods Manifest.lock */,
+				C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */,
 				577DC9131C4CB0E700FA02B7 /* Sources */,
 				577DC9141C4CB0E700FA02B7 /* Frameworks */,
 				577DC9151C4CB0E700FA02B7 /* Resources */,
-				5E6558FBA3E2E4C82E33D32F /* Copy Pods Resources */,
+				5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,14 +402,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17E920D71639B1100E29D5F3 /* Check Pods Manifest.lock */ = {
+		17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,14 +417,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		322707BDD69736227C915617 /* Embed Pods Frameworks */ = {
+		322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,14 +432,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E12B395E4A080C43F83A96F /* Embed Pods Frameworks */ = {
+		4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,14 +475,14 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"SENSORAMA: -------------------\"\nsource ~/.profile\n\"${PODS_ROOT}\"/../../scripts/fabric.sh\n";
 		};
-		5E6558FBA3E2E4C82E33D32F /* Copy Pods Resources */ = {
+		5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,14 +490,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C009B5E5CCED947A9BEBF0A5 /* Check Pods Manifest.lock */ = {
+		C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,14 +505,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DDE48401AC51A3EC5EF8BFC6 /* Check Pods Manifest.lock */ = {
+		DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,14 +520,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DF0A20BA250F9C4ECFFA50A9 /* Copy Pods Resources */ = {
+		DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,14 +535,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0E010AFED24FBE34024912E /* Copy Pods Resources */ = {
+		E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +571,7 @@
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 				57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */,
+				577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -725,7 +731,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 42;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
