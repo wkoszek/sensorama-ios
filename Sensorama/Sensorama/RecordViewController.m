@@ -47,6 +47,7 @@
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTextFieldTextColor];
     [sensoramaTheme registerColor:[UIColor lightGrayColor] forKey:A0ThemeTextFieldPlaceholderTextColor];
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTextFieldIconColor];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTitleTextColor];
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
 
     A0Lock *lock = [[SRAuth sharedInstance] lock];
