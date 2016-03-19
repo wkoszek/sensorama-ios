@@ -39,6 +39,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Custom login screen for Sensorama.
+    A0Theme *sensoramaTheme = [[A0Theme alloc] init];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemePrimaryButtonNormalColor];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeSecondaryButtonBackgroundColor];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeSecondaryButtonTextColor];
+    [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
+
     A0Lock *lock = [[SRAuth sharedInstance] lock];
     A0LockViewController *controller = [lock newLockViewController];
     controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
