@@ -44,6 +44,9 @@
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemePrimaryButtonNormalColor];
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeSecondaryButtonBackgroundColor];
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeSecondaryButtonTextColor];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTextFieldTextColor];
+    [sensoramaTheme registerColor:[UIColor lightGrayColor] forKey:A0ThemeTextFieldPlaceholderTextColor];
+    [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTextFieldIconColor];
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
 
     A0Lock *lock = [[SRAuth sharedInstance] lock];
