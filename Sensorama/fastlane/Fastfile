@@ -64,7 +64,7 @@ platform :ios do
   lane :beta do
     certs
     sigh(development: true)
-    increment_build_number
+    #increment_build_number
     build_app
     #deliver
     crashlytics_beta
