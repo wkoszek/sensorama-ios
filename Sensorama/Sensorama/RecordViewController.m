@@ -9,6 +9,8 @@
 
 #import <Lock/Lock.h>
 
+@import JWTDecode;
+
 #import "RecordViewController.h"
 #import "SensoramaTabBarController.h"
 #import "FilesTableViewController.h"
@@ -16,7 +18,7 @@
 #import "SRUsageStats.h"
 #import "SREngine.h"
 #import "SRAuth.h"
-
+#import "SimpleKeychain/A0SimpleKeychain.h"
 
 @interface RecordViewController ()
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
@@ -51,14 +53,40 @@
     [sensoramaTheme registerImageWithName:@"appLaunch" bundle:[NSBundle mainBundle] forKey:A0ThemeIconImageName];
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
 
-    A0Lock *lock = [[SRAuth sharedInstance] lock];
-    A0LockViewController *controller = [lock newLockViewController];
-    controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
-        // Do something with token & profile. e.g.: save them.
-        // And dismiss the ViewController
-        [self dismissViewControllerAnimated:YES completion:nil];
-    };
-    [self presentViewController:controller animated:YES completion:nil];
+    
+    A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
+    A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:[keychain dataForKey:@"profile"]];
+    NSString *idToken = [keychain stringForKey:@"id_token"];
+    
+    if (idToken) {
+        NSError *error = nil;
+        A0JWT *jwt = [A0JWT decode:idToken error:&error];
+        
+        NSLog(@"jwt=%@", jwt);
+#ifdef NOTYET
+        if ([jwt expi]
+            NSLog(@"Auth0 token has expired, refreshing.");
+            NSString *refreshToken = [store stringForKey:@"refresh_token"];
+            
+            @weakify(self);
+            A0APIClient *client = [[[Application sharedInstance] lock] apiClient];
+            [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
+                @strongify(self);
+                [store setString:token.idToken forKey:@"id_token"];
+                [self loginLayer:profile.userId];
+            } failure:^(NSError *error) {
+                [store clearAll];
+            }];
+            
+        } else {
+            //User is connected in Auth0 but layerclient isn't connected
+            self.tokenID = idToken;
+            [self loginLayer:profile.userId];
+        }
+    } else {
+        [self signInToAuth0];
+#endif
+    }
 
 
     [self setIsRecording:false];
