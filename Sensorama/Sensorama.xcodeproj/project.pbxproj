@@ -1,2069 +1,875 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>08E0F4238BAE6C65EFCBCB61</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Sensorama.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>14D2D52FEFE6F52AD8E15623</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>158C74F5DA9AB2C588F90234</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Sensorama.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>17E920D71639B1100E29D5F3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>285D4FA5CA450C922F3D12F2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SensoramaUITests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>322707BDD69736227C915617</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3B6C0FE83DCF8B4D0B2E2D70</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SensoramaTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4E12B395E4A080C43F83A96F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5700D5DB1C85A0C6009405AC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RecordViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5700D5DC1C85A0C6009405AC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RecordViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5700D5DD1C85A0C6009405AC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5700D5DC1C85A0C6009405AC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5700D5DE1C85A35B009405AC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRUtils.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5700D5DF1C85A35B009405AC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRUtils.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5700D5E01C85A35B009405AC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5700D5DF1C85A35B009405AC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>570103321C76EFAC005BA5C6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array>
-				<string>$(DERIVED_FILE_DIR)/SensoramaVars.h</string>
-			</array>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>pwd
-source ~/.profile
-$(PWD)/../scripts/gen_files.sh &gt; Sensorama/SensoramaVars.h</string>
-		</dict>
-		<key>570103331C771B98005BA5C6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string></string>
-			<key>dstSubfolderSpec</key>
-			<string>7</string>
-			<key>files</key>
-			<array>
-				<string>570103361C781954005BA5C6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>570103341C78171C005BA5C6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SensoramaVars.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>570103361C781954005BA5C6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>570103341C78171C005BA5C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5730B9FDC56CB76C1CDC9162</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ABCEAB95BBD7A989F38B0DD6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5735A3381C92B83D0076F979</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRSync.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5735A3391C92B83D0076F979</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRSync.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5735A33A1C92B83D0076F979</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5735A3391C92B83D0076F979</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577A2B801C9953BC00B2D890</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRAuth.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577A2B811C9953BC00B2D890</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRAuth.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577A2B821C9953BC00B2D890</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577A2B811C9953BC00B2D890</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC8EA1C4CB0E600FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC8F51C4CB0E700FA02B7</string>
-				<string>577DC90F1C4CB0E700FA02B7</string>
-				<string>577DC91A1C4CB0E700FA02B7</string>
-				<string>577DC8F41C4CB0E700FA02B7</string>
-				<string>C9188546ED92D4026C0F8BA3</string>
-				<string>B0669C08DCF32542E0AAF659</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8EB1C4CB0E600FA02B7</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0720</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Wojciech Adam Koszek</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>577DC8F21C4CB0E700FA02B7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2</string>
-						<key>DevelopmentTeam</key>
-						<string>QQ5A9Q7C7Z</string>
-					</dict>
-					<key>577DC90B1C4CB0E700FA02B7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2</string>
-						<key>DevelopmentTeam</key>
-						<string>3DHC3EAFWW</string>
-						<key>TestTargetID</key>
-						<string>577DC8F21C4CB0E700FA02B7</string>
-					</dict>
-					<key>577DC9161C4CB0E700FA02B7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.2</string>
-						<key>DevelopmentTeam</key>
-						<string>3DHC3EAFWW</string>
-						<key>TestTargetID</key>
-						<string>577DC8F21C4CB0E700FA02B7</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>577DC8EE1C4CB0E600FA02B7</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>577DC8EA1C4CB0E600FA02B7</string>
-			<key>productRefGroup</key>
-			<string>577DC8F41C4CB0E700FA02B7</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>577DC8F21C4CB0E700FA02B7</string>
-				<string>577DC90B1C4CB0E700FA02B7</string>
-				<string>577DC9161C4CB0E700FA02B7</string>
-			</array>
-		</dict>
-		<key>577DC8EE1C4CB0E600FA02B7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>577DC91E1C4CB0E700FA02B7</string>
-				<string>577DC91F1C4CB0E700FA02B7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>577DC8EF1C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>579FAB581C86B57400E06DF9</string>
-				<string>5700D5E01C85A35B009405AC</string>
-				<string>579FAB5E1C86F64F00E06DF9</string>
-				<string>57EC5FF01C87F5CA00243893</string>
-				<string>577DC8FB1C4CB0E700FA02B7</string>
-				<string>579FAB611C86FAA700E06DF9</string>
-				<string>577DC8F81C4CB0E700FA02B7</string>
-				<string>579FAB641C86FABC00E06DF9</string>
-				<string>57EC5FF31C88000C00243893</string>
-				<string>5735A33A1C92B83D0076F979</string>
-				<string>57F0B7611C8AD99900833BD9</string>
-				<string>5700D5DD1C85A0C6009405AC</string>
-				<string>579FAB551C86B56200E06DF9</string>
-				<string>57EC5FFD1C89650D00243893</string>
-				<string>577A2B821C9953BC00B2D890</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC8F01C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5D28C1C84DBDCD31DEEC87D0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC8F11C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>577DC9061C4CB0E700FA02B7</string>
-				<string>57EC5FF71C89530000243893</string>
-				<string>577DC9031C4CB0E700FA02B7</string>
-				<string>577DC9011C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC8F21C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>577DC9201C4CB0E700FA02B7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DDE48401AC51A3EC5EF8BFC6</string>
-				<string>570103321C76EFAC005BA5C6</string>
-				<string>570103331C771B98005BA5C6</string>
-				<string>577DC8EF1C4CB0E700FA02B7</string>
-				<string>577DC8F01C4CB0E700FA02B7</string>
-				<string>577DC8F11C4CB0E700FA02B7</string>
-				<string>5782D4221C747FAB00627263</string>
-				<string>322707BDD69736227C915617</string>
-				<string>E0E010AFED24FBE34024912E</string>
-				<string>A28EAE6B2C114349373EF78C</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Sensorama</string>
-			<key>productName</key>
-			<string>Sensorama</string>
-			<key>productReference</key>
-			<string>577DC8F31C4CB0E700FA02B7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>577DC8F31C4CB0E700FA02B7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Sensorama.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>577DC8F41C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC8F31C4CB0E700FA02B7</string>
-				<string>577DC90C1C4CB0E700FA02B7</string>
-				<string>577DC9171C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8F51C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>57EC5FFB1C89650D00243893</string>
-				<string>57EC5FFC1C89650D00243893</string>
-				<string>5700D5DB1C85A0C6009405AC</string>
-				<string>5700D5DC1C85A0C6009405AC</string>
-				<string>577A2B801C9953BC00B2D890</string>
-				<string>577A2B811C9953BC00B2D890</string>
-				<string>5735A3381C92B83D0076F979</string>
-				<string>5735A3391C92B83D0076F979</string>
-				<string>579FAB531C86B56200E06DF9</string>
-				<string>579FAB541C86B56200E06DF9</string>
-				<string>579FAB561C86B57400E06DF9</string>
-				<string>579FAB571C86B57400E06DF9</string>
-				<string>577DC8F91C4CB0E700FA02B7</string>
-				<string>577DC8FA1C4CB0E700FA02B7</string>
-				<string>57EC5FEE1C87F5CA00243893</string>
-				<string>57EC5FEF1C87F5CA00243893</string>
-				<string>57F0B75F1C8AD99900833BD9</string>
-				<string>57F0B7601C8AD99900833BD9</string>
-				<string>57EC5FF11C88000C00243893</string>
-				<string>57EC5FF21C88000C00243893</string>
-				<string>577DC8FF1C4CB0E700FA02B7</string>
-				<string>579FAB5F1C86FAA600E06DF9</string>
-				<string>579FAB601C86FAA600E06DF9</string>
-				<string>579FAB621C86FABC00E06DF9</string>
-				<string>579FAB631C86FABC00E06DF9</string>
-				<string>5700D5DE1C85A35B009405AC</string>
-				<string>5700D5DF1C85A35B009405AC</string>
-				<string>579FAB5C1C86F64F00E06DF9</string>
-				<string>579FAB5D1C86F64F00E06DF9</string>
-				<string>577DC9021C4CB0E700FA02B7</string>
-				<string>577DC9041C4CB0E700FA02B7</string>
-				<string>577DC9071C4CB0E700FA02B7</string>
-				<string>57EC5FF61C89530000243893</string>
-				<string>577DC8F61C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Sensorama</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8F61C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC8F71C4CB0E700FA02B7</string>
-				<string>570103341C78171C005BA5C6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8F71C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8F81C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC8F71C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC8F91C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8FA1C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC8FB1C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC8FA1C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC8FF1C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC9001C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9001C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9011C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC8FF1C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC9021C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9031C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC9021C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC9041C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC9051C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9051C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9061C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC9041C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC9071C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9081C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>577DC9111C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC9091C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>66609AEB062942D709133801</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC90A1C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC90B1C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>577DC9231C4CB0E700FA02B7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>17E920D71639B1100E29D5F3</string>
-				<string>577DC9081C4CB0E700FA02B7</string>
-				<string>577DC9091C4CB0E700FA02B7</string>
-				<string>577DC90A1C4CB0E700FA02B7</string>
-				<string>4E12B395E4A080C43F83A96F</string>
-				<string>DF0A20BA250F9C4ECFFA50A9</string>
-				<string>E47A6744135066BD28F8C679</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>577DC90E1C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SensoramaTests</string>
-			<key>productName</key>
-			<string>SensoramaTests</string>
-			<key>productReference</key>
-			<string>577DC90C1C4CB0E700FA02B7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>577DC90C1C4CB0E700FA02B7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SensoramaTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>577DC90D1C4CB0E700FA02B7</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>577DC8EB1C4CB0E600FA02B7</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>577DC8F21C4CB0E700FA02B7</string>
-			<key>remoteInfo</key>
-			<string>Sensorama</string>
-		</dict>
-		<key>577DC90E1C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>577DC8F21C4CB0E700FA02B7</string>
-			<key>targetProxy</key>
-			<string>577DC90D1C4CB0E700FA02B7</string>
-		</dict>
-		<key>577DC90F1C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC9101C4CB0E700FA02B7</string>
-				<string>577DC9121C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SensoramaTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9101C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SensoramaTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9111C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC9101C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC9121C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC9131C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>577DC91C1C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC9141C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5730B9FDC56CB76C1CDC9162</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC9151C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>577DC9161C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>577DC9261C4CB0E700FA02B7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C009B5E5CCED947A9BEBF0A5</string>
-				<string>577DC9131C4CB0E700FA02B7</string>
-				<string>577DC9141C4CB0E700FA02B7</string>
-				<string>577DC9151C4CB0E700FA02B7</string>
-				<string>5E6558FBA3E2E4C82E33D32F</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>577DC9191C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SensoramaUITests</string>
-			<key>productName</key>
-			<string>SensoramaUITests</string>
-			<key>productReference</key>
-			<string>577DC9171C4CB0E700FA02B7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>577DC9171C4CB0E700FA02B7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SensoramaUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>577DC9181C4CB0E700FA02B7</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>577DC8EB1C4CB0E600FA02B7</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>577DC8F21C4CB0E700FA02B7</string>
-			<key>remoteInfo</key>
-			<string>Sensorama</string>
-		</dict>
-		<key>577DC9191C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>577DC8F21C4CB0E700FA02B7</string>
-			<key>targetProxy</key>
-			<string>577DC9181C4CB0E700FA02B7</string>
-		</dict>
-		<key>577DC91A1C4CB0E700FA02B7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>577DC91B1C4CB0E700FA02B7</string>
-				<string>577DC91D1C4CB0E700FA02B7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SensoramaUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC91B1C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SensoramaUITests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC91C1C4CB0E700FA02B7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>577DC91B1C4CB0E700FA02B7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>577DC91D1C4CB0E700FA02B7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>577DC91E1C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>577DC91F1C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>577DC9201C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>577DC9211C4CB0E700FA02B7</string>
-				<string>577DC9221C4CB0E700FA02B7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>577DC9211C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D3592264C75D45B9A5136B5B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>42</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Sensorama/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.Sensorama</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string>$(sigh_com.koszek.Sensorama_development)</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>577DC9221C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>08E0F4238BAE6C65EFCBCB61</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>42</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Sensorama/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.Sensorama</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string>$(sigh_com.koszek.Sensorama_development)</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>577DC9231C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>577DC9241C4CB0E700FA02B7</string>
-				<string>577DC9251C4CB0E700FA02B7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>577DC9241C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>EB98888AE13C446822A4B76B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SensoramaTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.SensoramaTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>577DC9251C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>3B6C0FE83DCF8B4D0B2E2D70</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SensoramaTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.SensoramaTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>577DC9261C4CB0E700FA02B7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>577DC9271C4CB0E700FA02B7</string>
-				<string>577DC9281C4CB0E700FA02B7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>577DC9271C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>88EFEDCAB892A56187C2670B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>SensoramaUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.SensoramaUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Sensorama</string>
-				<key>USES_XCTRUNNER</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>577DC9281C4CB0E700FA02B7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>285D4FA5CA450C922F3D12F2</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>SensoramaUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.koszek.SensoramaUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Sensorama</string>
-				<key>USES_XCTRUNNER</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5782D4221C747FAB00627263</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Run Script</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>echo "SENSORAMA: -------------------"
-source ~/.profile
-"${PODS_ROOT}"/../../scripts/fabric.sh
-</string>
-		</dict>
-		<key>579FAB531C86B56200E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FilesTableViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB541C86B56200E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FilesTableViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB551C86B56200E06DF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>579FAB541C86B56200E06DF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>579FAB561C86B57400E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SettingsTableViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB571C86B57400E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SettingsTableViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB581C86B57400E06DF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>579FAB571C86B57400E06DF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>579FAB5C1C86F64F00E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRUsageStats.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB5D1C86F64F00E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRUsageStats.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB5E1C86F64F00E06DF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>579FAB5D1C86F64F00E06DF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>579FAB5F1C86FAA600E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AboutViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB601C86FAA600E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AboutViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB611C86FAA700E06DF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>579FAB601C86FAA600E06DF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>579FAB621C86FABC00E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PrivacyViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB631C86FABC00E06DF9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PrivacyViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>579FAB641C86FABC00E06DF9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>579FAB631C86FABC00E06DF9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>57EC5FEE1C87F5CA00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SREngine.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FEF1C87F5CA00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SREngine.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FF01C87F5CA00243893</key>
-		<dict>
-			<key>fileRef</key>
-			<string>57EC5FEF1C87F5CA00243893</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>57EC5FF11C88000C00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRCfg.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FF21C88000C00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRCfg.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FF31C88000C00243893</key>
-		<dict>
-			<key>fileRef</key>
-			<string>57EC5FF21C88000C00243893</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>57EC5FF61C89530000243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.json</string>
-			<key>path</key>
-			<string>sensorama.schema.json</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FF71C89530000243893</key>
-		<dict>
-			<key>fileRef</key>
-			<string>57EC5FF61C89530000243893</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>57EC5FFB1C89650D00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SensoramaTabBarController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FFC1C89650D00243893</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SensoramaTabBarController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57EC5FFD1C89650D00243893</key>
-		<dict>
-			<key>fileRef</key>
-			<string>57EC5FFC1C89650D00243893</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>57F0B75F1C8AD99900833BD9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SRFile.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57F0B7601C8AD99900833BD9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SRFile.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>57F0B7611C8AD99900833BD9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>57F0B7601C8AD99900833BD9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5D28C1C84DBDCD31DEEC87D0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>158C74F5DA9AB2C588F90234</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5E6558FBA3E2E4C82E33D32F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>66609AEB062942D709133801</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A53020199A0AD319780EF990</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>88EFEDCAB892A56187C2670B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SensoramaUITests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A28EAE6B2C114349373EF78C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A53020199A0AD319780EF990</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_SensoramaTests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>ABCEAB95BBD7A989F38B0DD6</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_SensoramaUITests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B0669C08DCF32542E0AAF659</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D3592264C75D45B9A5136B5B</string>
-				<string>08E0F4238BAE6C65EFCBCB61</string>
-				<string>EB98888AE13C446822A4B76B</string>
-				<string>3B6C0FE83DCF8B4D0B2E2D70</string>
-				<string>88EFEDCAB892A56187C2670B</string>
-				<string>285D4FA5CA450C922F3D12F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C009B5E5CCED947A9BEBF0A5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C9188546ED92D4026C0F8BA3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>14D2D52FEFE6F52AD8E15623</string>
-				<string>158C74F5DA9AB2C588F90234</string>
-				<string>A53020199A0AD319780EF990</string>
-				<string>ABCEAB95BBD7A989F38B0DD6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3592264C75D45B9A5136B5B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Sensorama.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DDE48401AC51A3EC5EF8BFC6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>DF0A20BA250F9C4ECFFA50A9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E0E010AFED24FBE34024912E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E47A6744135066BD28F8C679</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>EB98888AE13C446822A4B76B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-SensoramaTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>577DC8EB1C4CB0E600FA02B7</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700D5DC1C85A0C6009405AC /* RecordViewController.m */; };
+		5700D5E01C85A35B009405AC /* SRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700D5DF1C85A35B009405AC /* SRUtils.m */; };
+		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
+		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
+		5735A33A1C92B83D0076F979 /* SRSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRSync.m */; };
+		577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2B811C9953BC00B2D890 /* SRAuth.m */; };
+		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
+		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
+		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
+		577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9021C4CB0E700FA02B7 /* Assets.xcassets */; };
+		577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */; };
+		577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */; };
+		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
+		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
+		579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */; };
+		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
+		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
+		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
+		57B11EEB1CA922EF00B389EF /* contrib in Resources */ = {isa = PBXBuildFile; fileRef = 57B11EEA1CA922EF00B389EF /* contrib */; };
+		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
+		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
+		57EC5FF71C89530000243893 /* sensorama.schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 57EC5FF61C89530000243893 /* sensorama.schema.json */; };
+		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
+		57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0B7601C8AD99900833BD9 /* SRFile.m */; };
+		5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */; };
+		66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		577DC90D1C4CB0E700FA02B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577DC8F21C4CB0E700FA02B7;
+			remoteInfo = Sensorama;
+		};
+		577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577DC8F21C4CB0E700FA02B7;
+			remoteInfo = Sensorama;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		570103331C771B98005BA5C6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.release.xcconfig"; sourceTree = "<group>"; };
+		14D2D52FEFE6F52AD8E15623 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sensorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.release.xcconfig"; sourceTree = "<group>"; };
+		5700D5DB1C85A0C6009405AC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		5700D5DC1C85A0C6009405AC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		5700D5DE1C85A35B009405AC /* SRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUtils.h; sourceTree = "<group>"; };
+		5700D5DF1C85A35B009405AC /* SRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRUtils.m; sourceTree = "<group>"; };
+		570103341C78171C005BA5C6 /* SensoramaVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensoramaVars.h; sourceTree = "<group>"; };
+		5735A3381C92B83D0076F979 /* SRSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSync.h; sourceTree = "<group>"; };
+		5735A3391C92B83D0076F979 /* SRSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSync.m; sourceTree = "<group>"; };
+		577A2B801C9953BC00B2D890 /* SRAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAuth.h; sourceTree = "<group>"; };
+		577A2B811C9953BC00B2D890 /* SRAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAuth.m; sourceTree = "<group>"; };
+		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		577DC9001C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		577DC9021C4CB0E700FA02B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		577DC9051C4CB0E700FA02B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		577DC9071C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaTests.m; sourceTree = "<group>"; };
+		577DC9121C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaUITests.m; sourceTree = "<group>"; };
+		577DC91D1C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579FAB531C86B56200E06DF9 /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
+		579FAB541C86B56200E06DF9 /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
+		579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUsageStats.h; sourceTree = "<group>"; };
+		579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRUsageStats.m; sourceTree = "<group>"; };
+		579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		579FAB601C86FAA600E06DF9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		57B11EEA1CA922EF00B389EF /* contrib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contrib; sourceTree = SOURCE_ROOT; };
+		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
+		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
+		57EC5FF11C88000C00243893 /* SRCfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCfg.h; sourceTree = "<group>"; };
+		57EC5FF21C88000C00243893 /* SRCfg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCfg.m; sourceTree = "<group>"; };
+		57EC5FF61C89530000243893 /* sensorama.schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sensorama.schema.json; sourceTree = "<group>"; };
+		57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensoramaTabBarController.h; sourceTree = "<group>"; };
+		57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensoramaTabBarController.m; sourceTree = "<group>"; };
+		57F0B75F1C8AD99900833BD9 /* SRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFile.h; sourceTree = "<group>"; };
+		57F0B7601C8AD99900833BD9 /* SRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFile.m; sourceTree = "<group>"; };
+		88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.debug.xcconfig"; sourceTree = "<group>"; };
+		EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		577DC8F01C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9091C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9141C4CB0E700FA02B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		577DC8EA1C4CB0E600FA02B7 = {
+			isa = PBXGroup;
+			children = (
+				577DC8F51C4CB0E700FA02B7 /* Sensorama */,
+				577DC90F1C4CB0E700FA02B7 /* SensoramaTests */,
+				577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */,
+				577DC8F41C4CB0E700FA02B7 /* Products */,
+				C9188546ED92D4026C0F8BA3 /* Frameworks */,
+				B0669C08DCF32542E0AAF659 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		577DC8F41C4CB0E700FA02B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				577DC8F31C4CB0E700FA02B7 /* Sensorama.app */,
+				577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */,
+				577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		577DC8F51C4CB0E700FA02B7 /* Sensorama */ = {
+			isa = PBXGroup;
+			children = (
+				57B11EEA1CA922EF00B389EF /* contrib */,
+				57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */,
+				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
+				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
+				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				577A2B801C9953BC00B2D890 /* SRAuth.h */,
+				577A2B811C9953BC00B2D890 /* SRAuth.m */,
+				5735A3381C92B83D0076F979 /* SRSync.h */,
+				5735A3391C92B83D0076F979 /* SRSync.m */,
+				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
+				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
+				579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */,
+				579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */,
+				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
+				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
+				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
+				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
+				57F0B75F1C8AD99900833BD9 /* SRFile.h */,
+				57F0B7601C8AD99900833BD9 /* SRFile.m */,
+				57EC5FF11C88000C00243893 /* SRCfg.h */,
+				57EC5FF21C88000C00243893 /* SRCfg.m */,
+				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
+				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
+				579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */,
+				579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */,
+				5700D5DE1C85A35B009405AC /* SRUtils.h */,
+				5700D5DF1C85A35B009405AC /* SRUtils.m */,
+				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
+				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
+				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
+				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
+				577DC9071C4CB0E700FA02B7 /* Info.plist */,
+				57EC5FF61C89530000243893 /* sensorama.schema.json */,
+				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
+			);
+			path = Sensorama;
+			sourceTree = "<group>";
+		};
+		577DC8F61C4CB0E700FA02B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				577DC8F71C4CB0E700FA02B7 /* main.m */,
+				570103341C78171C005BA5C6 /* SensoramaVars.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		577DC90F1C4CB0E700FA02B7 /* SensoramaTests */ = {
+			isa = PBXGroup;
+			children = (
+				577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */,
+				577DC9121C4CB0E700FA02B7 /* Info.plist */,
+			);
+			path = SensoramaTests;
+			sourceTree = "<group>";
+		};
+		577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */,
+				577DC91D1C4CB0E700FA02B7 /* Info.plist */,
+			);
+			path = SensoramaUITests;
+			sourceTree = "<group>";
+		};
+		B0669C08DCF32542E0AAF659 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */,
+				08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */,
+				EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */,
+				3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */,
+				88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */,
+				285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C9188546ED92D4026C0F8BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14D2D52FEFE6F52AD8E15623 /* Pods.framework */,
+				158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */,
+				A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */,
+				ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		577DC8F21C4CB0E700FA02B7 /* Sensorama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */;
+			buildPhases = (
+				DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */,
+				570103321C76EFAC005BA5C6 /* ShellScript */,
+				570103331C771B98005BA5C6 /* CopyFiles */,
+				577DC8EF1C4CB0E700FA02B7 /* Sources */,
+				577DC8F01C4CB0E700FA02B7 /* Frameworks */,
+				577DC8F11C4CB0E700FA02B7 /* Resources */,
+				5782D4221C747FAB00627263 /* Run Script */,
+				322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */,
+				E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */,
+				A28EAE6B2C114349373EF78C /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sensorama;
+			productName = Sensorama;
+			productReference = 577DC8F31C4CB0E700FA02B7 /* Sensorama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		577DC90B1C4CB0E700FA02B7 /* SensoramaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */;
+			buildPhases = (
+				17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */,
+				577DC9081C4CB0E700FA02B7 /* Sources */,
+				577DC9091C4CB0E700FA02B7 /* Frameworks */,
+				577DC90A1C4CB0E700FA02B7 /* Resources */,
+				4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */,
+				DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */,
+				E47A6744135066BD28F8C679 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				577DC90E1C4CB0E700FA02B7 /* PBXTargetDependency */,
+			);
+			name = SensoramaTests;
+			productName = SensoramaTests;
+			productReference = 577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		577DC9161C4CB0E700FA02B7 /* SensoramaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */;
+			buildPhases = (
+				C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */,
+				577DC9131C4CB0E700FA02B7 /* Sources */,
+				577DC9141C4CB0E700FA02B7 /* Frameworks */,
+				577DC9151C4CB0E700FA02B7 /* Resources */,
+				5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				577DC9191C4CB0E700FA02B7 /* PBXTargetDependency */,
+			);
+			name = SensoramaUITests;
+			productName = SensoramaUITests;
+			productReference = 577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		577DC8EB1C4CB0E600FA02B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Wojciech Adam Koszek";
+				TargetAttributes = {
+					577DC8F21C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QQ5A9Q7C7Z;
+					};
+					577DC90B1C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3DHC3EAFWW;
+						TestTargetID = 577DC8F21C4CB0E700FA02B7;
+					};
+					577DC9161C4CB0E700FA02B7 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3DHC3EAFWW;
+						TestTargetID = 577DC8F21C4CB0E700FA02B7;
+					};
+				};
+			};
+			buildConfigurationList = 577DC8EE1C4CB0E600FA02B7 /* Build configuration list for PBXProject "Sensorama" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 577DC8EA1C4CB0E600FA02B7;
+			productRefGroup = 577DC8F41C4CB0E700FA02B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				577DC8F21C4CB0E700FA02B7 /* Sensorama */,
+				577DC90B1C4CB0E700FA02B7 /* SensoramaTests */,
+				577DC9161C4CB0E700FA02B7 /* SensoramaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		577DC8F11C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57B11EEB1CA922EF00B389EF /* contrib in Resources */,
+				577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */,
+				57EC5FF71C89530000243893 /* sensorama.schema.json in Resources */,
+				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,
+				577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC90A1C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9151C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		570103321C76EFAC005BA5C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/SensoramaVars.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pwd\nsource ~/.profile\n$(PWD)/../scripts/gen_files.sh > Sensorama/SensoramaVars.h";
+		};
+		5782D4221C747FAB00627263 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"SENSORAMA: -------------------\"\nsource ~/.profile\n\"${PODS_ROOT}\"/../../scripts/fabric.sh\n";
+		};
+		5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A28EAE6B2C114349373EF78C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E47A6744135066BD28F8C679 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		577DC8EF1C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */,
+				5700D5E01C85A35B009405AC /* SRUtils.m in Sources */,
+				579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */,
+				57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */,
+				577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */,
+				579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */,
+				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
+				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
+				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
+				5735A33A1C92B83D0076F979 /* SRSync.m in Sources */,
+				57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */,
+				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
+				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
+				57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */,
+				577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9081C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		577DC9131C4CB0E700FA02B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		577DC90E1C4CB0E700FA02B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
+			targetProxy = 577DC90D1C4CB0E700FA02B7 /* PBXContainerItemProxy */;
+		};
+		577DC9191C4CB0E700FA02B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
+			targetProxy = 577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				577DC9001C4CB0E700FA02B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				577DC9051C4CB0E700FA02B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		577DC91E1C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		577DC91F1C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		577DC9211C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 42;
+				INFOPLIST_FILE = Sensorama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		577DC9221C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 42;
+				INFOPLIST_FILE = Sensorama/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		577DC9241C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SensoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+			};
+			name = Debug;
+		};
+		577DC9251C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SensoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+			};
+			name = Release;
+		};
+		577DC9271C4CB0E700FA02B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = SensoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sensorama;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		577DC9281C4CB0E700FA02B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = SensoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sensorama;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		577DC8EE1C4CB0E600FA02B7 /* Build configuration list for PBXProject "Sensorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC91E1C4CB0E700FA02B7 /* Debug */,
+				577DC91F1C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9211C4CB0E700FA02B7 /* Debug */,
+				577DC9221C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9241C4CB0E700FA02B7 /* Debug */,
+				577DC9251C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				577DC9271C4CB0E700FA02B7 /* Debug */,
+				577DC9281C4CB0E700FA02B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+}
