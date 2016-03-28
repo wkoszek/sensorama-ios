@@ -14,15 +14,15 @@
 - (NSString *)printableLabelDetails;
 - (instancetype) initWithFileName:(NSString *)fileName;
 
-@property NSUInteger year;
-@property NSUInteger month;
-@property NSUInteger day;
-@property NSUInteger fromHour;
-@property NSUInteger fromMin;
-@property NSUInteger fromSec;
-@property NSUInteger toHour;
-@property NSUInteger toMin;
-@property NSUInteger toSec;
-@property NSUInteger size;
+@property int year;
+@property int month;
+@property int day;
+@property int fromHour;
+@property int fromMin;
+@property int fromSec;
+@property int toHour;
+@property int toMin;
+@property int toSec;
+@property int size;
 
 @end
