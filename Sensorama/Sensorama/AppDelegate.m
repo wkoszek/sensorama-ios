@@ -41,7 +41,12 @@
     [infoDict setValue:Auth0ClientID forKey:@"Auth0ClientId"];
     [infoDict setValue:Auth0Domain forKey:@"Auth0Domain"];
 
-    [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
+    if ([self isSimulator]) {
+        NSLog(@"Running on simulator. Crashlytics not initialized!");
+    } else {
+        [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
+    }
+
     [self AWSStart];
 
     A0Lock *lock = [[SRAuth sharedInstance] lock];
@@ -50,6 +55,14 @@
     [SRUsageStats eventAppOpened];
 
     return YES;
+}
+
+- (BOOL)isSimulator {
+#if TARGET_IPHONE_SIMULATOR
+    return true;
+#else
+    return false;
+#endif
 }
 
 - (void)AWSStart {
