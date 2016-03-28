@@ -6,7 +6,10 @@
 //
 // Corner radius animation:
 // http://stackoverflow.com/questions/5948167/uiview-animatewithduration-doesnt-animate-cornerradius-variation
-
+// Re-login implementation stolen from:
+// https://github.com/maju6406/Layer-Auth0-iOS-Example/blob/master/Code/Controllers/ViewController.m#L97
+// JWTDecode written in Swift doesn't export "isExpired" method, so I had to make it myself.
+//
 #import <Lock/Lock.h>
 
 @import JWTDecode;
@@ -19,6 +22,7 @@
 #import "SREngine.h"
 #import "SRAuth.h"
 #import "SimpleKeychain/A0SimpleKeychain.h"
+#import "../contrib/libextobjc/extobjc/EXTScope.h"
 
 @interface RecordViewController ()
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
@@ -27,6 +31,7 @@
 
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CGFloat savedCornerRadius;
+@property (nonatomic) NSString *idToken;
 
 @end
 
@@ -57,40 +62,68 @@
     A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:[keychain dataForKey:@"profile"]];
     NSString *idToken = [keychain stringForKey:@"id_token"];
-    
+
+    NSLog(@"keychain=%@", keychain);
+    NSLog(@"profile=%@", profile);
+    NSLog(@"idToken=%@", idToken);
+
     if (idToken) {
         NSError *error = nil;
         A0JWT *jwt = [A0JWT decode:idToken error:&error];
-        
-        NSLog(@"jwt=%@", jwt);
-#ifdef NOTYET
-        if ([jwt expi]
+
+        if ([self isJWTTokenExpired:jwt]) {
             NSLog(@"Auth0 token has expired, refreshing.");
-            NSString *refreshToken = [store stringForKey:@"refresh_token"];
-            
+            NSString *refreshToken = [keychain stringForKey:@"refresh_token"];
+
             @weakify(self);
-            A0APIClient *client = [[[Application sharedInstance] lock] apiClient];
+            A0APIClient *client = [[[SRAuth sharedInstance] lock] apiClient];
             [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
                 @strongify(self);
-                [store setString:token.idToken forKey:@"id_token"];
-                [self loginLayer:profile.userId];
+                [keychain setString:token.idToken forKey:@"id_token"];
+                (void)self;
             } failure:^(NSError *error) {
-                [store clearAll];
+                [keychain clearAll];
             }];
-            
         } else {
             //User is connected in Auth0 but layerclient isn't connected
-            self.tokenID = idToken;
-            [self loginLayer:profile.userId];
+            self.idToken = idToken;
         }
     } else {
         [self signInToAuth0];
-#endif
     }
 
 
     [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
+}
+
+- (void)signInToAuth0
+{
+    A0Lock *lock = [[SRAuth sharedInstance] lock];
+    A0LockViewController *controller = [lock newLockViewController];
+    controller.closable = true;
+    @weakify(self);
+    controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
+        @strongify(self);
+        self.idToken = token.idToken;
+
+        A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
+        [keychain setString:token.idToken forKey:@"id_token"];
+        [keychain setString:token.refreshToken forKey:@"refresh_token"];
+        [keychain setData:[NSKeyedArchiver archivedDataWithRootObject:profile] forKey:@"profile"];
+
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (BOOL)isJWTTokenExpired:(A0JWT *)jwt
+{
+    NSDate *date = [jwt expiresAt];
+    if (date == nil) {
+        return false;
+    }
+    return ([date compare:[NSDate new]] != NSOrderedDescending);
 }
 
 - (void)setIsRecording:(BOOL)isRecording
