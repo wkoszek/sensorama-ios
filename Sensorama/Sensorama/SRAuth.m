@@ -23,6 +23,7 @@
     self = [super init];
     if (self) {
         _lock = [A0Lock newLock];
+        _keychain = [A0SimpleKeychain keychainWithService:@"Sensorama"];
     }
     return self;
 }

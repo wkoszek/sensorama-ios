@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SimpleKeychain/A0SimpleKeychain.h"
 
 // Auth0 Lock singleton crap
 @class A0Lock;
 @interface SRAuth : NSObject
 @property (readonly, nonatomic) A0Lock *lock;
+@property A0SimpleKeychain *keychain;
 + (SRAuth *)sharedInstance;
 @end
