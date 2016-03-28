@@ -67,7 +67,7 @@
     NSUInteger toS = (self.toHour * 3600) + (self.toMin * 60) + self.toSec;
     NSUInteger lengthS = toS - fromS;
 
-    return [NSString stringWithFormat:@"%ds", lengthS];
+    return [NSString stringWithFormat:@"%lus", (unsigned long)lengthS];
 }
 
 
