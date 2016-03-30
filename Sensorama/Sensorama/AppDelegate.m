@@ -9,7 +9,7 @@
 #import "Crashlytics/Crashlytics.h"
 #import <AWSCore/AWSCore.h>
 #import <Lock/Lock.h>
-
+#import <NSLogger/NSLogger.h>
 
 #import "AppDelegate.h"
 #import "SRUsageStats.h"
@@ -24,6 +24,11 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    if ([[self deviceName] isEqualToString:[NSString stringWithUTF8String:SENSORAMA_DEV_PHONE]]) {
+        LoggerStart(LoggerGetDefaultLogger());
+        LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
+    }
 
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSDictionary *infoDict = [mainBundle infoDictionary];
@@ -63,6 +68,10 @@
 #else
     return false;
 #endif
+}
+
+- (NSString *)deviceName {
+    return [[UIDevice currentDevice] name];
 }
 
 - (void)AWSStart {

@@ -54,6 +54,9 @@ PODS:
   - Lock/WebView (1.22.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
+  - NSLogger (1.5.1):
+    - NSLogger/Standard (= 1.5.1)
+  - NSLogger/Standard (1.5.1)
   - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
@@ -64,6 +67,7 @@ DEPENDENCIES:
   - Fabric
   - JWTDecode
   - Lock
+  - NSLogger
   - SimpleKeychain
 
 SPEC CHECKSUMS:
@@ -76,6 +80,7 @@ SPEC CHECKSUMS:
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: 44dc7465a9aae6f0a6b2eb1c3dfe082855faad5b
+  NSLogger: 5ed223a2436df96244e033be750656dacdeec034
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0

@@ -9,6 +9,8 @@ def mypods
   pod "Lock", :inhibit_warnings => true
   pod "JWTDecode"
   pod "SimpleKeychain"
+
+  pod "NSLogger"
 end
 
 target 'Sensorama' do
