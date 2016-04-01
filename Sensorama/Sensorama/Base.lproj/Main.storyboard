@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PnA-qx-P6K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PnA-qx-P6K">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -141,12 +141,93 @@
                     <connections>
                         <segue destination="e5Z-SD-48H" kind="relationship" relationship="viewControllers" id="Gce-sE-yfE"/>
                         <segue destination="3OF-43-rtd" kind="relationship" relationship="viewControllers" id="ZJ0-YJ-v6g"/>
+                        <segue destination="LWg-h9-2Gj" kind="relationship" relationship="viewControllers" id="BVs-Jf-SnQ"/>
                         <segue destination="eUA-kF-p8x" kind="relationship" relationship="viewControllers" id="0at-6y-1gp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ0-6O-QNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="531"/>
+            <point key="canvasLocation" x="-306" y="615"/>
+        </scene>
+        <!--accountTVC-->
+        <scene sceneID="EjH-Fw-X2r">
+            <objects>
+                <tableViewController restorationIdentifier="accountTVC" storyboardIdentifier="accountTVC" title="Account" id="LWg-h9-2Gj" userLabel="accountTVC" customClass="AccountTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="jRb-Ya-BVp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Profile" id="gJ6-1H-hrO" userLabel="emailSection">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="emailCell" textLabel="xIJ-UF-APB" detailTextLabel="Gob-iF-Bed" style="IBUITableViewCellStyleValue1" id="BlA-DW-5p8" userLabel="emailCell">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlA-DW-5p8" id="kYJ-QT-Z5q">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xIJ-UF-APB">
+                                                    <rect key="frame" x="15" y="12" width="46" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="unknown" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gob-iF-Bed">
+                                                    <rect key="frame" x="519" y="12" width="66" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Session" id="Iag-CR-kuP" userLabel="Session">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailCell" textLabel="aHC-0w-Ezg" style="IBUITableViewCellStyleDefault" id="uG4-su-0PB" userLabel="emailLogout">
+                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uG4-su-0PB" id="gBG-LB-dYg">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aHC-0w-Ezg">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="LWg-h9-2Gj" id="vX7-tO-fTQ"/>
+                            <outlet property="delegate" destination="LWg-h9-2Gj" id="o0V-8V-wB5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Account" image="iconProfile" selectedImage="iconProfileActive" id="DJT-QO-mf1"/>
+                    <connections>
+                        <outlet property="emailCell" destination="BlA-DW-5p8" id="Wgw-Pu-rta"/>
+                        <outlet property="logoutCell" destination="uG4-su-0PB" id="iOH-ys-cuJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jT-m9-3QN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QYW-CY-QlA">
+                    <connections>
+                        <action selector="logoutButton:" destination="LWg-h9-2Gj" id="WEg-BQ-VhR"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-340" y="1555"/>
         </scene>
         <!--Settings-->
         <scene sceneID="x2Y-GR-aYG">
@@ -493,6 +574,8 @@
         <image name="iconFile" width="30" height="30"/>
         <image name="iconFiles" width="30" height="30"/>
         <image name="iconFilesActive" width="30" height="30"/>
+        <image name="iconProfile" width="30" height="30"/>
+        <image name="iconProfileActive" width="30" height="30"/>
         <image name="iconRecord" width="30" height="30"/>
         <image name="iconRecordActive" width="30" height="30"/>
         <image name="iconSettings" width="30" height="30"/>
