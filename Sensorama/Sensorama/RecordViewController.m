@@ -37,6 +37,9 @@
 
 @implementation RecordViewController
 
+
+// XXX swap did appear/did load
+
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"%s", __func__);
     [super viewDidAppear:animated];
@@ -92,7 +95,6 @@
         [self signInToAuth0];
     }
 
-
     [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
 }
@@ -115,6 +117,16 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     };
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)logoutAuth0
+{
+    A0APIClient *client = [[[SRAuth sharedInstance] lock] apiClient];
+    [client logout];
+
+    A0SimpleKeychain *store = [SRAuth sharedInstance].keychain;
+
+    [store clearAll];
 }
 
 - (BOOL)isJWTTokenExpired:(A0JWT *)jwt

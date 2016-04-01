@@ -10,4 +10,6 @@
 
 @interface RecordViewController : UIViewController
 
+- (void)logoutAuth0;
+
 @end
