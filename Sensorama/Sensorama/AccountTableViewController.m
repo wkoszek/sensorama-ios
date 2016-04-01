@@ -42,7 +42,6 @@
 
     A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
     NSData *decodedData = [keychain dataForKey:@"profile"];
-    NSLog(@"decodedData=%@", decodedData);
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
     SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
     AccountTableViewController *atvc = (AccountTableViewController *)[stvc.viewControllers objectAtIndex:2];
@@ -64,6 +63,12 @@
         NSLog(@"logoutButton");
         [self.logoutCell setSelected:NO];
         [self logout];
+
+#if 0 // need to make work
+        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
+        RecordViewController *rtvc = (RecordViewController *)[stvc.viewControllers objectAtIndex:0];
+        [self.navigationController pushViewController:rtvc animated:YES];
+#endif
     }
 }
 
