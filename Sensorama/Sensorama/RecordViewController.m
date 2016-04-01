@@ -40,14 +40,17 @@
 
 // XXX swap did appear/did load
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"%s", __func__);
-    [super viewDidAppear:animated];
-    [self.tabBarController setTitle:@"Record"];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSLog(@"%s", __func__);
+    [self setIsRecording:false];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tabBarController setTitle:@"Record"];
+    NSLog(@"%s", __func__);
 
     // Custom login screen for Sensorama.
     A0Theme *sensoramaTheme = [[A0Theme alloc] init];
@@ -95,7 +98,6 @@
         [self signInToAuth0];
     }
 
-    [self setIsRecording:false];
     [SRUsageStats eventAppRecord];
 }
 
