@@ -38,8 +38,6 @@
 @implementation RecordViewController
 
 
-// XXX swap did appear/did load
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
