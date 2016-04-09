@@ -21,6 +21,7 @@
 #import "SRUsageStats.h"
 #import "SREngine.h"
 #import "SRAuth.h"
+#import "SRSync.h"
 #import "SimpleKeychain/A0SimpleKeychain.h"
 #import "../contrib/libextobjc/extobjc/EXTScope.h"
 
@@ -83,13 +84,14 @@
             [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
                 @strongify(self);
                 [keychain setString:token.idToken forKey:@"id_token"];
+                [SRSync doAmazonLogin:token.idToken];
                 (void)self;
             } failure:^(NSError *error) {
                 [keychain clearAll];
             }];
         } else {
-            //User is connected in Auth0 but layerclient isn't connected
             self.idToken = idToken;
+            [SRSync doAmazonLogin:idToken];
         }
     } else {
         [self signInToAuth0];
@@ -112,6 +114,7 @@
         [keychain setString:token.idToken forKey:@"id_token"];
         [keychain setString:token.refreshToken forKey:@"refresh_token"];
         [keychain setData:[NSKeyedArchiver archivedDataWithRootObject:profile] forKey:@"profile"];
+        [SRSync doAmazonLogin:token.idToken];
 
         [self dismissViewControllerAnimated:YES completion:nil];
     };
@@ -127,6 +130,7 @@
 
     [store clearAll];
 }
+
 
 - (BOOL)isJWTTokenExpired:(A0JWT *)jwt
 {

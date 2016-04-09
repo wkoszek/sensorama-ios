@@ -5,8 +5,6 @@
 //  Sensorama
 //
 
-#import <AWSCore/AWSCore.h>
-#import <AWSCognito/AWSCognito.h>
 #import <NSLogger/NSLogger.h>
 #import <Lock/Lock.h>
 
@@ -59,9 +57,6 @@
         [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
     }
 
-    NSLog(@"==================");
-    [self AWSStart];
-
     A0Lock *lock = [[SRAuth sharedInstance] lock];
     [lock applicationLaunchedWithOptions:launchOptions];
 
@@ -80,19 +75,6 @@
 
 - (NSString *)deviceName {
     return [[UIDevice currentDevice] name];
-}
-
-- (void)AWSStart {
-    NSLog(@"--------------------");
-    [[AWSLogger defaultLogger] setLogLevel:AWSLogLevelVerbose];
-    NSString *CognitoPoolID = [NSString stringWithUTF8String:SENSORAMA_COGNITO_POOL_ID];
-    AWSCognitoCredentialsProvider *credentialsProvider =
-        [[AWSCognitoCredentialsProvider alloc] initWithRegionType:AWSRegionUSEast1
-                                                   identityPoolId:CognitoPoolID];
-    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
-        credentialsProvider:credentialsProvider];
-    AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
-    NSLog(@"--------------------");
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {

@@ -10,9 +10,10 @@
 
 @interface SRSync : NSObject
 
+@property NSString *pathToSync;
+
++ (void)doAmazonLogin:(NSString *)token;
 - (instancetype)initWithPath:(NSString *)path;
 - (void)syncStart;
-
-@property NSString *pathToSync;
 
 @end
