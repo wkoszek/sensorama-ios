@@ -13,6 +13,7 @@
 #import "SRSync.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
+#import "SRAuth.h"
 
 @interface SREngine ()
 
@@ -129,7 +130,7 @@
     NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
-    [dict setObject:[SRUtils computeSHA256DigestForString:@""] forKey:@"username"];
+    [dict setObject:[SRAuth emailHashed] forKey:@"username"];
     [dict setObject:self.srData forKey:@"points"];
     [dict setObject:dateString forKey:@"date"];
     [dict setObject:@"Sensorama_iOS" forKey:@"desc"];

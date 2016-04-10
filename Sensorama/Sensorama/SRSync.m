@@ -52,15 +52,14 @@
 
 - (void)syncStart
 {
-    NSString *emailString = [[SRAuth currentProfile] email];
-    NSString *emailStringHashed = [SRUtils computeSHA256DigestForString:emailString];
     NSString *baseFileName = [[self.pathToSync componentsSeparatedByString:@"/"] lastObject];
+
     NSURL *fileURL = [NSURL fileURLWithPath:self.pathToSync];
 
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
     AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
     uploadRequest.bucket = @"sensorama-data";
-    uploadRequest.key = [NSString stringWithFormat:@"%@/%@", emailStringHashed, baseFileName];
+    uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], baseFileName];
     uploadRequest.body = fileURL;
 
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {

@@ -22,5 +22,6 @@
 + (void)enableDebugging;
 + (void) startWithLaunchOptions:(NSDictionary *)launchOptions;
 + (A0UserProfile *) currentProfile;
++ (NSString *)emailHashed;
 
 @end

@@ -6,8 +6,10 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import "SRAuth.h"
 #import <Lock/Lock.h>
+
+#import "SRAuth.h"
+#import "SRUtils.h"
 
 #import "SensoramaVars.h"
 
@@ -54,6 +56,12 @@
     NSData *decodedData = [keychain dataForKey:@"profile"];
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
     return profile;
+}
+
++ (NSString *)emailHashed {
+    NSString *emailString = [[SRAuth currentProfile] email];
+    NSString *emailStringHashed = [SRUtils computeSHA256DigestForString:emailString];
+    return emailStringHashed;
 }
 
 @end
