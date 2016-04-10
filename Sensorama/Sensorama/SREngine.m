@@ -11,6 +11,7 @@
 #import "SREngine.h"
 #import "SRCfg.h"
 #import "SRSync.h"
+#import "SRUtils.h"
 
 @interface SREngine ()
 
@@ -121,14 +122,18 @@
     [self.srTimer invalidate];
     self.endTimeString = [self.srCfg sensoramaTimeString];
 
-    NSString *fileName = [NSString stringWithFormat:@"%@_%@-%@.json", self.startDateString, self.startTimeString, self.endTimeString];
+    NSString *dateString = [NSString stringWithFormat:@"%@_%@-%@",
+                            self.startDateString, self.startTimeString, self.endTimeString];
+    NSString *fileName = [NSString stringWithFormat:@"%@.json", dateString];
     NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
+    [dict setObject:[SRUtils computeSHA256DigestForString:@""] forKey:@"name"];
     [dict setObject:self.srData forKey:@"points"];
-    [dict setObject:sampleFilePath forKey:@"date"];
-    [dict setObject:@"Sensorama iOS" forKey:@"desc"];
+    [dict setObject:dateString forKey:@"date"];
+    [dict setObject:@"Sensorama_iOS" forKey:@"desc"];
     [dict setObject:@(250) forKey:@"interval"];
+    [dict setObject:[SRUtils deviceInfo] forKey:@"device_info"];
 
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
@@ -144,8 +149,6 @@
 }
 
 - (NSString *) filesPath {
-
-
     return self.pathDocuments;
 }
 
