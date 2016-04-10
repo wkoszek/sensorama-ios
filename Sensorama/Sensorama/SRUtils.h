@@ -11,5 +11,7 @@
 @interface SRUtils : NSObject
 
 + (UIColor *)mainColor;
++ (NSDictionary *)deviceInfo;
++ (NSString*)computeSHA256DigestForString:(NSString*)input;
 
 @end
