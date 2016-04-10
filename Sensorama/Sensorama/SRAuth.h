@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SimpleKeychain/A0SimpleKeychain.h"
 #import <AWSCore/AWSCore.h>
+#import <Lock/Lock.h>
 
 @class A0Lock;
 
@@ -20,5 +21,6 @@
 + (SRAuth *)sharedInstance;
 + (void)enableDebugging;
 + (void) startWithLaunchOptions:(NSDictionary *)launchOptions;
++ (A0UserProfile *) currentProfile;
 
 @end

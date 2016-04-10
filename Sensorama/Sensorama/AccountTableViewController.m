@@ -40,9 +40,8 @@
 
     [self.tabBarController setTitle:@"Account"];
 
-    A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
-    NSData *decodedData = [keychain dataForKey:@"profile"];
-    A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+    A0UserProfile *profile = [SRAuth currentProfile];
+
     SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
     AccountTableViewController *atvc = (AccountTableViewController *)[stvc.viewControllers objectAtIndex:2];
     NSLog(@"email=%@", profile.email);

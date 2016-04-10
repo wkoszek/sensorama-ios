@@ -49,5 +49,12 @@
     [lock applicationLaunchedWithOptions:launchOptions];
 }
 
++ (A0UserProfile *) currentProfile {
+    A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
+    NSData *decodedData = [keychain dataForKey:@"profile"];
+    A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+    return profile;
+}
+
 @end
 
