@@ -7,9 +7,11 @@
 //
 
 #import <AWSCore/AWSCore.h>
-#import <AWSCognito/AWSCognito.h>
+#import <AWSS3/AWSS3.h>
 
 #import "SRSync.h"
+#import "SRAuth.h"
+#import "SRUtils.h"
 
 #import "SensoramaVars.h"
 
@@ -19,44 +21,24 @@
 
 @implementation SRSync
 
-+ (AWSCognitoCredentialsProvider *)getCredProvider {
-    static AWSCognitoCredentialsProvider *credentialsProvider;
-    static dispatch_once_t onceToken;
-
-    NSString *CognitoPoolID = [NSString stringWithUTF8String:SENSORAMA_COGNITO_POOL_ID];
-    NSString *CognitoAuthRoleARN = [NSString stringWithUTF8String:SENSORAMA_COGNITO_AUTH_ROLE_ARN];
-
-    [[AWSLogger defaultLogger] setLogLevel:AWSLogLevelVerbose];
-
-    dispatch_once(&onceToken, ^{
-        AWSCognitoCredentialsProvider *credentialsProvider =
-        [[AWSCognitoCredentialsProvider alloc] initWithRegionType:AWSRegionUSEast1
-                                                       identityId:nil
-                                                        accountId:nil
-                                                   identityPoolId:CognitoPoolID
-                                                    unauthRoleArn:nil
-                                                      authRoleArn:CognitoAuthRoleARN
-                                                           logins:nil];
-        AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
-                                                                             credentialsProvider:credentialsProvider];
-        AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
-    });
-    return credentialsProvider;
-}
-
-
 + (void)doAmazonLogin:(NSString *)token
 {
-    AWSCognitoCredentialsProvider *provider = [SRSync getCredProvider];
+    AWSCognitoCredentialsProvider *provider = [[SRAuth sharedInstance] credentialsProvider];
+
+    (void)provider;
+
+#if 0
+    // Broken for now.
     [provider setLogins:@{ @"koszek.auth0.com" : token }];
     [[provider getIdentityId] continueWithBlock:^id _Nullable(AWSTask * _Nonnull task) {
         if ([task error]) {
-            NSLog(@"Amazon login failed");
+            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login failed");
         } else {
-            NSLog(@"Amazon login complete");
+            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login complete");
         }
         return nil;
     }];
+#endif
 }
 
 - (instancetype)initWithPath:(NSString *)path
@@ -70,17 +52,24 @@
 
 - (void)syncStart
 {
-    AWSCognito *syncClient = [AWSCognito defaultCognito];
+    NSString *emailString = [[SRAuth currentProfile] email];
+    NSString *emailStringHashed = [SRUtils computeSHA256DigestForString:emailString];
+    NSString *baseFileName = [[self.pathToSync componentsSeparatedByString:@"/"] lastObject];
+    NSURL *fileURL = [NSURL fileURLWithPath:self.pathToSync];
 
-    // Create a record in a dataset and synchronize with the server
-    AWSCognitoDataset *dataset = [syncClient openOrCreateDataset:@"myDataset"];
-    [dataset setString:@"myValue" forKey:@"myKey2"];
-    [[dataset synchronize] continueWithBlock:^id(AWSTask *task) {
-        // Your handler code here
-        NSLog(@"synced!");
+    AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
+    AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
+    uploadRequest.bucket = @"sensorama-data";
+    uploadRequest.key = [NSString stringWithFormat:@"%@/%@", emailStringHashed, baseFileName];
+    uploadRequest.body = fileURL;
+
+    [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
+        NSLog(@"download block");
+        if ([task error] == nil) {
+            NSLog(@"task finished");
+        }
         return nil;
     }];
-    [dataset synchronize];
 }
 
 @end
