@@ -45,12 +45,7 @@
     [self setIsRecording:false];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.tabBarController setTitle:@"Record"];
-    NSLog(@"%s", __func__);
-
-    // Custom login screen for Sensorama.
+- (void)customizeLoginLook {
     A0Theme *sensoramaTheme = [[A0Theme alloc] init];
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemePrimaryButtonNormalColor];
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeSecondaryButtonBackgroundColor];
@@ -61,23 +56,36 @@
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTitleTextColor];
     [sensoramaTheme registerImageWithName:@"appLaunch" bundle:[NSBundle mainBundle] forKey:A0ThemeIconImageName];
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tabBarController setTitle:@"Record"];
+    NSLog(@"%s", __func__);
+
+    [self customizeLoginLook];
+    [self doLogin];
+    [SRUsageStats eventAppRecord];
+}
+
+- (void)doLogin
+{
     A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:[keychain dataForKey:@"profile"]];
     NSString *idToken = [keychain stringForKey:@"id_token"];
-
+    
     NSLog(@"keychain=%@", keychain);
     NSLog(@"profile=%@", profile);
     NSLog(@"idToken=%@", idToken);
-
+    
     if (idToken) {
         NSError *error = nil;
         A0JWT *jwt = [A0JWT decode:idToken error:&error];
-
+        
         if ([self isJWTTokenExpired:jwt]) {
             NSLog(@"Auth0 token has expired, refreshing.");
             NSString *refreshToken = [keychain stringForKey:@"refresh_token"];
-
+            
             @weakify(self);
             A0APIClient *client = [[[SRAuth sharedInstance] lock] apiClient];
             [client fetchNewIdTokenWithRefreshToken:refreshToken parameters:nil success:^(A0Token *token) {
@@ -95,14 +103,13 @@
     } else {
         [self signInToAuth0];
     }
-
-    [SRUsageStats eventAppRecord];
 }
 
 - (void)signInToAuth0
 {
     A0Lock *lock = [[SRAuth sharedInstance] lock];
     A0LockViewController *controller = [lock newLockViewController];
+
     controller.closable = false;
     @weakify(self);
     controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
@@ -123,13 +130,11 @@
 - (void)logoutAuth0
 {
     A0APIClient *client = [[[SRAuth sharedInstance] lock] apiClient];
-    [client logout];
-
     A0SimpleKeychain *store = [SRAuth sharedInstance].keychain;
 
+    [client logout];
     [store clearAll];
 }
-
 
 - (BOOL)isJWTTokenExpired:(A0JWT *)jwt
 {
@@ -147,7 +152,6 @@
 
     NSLog(@"fund: %s", __func__);
     NSLog(@"files: %@", filesTVC);
-
 
     [self makeStartStopTransition:isRecording];
     if (isRecording) {
