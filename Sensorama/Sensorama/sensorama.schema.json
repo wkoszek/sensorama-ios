@@ -1,9 +1,9 @@
 {
-    "name" : "user's name",
+    "username" : "user's name",
+    "desc" : "description from the UI",
     "date" : "YYYYMMDD_HHmmss-HHmmss",
     "interval" : 250,
-    "device" : "device name",
-    "desc" : "description from the UI",
+    "device_info" : [],
     "sensors" : [
     ],
     "points" : [
