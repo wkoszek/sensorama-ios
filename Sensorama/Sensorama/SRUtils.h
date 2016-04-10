@@ -13,5 +13,6 @@
 + (UIColor *)mainColor;
 + (NSDictionary *)deviceInfo;
 + (NSString*)computeSHA256DigestForString:(NSString*)input;
++ (BOOL)isSimulator;
 
 @end

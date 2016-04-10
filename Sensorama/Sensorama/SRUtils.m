@@ -92,4 +92,12 @@
     return output;
 }
 
++ (BOOL)isSimulator {
+#if TARGET_IPHONE_SIMULATOR
+    return true;
+#else
+    return false;
+#endif
+}
+
 @end
