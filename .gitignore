@@ -1,4 +1,5 @@
 **/SensoramaVars.h
+**/.DS_Store
 Sensorama/fastlane/AppStore_com.koszek.Sensorama.mobileprovision
 Sensorama/fastlane/Development_com.koszek.Sensorama.mobileprovision
 Sensorama/fastlane/README.md
