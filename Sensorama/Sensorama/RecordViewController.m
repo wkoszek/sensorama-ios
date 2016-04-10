@@ -61,7 +61,6 @@
     [sensoramaTheme registerColor:[SRUtils mainColor] forKey:A0ThemeTitleTextColor];
     [sensoramaTheme registerImageWithName:@"appLaunch" bundle:[NSBundle mainBundle] forKey:A0ThemeIconImageName];
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
-
     
     A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:[keychain dataForKey:@"profile"]];
@@ -104,7 +103,7 @@
 {
     A0Lock *lock = [[SRAuth sharedInstance] lock];
     A0LockViewController *controller = [lock newLockViewController];
-    controller.closable = true;
+    controller.closable = false;
     @weakify(self);
     controller.onAuthenticationBlock = ^(A0UserProfile *profile, A0Token *token) {
         @strongify(self);
