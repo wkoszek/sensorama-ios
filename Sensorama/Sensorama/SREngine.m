@@ -12,6 +12,7 @@
 #import "SRCfg.h"
 #import "SRSync.h"
 #import "SRUtils.h"
+#import "SRDebug.h"
 
 @interface SREngine ()
 
@@ -91,23 +92,23 @@
     BOOL hasMagnetometer = isSIM || (self.motionManager.magnetometerActive && self.motionManager.magnetometerAvailable);
     BOOL hasGyroscope = isSIM || (self.motionManager.gyroActive && self.motionManager.gyroAvailable);
 
-    NSLog(@"loop");
+    SRPROBE0();
 
     if (hasAccelerometer) {
         CMAccelerometerData *accData = [self.motionManager accelerometerData];
-        NSLog(@"acc:%@", accData);
+        SRDEBUG(@"acc:%@", accData);
         CMAcceleration acc = [accData acceleration];
         [self.srData addObject:@{@"acc": @[ @(acc.x), @(acc.y), @(acc.z) ] }];
     }
     if (hasMagnetometer) {
         CMMagnetometerData *magData = [self.motionManager magnetometerData];
-        NSLog(@"mag:%@", magData);
+        SRDEBUG(@"mag:%@", magData);
         CMMagneticField mag = [magData magneticField];
         [self.srData addObject:@{@"mag": @[ @(mag.x), @(mag.y), @(mag.z) ] }];
     }
     if (hasGyroscope) {
         CMGyroData *gyroData = [self.motionManager gyroData];
-        NSLog(@"gyro:%@", gyroData);
+        SRDEBUG(@"gyro:%@", gyroData);
         CMRotationRate gyro = [gyroData rotationRate];
         [self.srData addObject:@{@"gyro": @[ @(gyro.x), @(gyro.y), @(gyro.z) ] }];
     }
@@ -138,14 +139,11 @@
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString = [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding];
-    NSLog(@"dict=%@", jsonString);
 
     [jsonString writeToFile:sampleFilePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:&error];
 
     SRSync *syncFile = [[SRSync alloc] initWithPath:sampleFilePath];
     [syncFile syncStart];
-
-    NSLog(@"error=%@", error);
 }
 
 - (NSString *) filesPath {
