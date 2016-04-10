@@ -22,6 +22,7 @@
 #import "SREngine.h"
 #import "SRAuth.h"
 #import "SRSync.h"
+#import "SRDebug.h"
 #import "SimpleKeychain/A0SimpleKeychain.h"
 #import "../contrib/libextobjc/extobjc/EXTScope.h"
 
@@ -150,8 +151,7 @@
     SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
     FilesTableViewController *filesTVC = [tabController.viewControllers objectAtIndex:1];
 
-    NSLog(@"fund: %s", __func__);
-    NSLog(@"files: %@", filesTVC);
+    SRPROBE1(filesTVC);
 
     [self makeStartStopTransition:isRecording];
     if (isRecording) {
@@ -164,7 +164,8 @@
 }
 
 - (void)makeStartStopTransition:(BOOL)needSquare {
-    NSLog(@"%s", __func__);
+    SRPROBE0();
+
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         [self makeInitialCircle];
@@ -180,7 +181,8 @@
 }
 
 - (void)makeInitialCircle {
-    NSLog(@"%s", __func__);
+    SRPROBE0();
+
     NSAssert(self.recordView.frame.size.width == self.recordView.frame.size.height,
              @"recordView must be rectangle");
     self.recordView.alpha = 1;
@@ -191,7 +193,7 @@
 }
 
 - (IBAction)doStartStop:(UITapGestureRecognizer *)sender {
-    NSLog(@"%s", __func__);
+    SRPROBE0();
 
     [self setIsRecording:!self.isRecording];
 }

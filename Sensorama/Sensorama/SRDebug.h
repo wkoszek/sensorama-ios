@@ -1,0 +1,26 @@
+//
+//  SRDebug.h
+//  Sensorama
+//
+//  Created by Wojciech Adam Koszek (h) on 09/04/2016.
+//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
+//
+
+#ifndef SRDebug_h
+#define SRDebug_h
+
+#define SRPROBE0() do {                     \
+    NSLog(@"%s", __func__);                 \
+} while (0)
+
+#define SRPROBE1(x1) do {                    \
+    NSLog(@"%s %s=%@", __func__, #x1, (x1));    \
+} while (0)
+
+#define SRPROBE2(x1, x2) do {                                  \
+    NSLog(@"%s %s=%@ %s=%@", __func__, #x1, (x1), #x2, (x2));    \
+} while (0)
+
+#define SRDEBUG if (1) NSLog
+
+#endif /* SRDebug_h */

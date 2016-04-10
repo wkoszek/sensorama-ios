@@ -79,6 +79,7 @@
 		570103341C78171C005BA5C6 /* SensoramaVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensoramaVars.h; sourceTree = "<group>"; };
 		5735A3381C92B83D0076F979 /* SRSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSync.h; sourceTree = "<group>"; };
 		5735A3391C92B83D0076F979 /* SRSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSync.m; sourceTree = "<group>"; };
+		57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRDebug.h; sourceTree = "<group>"; };
 		57697C8D1CABCE0E00C91641 /* AccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewController.h; sourceTree = "<group>"; };
 		57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
 		577A2B801C9953BC00B2D890 /* SRAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAuth.h; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
 				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
 				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */,
 				577A2B801C9953BC00B2D890 /* SRAuth.h */,
 				577A2B811C9953BC00B2D890 /* SRAuth.m */,
 				5735A3381C92B83D0076F979 /* SRSync.h */,
