@@ -14,22 +14,23 @@
 #import "AppDelegate.h"
 #import "SRUsageStats.h"
 #import "SRAuth.h"
+#import "SRUtils.h"
 
 #import "SensoramaVars.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic) BOOL isDevPhone;
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    BOOL devDevice = false;
-    if ([[self deviceName] isEqualToString:[NSString stringWithUTF8String:SENSORAMA_DEV_PHONE]]) {
-        devDevice = true;
+    
+    self.isDevPhone = [self isDevPhoneDetect];
+    if (self.isDevPhone) {
         LoggerStart(LoggerGetDefaultLogger());
         LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
+        [SRAuth enableDebugging];
     }
 
     NSBundle *mainBundle = [NSBundle mainBundle];
@@ -42,39 +43,33 @@
 
     // Below I replace whole bunch of secrets for 3rd party frameworks,
     // so that everything in Sensorama can be open-sourced and actively
-    // developed, but without decreasing security.
+    // developed, but without disclosing secrets.
     [[[infoDict objectForKey:@"CFBundleURLTypes"] objectAtIndex:0] setObject:@[ Auth0URLScheme ] forKey:@"CFBundleURLSchemes"];
     [fabricDict setValue:fabricAPIKey forKey:@"APIKey"];
     [infoDict setValue:Auth0ClientID forKey:@"Auth0ClientId"];
     [infoDict setValue:Auth0Domain forKey:@"Auth0Domain"];
 
-    if ([self isSimulator]) {
+    if ([SRUtils isSimulator]) {
         NSLog(@"Running on simulator. Crashlytics not initialized!");
     } else {
-        if (devDevice) {
+        if (self.isDevPhone) {
             [[Crashlytics sharedInstance] setDebugMode:YES];
         }
         [Fabric with:@[[CrashlyticsKit class], [Answers class]]];
     }
 
-    A0Lock *lock = [[SRAuth sharedInstance] lock];
-    [lock applicationLaunchedWithOptions:launchOptions];
-
+    [SRAuth startWithLaunchOptions:launchOptions];
     [SRUsageStats eventAppOpened];
 
     return YES;
 }
 
-- (BOOL)isSimulator {
-#if TARGET_IPHONE_SIMULATOR
-    return true;
-#else
-    return false;
-#endif
-}
-
 - (NSString *)deviceName {
     return [[UIDevice currentDevice] name];
+}
+
+- (BOOL)isDevPhoneDetect {
+    return [[self deviceName] isEqualToString:[NSString stringWithUTF8String:SENSORAMA_DEV_PHONE]];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
