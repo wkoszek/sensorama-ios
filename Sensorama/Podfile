@@ -13,6 +13,7 @@ def mypods
   pod "NSLogger"
 
   pod 'GBDeviceInfo', '~> 3.5'
+  pod 'BZipCompression', '~> 1.0.0'
 end
 
 target 'Sensorama' do

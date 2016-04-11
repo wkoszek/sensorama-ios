@@ -18,7 +18,7 @@
         __block NSError *error = nil;
 
         dispatch_once(&onceToken, ^{
-            regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{4})(\\d{2})(\\d{2})_(\\d{2})(\\d{2})(\\d{2})-(\\d{2})(\\d{2})(\\d{2}).json"
+            regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{4})(\\d{2})(\\d{2})_(\\d{2})(\\d{2})(\\d{2})-(\\d{2})(\\d{2})(\\d{2}).json.bz2"
                                                               options:0
                                                                 error:&error];
         });

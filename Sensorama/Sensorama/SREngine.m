@@ -7,7 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-
+#import "BZipCompression/BZipCompression.h"
 #import "CoreMotion/CoreMotion.h"
 #import "UIKit/UIKit.h"
 #import "SREngine.h"
@@ -133,7 +133,7 @@
 
     NSString *dateString = [NSString stringWithFormat:@"%@_%@-%@",
                             self.startDateString, self.startTimeString, self.endTimeString];
-    NSString *fileName = [NSString stringWithFormat:@"%@.json", dateString];
+    NSString *fileName = [NSString stringWithFormat:@"%@.json.bz2", dateString];
     NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
 
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
@@ -146,9 +146,8 @@
 
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding];
-
-    [jsonString writeToFile:sampleFilePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:&error];
+    NSData *compressedData = [BZipCompression compressedDataWithData:sampleDataJSON blockSize:BZipDefaultBlockSize workFactor:BZipDefaultWorkFactor error:&error];
+    [compressedData writeToFile:sampleFilePath atomically:NO];
 
     SRSync *syncFile = [[SRSync alloc] initWithPath:sampleFilePath];
     [syncFile syncStart];
