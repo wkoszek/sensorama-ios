@@ -11,6 +11,8 @@ def mypods
   pod "SimpleKeychain"
 
   pod "NSLogger"
+
+  pod 'GBDeviceInfo', '~> 3.5'
 end
 
 target 'Sensorama' do

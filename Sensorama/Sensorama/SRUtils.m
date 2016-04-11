@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
 #import <CommonCrypto/CommonHMAC.h>
+#import <GBDeviceInfo/GBDeviceInfo.h>
 
 #import "SRUtils.h"
 #import "SRCfg.h"
@@ -65,7 +66,7 @@
                            @"systemVersion" : [[UIDevice currentDevice] systemVersion],
                            @"model" : [[UIDevice currentDevice] model],
                            @"localizedModel" : [[UIDevice currentDevice] localizedModel],
-                           @"localizedModel" : [[UIDevice currentDevice] localizedModel],
+                           @"hw": [[GBDeviceInfo deviceInfo] modelString],
                            @"orientation" : [SRUtils orientationString],
                            };
     return info;
