@@ -6,6 +6,8 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "CoreMotion/CoreMotion.h"
 #import "UIKit/UIKit.h"
 #import "SREngine.h"
@@ -95,6 +97,9 @@
     NSMutableDictionary *oneDataPoint = [NSMutableDictionary new];
 
     SRPROBE0();
+
+    CFTimeInterval curTime = CACurrentMediaTime();
+    [oneDataPoint setObject:@(curTime) forKey:@"t"];
 
     if (hasAccelerometer) {
         CMAccelerometerData *accData = [self.motionManager accelerometerData];
