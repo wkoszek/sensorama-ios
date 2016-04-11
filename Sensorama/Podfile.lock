@@ -30,6 +30,7 @@ PODS:
     - CocoaLumberjack/Default
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
+  - DZNEmptyDataSet (1.7.3)
   - Fabric (1.6.7)
   - GBDeviceInfo (3.8.0):
     - GBDeviceInfo/Core (= 3.8.0)
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - AWSS3
   - BZipCompression (~> 1.0.0)
   - Crashlytics
+  - DZNEmptyDataSet
   - Fabric
   - GBDeviceInfo (~> 3.5)
   - JWTDecode
@@ -80,6 +82,7 @@ SPEC CHECKSUMS:
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
