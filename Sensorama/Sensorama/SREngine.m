@@ -92,6 +92,7 @@
     BOOL hasAccelerometer = isSIM || (self.motionManager.accelerometerActive && self.motionManager.accelerometerAvailable);
     BOOL hasMagnetometer = isSIM || (self.motionManager.magnetometerActive && self.motionManager.magnetometerAvailable);
     BOOL hasGyroscope = isSIM || (self.motionManager.gyroActive && self.motionManager.gyroAvailable);
+    NSMutableDictionary *oneDataPoint = [NSMutableDictionary new];
 
     SRPROBE0();
 
@@ -99,20 +100,21 @@
         CMAccelerometerData *accData = [self.motionManager accelerometerData];
         SRDEBUG(@"acc:%@", accData);
         CMAcceleration acc = [accData acceleration];
-        [self.srData addObject:@{@"acc": @[ @(acc.x), @(acc.y), @(acc.z) ] }];
+        [oneDataPoint setObject:@[ @(acc.x), @(acc.y), @(acc.z)] forKey:@"acc"];
     }
     if (hasMagnetometer) {
         CMMagnetometerData *magData = [self.motionManager magnetometerData];
         SRDEBUG(@"mag:%@", magData);
         CMMagneticField mag = [magData magneticField];
-        [self.srData addObject:@{@"mag": @[ @(mag.x), @(mag.y), @(mag.z) ] }];
+        [oneDataPoint setObject:@[ @(mag.x), @(mag.y), @(mag.z)] forKey:@"mag"];
     }
     if (hasGyroscope) {
         CMGyroData *gyroData = [self.motionManager gyroData];
         SRDEBUG(@"gyro:%@", gyroData);
         CMRotationRate gyro = [gyroData rotationRate];
-        [self.srData addObject:@{@"gyro": @[ @(gyro.x), @(gyro.y), @(gyro.z) ] }];
+        [oneDataPoint setObject:@[ @(gyro.x), @(gyro.y), @(gyro.z)] forKey:@"gyro"];
     }
+    [self.srData addObject:oneDataPoint];
 }
 
 - (void) recordingStop {
