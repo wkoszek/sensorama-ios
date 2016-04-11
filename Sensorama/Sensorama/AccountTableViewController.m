@@ -62,12 +62,8 @@
         NSLog(@"logoutButton");
         [self.logoutCell setSelected:NO];
         [self logout];
-
-#if 0 // need to make work
         SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
-        RecordViewController *rtvc = (RecordViewController *)[stvc.viewControllers objectAtIndex:0];
-        [self.navigationController pushViewController:rtvc animated:YES];
-#endif
+        [stvc setSelectedIndex:0];
     }
 }
 
