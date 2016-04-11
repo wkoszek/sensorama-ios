@@ -156,11 +156,21 @@
     [self makeStartStopTransition:isRecording];
     if (isRecording) {
         [tabController.srEngine recordingStart];
+        [self activateOtherTabs:NO];
     } else {
         [tabController.srEngine recordingStop];
+        [self activateOtherTabs:YES];
         filesTVC.filesList = [tabController.srEngine filesRecorded];
     }
     _isRecording = isRecording;
+}
+
+- (void)activateOtherTabs:(BOOL)activateFlag {
+    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
+
+    [[[[tabController tabBar] items] objectAtIndex:1] setEnabled:activateFlag];
+    [[[[tabController tabBar] items] objectAtIndex:2] setEnabled:activateFlag];
+    [[[[tabController tabBar] items] objectAtIndex:3] setEnabled:activateFlag];
 }
 
 - (void)makeStartStopTransition:(BOOL)needSquare {
