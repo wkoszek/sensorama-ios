@@ -34,17 +34,12 @@
     self = [super init];
     if (self) {
         self.dateFormatter = [self makeFormatterWithString:SENSORAMA_DATE_FORMAT];
-        self.timeFormatter = [self makeFormatterWithString:SENSORAMA_TIME_FORMAT];
     }
     return self;
 }
 
-- (NSString *)sensoramaTimeString {
-    return [self.timeFormatter stringFromDate:[NSDate date]];
-}
-
-- (NSString *)sensoramaDateString {
-    return [self.dateFormatter stringFromDate:[NSDate date]];
+- (NSString *)stringFromDate:(NSDate *)date {
+    return [self.dateFormatter stringFromDate:date];
 }
 
 @end

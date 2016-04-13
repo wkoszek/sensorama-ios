@@ -12,10 +12,8 @@
 @interface SRCfg : NSObject
 
 #define SENSORAMA_MAIN_COLOR 0xc51162
-#define SENSORAMA_DATE_FORMAT @"YYYYMMdd"
-#define SENSORAMA_TIME_FORMAT @"HHmmss"
+#define SENSORAMA_DATE_FORMAT @"YYYYMMdd-HHmmss"
 
-- (NSString *)sensoramaTimeString;
-- (NSString *)sensoramaDateString;
+- (NSString *)stringFromDate:(NSDate *)date;
 
 @end
