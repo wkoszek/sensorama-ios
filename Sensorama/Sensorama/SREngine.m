@@ -70,7 +70,7 @@
     [self recordingStartWithUpdates:YES];
 }
 
-- (void) recordingStop {
+- (void) recordingStopWithPath:(NSString *)path {
     if (self.startDate == nil) {
         // didn't start yet
         return;
@@ -79,6 +79,11 @@
 
     [self sampleEnd];
     [self sampleFinalize];
+    [self sampleExportWithPath:path];
+}
+
+- (void) recordingStop {
+    [self recordingStopWithPath:[self samplePath]];
 }
 
 - (void)startSensors {
@@ -175,7 +180,7 @@
     [self.srData addObject:oneDataPoint];
 }
 
-- (NSString *)fileNameBase {
+- (NSString *)samplePath {
     NSString *dateString = [NSString stringWithFormat:@"%@_%@",
                             [self.srCfg stringFromDate:self.startDate],
                             [self.srCfg stringFromDate:self.endDate]];
@@ -205,10 +210,6 @@
 
     SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];
     [syncFile syncStart];
-}
-
-- (void) sampleExport {
-    [self sampleExportWithPath:[self fileNameBase]];
 }
 
 - (NSString *) filesPath {

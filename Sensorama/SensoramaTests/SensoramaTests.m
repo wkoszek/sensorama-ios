@@ -12,6 +12,13 @@
 
 @end
 
+@interface SREngine ()
+
+- (void) recordingStopWithPath:(NSString *)path;
+- (void) recordingStartWithUpdates:(BOOL)enableUpdates;
+
+@end
+
 @implementation SensoramaTests
 
 - (void)setUp {
@@ -27,8 +34,9 @@
 - (void)testEngineBasic {
     SREngine *engine = [SREngine new];
 
-    [engine recordingStart];
-    [engine recordingStop];
+    NSLog(@"----------------------- ");
+    [engine recordingStartWithUpdates:NO];
+    [engine recordingStopWithPath:@"/tmp/data.json.bz2"];
 
 }
 
