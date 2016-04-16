@@ -181,6 +181,8 @@
 }
 
 - (NSString *)samplePath {
+    SRPROBE0();
+
     NSString *dateString = [NSString stringWithFormat:@"%@_%@",
                             [self.srCfg stringFromDate:self.startDate],
                             [self.srCfg stringFromDate:self.endDate]];
@@ -191,6 +193,8 @@
 }
 
 - (void) sampleFinalize {
+    SRPROBE0();
+
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
     [dict setObject:[SRAuth emailHashed] forKey:@"username"];
     [dict setObject:[self.srCfg stringFromDate:self.startDate] forKey:@"date_start"];
@@ -203,6 +207,7 @@
 }
 
 - (void) sampleExportWithPath:(NSString *)pathString {
+    SRPROBE0();
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:self.srContent options:NSJSONWritingPrettyPrinted error:&error];
     NSData *compressedData = [BZipCompression compressedDataWithData:sampleDataJSON blockSize:BZipDefaultBlockSize workFactor:BZipDefaultWorkFactor error:&error];
