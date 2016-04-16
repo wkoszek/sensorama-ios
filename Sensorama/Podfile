@@ -17,6 +17,7 @@ def mypods
 
   pod 'GBDeviceInfo', '~> 3.5'
   pod 'BZipCompression', '~> 1.0.0'
+  pod 'MessagePack'
 
   pod 'DZNEmptyDataSet'
 end

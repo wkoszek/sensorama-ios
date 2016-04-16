@@ -55,6 +55,7 @@ PODS:
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - Masonry (0.6.4)
+  - MessagePack (1.0.0)
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - GBDeviceInfo (~> 3.5)
   - JWTDecode
   - Lock
+  - MessagePack
   - NSLogger
   - SimpleKeychain
 
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  MessagePack: 6ef1d8f7c4b4021cf0b257d61ec5e8b4f3e9831c
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
