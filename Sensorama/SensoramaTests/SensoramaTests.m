@@ -37,7 +37,6 @@
     NSLog(@"----------------------- ");
     [engine recordingStartWithUpdates:NO];
     [engine recordingStopWithPath:@"/tmp/data.json.bz2"];
-
 }
 
 #if 0
