@@ -70,7 +70,7 @@
     [self recordingStartWithUpdates:YES];
 }
 
-- (void) recordingStopWithPath:(NSString *)path {
+- (void) recordingStopWithPath:(NSString *)path doSync:(BOOL)doSync {
     if (self.startDate == nil) {
         // didn't start yet
         return;
@@ -79,11 +79,11 @@
 
     [self sampleEnd];
     [self sampleFinalize];
-    [self sampleExportWithPath:path];
+    [self sampleExportWithPath:path doSync:doSync];
 }
 
 - (void) recordingStop {
-    [self recordingStopWithPath:[self samplePath]];
+    [self recordingStopWithPath:[self samplePath] doSync:YES];
 }
 
 - (void)startSensors {
@@ -173,9 +173,6 @@
 }
 
 - (void) sampleUpdate {
-
-    SRPROBE0();
-
     NSMutableDictionary *oneDataPoint = [self newDataPoint];
     [self.srData addObject:oneDataPoint];
 }
@@ -206,16 +203,27 @@
     self.srContent = dict;
 }
 
-- (void) sampleExportWithPath:(NSString *)pathString {
+- (void) sampleExportWithPath:(NSString *)pathString doSync:(BOOL)doSync {
     SRPROBE0();
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:self.srContent options:NSJSONWritingPrettyPrinted error:&error];
-    NSData *compressedData = [BZipCompression compressedDataWithData:sampleDataJSON blockSize:BZipDefaultBlockSize workFactor:BZipDefaultWorkFactor error:&error];
+    NSData *compressedData = [BZipCompression compressedDataWithData:sampleDataJSON
+                                                           blockSize:BZipDefaultBlockSize
+                                                          workFactor:BZipDefaultWorkFactor
+                                                               error:&error];
+    SRPROBE1(@([compressedData length]));
     [compressedData writeToFile:pathString atomically:NO];
 
-    SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];
-    [syncFile syncStart];
+    if (doSync) {
+        SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];
+        [syncFile syncStart];
+    }
 }
+
+- (void) sampleExportWithPath:(NSString *)pathString {
+    [self sampleExportWithPath:pathString doSync:YES];
+}
+
 
 - (NSString *) filesPath {
     return self.pathDocuments;

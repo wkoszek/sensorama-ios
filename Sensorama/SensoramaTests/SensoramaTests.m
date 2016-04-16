@@ -14,7 +14,7 @@
 
 @interface SREngine ()
 
-- (void) recordingStopWithPath:(NSString *)path;
+- (void) recordingStopWithPath:(NSString *)path doSync:(BOOL)doSync;
 - (void) recordingStartWithUpdates:(BOOL)enableUpdates;
 - (void) sampleUpdate;
 
@@ -41,8 +41,21 @@
     for (i = 0; i < 10; i++) {
         [engine sampleUpdate];
     }
-    [engine recordingStopWithPath:@"/tmp/data.json.bz2"];
+    [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
 }
+
+- (void)testEngineOneHour {
+    SREngine *engine = [SREngine new];
+    int i;
+
+    NSLog(@"----------------------- ");
+    [engine recordingStartWithUpdates:NO];
+    for (i = 0; i < 60*60*10; i++) {
+        [engine sampleUpdate];
+    }
+    [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+}
+
 
 #if 0
 - (void)testPerformanceExample {
