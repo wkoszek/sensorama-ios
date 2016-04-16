@@ -54,6 +54,9 @@
 + (A0UserProfile *) currentProfile {
     A0SimpleKeychain *keychain = [SRAuth sharedInstance].keychain;
     NSData *decodedData = [keychain dataForKey:@"profile"];
+    if (decodedData == nil) {
+        return nil;
+    }
     A0UserProfile *profile = [NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
     return profile;
 }
