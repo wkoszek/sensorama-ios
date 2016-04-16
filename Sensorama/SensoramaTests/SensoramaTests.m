@@ -16,6 +16,7 @@
 
 - (void) recordingStopWithPath:(NSString *)path;
 - (void) recordingStartWithUpdates:(BOOL)enableUpdates;
+- (void) sampleUpdate;
 
 @end
 
@@ -33,9 +34,13 @@
 
 - (void)testEngineBasic {
     SREngine *engine = [SREngine new];
+    int i;
 
     NSLog(@"----------------------- ");
     [engine recordingStartWithUpdates:NO];
+    for (i = 0; i < 10; i++) {
+        [engine sampleUpdate];
+    }
     [engine recordingStopWithPath:@"/tmp/data.json.bz2"];
 }
 
