@@ -8,6 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "BZipCompression/BZipCompression.h"
+#import <MPMessagePack/MPMessagePack.h>
+
 #import "CoreMotion/CoreMotion.h"
 #import "UIKit/UIKit.h"
 #import "SREngine.h"
@@ -207,12 +209,23 @@
     SRPROBE0();
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:self.srContent options:NSJSONWritingPrettyPrinted error:&error];
-    NSData *compressedData = [BZipCompression compressedDataWithData:sampleDataJSON
+    NSData *compressedDataJSON = [BZipCompression compressedDataWithData:sampleDataJSON
                                                            blockSize:BZipDefaultBlockSize
                                                           workFactor:BZipDefaultWorkFactor
                                                                error:&error];
-    SRPROBE1(@([compressedData length]));
-    [compressedData writeToFile:pathString atomically:NO];
+    SRPROBE1(@([sampleDataJSON length]));
+    SRPROBE1(@([compressedDataJSON length]));
+
+    NSData *sampleDataMP = [self.srContent mp_messagePack];
+    NSData *compressedDataMP = [BZipCompression compressedDataWithData:sampleDataMP
+                                                            blockSize:BZipDefaultBlockSize
+                                                           workFactor:BZipDefaultWorkFactor
+                                                                error:&error];
+    SRPROBE1(@([sampleDataMP length]));
+    SRPROBE1(@([compressedDataMP length]));
+
+
+    [compressedDataJSON writeToFile:pathString atomically:NO];
 
     if (doSync) {
         SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];

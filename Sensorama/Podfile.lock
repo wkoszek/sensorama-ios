@@ -35,6 +35,7 @@ PODS:
   - GBDeviceInfo (3.8.0):
     - GBDeviceInfo/Core (= 3.8.0)
   - GBDeviceInfo/Core (3.8.0)
+  - GHODictionary (1.0.9)
   - JWTDecode (1.0.0)
   - Lock (1.25.0):
     - CocoaLumberjack (~> 2.0)
@@ -55,7 +56,8 @@ PODS:
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - Masonry (0.6.4)
-  - MessagePack (1.0.0)
+  - MPMessagePack (1.3.5):
+    - GHODictionary
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
@@ -72,7 +74,7 @@ DEPENDENCIES:
   - GBDeviceInfo (~> 3.5)
   - JWTDecode
   - Lock
-  - MessagePack
+  - MPMessagePack
   - NSLogger
   - SimpleKeychain
 
@@ -87,10 +89,11 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
+  GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
-  MessagePack: 6ef1d8f7c4b4021cf0b257d61ec5e8b4f3e9831c
+  MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
