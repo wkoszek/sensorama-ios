@@ -7,9 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Realm/Realm.h"
 
-@interface SRDataPoint : NSObject
+@interface SRDataPoint : RLMObject
 
-- (instancetype) init;
+@property NSNumber<RLMInt> *accX;
+@property NSNumber<RLMInt> *accY;
+@property NSNumber<RLMInt> *accZ;
+
+@property NSNumber<RLMInt> *magX;
+@property NSNumber<RLMInt> *magY;
+@property NSNumber<RLMInt> *magZ;
+
+@property NSNumber<RLMInt> *gyroX;
+@property NSNumber<RLMInt> *gyroY;
+@property NSNumber<RLMInt> *gyroZ;
+
+@property NSNumber<RLMInt> *index;
+@property NSInteger curTime;
 
 @end

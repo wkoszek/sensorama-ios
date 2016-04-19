@@ -9,13 +9,4 @@
 #import "SRDataPoint.h"
 
 @implementation SRDataPoint
-
-- (instancetype) init; {
-    self = [super init];
-    if (self) {
-
-    }
-    return self;
-}
-
 @end
