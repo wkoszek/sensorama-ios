@@ -9,7 +9,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "BZipCompression/BZipCompression.h"
 #import <MPMessagePack/MPMessagePack.h>
-
+#if 0
+#import "ObjCBSON/BSONSerialization.h"
+#endif
 #import "CoreMotion/CoreMotion.h"
 #import "UIKit/UIKit.h"
 #import "SREngine.h"
@@ -194,6 +196,9 @@
 - (void) sampleFinalize {
     SRPROBE0();
 
+    NSTimeZone *timezone = [NSTimeZone localTimeZone];
+    NSString *timezoneString = [timezone name];
+
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
     [dict setObject:[SRAuth emailHashed] forKey:@"username"];
     [dict setObject:[self.srCfg stringFromDate:self.startDate] forKey:@"date_start"];
@@ -202,6 +207,7 @@
     [dict setObject:self.srData forKey:@"points"];
     [dict setObject:@"Sensorama_iOS" forKey:@"desc"];
     [dict setObject:@(250) forKey:@"interval"];
+    [dict setObject:timezoneString forKey:@"timezone"];
     self.srContent = dict;
 }
 
@@ -224,6 +230,17 @@
     SRPROBE1(@([sampleDataMP length]));
     SRPROBE1(@([compressedDataMP length]));
 
+
+#if 0
+    NSError *errorBSON = nil;
+    NSData *sampleDataBSON = [BSONSerialization BSONDataWithDictionary:self.srContent error:&errorBSON];
+    NSData *compressedDataBSON = [BZipCompression compressedDataWithData:sampleDataBSON
+                                                             blockSize:BZipDefaultBlockSize
+                                                            workFactor:BZipDefaultWorkFactor
+                                                                 error:&error];
+    SRPROBE1(@([sampleDataBSON length]));
+    SRPROBE1(@([compressedDataBSON length]));
+#endif
 
     [compressedDataJSON writeToFile:pathString atomically:NO];
 
