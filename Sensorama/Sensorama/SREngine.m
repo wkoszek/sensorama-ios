@@ -36,6 +36,7 @@
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
 
+@property (nonatomic) int datapointNumber;
 @property (nonatomic) BOOL isSim;
 
 @end
@@ -61,6 +62,7 @@
     [self startSensors];
     [self sampleStart];
     self.srTimer = nil;
+    self.datapointNumber = 0;
     if (enableUpdates) {
         [NSTimer scheduledTimerWithTimeInterval:0.25
                                          target:self
@@ -121,7 +123,7 @@
 
     CFTimeInterval curTime = CACurrentMediaTime();
     [oneDataPoint setObject:@(curTime) forKey:@"t"];
-    [oneDataPoint setObject:@(arc4random()) forKey:@"i"];
+    [oneDataPoint setObject:@(self.datapointNumber++) forKey:@"i"];
 
 
     CMAcceleration  acc = [self curAccData];
@@ -208,6 +210,7 @@
     [dict setObject:@"Sensorama_iOS" forKey:@"desc"];
     [dict setObject:@(250) forKey:@"interval"];
     [dict setObject:timezoneString forKey:@"timezone"];
+    [dict setObject:@(arc4random()) forKey:@"serial"];
     self.srContent = dict;
 }
 
