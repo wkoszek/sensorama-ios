@@ -6,6 +6,7 @@
 //
 
 #import "SREngine.h"
+#import "SRDataPoint.h"
 #import <XCTest/XCTest.h>
 
 @interface SensoramaTests : XCTestCase
@@ -56,6 +57,10 @@
     [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
 }
 
+- (void)testDatapoint {
+    SRDataPoint *dp = [SRDataPoint new];
+    NSLog(@"dp=%@", dp);
+}
 
 #if 0
 - (void)testPerformanceExample {
