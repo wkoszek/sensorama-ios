@@ -37,7 +37,6 @@ PODS:
   - GBDeviceInfo/Core (3.8.0)
   - GHODictionary (1.0.9)
   - JWTDecode (1.0.0)
-  - libbson (1.1.11)
   - Lock (1.25.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/Core (= 1.25.0)
@@ -62,10 +61,6 @@ PODS:
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
-  - ObjCBSON (0.2.0):
-    - libbson (~> 1.1.0)
-    - OrderedDictionary (~> 1.2)
-  - OrderedDictionary (1.2)
   - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
@@ -81,7 +76,6 @@ DEPENDENCIES:
   - Lock
   - MPMessagePack
   - NSLogger
-  - ObjCBSON
   - SimpleKeychain
 
 SPEC CHECKSUMS:
@@ -97,13 +91,10 @@ SPEC CHECKSUMS:
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
-  libbson: 22ee70304be0a5989e257e1df859e88dc688d1e3
   Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
-  ObjCBSON: 309dd739739de508ab81a915982587a267fea507
-  OrderedDictionary: 9cc5d69c5c5314ad696ed1839190724e83d534c7
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0

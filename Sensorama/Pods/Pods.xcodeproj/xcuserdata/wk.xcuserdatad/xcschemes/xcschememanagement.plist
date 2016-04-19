@@ -79,16 +79,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ObjCBSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>OrderedDictionary.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Sensorama.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -109,20 +99,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>libbson.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>046004C338704DF1208C6866E5075CFF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0A7FBD4F0C89694886A2A8E78CDD4223</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -138,11 +118,6 @@
 			<true/>
 		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1F97EF244F4A9FA77433036B9021C80B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,7 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89A6E004BEBB967F9A4A865C46FFCB88</key>
+		<key>6EC09CDF483883DB13D6164743F27985</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,17 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B17B67C006572E8DD225B442C8E6A566</key>
+		<key>A2E94E0D0B5634C99FD279D9081F3C7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C071273CDD828A447DB5E52E2D3679C5</key>
+		<key>D744044CC1D02BEB5542537E8C6BBD5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C63F57CF828A9A29A0FC9B37DC851638</key>
+		<key>DA8DB8FB14AEE880EDF274C3E5328CD2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -213,11 +188,6 @@
 			<true/>
 		</dict>
 		<key>E76EECCADC9F68D63D9DB7C9DD0E4A71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F10499656946A4682B929B6733495286</key>
 		<dict>
 			<key>primary</key>
 			<true/>

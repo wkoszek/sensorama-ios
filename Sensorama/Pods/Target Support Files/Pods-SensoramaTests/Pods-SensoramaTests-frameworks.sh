@@ -98,10 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SensoramaTests/MPMessagePack.framework"
   install_framework "Pods-SensoramaTests/Masonry.framework"
   install_framework "Pods-SensoramaTests/NSLogger.framework"
-  install_framework "Pods-SensoramaTests/ObjCBSON.framework"
-  install_framework "Pods-SensoramaTests/OrderedDictionary.framework"
   install_framework "Pods-SensoramaTests/SimpleKeychain.framework"
-  install_framework "Pods-SensoramaTests/bson.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SensoramaTests/AFNetworking.framework"
@@ -118,8 +115,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SensoramaTests/MPMessagePack.framework"
   install_framework "Pods-SensoramaTests/Masonry.framework"
   install_framework "Pods-SensoramaTests/NSLogger.framework"
-  install_framework "Pods-SensoramaTests/ObjCBSON.framework"
-  install_framework "Pods-SensoramaTests/OrderedDictionary.framework"
   install_framework "Pods-SensoramaTests/SimpleKeychain.framework"
-  install_framework "Pods-SensoramaTests/bson.framework"
 fi

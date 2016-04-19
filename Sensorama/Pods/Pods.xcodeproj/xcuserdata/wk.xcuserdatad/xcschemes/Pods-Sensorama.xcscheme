@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A5D10DAD956544C2408109A4'
+               BlueprintIdentifier = '515AA1684DD01A886F49E7B9'
                BlueprintName = 'Pods-Sensorama'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Sensorama.framework'>
