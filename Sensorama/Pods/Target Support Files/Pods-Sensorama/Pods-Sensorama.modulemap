@@ -1,0 +1,6 @@
+framework module Pods_Sensorama {
+  umbrella header "Pods-Sensorama-umbrella.h"
+
+  export *
+  module * { export * }
+}

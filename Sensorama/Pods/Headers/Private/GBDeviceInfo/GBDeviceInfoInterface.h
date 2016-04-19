@@ -1,0 +1,1 @@
+../../../GBDeviceInfo/GBDeviceInfo/GBDeviceInfoInterface.h

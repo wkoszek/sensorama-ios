@@ -1,0 +1,6 @@
+framework module Pods_SensoramaTests {
+  umbrella header "Pods-SensoramaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
