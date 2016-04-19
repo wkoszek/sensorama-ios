@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '797E1800EB7BBEF7286AF215'
+               BlueprintIdentifier = 'A691FC25BDA071A42B3AE497'
                BlueprintName = 'BZipCompression'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BZipCompression.framework'>

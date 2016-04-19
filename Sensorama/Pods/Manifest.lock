@@ -61,6 +61,9 @@ PODS:
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
+  - Realm (0.98.8):
+    - Realm/Headers (= 0.98.8)
+  - Realm/Headers (0.98.8)
   - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
@@ -76,6 +79,7 @@ DEPENDENCIES:
   - Lock
   - MPMessagePack
   - NSLogger
+  - Realm
   - SimpleKeychain
 
 SPEC CHECKSUMS:
@@ -95,6 +99,7 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
+  Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0

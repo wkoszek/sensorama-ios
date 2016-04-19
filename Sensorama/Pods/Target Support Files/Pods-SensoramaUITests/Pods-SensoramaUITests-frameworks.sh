@@ -98,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SensoramaUITests/MPMessagePack.framework"
   install_framework "Pods-SensoramaUITests/Masonry.framework"
   install_framework "Pods-SensoramaUITests/NSLogger.framework"
+  install_framework "Pods-SensoramaUITests/Realm.framework"
   install_framework "Pods-SensoramaUITests/SimpleKeychain.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -115,5 +116,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SensoramaUITests/MPMessagePack.framework"
   install_framework "Pods-SensoramaUITests/Masonry.framework"
   install_framework "Pods-SensoramaUITests/NSLogger.framework"
+  install_framework "Pods-SensoramaUITests/Realm.framework"
   install_framework "Pods-SensoramaUITests/SimpleKeychain.framework"
 fi
