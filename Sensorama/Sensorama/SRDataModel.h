@@ -1,5 +1,5 @@
 //
-//  SRDataPoint.h
+//  SRDataModel.h
 //  Sensorama
 //
 //  Created by Wojciech Adam Koszek (h) on 19/04/2016.

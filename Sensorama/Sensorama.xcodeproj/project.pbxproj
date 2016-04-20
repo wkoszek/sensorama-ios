@@ -21,7 +21,7 @@
 		577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */; };
 		577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */; };
 		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
-		578EDD211CC62A7C00BC62B5 /* SRDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 578EDD201CC62A7C00BC62B5 /* SRDataPoint.m */; };
+		578EDD211CC62A7C00BC62B5 /* SRDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 578EDD201CC62A7C00BC62B5 /* SRDataModel.m */; };
 		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
 		579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */; };
 		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
@@ -99,8 +99,8 @@
 		577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaUITests.m; sourceTree = "<group>"; };
 		577DC91D1C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		578EDD1F1CC62A7C00BC62B5 /* SRDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataPoint.h; sourceTree = "<group>"; };
-		578EDD201CC62A7C00BC62B5 /* SRDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataPoint.m; sourceTree = "<group>"; };
+		578EDD1F1CC62A7C00BC62B5 /* SRDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataModel.h; sourceTree = "<group>"; };
+		578EDD201CC62A7C00BC62B5 /* SRDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataModel.m; sourceTree = "<group>"; };
 		579FAB531C86B56200E06DF9 /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
 		579FAB541C86B56200E06DF9 /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
 				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
 				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
-				578EDD1F1CC62A7C00BC62B5 /* SRDataPoint.h */,
-				578EDD201CC62A7C00BC62B5 /* SRDataPoint.m */,
+				578EDD1F1CC62A7C00BC62B5 /* SRDataModel.h */,
+				578EDD201CC62A7C00BC62B5 /* SRDataModel.m */,
 				57F0B75F1C8AD99900833BD9 /* SRFile.h */,
 				57F0B7601C8AD99900833BD9 /* SRFile.m */,
 				57EC5FF11C88000C00243893 /* SRCfg.h */,
@@ -611,7 +611,7 @@
 				57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */,
 				577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */,
 				579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */,
-				578EDD211CC62A7C00BC62B5 /* SRDataPoint.m in Sources */,
+				578EDD211CC62A7C00BC62B5 /* SRDataModel.m in Sources */,
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
