@@ -6,7 +6,7 @@
 //
 
 #import "SREngine.h"
-#import "SRDataPoint.h"
+#import "SRDataModel.h"
 #import <XCTest/XCTest.h>
 
 @interface SensoramaTests : XCTestCase
@@ -48,7 +48,7 @@
         NSError *error = nil;
         [manager removeItemAtPath:path error:&error];
         if (error) {
-            NSLog(@"error hanlding dbTearDown! %@", [error localizedDescription]);
+            NSLog(@"error handling dbTearDown! %@", [error localizedDescription]);
         }
     }
 }
@@ -80,7 +80,7 @@
     dp.accX = dp.accY = dp.accZ = @(arc4random());
     dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
     dp.curTime = arc4random();
-    dp.index = @(arc4random());
+    dp.fileId = @(arc4random());
     return dp;
 }
 
@@ -115,6 +115,33 @@
 
 - (void)testDatapointOneDay {
     [self helperDataPointTestWithPoints:10*60*60*24 batchSize:600];
+}
+
+
+#pragma mark - Basic datastore functionality
+
+- (NSArray *)makeDataPointsWithFileId:(int)fileId howMany:(NSInteger)howMany {
+    NSMutableArray *points = [NSMutableArray new];
+    for (int pi = 0; pi < howMany; pi++) {
+        SRDataPoint *dp = [self makeRandomDataPoint];
+        dp.fileId = fileId;
+        [points addObject:dp];
+    }
+    XCTAssert([points count] == howMany);
+    return points;
+}
+
+- (void)testDataStoreBasic {
+    NSArray *points = [self makeDataPointsWithFileId:13 howMany:10];
+
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addOrUpdateObjectsFromArray:points];
+    [realm commitWriteTransaction];
+
+    RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId == 13"];
+
+    NSLog(@"count = %d %@", dataPoints.count, dataPoints);
 }
 
 
