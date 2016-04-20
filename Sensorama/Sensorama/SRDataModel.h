@@ -27,6 +27,8 @@
 @property NSInteger curTime;
 
 @end
+RLM_ARRAY_TYPE(SRDataPoint)
+
 
 @interface SRDataFile : RLMObject
 
@@ -44,4 +46,7 @@
 @property NSDate *dateEnd;
 @property NSInteger fileId;
 
+@property RLMArray<SRDataPoint> *dataPoints;
+
 @end
+RLM_ARRAY_TYPE(SRDataFile)
