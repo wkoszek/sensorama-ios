@@ -20,6 +20,7 @@
 #import "SRUtils.h"
 #import "SRDebug.h"
 #import "SRAuth.h"
+#import "SRDataModel.h"
 
 @interface SREngine ()
 
@@ -198,20 +199,30 @@
 - (void) sampleFinalize {
     SRPROBE0();
 
-    NSTimeZone *timezone = [NSTimeZone localTimeZone];
-    NSString *timezoneString = [timezone name];
+    NSString *timezoneString = [[NSTimeZone localTimeZone] name];
 
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:[self schemaDict] copyItems:YES];
-    [dict setObject:[SRAuth emailHashed] forKey:@"username"];
-    [dict setObject:[self.srCfg stringFromDate:self.startDate] forKey:@"date_start"];
-    [dict setObject:[self.srCfg stringFromDate:self.startDate] forKey:@"date_end"];
-    [dict setObject:[SRUtils deviceInfo] forKey:@"device_info"];
-    [dict setObject:self.srData forKey:@"points"];
-    [dict setObject:@"Sensorama_iOS" forKey:@"desc"];
-    [dict setObject:@(250) forKey:@"interval"];
-    [dict setObject:timezoneString forKey:@"timezone"];
-    [dict setObject:@(arc4random()) forKey:@"serial"];
-    self.srContent = dict;
+    SRDataFile *dataFile = [SRDataFile new];
+
+    dataFile.username = [SRAuth emailHashed];
+    dataFile.desc = @"Sensorama_iOS";
+    dataFile.timezone = timezoneString;
+    /* do something about device_info */
+
+    dataFile.sampleInterval = 250;
+    /* sensor states */
+
+    dataFile.dateStart = self.startDate;
+    dataFile.dateEnd = self.endDate;
+    dataFile.fileId = arc4random();
+
+    [self sampleFinalizeDataFile:dataFile points:self.srData];
+    
+    /* commit data to the database */
+}
+
+- (void) sampleFinalizeDataFile:(SRDataFile *)dataFile points:(NSArray *)dataPointsArray
+{
+
 }
 
 - (void) sampleExportWithPath:(NSString *)pathString doSync:(BOOL)doSync {
