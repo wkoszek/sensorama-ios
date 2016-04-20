@@ -30,7 +30,6 @@
 		57B11EEB1CA922EF00B389EF /* contrib in Resources */ = {isa = PBXBuildFile; fileRef = 57B11EEA1CA922EF00B389EF /* contrib */; };
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
-		57EC5FF71C89530000243893 /* sensorama.schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 57EC5FF61C89530000243893 /* sensorama.schema.json */; };
 		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
 		57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0B7601C8AD99900833BD9 /* SRFile.m */; };
 		5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */; };
@@ -116,7 +115,6 @@
 		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
 		57EC5FF11C88000C00243893 /* SRCfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCfg.h; sourceTree = "<group>"; };
 		57EC5FF21C88000C00243893 /* SRCfg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCfg.m; sourceTree = "<group>"; };
-		57EC5FF61C89530000243893 /* sensorama.schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sensorama.schema.json; sourceTree = "<group>"; };
 		57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensoramaTabBarController.h; sourceTree = "<group>"; };
 		57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensoramaTabBarController.m; sourceTree = "<group>"; };
 		57F0B75F1C8AD99900833BD9 /* SRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFile.h; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				5700D5DF1C85A35B009405AC /* SRUtils.m */,
 				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
 				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
-				57EC5FF61C89530000243893 /* sensorama.schema.json */,
 			);
 			path = Sensorama;
 			sourceTree = "<group>";
@@ -405,7 +402,6 @@
 			files = (
 				57B11EEB1CA922EF00B389EF /* contrib in Resources */,
 				577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */,
-				57EC5FF71C89530000243893 /* sensorama.schema.json in Resources */,
 				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,
 				577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */,
 			);
