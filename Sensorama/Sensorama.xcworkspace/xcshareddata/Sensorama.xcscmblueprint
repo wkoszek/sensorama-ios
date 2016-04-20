@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2539770C630DE77959E3E0BB3B9630E30EA23F12",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0,
+    "2539770C630DE77959E3E0BB3B9630E30EA23F12" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "16FAF83D-7C33-4416-A7D1-D4AEEBAE544D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "sensorama-ios\/Sensorama\/contrib\/libextobjc\/",
+    "2539770C630DE77959E3E0BB3B9630E30EA23F12" : "sensorama-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Sensorama",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Sensorama\/Sensorama.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wkoszek\/sensorama-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2539770C630DE77959E3E0BB3B9630E30EA23F12"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jspahrsummers\/libextobjc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
+    }
+  ]
+}
