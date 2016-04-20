@@ -12,12 +12,12 @@
 
 + (NSString *)primaryKey
 {
-    return @"index";
+    return @"fileId";
 }
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"index": @(0) };
+    return @{@"fileId": @(0) };
 }
 
 @end
@@ -33,5 +33,35 @@
 {
     return @{@"fileId": @(0) };
 }
+
+@end
+
+@interface SRDataStore : NSObject
+
+@property (readonly) RLMRealm *realm;
+
++ (SRDataStore *)sharedInstance;
+
+@end
+
+@implementation SRDataStore
+
++ (SRDataStore *)sharedInstance {
+    static SRDataStore *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [self new];
+    });
+    return sharedInstance;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        _realm = [RLMRealm defaultRealm];
+    }
+    return self;
+}
+
 
 @end
