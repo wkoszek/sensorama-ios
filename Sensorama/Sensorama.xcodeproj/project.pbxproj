@@ -181,20 +181,18 @@
 		577DC8F51C4CB0E700FA02B7 /* Sensorama */ = {
 			isa = PBXGroup;
 			children = (
+				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
+				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				577DC9071C4CB0E700FA02B7 /* Info.plist */,
+				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
+				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
 				57B11EEA1CA922EF00B389EF /* contrib */,
-				57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */,
-				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
-				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
-				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				578EDD221CC7543C00BC62B5 /* Views */,
 				57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */,
 				577A2B801C9953BC00B2D890 /* SRAuth.h */,
 				577A2B811C9953BC00B2D890 /* SRAuth.m */,
 				5735A3381C92B83D0076F979 /* SRSync.h */,
 				5735A3391C92B83D0076F979 /* SRSync.m */,
-				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
-				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
-				579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */,
-				579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */,
 				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
 				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
 				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
@@ -205,22 +203,11 @@
 				57F0B7601C8AD99900833BD9 /* SRFile.m */,
 				57EC5FF11C88000C00243893 /* SRCfg.h */,
 				57EC5FF21C88000C00243893 /* SRCfg.m */,
-				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
-				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
-				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
-				579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */,
-				579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */,
 				5700D5DE1C85A35B009405AC /* SRUtils.h */,
 				5700D5DF1C85A35B009405AC /* SRUtils.m */,
 				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
 				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
-				57697C8D1CABCE0E00C91641 /* AccountTableViewController.h */,
-				57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */,
-				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
-				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
-				577DC9071C4CB0E700FA02B7 /* Info.plist */,
 				57EC5FF61C89530000243893 /* sensorama.schema.json */,
-				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
 			);
 			path = Sensorama;
 			sourceTree = "<group>";
@@ -250,6 +237,27 @@
 				577DC91D1C4CB0E700FA02B7 /* Info.plist */,
 			);
 			path = SensoramaUITests;
+			sourceTree = "<group>";
+		};
+		578EDD221CC7543C00BC62B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */,
+				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
+				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
+				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
+				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
+				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
+				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
+				579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */,
+				579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */,
+				579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */,
+				579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */,
+				57697C8D1CABCE0E00C91641 /* AccountTableViewController.h */,
+				57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B0669C08DCF32542E0AAF659 /* Pods */ = {
