@@ -12,12 +12,12 @@
 
 + (NSString *)primaryKey
 {
-    return @"fileId";
+    return @"pointId";
 }
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"fileId": @(0) };
+    return @{@"pointId": @(0) };
 }
 
 @end

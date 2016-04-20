@@ -23,6 +23,7 @@
 @property NSNumber<RLMInt> *gyroY;
 @property NSNumber<RLMInt> *gyroZ;
 
+@property NSInteger pointId;
 @property NSInteger fileId;
 @property NSInteger curTime;
 

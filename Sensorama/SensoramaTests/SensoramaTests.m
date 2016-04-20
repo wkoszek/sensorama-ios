@@ -125,6 +125,7 @@
     for (int pi = 0; pi < howMany; pi++) {
         SRDataPoint *dp = [self makeRandomDataPoint];
         dp.fileId = fileId;
+        dp.pointId = fileId + pi;
         [points addObject:dp];
     }
     XCTAssert([points count] == howMany);
@@ -136,12 +137,20 @@
 
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
+#if 0
+    [realm addObject:points[0]];
+    [realm addObject:points[1]];
+    [realm addObject:points[2]];
+#else
     [realm addOrUpdateObjectsFromArray:points];
+#endif
     [realm commitWriteTransaction];
 
-    RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId == 13"];
-
+    RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId = 13"];
     NSLog(@"count = %d %@", dataPoints.count, dataPoints);
+
+    RLMResults<SRDataPoint *> *dataPoints2 = [SRDataPoint allObjects];
+    NSLog(@"count = %d %@", dataPoints2.count, dataPoints2);
 }
 
 
