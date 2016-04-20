@@ -26,12 +26,12 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    [self dbTearDown];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-    [self dbTearDown];
 }
 
 - (void)dbTearDown {
@@ -64,61 +64,58 @@
     [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
 }
 
-- (void)testPerformanceEngineOneHour {
-    SREngine __block *engine = [SREngine new];
+- (void)testEngineOneHour {
+    SREngine *engine = [SREngine new];
 
     [engine recordingStartWithUpdates:NO];
-    [self measureBlock:^{
-        for (int i = 0; i < 60*60*10; i++) {
-            [engine sampleUpdate];
-        }
-    }];
+    for (int i = 0; i < 60*60*10; i++) {
+        [engine sampleUpdate];
+    }
     [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
 }
 
-- (void)testPerformanceDatapointBasic {
+- (SRDataPoint *)makeRandomDataPoint {
+    SRDataPoint *dp = [SRDataPoint new];
+    dp.magX = dp.magY = dp.magZ = @(arc4random());
+    dp.accX = dp.accY = dp.accZ = @(arc4random());
+    dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
+    dp.curTime = arc4random();
+    dp.index = @(arc4random());
+    return dp;
+}
+
+- (void)testDatapointBasic {
     RLMRealm *realm = [RLMRealm defaultRealm];
-    [self measureBlock:^{
-        for (int i = 0; i < 10; i++) {
-            SRDataPoint *dp = [SRDataPoint new];
-
-            dp.magX = @(10);
-            dp.magY = @(12);
-            dp.magZ = @(14);
-
-            [realm transactionWithBlock:^{
-                [realm addObject:dp];
-            }];
-        }
-    }];
+    for (int i = 0; i < 10; i++) {
+        SRDataPoint *dp = [self makeRandomDataPoint];
+        [realm transactionWithBlock:^{
+            [realm addObject:dp];
+        }];
+    }
 }
 
-- (void)testPerformanceDatapointOneDay {
+- (void) helperDataPointTestWithPoints:(int)numberOfPoints batchSize:(int)batchSize
+{
     RLMRealm *realm = [RLMRealm defaultRealm];
-    [self measureBlock:^{
-        for (int i = 0; i < 60*60*10; i++) {
-            SRDataPoint *dp = [SRDataPoint new];
+    NSInteger transNumber = numberOfPoints / batchSize;
 
-            dp.magX = dp.magY = dp.magZ = @(arc4random());
-            dp.accX = dp.accY = dp.accZ = @(arc4random());
-            dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
-            dp.curTime = arc4random();
-            dp.index = @(arc4random());
+    for (int ti = 0; ti < transNumber; ti++) {
 
-            [realm transactionWithBlock:^{
-                [realm addObject:dp];
-            }];
+        NSMutableArray *dps = [NSMutableArray new];
+        for (NSInteger bi = 0; bi < batchSize; bi++) {
+            SRDataPoint *dp = [self makeRandomDataPoint];
+            [dps addObject:dp];
         }
-    }];
+        [realm beginWriteTransaction];
+        [realm addOrUpdateObjectsFromArray:dps];
+        [realm commitWriteTransaction];
+        NSLog(@"%d/%d", ti, transNumber);
+    }
 }
 
-#if 0
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testDatapointOneDay {
+    [self helperDataPointTestWithPoints:10*60*60*24 batchSize:600];
 }
-#endif
+
 
 @end

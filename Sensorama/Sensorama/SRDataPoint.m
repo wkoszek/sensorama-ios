@@ -9,4 +9,15 @@
 #import "SRDataPoint.h"
 
 @implementation SRDataPoint
+
++ (NSString *)primaryKey
+{
+    return @"index";
+}
+
++ (NSDictionary *)defaultPropertyValues
+{
+    return @{@"index": @(0) };
+}
+
 @end
