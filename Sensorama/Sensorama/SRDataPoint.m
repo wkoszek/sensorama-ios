@@ -21,3 +21,17 @@
 }
 
 @end
+
+@implementation SRDataFile
+
++ (NSString *)primaryKey
+{
+    return @"fileId";
+}
+
++ (NSDictionary *)defaultPropertyValues
+{
+    return @{@"fileId": @(0) };
+}
+
+@end

@@ -23,7 +23,24 @@
 @property NSNumber<RLMInt> *gyroY;
 @property NSNumber<RLMInt> *gyroZ;
 
-@property NSNumber<RLMInt> *index;
+@property NSInteger fileId;
 @property NSInteger curTime;
+
+@end
+
+@interface SRDataFile : RLMObject
+
+@property NSString *username;
+@property NSString *desc;
+/* need to do something about device_info */
+
+@property NSInteger sampleInterval;
+@property BOOL accEnabled;
+@property BOOL magEnabled;
+@property BOOL gyroEnabled;
+
+@property NSDate *dateStart;
+@property NSDate *dateEnd;
+@property NSInteger fileId;
 
 @end
