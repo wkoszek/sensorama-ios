@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AWSCognito (2.3.6):
-    - AWSCore (= 2.3.6)
-  - AWSCore (2.3.6)
-  - AWSS3 (2.3.6):
-    - AWSCore (= 2.3.6)
+  - AWSCognito (2.4.0):
+    - AWSCore (= 2.4.0)
+  - AWSCore (2.4.0)
+  - AWSS3 (2.4.0):
+    - AWSCore (= 2.4.0)
   - BZipCompression (1.0.2)
   - CocoaLumberjack (2.2.0):
     - CocoaLumberjack/Default (= 2.2.0)
@@ -36,6 +36,7 @@ PODS:
     - GBDeviceInfo/Core (= 3.8.0)
   - GBDeviceInfo/Core (3.8.0)
   - GHODictionary (1.0.9)
+  - JSONModel (1.2.0)
   - JWTDecode (1.0.0)
   - Lock (1.25.0):
     - CocoaLumberjack (~> 2.0)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Fabric
   - GBDeviceInfo (~> 3.5)
+  - JSONModel
   - JWTDecode
   - Lock
   - MPMessagePack
@@ -84,9 +86,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AWSCognito: af54fe65171c7c994c134e5d29b1ee60ee234825
-  AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
-  AWSS3: 1caaf6b45100503fecf3d418c394519a89409a74
+  AWSCognito: 1d96bd3ccda48918b00862895561dcb2a6080acf
+  AWSCore: 7e0da755786280a76ed4ab4ed8c1d38ced09b460
+  AWSS3: dc00e788fb6733853ecd615a45f9d7dd6ce25823
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
