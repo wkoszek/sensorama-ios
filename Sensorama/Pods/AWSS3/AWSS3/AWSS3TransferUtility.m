@@ -17,9 +17,12 @@
 #import "AWSS3PreSignedURL.h"
 #import "AWSSynchronizedMutableDictionary.h"
 
+NSString *const AWSS3TransferUtilityURLSessionDidBecomeInvalidNotification = @"com.amazonaws.AWSS3TransferUtility.AWSS3TransferUtilityURLSessionDidBecomeInvalidNotification";
 NSString *const AWSS3TransferUtilityIdentifier = @"com.amazonaws.AWSS3TransferUtility.Identifier";
 NSTimeInterval const AWSS3TransferUtilityTimeoutIntervalForResource = 50 * 60; // 50 minutes
 NSString *const AWSS3TransferUtilityUserAgent = @"transfer-utility";
+
+static NSString *const AWSInfoS3TransferUtility = @"S3TransferUtility";
 
 #pragma mark - Private classes
 
@@ -83,6 +86,12 @@ NSString *const AWSS3TransferUtilityUserAgent = @"transfer-utility";
 
 @end
 
+@interface AWSS3PreSignedURLBuilder()
+
+- (instancetype)initWithConfiguration:(AWSServiceConfiguration *)configuration;
+
+@end
+
 #pragma mark - AWSS3TransferUtility
 
 @implementation AWSS3TransferUtility
@@ -93,15 +102,26 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
 #pragma mark - Initialization methods
 
 + (instancetype)defaultS3TransferUtility {
-    if (![AWSServiceManager defaultServiceManager].defaultServiceConfiguration) {
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:@"`defaultServiceConfiguration` is `nil`. You need to set it before using this method."
-                                     userInfo:nil];
-    }
-
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _defaultS3TransferUtility = [[AWSS3TransferUtility alloc] initWithConfiguration:[AWSServiceManager defaultServiceManager].defaultServiceConfiguration
+        AWSServiceConfiguration *serviceConfiguration = nil;
+        AWSServiceInfo *serviceInfo = [[AWSInfo defaultAWSInfo] defaultServiceInfo:AWSInfoS3TransferUtility];
+        if (serviceInfo) {
+            serviceConfiguration = [[AWSServiceConfiguration alloc] initWithRegion:serviceInfo.region
+                                                               credentialsProvider:serviceInfo.cognitoCredentialsProvider];
+        }
+
+        if (!serviceConfiguration) {
+            serviceConfiguration = [AWSServiceManager defaultServiceManager].defaultServiceConfiguration;
+        }
+
+        if (!serviceConfiguration) {
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:@"The service configuration is `nil`. You need to configure `Info.plist` or set `defaultServiceConfiguration` before using this method."
+                                         userInfo:nil];
+        }
+
+        _defaultS3TransferUtility = [[AWSS3TransferUtility alloc] initWithConfiguration:serviceConfiguration
                                                                              identifier:nil];
     });
 
@@ -121,11 +141,30 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
 }
 
 + (instancetype)S3TransferUtilityForKey:(NSString *)key {
-    return [_serviceClients objectForKey:key];
+    @synchronized(self) {
+        AWSS3TransferUtility *serviceClient = [_serviceClients objectForKey:key];
+        if (serviceClient) {
+            return serviceClient;
+        }
+
+        AWSServiceInfo *serviceInfo = [[AWSInfo defaultAWSInfo] serviceInfo:AWSInfoS3TransferUtility
+                                                                     forKey:key];
+        if (serviceInfo) {
+            AWSServiceConfiguration *serviceConfiguration = [[AWSServiceConfiguration alloc] initWithRegion:serviceInfo.region
+                                                                                        credentialsProvider:serviceInfo.cognitoCredentialsProvider];
+            [AWSS3TransferUtility registerS3TransferUtilityWithConfiguration:serviceConfiguration
+                                                                      forKey:key];
+        }
+
+        return [_serviceClients objectForKey:key];
+    }
 }
 
 + (void)removeS3TransferUtilityForKey:(NSString *)key {
-    [_serviceClients removeObjectForKey:key];
+    AWSS3TransferUtility *transferUtility = [self S3TransferUtilityForKey:key];
+    if (transferUtility) {
+        [transferUtility.session invalidateAndCancel];
+    }
 }
 
 - (instancetype)init {
@@ -140,10 +179,7 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
     if (self = [super init]) {
         _configuration = [serviceConfiguration copy];
         [_configuration addUserAgentProductToken:AWSS3TransferUtilityUserAgent];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         _preSignedURLBuilder = [[AWSS3PreSignedURLBuilder alloc] initWithConfiguration:_configuration];
-#pragma clang diagnostic pop
 
         if (identifier) {
             _sessionIdentifier = identifier;
@@ -585,6 +621,13 @@ handleEventsForBackgroundURLSession:(NSString *)identifier
     }
 }
 
+- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error {
+    [[NSNotificationCenter defaultCenter] postNotificationName:AWSS3TransferUtilityURLSessionDidBecomeInvalidNotification object:self];
+
+    [_serviceClients removeObject:self];
+}
+
+
 #pragma mark - NSURLSessionTaskDelegate
 
 - (void)URLSession:(NSURLSession *)session
@@ -658,7 +701,11 @@ didFinishDownloadingToURL:(NSURL *)location {
             }
         }
     } else {
-        transferUtilityTask.data = [NSData dataWithContentsOfURL:location];
+        NSError *error = nil;
+        transferUtilityTask.data = [NSData dataWithContentsOfFile:location.path options:NSDataReadingMappedIfSafe error:&error];
+        if (!transferUtilityTask.data) {
+            transferUtilityTask.error = error;
+        }
     }
 }
 
