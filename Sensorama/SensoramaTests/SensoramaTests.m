@@ -135,7 +135,7 @@
 - (void)testDataStoreBasic {
     NSArray *points = [self makeDataPointsWithFileId:13 howMany:10];
 
-    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMRealm *realm = [[SRDataStore sharedInstance] realm];
     [realm beginWriteTransaction];
 #if 0
     [realm addObject:points[0]];
