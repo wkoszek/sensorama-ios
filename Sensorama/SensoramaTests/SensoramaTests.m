@@ -147,10 +147,8 @@
     [realm commitWriteTransaction];
 
     RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId = 13"];
-    NSLog(@"count = %d %@", dataPoints.count, dataPoints);
 
-    RLMResults<SRDataPoint *> *dataPoints2 = [SRDataPoint allObjects];
-    NSLog(@"count = %d %@", dataPoints2.count, dataPoints2);
+    XCTAssert([dataPoints count] == 10);
 }
 
 
