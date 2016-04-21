@@ -108,17 +108,6 @@
     [self.motionManager startGyroUpdates];
 }
 
-- (NSDictionary *)schemaDict {
-    NSError *error;
-    NSString *schemaFilePath = [[NSBundle mainBundle] pathForResource:@"sensorama.schema" ofType:@"json"];
-    NSData *schemaData = [NSData dataWithContentsOfFile:schemaFilePath];
-    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:schemaData
-                          options:kNilOptions
-                          error:&error];
-    NSAssert(jsonDict != nil, @"couldn't serialize JSON file");
-    return jsonDict;
-}
-
 - (NSMutableDictionary *) newDataPoint {
     NSMutableDictionary *oneDataPoint = [NSMutableDictionary new];
 
