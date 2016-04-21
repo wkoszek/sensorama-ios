@@ -36,13 +36,6 @@
 
 @end
 
-@interface SRDataStore : NSObject
-
-@property (readonly) RLMRealm *realm;
-
-+ (SRDataStore *)sharedInstance;
-
-@end
 
 @implementation SRDataStore
 
@@ -61,6 +54,20 @@
         _realm = [RLMRealm defaultRealm];
     }
     return self;
+}
+
+- (void) insertDataFile:(SRDataFile *)dataFile
+{
+    [self.realm beginWriteTransaction];
+    [self.realm addObject:dataFile];
+    [self.realm commitWriteTransaction];
+}
+
+- (void) insertDataPoints:(NSArray<SRDataPoint *> *) points
+{
+    [self.realm beginWriteTransaction];
+    [self.realm addOrUpdateObjectsFromArray:points];
+    [self.realm commitWriteTransaction];
 }
 
 

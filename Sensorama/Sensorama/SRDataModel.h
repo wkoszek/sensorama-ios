@@ -51,3 +51,15 @@ RLM_ARRAY_TYPE(SRDataPoint)
 
 @end
 RLM_ARRAY_TYPE(SRDataFile)
+
+
+@interface SRDataStore : NSObject
+
+@property (readonly) RLMRealm *realm;
+
++ (SRDataStore *)sharedInstance;
+- (void) insertDataFile:(SRDataFile *)dataFile;
+- (void) insertDataPoints:(NSArray<SRDataPoint *> *) points;
+
+
+@end
