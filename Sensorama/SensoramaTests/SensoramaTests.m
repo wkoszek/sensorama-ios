@@ -113,8 +113,8 @@
     }
 }
 
-- (void)testDatapointOneDay {
-    [self helperDataPointTestWithPoints:10*60*60*24 batchSize:600];
+- (void)testDatapointLonger {
+    [self helperDataPointTestWithPoints:10*60 batchSize:60];
 }
 
 

@@ -108,23 +108,30 @@
     [self.motionManager startGyroUpdates];
 }
 
-- (NSMutableDictionary *) newDataPoint {
-    NSMutableDictionary *oneDataPoint = [NSMutableDictionary new];
+- (SRDataPoint *) newDataPoint {
+    SRDataPoint *dataPoint = [SRDataPoint new];
 
     CFTimeInterval curTime = CACurrentMediaTime();
-    [oneDataPoint setObject:@(curTime) forKey:@"t"];
-    [oneDataPoint setObject:@(self.datapointNumber++) forKey:@"i"];
-
+    dataPoint.curTime = curTime;
+    dataPoint.pointId = self.datapointNumber++;
 
     CMAcceleration  acc = [self curAccData];
     CMMagneticField mag = [self curMagData];
     CMRotationRate gyro = [self curGyroData];
 
-    [oneDataPoint setObject:@[  @(acc.x),  @(acc.y), @(acc.z)]  forKey:@"acc"];
-    [oneDataPoint setObject:@[  @(mag.x),  @(mag.y), @(mag.z)]  forKey:@"mag"];
-    [oneDataPoint setObject:@[ @(gyro.x), @(gyro.y), @(gyro.z)] forKey:@"gyro"];
+    dataPoint.accX = @(acc.x);
+    dataPoint.accY = @(acc.y);
+    dataPoint.accZ = @(acc.z);
 
-    return oneDataPoint;
+    dataPoint.magX = @(mag.x);
+    dataPoint.magY = @(mag.y);
+    dataPoint.magZ = @(mag.z);
+
+    dataPoint.gyroX = @(gyro.x);
+    dataPoint.gyroY = @(gyro.y);
+    dataPoint.gyroZ = @(gyro.z);
+
+    return dataPoint;
 }
 
 - (CMAcceleration) curAccData {
@@ -169,8 +176,8 @@
 }
 
 - (void) sampleUpdate {
-    NSMutableDictionary *oneDataPoint = [self newDataPoint];
-    [self.srData addObject:oneDataPoint];
+    SRDataPoint *point = [self newDataPoint];
+    [self.srData addObject:point];
 }
 
 - (NSString *)samplePath {
@@ -204,14 +211,16 @@
     dataFile.dateEnd = self.endDate;
     dataFile.fileId = arc4random();
 
+    SRDataStore *datastore = [SRDataStore sharedInstance];
+    [datastore insertDataFile:dataFile];
+
     [self sampleFinalizeDataFile:dataFile points:self.srData];
-    
-    /* commit data to the database */
 }
 
 - (void) sampleFinalizeDataFile:(SRDataFile *)dataFile points:(NSArray *)dataPointsArray
 {
-
+    SRDataStore *datastore = [SRDataStore sharedInstance];
+    [datastore insertDataPoints:dataPointsArray];
 }
 
 - (void) sampleExportWithPath:(NSString *)pathString doSync:(BOOL)doSync {
