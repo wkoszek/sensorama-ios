@@ -1,6 +1,13 @@
 #!/bin/sh
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
+if [ $1 = "bootstrap" ]; then
+	rvm get stable --auto-dotfiles
+	rvm install 2.2
+	gem install cocoapods
+	gem install fastlane
+fi
+
 PROJ=Sensorama
 TOOL=xcodebuild
 if [ "x$BUILDTOOL" != "x" ]; then
