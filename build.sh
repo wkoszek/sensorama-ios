@@ -24,11 +24,9 @@ function build_old() {
 	)
 }
 
-FASTLANE=`which fastlane`
-if [ "x$FASTNAME" != "/usr/local/bin/fastlane" ]; then
-	# New world...
+which fastlane 2>/dev/null >/dev/null
+if [ $? -eq 0 ]; then
 	(cd Sensorama && fastlane beta)
 else
-	# Old way of building stuff.
 	build_old
 fi
