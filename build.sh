@@ -2,8 +2,8 @@
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
 if [ $1 = "bootstrap" ]; then
-	rvm get stable --auto-dotfiles
-	rvm install 2.2
+	#rvm get stable --auto-dotfiles
+	#rvm install 2.2
 	source ~/.profile
 	gem install cocoapods --pre
 	gem install fastlane
