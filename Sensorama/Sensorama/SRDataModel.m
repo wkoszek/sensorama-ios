@@ -34,6 +34,22 @@
     return @{@"fileId": @(0) };
 }
 
+- (NSDictionary *)toDict {
+    return @{
+             @"username" : self.username,
+             @"desc" : self.desc,
+             @"timezone" : self.timezone,
+             @"interval" : @(self.sampleInterval),
+             @"accEnabled" : @(self.accEnabled),
+             @"magEnabled" : @(self.magEnabled),
+             @"gyroEnabled" : @(self.gyroEnabled),
+// TODO: get formatters from configuration somehow
+//             @"dateStart" : self.dateStart,
+//             @"dateEnd" : self.dateEnd,
+             @"fileId" : @(self.fileId)
+    };
+}
+
 @end
 
 

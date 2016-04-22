@@ -49,6 +49,8 @@ RLM_ARRAY_TYPE(SRDataPoint)
 
 @property RLMArray<SRDataPoint> *dataPoints;
 
+- (NSDictionary *)toDict;
+
 @end
 RLM_ARRAY_TYPE(SRDataFile)
 
