@@ -5,12 +5,36 @@
 //  SensoramaTests
 //
 
+#import <XCTest/XCTest.h>
+#import "JSONModel/JSONModel.h"
+
 #import "SREngine.h"
 #import "SRDataModel.h"
-#import <XCTest/XCTest.h>
+
+
+#define WAIT_INIT()     __block BOOL __waitIsDone = NO
+#define WAIT_DONE()     __waitIsDone = YES
+#define WAIT_LOOP()    do {                                                    \
+        NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:10];           \
+        while (__waitIsDone == NO && [loopUntil timeIntervalSinceNow] > 0) {   \
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode  beforeDate:loopUntil];                     \
+        }                                                                       \
+        if (!__waitIsDone)                                                      \
+        {                                                                       \
+            XCTFail(@"I know this will fail, thanks");                          \
+        }                                                                       \
+} while (0)
+
+
 
 @interface SensoramaTests : XCTestCase
+@property (nonatomic) dispatch_queue_t waitQueue;
+@end
 
+@interface Bleh : JSONModel
+@property (nonatomic) SRDataPoint *point;
+@end
+@implementation Bleh
 @end
 
 @interface SREngine ()
@@ -25,6 +49,7 @@
 
 - (void)setUp {
     [super setUp];
+    self.waitQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [self dbTearDown];
 }
@@ -53,25 +78,52 @@
     }
 }
 
+- (void)testBasicPointMake {
+    SRDataPoint *dp = [self makeRandomDataPoint];
+    SRDataStore *dataStore = [SRDataStore sharedInstance];
+
+    WAIT_INIT();
+    dispatch_sync(self.waitQueue, ^{
+        [dataStore.realm beginWriteTransaction];
+        [dataStore.realm addObject:dp];
+        [dataStore.realm commitWriteTransaction];
+        WAIT_DONE();
+    });
+    WAIT_LOOP();
+}
+
 - (void)testEngineBasic {
     SREngine __block *engine = [SREngine new];
     int i;
+
+    WAIT_INIT();
 
     [engine recordingStartWithUpdates:NO];
     for (i = 0; i < 10; i++) {
         [engine sampleUpdate];
     }
-    [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+    dispatch_sync(self.waitQueue, ^{
+        [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+        WAIT_DONE();
+    });
+
+    WAIT_LOOP();
 }
 
 - (void)testEngineOneHour {
     SREngine *engine = [SREngine new];
 
+    WAIT_INIT();
     [engine recordingStartWithUpdates:NO];
     for (int i = 0; i < 60*60*10; i++) {
         [engine sampleUpdate];
     }
-    [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+    dispatch_sync(self.waitQueue, ^{
+        [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+        WAIT_DONE();
+    });
+
+    WAIT_LOOP();
 }
 
 - (SRDataPoint *)makeRandomDataPoint {
@@ -80,18 +132,24 @@
     dp.accX = dp.accY = dp.accZ = @(arc4random());
     dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
     dp.curTime = arc4random();
-    dp.fileId = @(arc4random());
+    dp.pointId = arc4random();
     return dp;
 }
 
 - (void)testDatapointBasic {
     RLMRealm *realm = [RLMRealm defaultRealm];
+    WAIT_INIT();
     for (int i = 0; i < 10; i++) {
         SRDataPoint *dp = [self makeRandomDataPoint];
-        [realm transactionWithBlock:^{
-            [realm addObject:dp];
-        }];
+
+        dispatch_sync(self.waitQueue, ^{
+            [realm transactionWithBlock:^{
+                [realm addObject:dp];
+            }];
+            WAIT_DONE();
+        });
     }
+    WAIT_LOOP();
 }
 
 - (void) helperDataPointTestWithPoints:(int)numberOfPoints batchSize:(int)batchSize
@@ -99,6 +157,7 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
     NSInteger transNumber = numberOfPoints / batchSize;
 
+    WAIT_INIT();
     for (int ti = 0; ti < transNumber; ti++) {
 
         NSMutableArray *dps = [NSMutableArray new];
@@ -106,11 +165,16 @@
             SRDataPoint *dp = [self makeRandomDataPoint];
             [dps addObject:dp];
         }
-        [realm beginWriteTransaction];
-        [realm addOrUpdateObjectsFromArray:dps];
-        [realm commitWriteTransaction];
+        dispatch_sync(self.waitQueue, ^{
+            [realm beginWriteTransaction];
+            [realm addOrUpdateObjectsFromArray:dps];
+            [realm commitWriteTransaction];
+            WAIT_DONE();
+        });
+
         NSLog(@"%d/%d", ti, transNumber);
     }
+    WAIT_LOOP();
 }
 
 - (void)testDatapointLonger {
@@ -136,20 +200,30 @@
     NSArray *points = [self makeDataPointsWithFileId:13 howMany:10];
 
     RLMRealm *realm = [[SRDataStore sharedInstance] realm];
-    [realm beginWriteTransaction];
+
+
+    dispatch_sync(self.waitQueue, ^{
+        [realm beginWriteTransaction];
 #if 0
-    [realm addObject:points[0]];
-    [realm addObject:points[1]];
-    [realm addObject:points[2]];
+        [realm addObject:points[0]];
+        [realm addObject:points[1]];
+        [realm addObject:points[2]];
 #else
-    [realm addOrUpdateObjectsFromArray:points];
+        [realm addOrUpdateObjectsFromArray:points];
 #endif
-    [realm commitWriteTransaction];
+        [realm commitWriteTransaction];
+    });
 
     RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId = 13"];
 
     XCTAssert([dataPoints count] == 10);
 }
 
+- (void)testJSONSerialize {
+    Bleh *bleh = [Bleh new];
+    bleh.point = [self makeRandomDataPoint];
+    NSString *string = [bleh toJSONString];
+    NSLog(@"JSON string=%@", string);
+}
 
 @end
