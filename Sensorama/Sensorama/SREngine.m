@@ -85,8 +85,8 @@
     [self.srTimer invalidate];
 
     [self sampleEnd];
-    [self sampleFinalize];
-    [self sampleExportWithPath:path doSync:doSync];
+    SRDataFile *dataFile = [self sampleFinalize];
+    [self sampleExportWithFileId:dataFile.fileId doSync:doSync];
 }
 
 - (void) recordingStop {
@@ -192,7 +192,7 @@
     return sampleFilePath;
 }
 
-- (void) sampleFinalize {
+- (SRDataFile *) sampleFinalize {
     SRPROBE0();
 
     NSString *timezoneString = [[NSTimeZone localTimeZone] name];
@@ -209,12 +209,13 @@
 
     dataFile.dateStart = self.startDate;
     dataFile.dateEnd = self.endDate;
-    dataFile.fileId = arc4random();
+    dataFile.fileId = [[NSDate date] timeIntervalSince1970];
 
     SRDataStore *datastore = [SRDataStore sharedInstance];
     [datastore insertDataFile:dataFile];
 
     [self sampleFinalizeDataFile:dataFile points:self.srData];
+    return dataFile;
 }
 
 - (void) sampleFinalizeDataFile:(SRDataFile *)dataFile points:(NSArray *)dataPointsArray
@@ -223,10 +224,18 @@
     [datastore insertDataPoints:dataPointsArray];
 }
 
-- (void) sampleExportWithPath:(NSString *)pathString doSync:(BOOL)doSync {
+- (void) sampleExportWithFileId:(NSInteger)fileId doSync:(BOOL)doSync {
     SRPROBE0();
+
+    RLMResults<SRDataFile *> *dataFile = [SRDataFile objectsWhere:@"fileId = %d", fileId];
+    NSAssert([dataFile count] == 1, @"more than one file with the same ID!");
+
     NSError *error = nil;
-    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:self.srContent options:NSJSONWritingPrettyPrinted error:&error];
+    
+    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:[dataFile[0] toDict] options:NSJSONWritingPrettyPrinted error:&error];
+
+
+    NSLog(@"%@", [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding]);
     NSData *compressedDataJSON = [BZipCompression compressedDataWithData:sampleDataJSON
                                                            blockSize:BZipDefaultBlockSize
                                                           workFactor:BZipDefaultWorkFactor
@@ -254,18 +263,19 @@
     SRPROBE1(@([compressedDataBSON length]));
 #endif
 
+#if 0
     [compressedDataJSON writeToFile:pathString atomically:NO];
 
     if (doSync) {
         SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];
         [syncFile syncStart];
     }
+#endif
 }
 
-- (void) sampleExportWithPath:(NSString *)pathString {
-    [self sampleExportWithPath:pathString doSync:YES];
+- (void) sampleExportWithId:(NSInteger)fileId {
+    [self sampleExportWithFileId:fileId doSync:YES];
 }
-
 
 - (NSString *) filesPath {
     return self.pathDocuments;
