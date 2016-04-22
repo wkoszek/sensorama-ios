@@ -1,4 +1,9 @@
 language: objective-c
+podfile: Sensorama/Podfile
+cache:
+  - cocoapods
+  directories:
+  - $HOME/.rvm
 before_install:
 - rvm get stable --auto-dotfiles
 - rvm install 2.2
