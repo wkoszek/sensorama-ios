@@ -8,8 +8,8 @@
 #import <NSLogger/NSLogger.h>
 #import <Lock/Lock.h>
 
-#import "Fabric/Fabric.h"
-#import "Crashlytics/Crashlytics.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #import "AppDelegate.h"
 #import "SRUsageStats.h"
