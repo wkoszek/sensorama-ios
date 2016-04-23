@@ -14,6 +14,7 @@
 		5735A33A1C92B83D0076F979 /* SRSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRSync.m */; };
 		57697C8F1CABCE0E00C91641 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */; };
 		577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2B811C9953BC00B2D890 /* SRAuth.m */; };
+		577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B7F1CCB5FCB00FA6E7D /* SRDataPoint.m */; };
 		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
 		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
 		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
@@ -84,6 +85,8 @@
 		57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
 		577A2B801C9953BC00B2D890 /* SRAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAuth.h; sourceTree = "<group>"; };
 		577A2B811C9953BC00B2D890 /* SRAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAuth.m; sourceTree = "<group>"; };
+		577A4B7E1CCB5FCB00FA6E7D /* SRDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataPoint.h; sourceTree = "<group>"; };
+		577A4B7F1CCB5FCB00FA6E7D /* SRDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataPoint.m; sourceTree = "<group>"; };
 		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
 				578EDD1F1CC62A7C00BC62B5 /* SRDataModel.h */,
 				578EDD201CC62A7C00BC62B5 /* SRDataModel.m */,
+				577A4B7E1CCB5FCB00FA6E7D /* SRDataPoint.h */,
+				577A4B7F1CCB5FCB00FA6E7D /* SRDataPoint.m */,
 				57F0B75F1C8AD99900833BD9 /* SRFile.h */,
 				57F0B7601C8AD99900833BD9 /* SRFile.m */,
 				57EC5FF11C88000C00243893 /* SRCfg.h */,
@@ -618,6 +623,7 @@
 				578EDD211CC62A7C00BC62B5 /* SRDataModel.m in Sources */,
 				577DC8F81C4CB0E700FA02B7 /* main.m in Sources */,
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
+				577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
 				5735A33A1C92B83D0076F979 /* SRSync.m in Sources */,
 				57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */,

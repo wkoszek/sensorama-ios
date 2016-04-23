@@ -8,30 +8,6 @@
 
 #import "SRDataModel.h"
 
-@implementation SRDataPoint
-
-+ (NSString *)primaryKey
-{
-    return @"pointId";
-}
-
-+ (NSDictionary *)defaultPropertyValues
-{
-    return @{@"pointId": @(0) };
-}
-
-- (NSDictionary *) toDict {
-    return @{
-             @"acc" : @[ _accX, _accY, _accZ ],
-             @"mag" : @[ _magX, _magY, _magZ ],
-             @"gyro": @[ _gyroX, _gyroY, _gyroZ ],
-             @"pointId" : @(_pointId),
-             @"fileId" : @(_fileId),
-             @"curTime" : @(_curTime)
-    };
-}
-
-@end
 
 @implementation SRDataFile
 

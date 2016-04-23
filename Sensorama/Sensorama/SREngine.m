@@ -6,7 +6,6 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "BZipCompression/BZipCompression.h"
 #import <MPMessagePack/MPMessagePack.h>
 #if 0
@@ -94,10 +93,7 @@
 }
 
 - (void)startSensors {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        self.motionManager = [CMMotionManager new];
-    });
+
 
     [self.motionManager stopAccelerometerUpdates];
     [self.motionManager stopMagnetometerUpdates];
@@ -108,64 +104,7 @@
     [self.motionManager startGyroUpdates];
 }
 
-- (SRDataPoint *) newDataPoint {
-    SRDataPoint *dataPoint = [SRDataPoint new];
 
-    CFTimeInterval curTime = CACurrentMediaTime();
-    dataPoint.curTime = curTime;
-    dataPoint.pointId = self.datapointNumber++;
-
-    CMAcceleration  acc = [self curAccData];
-    CMMagneticField mag = [self curMagData];
-    CMRotationRate gyro = [self curGyroData];
-
-    dataPoint.accX = @(acc.x);
-    dataPoint.accY = @(acc.y);
-    dataPoint.accZ = @(acc.z);
-
-    dataPoint.magX = @(mag.x);
-    dataPoint.magY = @(mag.y);
-    dataPoint.magZ = @(mag.z);
-
-    dataPoint.gyroX = @(gyro.x);
-    dataPoint.gyroY = @(gyro.y);
-    dataPoint.gyroZ = @(gyro.z);
-
-    return dataPoint;
-}
-
-- (CMAcceleration) curAccData {
-    CMAcceleration vals;
-    if (!self.isSim) {
-        return [[self.motionManager accelerometerData] acceleration];
-    }
-    vals.x = (double)arc4random();
-    vals.y = (double)arc4random();
-    vals.z = (double)arc4random();
-    return vals;
-}
-
-- (CMMagneticField) curMagData {
-    CMMagneticField vals;
-    if (!self.isSim) {
-        return [[self.motionManager magnetometerData] magneticField];
-    }
-    vals.x = (double)arc4random();
-    vals.y = (double)arc4random();
-    vals.z = (double)arc4random();
-    return vals;
-}
-
-- (CMRotationRate) curGyroData {
-    CMRotationRate vals;
-    if (!self.isSim) {
-        return [[self.motionManager gyroData] rotationRate];
-    }
-    vals.x = (double)arc4random();
-    vals.y = (double)arc4random();
-    vals.z = (double)arc4random();
-    return vals;
-}
 
 - (void) sampleStart {
     self.startDate = [NSDate new];
@@ -176,7 +115,7 @@
 }
 
 - (void) sampleUpdate {
-    SRDataPoint *point = [self newDataPoint];
+    SRDataPoint *point = [SRDataPoint new];
     [self.srData addObject:point];
 }
 
@@ -229,11 +168,13 @@
 
     RLMResults<SRDataFile *> *dataFile = [SRDataFile objectsWhere:@"fileId = %d", fileId];
     NSAssert([dataFile count] == 1, @"more than one file with the same ID!");
+    NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:[dataFile[0] toDict]];
+    RLMResults<SRDataPoint *> *points = [SRDataFile objectsWhere:@"fileId = %d", fileId];
+    [wholeFile setObject:points forKey:@"points"];
 
     NSError *error = nil;
-    
-    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:[dataFile[0] toDict] options:NSJSONWritingPrettyPrinted error:&error];
-
+    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:wholeFile
+                                                             options:NSJSONWritingPrettyPrinted error:&error];
 
     NSLog(@"%@", [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding]);
     NSData *compressedDataJSON = [BZipCompression compressedDataWithData:sampleDataJSON
