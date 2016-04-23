@@ -78,6 +78,11 @@
     }
 }
 
+- (void)testBasicPointJSONSerialize {
+    SRDataPoint *dp = [SRDataPoint new];
+    NSLog(@"dp=%@", [dp toDict]);
+}
+
 - (void)testBasicPointMake {
     SRDataPoint *dp = [self makeRandomDataPoint];
     SRDataStore *dataStore = [SRDataStore sharedInstance];
@@ -131,8 +136,6 @@
     dp.magX = dp.magY = dp.magZ = @(arc4random());
     dp.accX = dp.accY = dp.accZ = @(arc4random());
     dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
-    dp.curTime = arc4random();
-    dp.pointId = arc4random();
     return dp;
 }
 
@@ -189,7 +192,6 @@
     for (int pi = 0; pi < howMany; pi++) {
         SRDataPoint *dp = [self makeRandomDataPoint];
         dp.fileId = fileId;
-        dp.pointId = fileId + pi;
         [points addObject:dp];
     }
     XCTAssert([points count] == howMany);
