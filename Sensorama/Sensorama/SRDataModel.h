@@ -23,9 +23,11 @@
 @property NSNumber<RLMInt> *gyroY;
 @property NSNumber<RLMInt> *gyroZ;
 
-@property NSInteger pointId;
+@property NSInteger pointId;    // TODO: this is probably redundant and should be removed
 @property NSInteger fileId;
 @property NSInteger curTime;
+
+- (NSDictionary *)toDict;
 
 @end
 RLM_ARRAY_TYPE(SRDataPoint)
