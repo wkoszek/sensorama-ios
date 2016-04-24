@@ -164,10 +164,9 @@
         [tabController.engine recordingStart];
         [self activateOtherTabs:NO];
     } else {
-        [tabController.engine recordingStop];
+        [tabController.engine recordingStopWithSync:YES];
         [self activateOtherTabs:YES];
-        // XXXTODO
-        //filesTVC.filesList = [tabController.srEngine filesRecorded];
+        filesTVC.filesList = [tabController.engine allRecordedFiles];
     }
 }
 
