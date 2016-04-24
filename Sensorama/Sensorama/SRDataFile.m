@@ -30,20 +30,19 @@
                               userName:(NSString *)userName {
     self = [super init];
     if (!self) {
-        NSString *timezoneString = [[NSTimeZone localTimeZone] name];
-        _timezone = timezoneString;
-
-        _configuration = cfg;
-        _fileId = fileId;
-        _username = userName;
-        _desc = @"Sensorama_iOS";
-        _sampleInterval = [cfg sampleInterval];
-        ///* need to do something about device_info */
-
         return self;
     }
+    NSString *timezoneString = [[NSTimeZone localTimeZone] name];
+    _timezone = timezoneString;
 
-    return self;
+    _configuration = cfg;
+    _fileId = fileId;
+    _username = userName;
+    _desc = @"Sensorama_iOS";
+    _sampleInterval = [cfg sampleInterval];
+    ///* need to do something about device_info */
+
+     return self;
 }
 
 - (instancetype) initWithConfiguration:(SRCfg *)cfg userName:(NSString *)userName {
@@ -51,10 +50,15 @@
     return [self initWithConfiguration:cfg fileId:fileId userName:userName];
 }
 
+- (instancetype) init {
+    return [self initWithConfiguration:[SRCfg defaultConfiguration] userName:@""];
+}
+
 + (NSInteger) newFileId {
     RLMResults<SRDataFile *> *sortedFiles = [[SRDataFile allObjects] sortedResultsUsingProperty:@"fileId" ascending:YES];
     SRDataFile *lastDataFile = [sortedFiles lastObject];
     NSInteger nextFileId = lastDataFile.fileId + 1;
+
     return nextFileId;
 }
 
@@ -74,10 +78,19 @@
     self.dateEnd = dateEnd;
 }
 
-- (void) saveWithSync:(BOOL)doSync {
+- (void) save {
     SRDataStore *datastore = [SRDataStore sharedInstance];
     [datastore insertDataFile:self];
+}
+
+- (void)savePoints {
+    SRDataStore *datastore = [SRDataStore sharedInstance];
     [datastore insertDataPoints:self.dataPoints];
+}
+
+- (void) saveWithSync:(BOOL)doSync {
+    [self save];
+    [self savePoints];
     if (doSync) {
         [self exportWithSync:doSync];
     }

@@ -39,6 +39,8 @@
 - (void) updateWithPoint:(SRDataPoint *)point;
 - (void) finalizeWithDate:(NSDate *)dateEnd;
 - (void) saveWithSync:(BOOL)doSync;
+- (void) save;
+- (void) savePoints;
 - (NSString *)printableLabel;
 - (NSString *)printableLabelDetails;
 

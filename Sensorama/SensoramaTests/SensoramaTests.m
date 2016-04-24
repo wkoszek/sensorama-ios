@@ -60,12 +60,50 @@
     }
 }
 
-- (void) SRDataFile1 {
+#pragma mark - Simple file tests
+
+- (void) testSRDataFile1 {
+    SRDataFile *file = [SRDataFile new];
+    [file save];
+
+    RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
+    XCTAssert([files count] == 1);
 }
 
-//- (void)testSRDataPoint1 {
-//    SRDataPoint *point = [SRDataPoint new];
-//}
+- (void) testSRDataFile3 {
+    SRDataFile *file1 = [SRDataFile new];
+    [file1 save];
+
+    SRDataFile *file2 = [SRDataFile new];
+    [file2 save];
+
+
+    SRDataFile *file3 = [SRDataFile new];
+    [file3 save];
+
+    RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
+    XCTAssert([files count] == 1);
+
+    int fid = 1;
+    for (SRDataFile *dataFile in files) {
+        XCTAssert(dataFile.fileId == fid++);
+    }
+}
+
+- (void) testSRDataFileWithPoints {
+    SRDataFile *file = [SRDataFile new];
+    [file a]
+    NSArray *points = @[
+                        [SRDataPoint new],
+                        [SRDataPoint new],
+                        [SRDataPoint new]
+                        ];
+
+    [file save];
+
+    RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
+    XCTAssert([files count] == 1);
+}
 
 - (void)testBasicPointMake {
     SRDataPoint *dp = [SRDataPoint new];
