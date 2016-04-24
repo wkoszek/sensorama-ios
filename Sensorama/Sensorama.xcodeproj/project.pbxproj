@@ -34,7 +34,6 @@
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
 		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
-		57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F0B7601C8AD99900833BD9 /* SRFile.m */; };
 		5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */; };
 		66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */; };
 /* End PBXBuildFile section */
@@ -126,8 +125,6 @@
 		57EC5FF21C88000C00243893 /* SRCfg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCfg.m; sourceTree = "<group>"; };
 		57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensoramaTabBarController.h; sourceTree = "<group>"; };
 		57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensoramaTabBarController.m; sourceTree = "<group>"; };
-		57F0B75F1C8AD99900833BD9 /* SRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFile.h; sourceTree = "<group>"; };
-		57F0B7601C8AD99900833BD9 /* SRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFile.m; sourceTree = "<group>"; };
 		88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,18 +208,12 @@
 				577A2B811C9953BC00B2D890 /* SRAuth.m */,
 				5735A3381C92B83D0076F979 /* SRSync.h */,
 				5735A3391C92B83D0076F979 /* SRSync.m */,
-				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
-				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
 				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
 				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
-				57F0B75F1C8AD99900833BD9 /* SRFile.h */,
-				57F0B7601C8AD99900833BD9 /* SRFile.m */,
 				57EC5FF11C88000C00243893 /* SRCfg.h */,
 				57EC5FF21C88000C00243893 /* SRCfg.m */,
 				5700D5DE1C85A35B009405AC /* SRUtils.h */,
 				5700D5DF1C85A35B009405AC /* SRUtils.m */,
-				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
-				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
 			);
 			path = Sensorama;
 			sourceTree = "<group>";
@@ -235,6 +226,10 @@
 				577DC9071C4CB0E700FA02B7 /* Info.plist */,
 				577DC8F71C4CB0E700FA02B7 /* main.m */,
 				570103341C78171C005BA5C6 /* SensoramaVars.h */,
+				577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */,
+				577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */,
+				579FAB5C1C86F64F00E06DF9 /* SRUsageStats.h */,
+				579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -645,7 +640,6 @@
 				577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
 				5735A33A1C92B83D0076F979 /* SRSync.m in Sources */,
-				57F0B7611C8AD99900833BD9 /* SRFile.m in Sources */,
 				57697C8F1CABCE0E00C91641 /* AccountTableViewController.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
