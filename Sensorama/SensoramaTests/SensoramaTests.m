@@ -21,7 +21,6 @@
 
 @interface SREngine ()
 
-- (void) recordingStopWithPath:(NSString *)path doSync:(BOOL)doSync;
 - (void) recordingStartWithUpdates:(BOOL)enableUpdates;
 - (void) sampleUpdate;
 
@@ -67,18 +66,13 @@
     NSLog(@"save1=%@", files);
     XCTAssert([files count] == 0);
 
-
     SRDataFile *file1 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:11 userName:@""];
-    [file1 save];
-
     SRDataFile *file2 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:12 userName:@""];
-    [file2 save];
-
-
     SRDataFile *file3 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:13 userName:@""];
-    [file3 save];
 
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+    [file1 save];
+    [file2 save];
+    [file3 save];
 
     RLMResults<SRDataFile *> *files2 = [SRDataFile allObjects];
     NSLog(@"save=%@", files2);
@@ -121,20 +115,12 @@
 
 - (void)testEngineBasic {
     SREngine __block *engine = [SREngine new];
-    int i;
-
-    WAIT_INIT();
 
     [engine recordingStartWithUpdates:NO];
-    for (i = 0; i < 10; i++) {
-        [engine sampleUpdate];
+    for (int i = 0; i < 10; i++) {
+        [engine recordingUpdate];
     }
-    dispatch_sync(self.waitQueue, ^{
-        [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
-        WAIT_DONE();
-    });
-
-    WAIT_LOOP();
+    [engine recordingStopWithSync:NO];
 }
 
 - (void)testEngineOneHour {
@@ -143,10 +129,10 @@
     WAIT_INIT();
     [engine recordingStartWithUpdates:NO];
     for (int i = 0; i < 60*60*10; i++) {
-        [engine sampleUpdate];
+        [engine recordingUpdate];
     }
     dispatch_sync(self.waitQueue, ^{
-        [engine recordingStopWithPath:@"/tmp/data.json.bz2" doSync:NO];
+        [engine recordingStopWithSync:NO];
         WAIT_DONE();
     });
 
