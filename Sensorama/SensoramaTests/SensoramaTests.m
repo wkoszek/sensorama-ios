@@ -84,19 +84,28 @@
     }
 }
 
-- (void) testSRDataFileWithPoints {
+- (SRDataFile *) helperMakeDataFileWithPoints {
     SRDataFile *file = [SRDataFile new];
     [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10250]];
     [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10500]];
     [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10750]];
-    [file save];
-    [file savePoints];
+    return file;
+}
+
+- (void) testSRDataFileWithPoints {
+    SRDataFile *file = [self helperMakeDataFileWithPoints];
+    [file saveWithSync:NO];
 
     RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
     XCTAssert([files count] == 1);
 
     RLMResults<SRDataPoint *> *points = [SRDataPoint allObjects];
     XCTAssert([points count] == 3);
+}
+
+- (void) testSRDataFileSync {
+    SRDataFile *dataFile = [self helperMakeDataFileWithPoints];
+    [dataFile saveWithSync:YES];
 }
 
 - (void)testBasicPointMake {
