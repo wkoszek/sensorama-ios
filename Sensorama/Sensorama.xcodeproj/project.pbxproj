@@ -173,6 +173,24 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		577A4B8C1CCD62AA00FA6E7D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */,
+				577A2B801C9953BC00B2D890 /* SRAuth.h */,
+				577A2B811C9953BC00B2D890 /* SRAuth.m */,
+				5735A3381C92B83D0076F979 /* SRSync.h */,
+				5735A3391C92B83D0076F979 /* SRSync.m */,
+				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
+				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
+				57EC5FF11C88000C00243893 /* SRCfg.h */,
+				57EC5FF21C88000C00243893 /* SRCfg.m */,
+				5700D5DE1C85A35B009405AC /* SRUtils.h */,
+				5700D5DF1C85A35B009405AC /* SRUtils.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		577DC8EA1C4CB0E600FA02B7 = {
 			isa = PBXGroup;
 			children = (
@@ -203,17 +221,7 @@
 				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
 				577A4B8B1CCC9D7E00FA6E7D /* Model */,
 				578EDD221CC7543C00BC62B5 /* Views */,
-				57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */,
-				577A2B801C9953BC00B2D890 /* SRAuth.h */,
-				577A2B811C9953BC00B2D890 /* SRAuth.m */,
-				5735A3381C92B83D0076F979 /* SRSync.h */,
-				5735A3391C92B83D0076F979 /* SRSync.m */,
-				57EC5FEE1C87F5CA00243893 /* SREngine.h */,
-				57EC5FEF1C87F5CA00243893 /* SREngine.m */,
-				57EC5FF11C88000C00243893 /* SRCfg.h */,
-				57EC5FF21C88000C00243893 /* SRCfg.m */,
-				5700D5DE1C85A35B009405AC /* SRUtils.h */,
-				5700D5DF1C85A35B009405AC /* SRUtils.m */,
+				577A4B8C1CCD62AA00FA6E7D /* Core */,
 			);
 			path = Sensorama;
 			sourceTree = "<group>";
