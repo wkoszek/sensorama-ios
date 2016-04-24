@@ -39,25 +39,15 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    [self dbTearDown];
 }
 
+
 - (void)dbTearDown {
-    NSFileManager *manager = [NSFileManager defaultManager];
-    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    NSArray<NSString *> *realmFilePaths = @[
-                                            config.path,
-                                            [config.path stringByAppendingPathExtension:@"lock"],
-                                            [config.path stringByAppendingPathExtension:@"log_a"],
-                                            [config.path stringByAppendingPathExtension:@"log_b"],
-                                            [config.path stringByAppendingPathExtension:@"note"]
-                                            ];
-    for (NSString *path in realmFilePaths) {
-        NSError *error = nil;
-        [manager removeItemAtPath:path error:&error];
-        if (error) {
-            NSLog(@"error handling dbTearDown! %@", [error localizedDescription]);
-        }
-    }
+    RLMRealm *realm = [[SRDataStore sharedInstance] realm];
+    [realm beginWriteTransaction];
+    [realm deleteAllObjects];
+    [realm commitWriteTransaction];
 }
 
 #pragma mark - Simple file tests
