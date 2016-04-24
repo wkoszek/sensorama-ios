@@ -35,12 +35,12 @@
 
 - (NSDictionary *) toDict {
     return @{
-             @"acc" : @[ _accX, _accY, _accZ ],
-             @"mag" : @[ _magX, _magY, _magZ ],
-             @"gyro": @[ _gyroX, _gyroY, _gyroZ ],
-             @"fileId" : @(_fileId),
-             @"curTime" : _curTime
-             };
+             @"acc" : @[ self.accX, self.accY, self.accZ ],
+             @"mag" : @[ self.magX, self.magY, self.magZ ],
+             @"gyro": @[ self.gyroX, self.gyroY, self.gyroZ ],
+             @"fileId" : @(self.fileId),
+             @"curTime" : self.curTime
+    };
 }
 
 #pragma mark - Singletons
