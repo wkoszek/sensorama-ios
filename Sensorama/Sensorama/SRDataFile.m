@@ -136,10 +136,15 @@
 - (void) exportWithSync:(BOOL)doSync {
     SRPROBE0();
 
-    RLMResults<SRDataFile *> *dataFile = [SRDataFile objectsWhere:@"fileId = %d", self.fileId];
-    NSAssert([dataFile count] == 1, @"more than one file with the same ID!");
-    NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:[dataFile[0] toDict]];
-    RLMResults<SRDataPoint *> *points = [SRDataFile objectsWhere:@"fileId = %d", self.fileId];
+    NSDictionary *dataFileDict = [self toDict];
+    NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:dataFileDict];
+
+    RLMResults<SRDataPoint *> *pointsRaw = [SRDataPoint objectsWhere:@"fileId = %d", self.fileId];
+    NSMutableArray <NSDictionary *> *points = [NSMutableArray new];
+    for (SRDataPoint *pointRaw in pointsRaw) {
+        NSDictionary *pointDict = [pointRaw toDict];
+        [points addObject:pointDict];
+    }
     [wholeFile setObject:points forKey:@"points"];
 
     NSError *error = nil;
