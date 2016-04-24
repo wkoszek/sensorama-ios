@@ -34,6 +34,7 @@
     self = [super init];
     if (self) {
         self.dateFormatter = [self makeFormatterWithString:SENSORAMA_DATE_FORMAT];
+        self.sampleInterval = SRCFG_DEFAULT_SAMPLE_INTERVAL;
     }
     return self;
 }
