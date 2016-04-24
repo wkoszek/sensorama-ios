@@ -9,9 +9,10 @@
 #import "JSONModel/JSONModel.h"
 
 #import "SREngine.h"
-#import "SRDataModel.h"
+#import "SRDataStore.h"
+#import "SRDataPoint.h"
+#import "SRDataFile.h"
 #import "SRUnitTestLoop.h"
-
 
 
 @interface SensoramaTests : XCTestCase
@@ -59,13 +60,15 @@
     }
 }
 
-- (void)testBasicPointJSONSerialize {
-    SRDataPoint *dp = [SRDataPoint new];
-    NSLog(@"dp=%@", [dp toDict]);
+- (void) SRDataFile1 {
 }
 
+//- (void)testSRDataPoint1 {
+//    SRDataPoint *point = [SRDataPoint new];
+//}
+
 - (void)testBasicPointMake {
-    SRDataPoint *dp = [self makeRandomDataPoint];
+    SRDataPoint *dp = [SRDataPoint new];
     SRDataStore *dataStore = [SRDataStore sharedInstance];
 
     WAIT_INIT();
@@ -116,7 +119,7 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
     WAIT_INIT();
     for (int i = 0; i < 10; i++) {
-        SRDataPoint *dp = [self makeRandomDataPoint];
+        SRDataPoint *dp = [SRDataPoint new];
 
         dispatch_sync(self.waitQueue, ^{
             [realm transactionWithBlock:^{
@@ -138,7 +141,7 @@
 
         NSMutableArray *dps = [NSMutableArray new];
         for (NSInteger bi = 0; bi < batchSize; bi++) {
-            SRDataPoint *dp = [self makeRandomDataPoint];
+            SRDataPoint *dp = [SRDataPoint new];
             [dps addObject:dp];
         }
         dispatch_sync(self.waitQueue, ^{
@@ -163,7 +166,7 @@
 - (NSArray *)makeDataPointsWithFileId:(int)fileId howMany:(NSInteger)howMany {
     NSMutableArray *points = [NSMutableArray new];
     for (int pi = 0; pi < howMany; pi++) {
-        SRDataPoint *dp = [self makeRandomDataPoint];
+        SRDataPoint *dp = [SRDataPoint new];
         dp.fileId = fileId;
         [points addObject:dp];
     }
