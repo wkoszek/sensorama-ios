@@ -24,12 +24,12 @@
 
 + (NSString *)primaryKey
 {
-    return @"curTime";
+    return @"fileId";
 }
 
 + (NSDictionary *)defaultPropertyValues
 {
-    return @{@"curTime": @(CACurrentMediaTime())};
+    return @{@"fileId": @(-1) };
 }
 
 #pragma mark - JSON helper methods
@@ -98,6 +98,8 @@
     if (!self) {
         return self;
     }
+
+    self.curTime = @(CACurrentMediaTime());
 
     CMAcceleration  acc = [self curAccData];
     CMMagneticField mag = [self curMagData];
