@@ -112,14 +112,6 @@
     WAIT_LOOP();
 }
 
-- (SRDataPoint *)makeRandomDataPoint {
-    SRDataPoint *dp = [SRDataPoint new];
-    dp.magX = dp.magY = dp.magZ = @(arc4random());
-    dp.accX = dp.accY = dp.accZ = @(arc4random());
-    dp.gyroX = dp.gyroY = dp.gyroZ = @(arc4random());
-    return dp;
-}
-
 - (void)testDatapointBasic {
     RLMRealm *realm = [RLMRealm defaultRealm];
     WAIT_INIT();
