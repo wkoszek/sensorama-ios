@@ -40,6 +40,7 @@
     _username = userName;
     _desc = @"Sensorama_iOS";
     _sampleInterval = [cfg sampleInterval];
+    _dataPoints = [NSMutableArray new];
     ///* need to do something about device_info */
 
      return self;
@@ -67,6 +68,7 @@
 }
 
 - (void) updateWithPoint:(SRDataPoint *)point {
+    point.fileId = self.fileId;
     [self.dataPoints addObject:point];
 }
 
