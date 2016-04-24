@@ -160,7 +160,8 @@
     } else {
         [tabController.srEngine recordingStop];
         [self activateOtherTabs:YES];
-        filesTVC.filesList = [tabController.srEngine filesRecorded];
+        // XXXTODO
+        //filesTVC.filesList = [tabController.srEngine filesRecorded];
     }
     _isRecording = isRecording;
 }

@@ -15,7 +15,4 @@
 - (void) recordingStart;
 - (void) recordingStop;
 
-- (NSArray *) filesRecorded;
-- (NSString *) filesPath;
-
 @end

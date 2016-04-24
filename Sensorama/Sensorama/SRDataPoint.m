@@ -6,8 +6,7 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-#import <CoreMotion/CoreMotion.h>
+
 
 #import "SRDataPoint.h"
 #import "SRUtils.h"
@@ -22,15 +21,15 @@
 
 #pragma mark - Realm relationship methods
 
-+ (NSString *)primaryKey
-{
-    return @"fileId";
-}
-
-+ (NSDictionary *)defaultPropertyValues
-{
-    return @{@"fileId": @(-1) };
-}
+//+ (NSString *)primaryKey
+//{
+//    return @"fileId";
+//}
+//
+//+ (NSDictionary *)defaultPropertyValues
+//{
+//    return @{@"fileId": @(-1) };
+//}
 
 #pragma mark - JSON helper methods
 

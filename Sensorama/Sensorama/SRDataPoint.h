@@ -6,7 +6,10 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import QuartzCore;
+@import CoreMotion;
+@import Foundation;
+
 #import "Realm/Realm.h"
 
 @interface SRDataPoint : RLMObject
@@ -27,6 +30,7 @@
 @property NSNumber<RLMDouble> *curTime;
 
 - (NSDictionary *)toDict;
++ (CMMotionManager *)motionManager;
 
 @end
 RLM_ARRAY_TYPE(SRDataPoint)
