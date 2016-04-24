@@ -12,7 +12,7 @@
 #import "SensoramaTabBarController.h"
 #import "SRUsageStats.h"
 #import "SRUtils.h"
-#import "SRFile.h"
+#import "SRDataStore.h"
 
 
 @interface FilesTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
@@ -38,9 +38,8 @@
 
     SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
     // XXXTODO
-    //self.filesList = [tabController.srEngine filesRecorded];
+    self.filesList = [tabController.engine allRecordedFiles];
     NSLog(@"filelistZZZ=%@", self.filesList);
-
 
     [SRUsageStats eventAppFiles];
 
@@ -61,7 +60,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.filesList count];
@@ -86,12 +84,9 @@
     }
 
 
-    SRFile *file = [[SRFile alloc] initWithFileName:self.filesList[whichItem]];
-    NSString *itemString = [file printableLabel];
-    NSString *itemStringDetails = [file printableLabelDetails];
-
-    [cell.textLabel setText:itemString];
-    [cell.detailTextLabel setText:itemStringDetails];
+    SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
+    [cell.textLabel setText:[dataFile printableLabel]];
+    [cell.detailTextLabel setText:[dataFile printableLabelDetails]];
 
     return cell;
 }

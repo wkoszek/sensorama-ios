@@ -155,10 +155,10 @@
 
     [self makeStartStopTransition:isRecording];
     if (isRecording) {
-        [tabController.srEngine recordingStart];
+        [tabController.engine recordingStart];
         [self activateOtherTabs:NO];
     } else {
-        [tabController.srEngine recordingStop];
+        [tabController.engine recordingStop];
         [self activateOtherTabs:YES];
         // XXXTODO
         //filesTVC.filesList = [tabController.srEngine filesRecorded];

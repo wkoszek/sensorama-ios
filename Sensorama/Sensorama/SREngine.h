@@ -6,13 +6,15 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+#import "SRDataFile.h"
 
 @interface SREngine : NSObject
-
 
 - (instancetype) init;
 - (void) recordingStart;
 - (void) recordingStop;
+- (NSArray<SRDataFile *> *) allRecordedFiles;
 
 @end

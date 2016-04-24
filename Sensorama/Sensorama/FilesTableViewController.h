@@ -6,10 +6,12 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
+#import "SRDataFile.h"
 
 @interface FilesTableViewController : UITableViewController <UITableViewDataSource>
 
-@property (nonatomic) NSArray *filesList;
+@property (nonatomic) NSArray<SRDataFile *> *filesList;
 
 @end

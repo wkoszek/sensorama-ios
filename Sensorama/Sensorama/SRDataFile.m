@@ -83,6 +83,16 @@
     }
 }
 
+- (NSString *)printableLabel {
+    return [NSString stringWithFormat:@"%@-%@",
+            [self.configuration stringFromDate:self.dateStart],
+            [self.configuration stringFromDate:self.dateEnd]];
+}
+
+- (NSString *)printableLabelDetails {
+    return @"details";
+}
+
 - (NSDictionary *)toDict {
     return @{
              @"username" : self.username,

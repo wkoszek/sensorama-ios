@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.srEngine = [SREngine new];
+    self.engine = [SREngine new];
     // Do any additional setup after loading the view.
 }
 

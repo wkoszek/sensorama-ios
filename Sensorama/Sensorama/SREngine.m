@@ -98,4 +98,12 @@
     [[SRDataPoint motionManager] startGyroUpdates];
 }
 
+- (NSArray<SRDataFile *> *) allRecordedFiles {
+    NSMutableArray *array = [NSMutableArray new];
+    for (SRDataFile *file in [[SRDataFile allObjects] sortedResultsUsingProperty:@"fileId" ascending:YES]) {
+        [array addObject:file];
+    }
+    return array;
+}
+
 @end

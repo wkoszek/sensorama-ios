@@ -11,6 +11,6 @@
 
 @interface SensoramaTabBarController : UITabBarController
 
-@property (strong, nonatomic) SREngine *srEngine;
+@property (strong, nonatomic) SREngine *engine;
 
 @end
