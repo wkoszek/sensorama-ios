@@ -53,28 +53,38 @@
 #pragma mark - Simple file tests
 
 - (void) testSRDataFile1 {
-    SRDataFile *file = [SRDataFile new];
+    
+    SRDataFile *file = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:__LINE__ userName:@""];
     [file save];
 
     RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
     XCTAssert([files count] == 1);
 }
 
+
 - (void) testSRDataFile3 {
-    SRDataFile *file1 = [SRDataFile new];
+    RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
+    NSLog(@"save1=%@", files);
+    XCTAssert([files count] == 0);
+
+
+    SRDataFile *file1 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:11 userName:@""];
     [file1 save];
 
-    SRDataFile *file2 = [SRDataFile new];
+    SRDataFile *file2 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:12 userName:@""];
     [file2 save];
 
 
-    SRDataFile *file3 = [SRDataFile new];
+    SRDataFile *file3 = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] fileId:13 userName:@""];
     [file3 save];
 
-    RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
-    XCTAssert([files count] == 1);
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]];
 
-    int fid = 1;
+    RLMResults<SRDataFile *> *files2 = [SRDataFile allObjects];
+    NSLog(@"save=%@", files2);
+    XCTAssert([files2 count] == 3);
+
+    int fid = 11;
     for (SRDataFile *dataFile in files) {
         XCTAssert(dataFile.fileId == fid++);
     }
@@ -82,17 +92,17 @@
 
 - (void) testSRDataFileWithPoints {
     SRDataFile *file = [SRDataFile new];
-    [file a]
-    NSArray *points = @[
-                        [SRDataPoint new],
-                        [SRDataPoint new],
-                        [SRDataPoint new]
-                        ];
-
+    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10250]];
+    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10500]];
+    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10750]];
     [file save];
+    [file savePoints];
 
     RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
     XCTAssert([files count] == 1);
+
+    RLMResults<SRDataPoint *> *points = [SRDataPoint allObjects];
+    XCTAssert([points count] == 3);
 }
 
 - (void)testBasicPointMake {
@@ -229,6 +239,5 @@
     SRDataPoint *dp = [SRDataPoint new];
     NSLog(@"dp=%@", [dp toDict]);
 }
-
 
 @end
