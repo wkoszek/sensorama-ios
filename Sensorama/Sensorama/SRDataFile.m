@@ -70,6 +70,12 @@
 - (void) updateWithPoint:(SRDataPoint *)point {
     point.fileId = self.fileId;
     [self.dataPoints addObject:point];
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self startWithDate:[NSDate date]];
+    });
+    self.dateEnd = [NSDate date];       // XXTODO: figure if we could re-use curTime
 }
 
 - (void) finalizeWithDate:(NSDate *)dateEnd {
@@ -109,6 +115,10 @@
 }
 
 - (NSDictionary *)toDict {
+    NSString *dateStartString = [self.configuration stringFromDate:self.dateStart];
+    NSString *dateEndString = [self.configuration stringFromDate:self.dateEnd];
+    NSAssert(dateStartString != nil, @"dateStartString can't be nil");
+    NSAssert(dateEndString != nil, @"dateEndString can't be nil");
     return @{
              @"username" : self.username,
              @"desc" : self.desc,
@@ -117,8 +127,8 @@
              @"accEnabled" : @(self.accEnabled),
              @"magEnabled" : @(self.magEnabled),
              @"gyroEnabled" : @(self.gyroEnabled),
-             @"dateStart" : [self.configuration stringFromDate:self.dateStart],
-             @"dateEnd" : [self.configuration stringFromDate:self.dateEnd],
+             @"dateStart" : dateStartString,
+             @"dateEnd" : dateEndString,
              @"fileId" : @(self.fileId)
     };
 }
