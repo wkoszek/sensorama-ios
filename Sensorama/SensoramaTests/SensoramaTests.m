@@ -10,31 +10,12 @@
 
 #import "SREngine.h"
 #import "SRDataModel.h"
-
-
-#define WAIT_INIT()     __block BOOL __waitIsDone = NO
-#define WAIT_DONE()     __waitIsDone = YES
-#define WAIT_LOOP()    do {                                                    \
-        NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:10];           \
-        while (__waitIsDone == NO && [loopUntil timeIntervalSinceNow] > 0) {   \
-            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode  beforeDate:loopUntil];                     \
-        }                                                                       \
-        if (!__waitIsDone)                                                      \
-        {                                                                       \
-            XCTFail(@"I know this will fail, thanks");                          \
-        }                                                                       \
-} while (0)
+#import "SRUnitTestLoop.h"
 
 
 
 @interface SensoramaTests : XCTestCase
 @property (nonatomic) dispatch_queue_t waitQueue;
-@end
-
-@interface Bleh : JSONModel
-@property (nonatomic) SRDataPoint *point;
-@end
-@implementation Bleh
 @end
 
 @interface SREngine ()
@@ -221,11 +202,10 @@
     XCTAssert([dataPoints count] == 10);
 }
 
-- (void)testJSONSerialize {
-    Bleh *bleh = [Bleh new];
-    bleh.point = [self makeRandomDataPoint];
-    NSString *string = [bleh toJSONString];
-    NSLog(@"JSON string=%@", string);
+- (void)testBasicPointJSONSerialize {
+    SRDataPoint *dp = [SRDataPoint new];
+    NSLog(@"dp=%@", [dp toDict]);
 }
+
 
 @end
