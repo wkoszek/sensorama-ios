@@ -21,14 +21,14 @@
 
 #pragma mark - Realm relationship methods
 
-//+ (NSString *)primaryKey
-//{
-//    return @"fileId";
-//}
-//
++ (NSString *)primaryKey
+{
+    return @"pointId";
+}
+
 //+ (NSDictionary *)defaultPropertyValues
 //{
-//    return @{@"fileId": @(-1) };
+//    return @{@"pointId": @(-1) };
 //}
 
 #pragma mark - JSON helper methods
@@ -43,6 +43,8 @@
              };
 }
 
+#pragma mark - Singletons
+
 + (CMMotionManager *)motionManager {
     __block CMMotionManager *motionManager = nil;
 
@@ -54,6 +56,16 @@
     return motionManager;
 }
 
+
++ (NSInteger) nextPointId:(NSNumber *)number {
+    static NSInteger pointId = 0;
+    if (number != nil) {
+        pointId = [number integerValue];
+    } else {
+        pointId += 1;
+    }
+    return pointId;
+}
 
 #pragma mark - Actual sensor data fetching
 
@@ -92,13 +104,14 @@
 
 #pragma mark - initializer
 
-- (instancetype) init {
+- (instancetype) initWithTime:(NSTimeInterval)timeVal {
     self = [super init];
     if (!self) {
         return self;
     }
 
-    self.curTime = @(CACurrentMediaTime());
+    self.curTime = @(timeVal);
+    self.pointId = [SRDataPoint nextPointId:nil];
 
     CMAcceleration  acc = [self curAccData];
     CMMagneticField mag = [self curMagData];
@@ -117,6 +130,10 @@
     self.gyroZ = @(gyro.z);
 
     return self;
+}
+
+- (instancetype) init {
+    return [self initWithTime:CACurrentMediaTime()];
 }
 
 @end

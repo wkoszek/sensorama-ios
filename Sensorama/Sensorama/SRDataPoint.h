@@ -27,8 +27,11 @@
 @property NSNumber<RLMInt> *gyroZ;
 
 @property NSInteger fileId;
+@property NSInteger pointId;
 @property NSNumber<RLMDouble> *curTime;
 
+- (instancetype) initWithTime:(NSTimeInterval)timeVal;
+- (instancetype) init;
 - (NSDictionary *)toDict;
 + (CMMotionManager *)motionManager;
 
