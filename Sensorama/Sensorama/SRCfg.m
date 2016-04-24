@@ -21,13 +21,13 @@
 
 @implementation SRCfg
 
-- (NSDateFormatter *) makeFormatterWithString:(NSString *)formatString {
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    [dateFormatter setLocale:enUSPOSIXLocale];
-    [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
-    [dateFormatter setDateFormat:formatString];
-    return dateFormatter;
++ (SRCfg *) defaultConfiguration {
+    static SRCfg *sharedConfiguration = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedConfiguration = [[self alloc] init];
+    });
+    return sharedConfiguration;
 }
 
 - (instancetype) init {
@@ -36,6 +36,15 @@
         self.dateFormatter = [self makeFormatterWithString:SENSORAMA_DATE_FORMAT];
     }
     return self;
+}
+
+- (NSDateFormatter *) makeFormatterWithString:(NSString *)formatString {
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
+    [dateFormatter setDateFormat:formatString];
+    return dateFormatter;
 }
 
 - (NSString *)stringFromDate:(NSDate *)date {
