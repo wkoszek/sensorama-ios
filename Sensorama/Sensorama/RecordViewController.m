@@ -43,7 +43,17 @@
     [super viewDidLoad];
 
     NSLog(@"%s", __func__);
-    [self setIsRecording:false];
+    [self setIsRecording:false initial:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tabBarController setTitle:@"Record"];
+    NSLog(@"%s", __func__);
+
+    [self customizeLoginLook];
+    [self doLogin];
+    [SRUsageStats eventAppRecord];
 }
 
 - (void)customizeLoginLook {
@@ -59,15 +69,6 @@
     [[A0Theme sharedInstance] registerTheme:sensoramaTheme];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.tabBarController setTitle:@"Record"];
-    NSLog(@"%s", __func__);
-
-    [self customizeLoginLook];
-    [self doLogin];
-    [SRUsageStats eventAppRecord];
-}
 
 - (void)doLogin
 {
@@ -146,7 +147,7 @@
     return ([date compare:[NSDate new]] != NSOrderedDescending);
 }
 
-- (void)setIsRecording:(BOOL)isRecording
+- (void)setIsRecording:(BOOL)isRecording initial:(BOOL)isInitial
 {
     SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
     FilesTableViewController *filesTVC = [tabController.viewControllers objectAtIndex:1];
@@ -154,6 +155,11 @@
     SRPROBE1(filesTVC);
 
     [self makeStartStopTransition:isRecording];
+    _isRecording = isRecording;
+    if (isInitial) {
+        return;
+    }
+
     if (isRecording) {
         [tabController.engine recordingStart];
         [self activateOtherTabs:NO];
@@ -163,7 +169,6 @@
         // XXXTODO
         //filesTVC.filesList = [tabController.srEngine filesRecorded];
     }
-    _isRecording = isRecording;
 }
 
 - (void)activateOtherTabs:(BOOL)activateFlag {
@@ -206,7 +211,7 @@
 - (IBAction)doStartStop:(UITapGestureRecognizer *)sender {
     SRPROBE0();
 
-    [self setIsRecording:!self.isRecording];
+    [self setIsRecording:!self.isRecording initial:NO];
 }
 
 - (void)didReceiveMemoryWarning {
