@@ -63,7 +63,7 @@
 
     self.timer = nil;
     if (enableUpdates) {
-        [NSTimer scheduledTimerWithTimeInterval:self.configuration.sampleInterval / 1000
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25 //self.configuration.sampleInterval / 1000
                                          target:self
                                        selector:@selector(recordingUpdate)
                                        userInfo:nil
@@ -72,6 +72,10 @@
 }
 
 - (void)recordingUpdate {
+    SRPROBE0();
+    if (self.timer == nil) {
+        NSLog(@"stopped!");
+    }
     [self.dataFile updateWithPoint:[SRDataPoint new]];
 }
 
@@ -81,6 +85,7 @@
 
 - (void) recordingStopWithSync:(BOOL)doSync {
     [self.timer invalidate];
+    self.timer = nil;
     [self.dataFile finalizeWithDate:[NSDate date]];
     [self.dataFile saveWithSync:doSync];
 }
