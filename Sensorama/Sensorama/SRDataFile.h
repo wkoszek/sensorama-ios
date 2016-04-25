@@ -49,6 +49,7 @@
 
 // Not in the persistent data model.
 @property (nonatomic, readonly) SRCfg *configuration;
+@property (nonatomic, readonly) dispatch_once_t onceToken;
 
 @end
 RLM_ARRAY_TYPE(SRDataFile)

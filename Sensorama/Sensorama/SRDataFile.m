@@ -71,8 +71,7 @@
     point.fileId = self.fileId;
     [self.dataPoints addObject:point];
 
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    dispatch_once(&(_onceToken), ^{
         [self startWithDate:[NSDate date]];
     });
     self.dateEnd = [NSDate date];       // XXTODO: figure if we could re-use curTime
