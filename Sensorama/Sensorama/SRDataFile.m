@@ -151,8 +151,6 @@
 - (void) exportWithSync:(BOOL)doSync {
     SRPROBE0();
 
-//    dispatch_queue_t saveQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-
     NSDictionary *dataFileDict = [self toDict];
     NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:dataFileDict];
 
