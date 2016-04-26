@@ -41,6 +41,8 @@
     _desc = @"Sensorama_iOS";
     _sampleInterval = [cfg sampleInterval];
     _dataPoints = [NSMutableArray new];
+    _dateStart = nil;
+    _dateEnd = nil;
     ///* need to do something about device_info */
 
      return self;
@@ -61,6 +63,16 @@
     NSInteger nextFileId = lastDataFile.fileId + 1;
 
     return nextFileId;
+}
+
++ (dispatch_queue_t) saveQueue {
+    static dispatch_once_t onceToken;
+    dispatch_queue_t __block saveQueue;
+    saveQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_once(&onceToken, ^{
+        saveQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    });
+    return saveQueue;
 }
 
 - (void)startWithDate:(NSDate *)dateStart {
@@ -86,13 +98,17 @@
 }
 
 - (void) save {
-    SRDataStore *datastore = [SRDataStore sharedInstance];
-    [datastore insertDataFile:self];
+    dispatch_sync([SRDataFile saveQueue], ^{
+        SRDataStore *datastore = [SRDataStore sharedInstance];
+        [datastore insertDataFile:self];
+    });
 }
 
 - (void)savePoints {
-    SRDataStore *datastore = [SRDataStore sharedInstance];
-    [datastore insertDataPoints:self.dataPoints];
+    dispatch_sync([SRDataFile saveQueue], ^{
+        SRDataStore *datastore = [SRDataStore sharedInstance];
+        [datastore insertDataPoints:self.dataPoints];
+    });
 }
 
 - (void) saveWithSync:(BOOL)doSync {
@@ -134,6 +150,8 @@
 
 - (void) exportWithSync:(BOOL)doSync {
     SRPROBE0();
+
+//    dispatch_queue_t saveQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
 
     NSDictionary *dataFileDict = [self toDict];
     NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:dataFileDict];
