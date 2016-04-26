@@ -43,7 +43,7 @@
     self = [super init];
     if (self) {
         _configuration = configuration;
-        _dataFile = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] userName:[SRAuth emailHashed]];
+        _dataFile = nil;
     }
 //
 //        self.fileManager = [NSFileManager defaultManager];
@@ -59,6 +59,8 @@
 
 - (void) recordingStartWithUpdates:(BOOL)enableUpdates {
     [self startSensors];
+
+    self.dataFile = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration] userName:[SRAuth emailHashed]];
     [self.dataFile startWithDate:[NSDate date]];
 
     self.timer = nil;
