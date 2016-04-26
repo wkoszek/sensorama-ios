@@ -16,6 +16,8 @@
 
 @implementation SRDataFile
 
+@synthesize configuration = _configuration;
+
 //+ (NSString *)primaryKey
 //{
 //    return @"fileId";
@@ -55,6 +57,13 @@
 
 - (instancetype) init {
     return [self initWithConfiguration:[SRCfg defaultConfiguration] userName:@""];
+}
+
+- (SRCfg *)configuration {
+    if (_configuration == nil) {
+        return [SRCfg defaultConfiguration];
+    }
+    return _configuration;
 }
 
 + (NSInteger) newFileId {
@@ -120,9 +129,9 @@
 }
 
 - (NSString *)printableLabel {
-    return [NSString stringWithFormat:@"%@-%@",
-            [self.configuration stringFromDate:self.dateStart],
-            [self.configuration stringFromDate:self.dateEnd]];
+    NSString *dateStartString = [self.configuration stringFromDate:self.dateStart];
+    NSString *dateEndString = [self.configuration stringFromDate:self.dateEnd];
+    return [NSString stringWithFormat:@"%@-%@", dateStartString, dateEndString];
 }
 
 - (NSString *)printableLabelDetails {

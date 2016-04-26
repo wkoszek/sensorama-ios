@@ -13,6 +13,7 @@
 #import "SRUsageStats.h"
 #import "SRUtils.h"
 #import "SRDataStore.h"
+#import "SRCfg.h"
 
 
 @interface FilesTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
