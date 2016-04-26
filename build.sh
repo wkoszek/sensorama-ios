@@ -1,7 +1,7 @@
 #!/bin/sh
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
-if [ $1 = "bootstrap" ]; then
+if [ "$1" = "bootstrap" ]; then
 	#rvm get stable --auto-dotfiles
 	#rvm install 2.2
 	source ~/.profile
