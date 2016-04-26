@@ -30,16 +30,20 @@
 
 - (void) insertDataFile:(SRDataFile *)dataFile
 {
-    [self.realm beginWriteTransaction];
-    [self.realm addObject:dataFile];
-    [self.realm commitWriteTransaction];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm addObject:dataFile];
+    [realm commitWriteTransaction];
 }
 
 - (void) insertDataPoints:(NSArray<SRDataPoint *> *) points
 {
-    [self.realm beginWriteTransaction];
-    [self.realm addOrUpdateObjectsFromArray:points];
-    [self.realm commitWriteTransaction];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm addOrUpdateObjectsFromArray:points];
+    [realm commitWriteTransaction];
 }
 
 @end
