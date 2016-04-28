@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define SENSORAMA_MAIN_COLOR 0xc51162
+#define SENSORAMA_DATE_FORMAT @"YYYYMMdd-HHmmss"
 
 @interface SRCfg : NSObject
 
+@property (nonatomic) NSFileManager *fileManager;
+@property (nonatomic) NSString *pathForDataFiles;
 @property (nonatomic) NSInteger sampleInterval;
 #define SRCFG_DEFAULT_SAMPLE_INTERVAL 250
-
-
-#define SENSORAMA_MAIN_COLOR 0xc51162
-#define SENSORAMA_DATE_FORMAT @"YYYYMMdd-HHmmss"
 
 + (SRCfg *) defaultConfiguration;
 - (NSString *)stringFromDate:(NSDate *)date;

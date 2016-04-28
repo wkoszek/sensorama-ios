@@ -35,6 +35,8 @@
     if (self) {
         self.dateFormatter = [self makeFormatterWithString:SENSORAMA_DATE_FORMAT];
         self.sampleInterval = SRCFG_DEFAULT_SAMPLE_INTERVAL;
+        self.fileManager = [NSFileManager defaultManager];
+        self.pathForDataFiles = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     }
     return self;
 }
