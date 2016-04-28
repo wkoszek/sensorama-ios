@@ -21,6 +21,10 @@
     NSLog(@"%s %s=%@ %s=%@", __func__, #x1, (x1), #x2, (x2));    \
 } while (0)
 
+#define SRPROBE3(x1, x2, x3) do {                                  \
+    NSLog(@"%s %s=%@ %s=%@ %s=%@", __func__, #x1, (x1), #x2, (x2), #x3, (x3));    \
+} while (0)
+
 #define SRDEBUG if (1) NSLog
 
 #endif /* SRDebug_h */
