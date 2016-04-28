@@ -31,10 +31,6 @@
 @property (nonatomic) SRDataFile *dataFile;
 @property (nonatomic) NSTimer *timer;
 
-@property (strong, nonatomic) NSMutableArray *srData;
-@property (strong, nonatomic) NSDictionary *srContent;
-
-
 @end
 
 @implementation SREngine
@@ -45,11 +41,6 @@
         _configuration = configuration;
         _dataFile = nil;
     }
-//
-//        self.fileManager = [NSFileManager defaultManager];
-//        self.pathDocuments = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//        self.srData = [NSMutableArray new];
-
     return self;
 }
 
