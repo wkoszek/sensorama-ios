@@ -13,6 +13,7 @@
 #import "SRDataStore.h"
 #import "SRDataPoint.h"
 #import "SRDebug.h"
+#import "SRSync.h"
 
 @implementation SRDataFile
 
@@ -128,10 +129,20 @@
     }
 }
 
+- (NSString *) stringDateStart {
+    NSString *ret = [self.configuration stringFromDate:self.dateStart];
+    assert(ret != nil);
+    return ret;
+}
+
+- (NSString *) stringDateEnd {
+    NSString *ret = [self.configuration stringFromDate:self.dateEnd];
+    assert(ret != nil);
+    return ret;
+}
+
 - (NSString *)printableLabel {
-    NSString *dateStartString = [self.configuration stringFromDate:self.dateStart];
-    NSString *dateEndString = [self.configuration stringFromDate:self.dateEnd];
-    return [NSString stringWithFormat:@"%@-%@", dateStartString, dateEndString];
+    return [NSString stringWithFormat:@"%@-%@", [self stringDateStart], [self stringDateEnd]];
 }
 
 - (NSString *)printableLabelDetails {
@@ -139,10 +150,6 @@
 }
 
 - (NSDictionary *)toDict {
-    NSString *dateStartString = [self.configuration stringFromDate:self.dateStart];
-    NSString *dateEndString = [self.configuration stringFromDate:self.dateEnd];
-    NSAssert(dateStartString != nil, @"dateStartString can't be nil");
-    NSAssert(dateEndString != nil, @"dateEndString can't be nil");
     return @{
              @"username" : self.username,
              @"desc" : self.desc,
@@ -151,10 +158,18 @@
              @"accEnabled" : @(self.accEnabled),
              @"magEnabled" : @(self.magEnabled),
              @"gyroEnabled" : @(self.gyroEnabled),
-             @"dateStart" : dateStartString,
-             @"dateEnd" : dateEndString,
+             @"dateStart" : [self stringDateStart],
+             @"dateEnd" : [self stringDateEnd],
              @"fileId" : @(self.fileId)
     };
+}
+
+- (void) pruneFileCache {
+    // XXTODO remove old files
+}
+
+- (NSString *) filePathName {
+    return [NSString stringWithFormat:@"%@-%@.json.bz2", [self stringDateStart], [self stringDateEnd]];
 }
 
 - (void) exportWithSync:(BOOL)doSync {
@@ -183,6 +198,15 @@
     SRPROBE1(@([sampleDataJSON length]));
     SRPROBE1(@([compressedDataJSON length]));
 
+    [SRDataFile pruneFileCache];
+
+    NSString *outFileName = [self filePathName];
+    [self serializeWithData:compressedDataJSON path:outFileName];
+    if (doSync) {
+        SRSync *syncFile = [[SRSync alloc] initWithPath:outFileName];
+        [syncFile syncStart];
+    }
+
 #if 0
 
     NSData *sampleDataMP = [self.srContent mp_messagePack];
@@ -203,13 +227,12 @@
     SRPROBE1(@([sampleDataBSON length]));
     SRPROBE1(@([compressedDataBSON length]));
 
-    [compressedDataJSON writeToFile:pathString atomically:NO];
 
-    if (doSync) {
-        SRSync *syncFile = [[SRSync alloc] initWithPath:pathString];
-        [syncFile syncStart];
-    }
 #endif
+}
+
+- (void) serializeWithData:(NSData *)data path:(NSString *)filePath {
+    [data writeToFile:filePath atomically:NO];
 }
 
 

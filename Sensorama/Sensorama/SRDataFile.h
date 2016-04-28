@@ -44,6 +44,8 @@
 - (NSString *)printableLabel;
 - (NSString *)printableLabelDetails;
 
++ (void) pruneFileCache;
+
 // General helper methods.
 - (NSDictionary *)toDict;
 
