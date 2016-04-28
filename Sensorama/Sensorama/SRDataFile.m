@@ -75,6 +75,10 @@
     return nextFileId;
 }
 
+- (void) pruneFileCache {
+    // XXTODO remove old files
+}
+
 + (dispatch_queue_t) saveQueue {
     static dispatch_once_t onceToken;
     dispatch_queue_t __block saveQueue;
@@ -164,10 +168,6 @@
     };
 }
 
-- (void) pruneFileCache {
-    // XXTODO remove old files
-}
-
 - (NSString *) filePathName {
     return [NSString stringWithFormat:@"%@-%@.json.bz2", [self stringDateStart], [self stringDateEnd]];
 }
@@ -198,7 +198,7 @@
     SRPROBE1(@([sampleDataJSON length]));
     SRPROBE1(@([compressedDataJSON length]));
 
-    [SRDataFile pruneFileCache];
+    [self pruneFileCache];
 
     NSString *outFileName = [self filePathName];
     [self serializeWithData:compressedDataJSON path:outFileName];

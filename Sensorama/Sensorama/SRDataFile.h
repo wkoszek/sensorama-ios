@@ -41,10 +41,10 @@
 - (void) saveWithSync:(BOOL)doSync;
 - (void) save;
 - (void) savePoints;
+- (void) pruneFileCache;
+
 - (NSString *)printableLabel;
 - (NSString *)printableLabelDetails;
-
-+ (void) pruneFileCache;
 
 // General helper methods.
 - (NSDictionary *)toDict;
