@@ -29,7 +29,7 @@ target 'Sensorama' do
   mypods
 end
 
-target :SensoramaTests, :exclusive => true do
+target :SensoramaTests do
   mypods
 end
 
