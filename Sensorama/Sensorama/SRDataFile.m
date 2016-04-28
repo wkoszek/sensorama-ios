@@ -168,8 +168,15 @@
     };
 }
 
-- (NSString *) filePathName {
+- (NSString *) fileBasePathName {
     return [NSString stringWithFormat:@"%@-%@.json.bz2", [self stringDateStart], [self stringDateEnd]];
+}
+
+- (NSString *) filePathName {
+    NSString *destDirString = [self.configuration pathForDataFiles];
+    NSString *baseFileName = [self fileBasePathName];
+    NSString *targetPath = [NSString stringWithFormat:@"%@/%@", destDirString, baseFileName];
+    return targetPath;
 }
 
 - (void) exportWithSync:(BOOL)doSync {
@@ -203,7 +210,7 @@
     NSString *outFileName = [self filePathName];
     [self serializeWithData:compressedDataJSON path:outFileName];
     if (doSync) {
-        SRSync *syncFile = [[SRSync alloc] initWithPath:outFileName];
+        SRSync *syncFile = [[SRSync alloc] initWithFile:self configuration:self.configuration];
         [syncFile syncStart];
     }
 

@@ -43,8 +43,10 @@
 - (void) savePoints;
 - (void) pruneFileCache;
 
-- (NSString *)printableLabel;
-- (NSString *)printableLabelDetails;
+- (NSString *) fileBasePathName;
+- (NSString *) filePathName;
+- (NSString *) printableLabel;
+- (NSString *) printableLabelDetails;
 
 // General helper methods.
 - (NSDictionary *)toDict;
