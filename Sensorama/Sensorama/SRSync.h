@@ -6,14 +6,19 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
+#import "SRCfg.h"
+#import "SRDataFile.h"
 
 @interface SRSync : NSObject
 
-@property NSString *pathToSync;
+@property (nonatomic) SRDataFile *fileToSync;
+@property (nonatomic) SRCfg *configuration;
+
+- (instancetype)initWithFile:(SRDataFile *)dataFile configuration:(SRCfg *)configuration;
 
 + (void)doAmazonLogin:(NSString *)token;
-- (instancetype)initWithPath:(NSString *)path;
 - (void)syncStart;
 
 @end

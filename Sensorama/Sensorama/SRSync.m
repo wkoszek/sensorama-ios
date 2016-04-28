@@ -12,6 +12,7 @@
 #import "SRSync.h"
 #import "SRAuth.h"
 #import "SRUtils.h"
+#import "SRDebug.h"
 
 #import "SensoramaVars.h"
 
@@ -25,7 +26,7 @@
 {
     AWSCognitoCredentialsProvider *provider = [[SRAuth sharedInstance] credentialsProvider];
 
-    (void)provider;
+    SRPROBE1(provider);
 
 #if 0
     // Broken for now.
@@ -41,25 +42,30 @@
 #endif
 }
 
-- (instancetype)initWithPath:(NSString *)path
+- (instancetype)initWithFile:(SRDataFile *)dataFile configuration:(SRCfg *)configuration
 {
     self = [super init];
     if (self) {
-        self.pathToSync = path;
+        self.fileToSync = dataFile;
+        self.configuration = configuration;
     }
     return self;
 }
 
+- (instancetype) init {
+    return [self initWithFile:nil configuration:nil];
+}
+
 - (void)syncStart
 {
-    NSString *baseFileName = [[self.pathToSync componentsSeparatedByString:@"/"] lastObject];
-
-    NSURL *fileURL = [NSURL fileURLWithPath:self.pathToSync];
+    NSString *fileBaseName = [self.fileToSync fileBasePathName];
+    NSURL *fileURL = [NSURL fileURLWithPath:[self.fileToSync filePathName]];
+    SRPROBE1(fileURL);
 
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
     AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
     uploadRequest.bucket = @"sensorama-data";
-    uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], baseFileName];
+    uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], fileBaseName];
     uploadRequest.body = fileURL;
 
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
