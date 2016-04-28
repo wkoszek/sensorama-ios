@@ -30,7 +30,7 @@ PODS:
     - CocoaLumberjack/Default
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
-  - DZNEmptyDataSet (1.7.3)
+  - DZNEmptyDataSet (1.8)
   - Fabric (1.6.7)
   - GBDeviceInfo (3.8.0):
     - GBDeviceInfo/Core (= 3.8.0)
@@ -62,9 +62,9 @@ PODS:
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
-  - Realm (0.98.8):
-    - Realm/Headers (= 0.98.8)
-  - Realm/Headers (0.98.8)
+  - Realm (0.99.1):
+    - Realm/Headers (= 0.99.1)
+  - Realm/Headers (0.99.1)
   - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
@@ -92,7 +92,7 @@ SPEC CHECKSUMS:
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
+  DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
@@ -102,7 +102,7 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
-  Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
+  Realm: 522a0cc8e1f8755ee56d7dc16ca0fc380d045766
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0
