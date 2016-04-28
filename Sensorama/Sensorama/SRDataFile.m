@@ -242,18 +242,4 @@
     [data writeToFile:filePath atomically:NO];
 }
 
-
-//- (NSString *)samplePath {
-//    SRPROBE0();
-//
-//    NSString *dateString = [NSString stringWithFormat:@"%@_%@",
-//                            [self.srCfg stringFromDate:self.startDate],
-//                            [self.srCfg stringFromDate:self.endDate]];
-//    NSString *fileName = [NSString stringWithFormat:@"%@.json.bz2", dateString];
-//    NSString *sampleFilePath = [self.pathDocuments stringByAppendingPathComponent:fileName];
-//
-//    return sampleFilePath;
-//}
-
-
 @end
