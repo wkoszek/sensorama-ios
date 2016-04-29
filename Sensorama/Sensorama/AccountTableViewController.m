@@ -43,7 +43,7 @@
     A0UserProfile *profile = [SRAuth currentProfile];
 
     SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
-    AccountTableViewController *atvc = (AccountTableViewController *)[stvc.viewControllers objectAtIndex:2];
+    AccountTableViewController *atvc = [stvc viewControllerByClass:[AccountTableViewController class]];
     NSLog(@"email=%@", profile.email);
 
     atvc.emailAddress = profile.email;

@@ -25,6 +25,7 @@
 		577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */; };
 		577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */; };
 		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
+		579B6CE51CD3411E0011759B /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579B6CE41CD3411E0011759B /* ActivityViewController.m */; };
 		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
 		579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */; };
 		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
@@ -108,6 +109,8 @@
 		577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensoramaUITests.m; sourceTree = "<group>"; };
 		577DC91D1C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579B6CE31CD3411E0011759B /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		579B6CE41CD3411E0011759B /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		579FAB531C86B56200E06DF9 /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
 		579FAB541C86B56200E06DF9 /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */,
 				5700D5DB1C85A0C6009405AC /* RecordViewController.h */,
 				5700D5DC1C85A0C6009405AC /* RecordViewController.m */,
+				579B6CE31CD3411E0011759B /* ActivityViewController.h */,
+				579B6CE41CD3411E0011759B /* ActivityViewController.m */,
 				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
 				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
 				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
@@ -652,6 +657,7 @@
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 				57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */,
+				579B6CE51CD3411E0011759B /* ActivityViewController.m in Sources */,
 				577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,7 +750,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -782,7 +788,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -798,7 +804,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 57;
 				INFOPLIST_FILE = Sensorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -815,7 +821,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 57;
 				INFOPLIST_FILE = Sensorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
