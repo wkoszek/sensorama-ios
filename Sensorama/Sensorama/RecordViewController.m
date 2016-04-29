@@ -149,8 +149,8 @@
 
 - (void)setIsRecording:(BOOL)isRecording initial:(BOOL)isInitial
 {
-    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
-    FilesTableViewController *filesTVC = [tabController.viewControllers objectAtIndex:1];
+    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.parentViewController;
+    FilesTableViewController *filesTVC = [tabBarController viewControllerByClass:[FilesTableViewController class]];
 
     SRPROBE1(filesTVC);
 
@@ -161,21 +161,26 @@
     }
 
     if (isRecording) {
-        [tabController.engine recordingStart];
+        [tabBarController.engine recordingStart];
         [self activateOtherTabs:NO];
     } else {
-        [tabController.engine recordingStopWithSync:YES];
+        [tabBarController.engine recordingStopWithSync:YES];
         [self activateOtherTabs:YES];
-        filesTVC.filesList = [tabController.engine allRecordedFiles];
+        filesTVC.filesList = [tabBarController.engine allRecordedFiles];
     }
 }
 
 - (void)activateOtherTabs:(BOOL)activateFlag {
-    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
+    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.parentViewController;
+    NSInteger viewIndexToKeep = [tabBarController viewControllerIndexByClass:[RecordViewController class]];
 
-    [[[[tabController tabBar] items] objectAtIndex:1] setEnabled:activateFlag];
-    [[[[tabController tabBar] items] objectAtIndex:2] setEnabled:activateFlag];
-    [[[[tabController tabBar] items] objectAtIndex:3] setEnabled:activateFlag];
+    NSInteger curTabItem = 0;
+    for (UITabBarItem *tbi in [tabBarController viewControllers]) {
+        if (viewIndexToKeep == curTabItem) {
+            continue;
+        }
+        [tbi setEnabled:activateFlag];
+    }
 }
 
 - (void)makeStartStopTransition:(BOOL)needSquare {

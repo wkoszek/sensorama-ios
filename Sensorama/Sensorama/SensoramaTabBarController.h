@@ -13,4 +13,7 @@
 
 @property (strong, nonatomic) SREngine *engine;
 
+- (id) viewControllerByClass:(id)objClass;
+- (NSInteger) viewControllerIndexByClass:(id)objClass;
+
 @end
