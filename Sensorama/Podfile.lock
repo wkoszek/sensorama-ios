@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AWSCognito (2.4.0):
-    - AWSCore (= 2.4.0)
-  - AWSCore (2.4.0)
-  - AWSS3 (2.4.0):
-    - AWSCore (= 2.4.0)
+  - AWSCognito (2.4.1):
+    - AWSCore (= 2.4.1)
+  - AWSCore (2.4.1)
+  - AWSS3 (2.4.1):
+    - AWSCore (= 2.4.1)
   - BZipCompression (1.0.2)
   - CocoaLumberjack (2.2.0):
     - CocoaLumberjack/Default (= 2.2.0)
@@ -86,9 +86,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AWSCognito: 1d96bd3ccda48918b00862895561dcb2a6080acf
-  AWSCore: 7e0da755786280a76ed4ab4ed8c1d38ced09b460
-  AWSS3: dc00e788fb6733853ecd615a45f9d7dd6ce25823
+  AWSCognito: a57173a82505161bd1a9c8cfe393cea9b5b1f6bb
+  AWSCore: 9bfd632f04aaf12053e639d2a9120372844beb0d
+  AWSS3: d7a3a694ffc4010e90b14755b5b9dbf70989c117
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d

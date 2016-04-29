@@ -2900,20 +2900,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>1A6D92F91E679C2DD8AB86F935F34609</key>
-		<dict>
-			<key>fileRef</key>
-			<string>125B6F673DB4CAEB792AEBBFC95323D6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>1AE926DF5883F61832ADF8426DE78BCC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -3823,20 +3809,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>20B71037E72D983630C20C0485E2AC9C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>80018E07932425802095EC46420A905F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
 		<key>20C6F117C47B57EDA08000A95B5B3369</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -3851,20 +3823,6 @@
 			<string>Pods_Sensorama.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>20DB48BFD08680B52F9829F12414699D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1C3DEC101CD35701250769F39BFDDEBE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
 		</dict>
 		<key>20EE8030FCF2402DAC7F1C9B9DDAEF79</key>
 		<dict>
@@ -16958,6 +16916,20 @@
 			<key>targetProxy</key>
 			<string>2B2B5B3791DC37DB29E54BC01405D431</string>
 		</dict>
+		<key>95ADE88ED7E7423933F06A56FE5583DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>80018E07932425802095EC46420A905F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
+		</dict>
 		<key>95E0DC4DEE3A35453912FA76368DD8DB</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -17274,20 +17246,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>EDE48EF98B92B682BB2C7216B20F10AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>99961B3CB0ED3CF5A71BBA0D8A7DD514</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DA9F6AF26C92ACD0E879C77FA2B9613B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -21667,6 +21625,20 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>BEC316533F83B97A41555D7425D45D29</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DA9F6AF26C92ACD0E879C77FA2B9613B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
+		</dict>
 		<key>BEC6F47416E7FF13745833D25524485A</key>
 		<dict>
 			<key>fileRef</key>
@@ -23748,10 +23720,10 @@
 				<string>B673CDD7B5557E7B13E29524E95B3223</string>
 				<string>71814104EC71830FDAAE1A872A774C55</string>
 				<string>CF760DE96C842B29371B16F14D57920C</string>
-				<string>1A6D92F91E679C2DD8AB86F935F34609</string>
-				<string>99961B3CB0ED3CF5A71BBA0D8A7DD514</string>
-				<string>20B71037E72D983630C20C0485E2AC9C</string>
-				<string>20DB48BFD08680B52F9829F12414699D</string>
+				<string>D1EFEAFA5694633BA9E6F0654FE7886B</string>
+				<string>BEC316533F83B97A41555D7425D45D29</string>
+				<string>95ADE88ED7E7423933F06A56FE5583DA</string>
+				<string>FCADB22018BCB4B52C677A57D8486BFF</string>
 				<string>3D76640795BC34FD6FC15E96978556F4</string>
 				<string>A213B461ED4CCA3F7616AF5C77063E92</string>
 				<string>BCD23DAC2CC9DD8C80B8A8E8C1CB7A78</string>
@@ -24207,6 +24179,20 @@
 			<string>GBDeviceInfo/GBDeviceInfo_Common.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1EFEAFA5694633BA9E6F0654FE7886B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>125B6F673DB4CAEB792AEBBFC95323D6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
 		</dict>
 		<key>D20DE735738293567CF20AAEA7A8BF2F</key>
 		<dict>
@@ -28582,6 +28568,20 @@
 			<string>5FE8A0AF2AAA578699D89ABF80E052B1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>FCADB22018BCB4B52C677A57D8486BFF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1C3DEC101CD35701250769F39BFDDEBE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Private</string>
+				</array>
+			</dict>
 		</dict>
 		<key>FCBBEC358AAF673787EA0C7392FE3A34</key>
 		<dict>
