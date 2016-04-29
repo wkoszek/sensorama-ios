@@ -37,6 +37,7 @@ PODS:
   - GBDeviceInfo/Core (3.8.0)
   - GHODictionary (1.0.9)
   - JSONModel (1.2.0)
+  - JTCalendar (2.1.5)
   - JWTDecode (1.0.0)
   - Lock (1.25.0):
     - CocoaLumberjack (~> 2.0)
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - Fabric
   - GBDeviceInfo (~> 3.5)
   - JSONModel
+  - JTCalendar (~> 2.0)
   - JWTDecode
   - Lock
   - MPMessagePack
@@ -97,6 +99,7 @@ SPEC CHECKSUMS:
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  JTCalendar: 57a4420f12d10c93c3b28da96803e7043d1c9281
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
