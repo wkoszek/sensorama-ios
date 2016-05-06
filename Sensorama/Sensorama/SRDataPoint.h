@@ -26,6 +26,13 @@
 @property NSNumber<RLMInt> *gyroY;
 @property NSNumber<RLMInt> *gyroZ;
 
+@property NSNumber<RLMInt> *numberOfSteps;
+@property NSNumber<RLMInt> *distance;
+@property NSNumber<RLMInt> *currentPace;
+@property NSNumber<RLMInt> *currentCadence;
+@property NSNumber<RLMInt> *floorsAscended;
+@property NSNumber<RLMInt> *floorsDescended;
+
 @property NSInteger fileId;
 @property NSInteger pointId;
 @property NSNumber<RLMDouble> *curTime;
@@ -34,6 +41,9 @@
 - (instancetype) init;
 - (NSDictionary *)toDict;
 + (CMMotionManager *)motionManager;
++ (CMPedometer *)pedometerInstance;
++ (CMPedometerData *)pedometerDataUpdate:(CMPedometerData *)data;
+
 
 @end
 RLM_ARRAY_TYPE(SRDataPoint)

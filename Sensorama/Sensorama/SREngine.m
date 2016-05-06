@@ -30,7 +30,6 @@
 @property (nonatomic) SRCfg *configuration;
 @property (nonatomic) SRDataFile *dataFile;
 @property (nonatomic) NSTimer *timer;
-
 @end
 
 @implementation SREngine
@@ -69,7 +68,9 @@
     if (self.timer == nil) {
         NSLog(@"stopped!");
     }
-    [self.dataFile updateWithPoint:[SRDataPoint new]];
+
+    SRDataPoint *newPoint = [SRDataPoint new];
+    [self.dataFile updateWithPoint:newPoint];
 }
 
 - (void) recordingStart {
@@ -87,13 +88,26 @@
     [self recordingStopWithSync:YES];
 }
 
+
+
+- (CMPedometerHandler)pedometerUpdateHandler {
+    void (^handler)(CMPedometerData *, NSError *) = ^(CMPedometerData *d, NSError *error) {
+        [SRDataPoint pedometerDataUpdate:d];
+    };
+    return handler;
+}
+
 - (void)startSensors {
     [[SRDataPoint motionManager] stopAccelerometerUpdates];
     [[SRDataPoint motionManager] stopMagnetometerUpdates];
     [[SRDataPoint motionManager] stopGyroUpdates];
+    [[SRDataPoint pedometerInstance] stopPedometerUpdates];
+
     [[SRDataPoint motionManager] startAccelerometerUpdates];
     [[SRDataPoint motionManager] startMagnetometerUpdates];
     [[SRDataPoint motionManager] startGyroUpdates];
+    [[SRDataPoint pedometerInstance] startPedometerUpdatesFromDate:[NSDate date]
+                                                       withHandler:self.pedometerUpdateHandler];
 }
 
 - (NSArray<SRDataFile *> *) allRecordedFiles {
