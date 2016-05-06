@@ -188,7 +188,7 @@
                             <constraint firstItem="46x-OF-mRj" firstAttribute="top" secondItem="Mrf-lI-uQG" secondAttribute="bottom" constant="8" id="t6U-HW-bJG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity" id="mBG-RD-JlU"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="iconActivityInactive" selectedImage="iconActivity" id="mBG-RD-JlU"/>
                     <connections>
                         <outlet property="calendarContentView" destination="mbI-DU-VPY" id="4fS-S4-IIf"/>
                         <outlet property="calendarMenuView" destination="46x-OF-mRj" id="bAN-cW-z7X"/>
@@ -620,6 +620,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconActivity" width="30" height="30"/>
+        <image name="iconActivityInactive" width="30" height="30"/>
         <image name="iconFile" width="30" height="30"/>
         <image name="iconFiles" width="30" height="30"/>
         <image name="iconFilesActive" width="30" height="30"/>
