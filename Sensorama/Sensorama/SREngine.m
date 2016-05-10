@@ -97,17 +97,27 @@
     return handler;
 }
 
+- (CMMotionActivityHandler)motionActivityUpdateHandler {
+    void (^handler)(CMMotionActivity *) = ^(CMMotionActivity *activity) {
+        NSLog(@"activity Update: %@", activity);
+    };
+    return handler;
+}
+
 - (void)startSensors {
     [[SRDataPoint motionManager] stopAccelerometerUpdates];
     [[SRDataPoint motionManager] stopMagnetometerUpdates];
     [[SRDataPoint motionManager] stopGyroUpdates];
     [[SRDataPoint pedometerInstance] stopPedometerUpdates];
+    [[SRDataPoint activityManager] stopActivityUpdates];
 
     [[SRDataPoint motionManager] startAccelerometerUpdates];
     [[SRDataPoint motionManager] startMagnetometerUpdates];
     [[SRDataPoint motionManager] startGyroUpdates];
     [[SRDataPoint pedometerInstance] startPedometerUpdatesFromDate:[NSDate date]
                                                        withHandler:self.pedometerUpdateHandler];
+    [[SRDataPoint activityManager] startActivityUpdatesToQueue:[NSOperationQueue mainQueue]
+                                                   withHandler:[self motionActivityUpdateHandler]];
 }
 
 - (NSArray<SRDataFile *> *) allRecordedFiles {

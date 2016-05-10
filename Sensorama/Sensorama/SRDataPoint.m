@@ -73,6 +73,17 @@
     return pedometer;
 }
 
++ (CMMotionActivityManager *)activityManager {
+    __block CMMotionActivityManager *activityManager = nil;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        activityManager = [CMMotionActivityManager new];
+    });
+
+    return activityManager;
+}
+
 + (CMPedometerData *)pedometerDataUpdate:(CMPedometerData *)data {
     static CMPedometerData *pedometerData = nil;
 

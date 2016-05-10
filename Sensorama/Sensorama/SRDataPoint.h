@@ -43,7 +43,7 @@
 + (CMMotionManager *)motionManager;
 + (CMPedometer *)pedometerInstance;
 + (CMPedometerData *)pedometerDataUpdate:(CMPedometerData *)data;
-
++ (CMMotionActivityManager *)activityManager;
 
 @end
 RLM_ARRAY_TYPE(SRDataPoint)
