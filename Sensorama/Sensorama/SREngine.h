@@ -17,5 +17,6 @@
 - (void) recordingStopWithSync:(BOOL)doSync;
 - (void) recordingUpdate;
 - (NSArray<SRDataFile *> *) allRecordedFiles;
+- (NSString *)activityString:(CMMotionActivity *)activity;
 
 @end

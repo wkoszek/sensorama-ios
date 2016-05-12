@@ -97,9 +97,22 @@
     return handler;
 }
 
+- (NSString *)activityString:(CMMotionActivity *)activity
+{
+    NSString *ret = @"";
+    if (activity.automotive) ret = @"car";
+    if (activity.stationary) ret = @"stat";
+    if (activity.cycling)    ret = @"bike";
+    if (activity.running)    ret = @"run";
+    if (activity.walking)    ret = @"walk";
+    if (activity.unknown)    ret = @"unknown";
+    return ret;
+}
+
 - (CMMotionActivityHandler)motionActivityUpdateHandler {
     void (^handler)(CMMotionActivity *) = ^(CMMotionActivity *activity) {
-        NSLog(@"activity Update: %@", activity);
+        NSString *activityString = [self activityString:activity];
+        NSLog(@"activity Update: %@", activityString);
     };
     return handler;
 }
