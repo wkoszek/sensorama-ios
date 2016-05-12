@@ -25,10 +25,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.isDevPhone = [self isDevPhoneDetect];
     if (self.isDevPhone) {
-        LoggerStart(LoggerGetDefaultLogger());
         LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
         [SRAuth enableDebugging];
     }
