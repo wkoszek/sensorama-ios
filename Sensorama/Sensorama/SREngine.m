@@ -70,6 +70,7 @@
     }
 
     SRDataPoint *newPoint = [SRDataPoint new];
+    NSLog(@"newPoint=%@", newPoint);
     [self.dataFile updateWithPoint:newPoint];
 }
 

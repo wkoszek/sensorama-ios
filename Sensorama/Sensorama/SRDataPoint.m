@@ -52,8 +52,7 @@
 #pragma mark - Singletons
 
 + (CMMotionManager *)motionManager {
-    __block CMMotionManager *motionManager = nil;
-
+    static CMMotionManager *motionManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         motionManager = [CMMotionManager new];
@@ -63,8 +62,7 @@
 }
 
 + (CMPedometer *)pedometerInstance {
-    __block CMPedometer *pedometer = nil;
-
+    static CMPedometer *pedometer = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         pedometer = [CMPedometer new];
@@ -74,8 +72,7 @@
 }
 
 + (CMMotionActivityManager *)activityManager {
-    __block CMMotionActivityManager *activityManager = nil;
-
+    static CMMotionActivityManager *activityManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         activityManager = [CMMotionActivityManager new];
