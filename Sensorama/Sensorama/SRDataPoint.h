@@ -14,24 +14,24 @@
 
 @interface SRDataPoint : RLMObject
 
-@property NSNumber<RLMInt> *accX;
-@property NSNumber<RLMInt> *accY;
-@property NSNumber<RLMInt> *accZ;
+@property NSNumber<RLMFloat> *accX;
+@property NSNumber<RLMFloat> *accY;
+@property NSNumber<RLMFloat> *accZ;
 
-@property NSNumber<RLMInt> *magX;
-@property NSNumber<RLMInt> *magY;
-@property NSNumber<RLMInt> *magZ;
+@property NSNumber<RLMFloat> *magX;
+@property NSNumber<RLMFloat> *magY;
+@property NSNumber<RLMFloat> *magZ;
 
-@property NSNumber<RLMInt> *gyroX;
-@property NSNumber<RLMInt> *gyroY;
-@property NSNumber<RLMInt> *gyroZ;
+@property NSNumber<RLMFloat> *gyroX;
+@property NSNumber<RLMFloat> *gyroY;
+@property NSNumber<RLMFloat> *gyroZ;
 
-@property NSNumber<RLMInt> *numberOfSteps;
-@property NSNumber<RLMInt> *distance;
-@property NSNumber<RLMInt> *currentPace;
-@property NSNumber<RLMInt> *currentCadence;
-@property NSNumber<RLMInt> *floorsAscended;
-@property NSNumber<RLMInt> *floorsDescended;
+@property NSNumber<RLMFloat> *numberOfSteps;
+@property NSNumber<RLMFloat> *distance;
+@property NSNumber<RLMFloat> *currentPace;
+@property NSNumber<RLMFloat> *currentCadence;
+@property NSNumber<RLMFloat> *floorsAscended;
+@property NSNumber<RLMFloat> *floorsDescended;
 
 @property NSInteger fileId;
 @property NSInteger pointId;
