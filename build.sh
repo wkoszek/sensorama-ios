@@ -2,10 +2,8 @@
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
 if [ "$1" = "bootstrap" ]; then
-	#rvm get stable --auto-dotfiles
-	#rvm install 2.2
-	source ~/.profile
-	gem install cocoapods --pre
+	gem install bundler
+	gem install cocoapods
 	gem install fastlane
 fi
 
@@ -32,12 +30,24 @@ function build_old() {
 	)
 }
 
+function build_ci() {
+	openssl aes-256-cbc -K $encrypted_c972abe91c70_key -iv $encrypted_c972abe91c70_iv -in scripts/travis.enc -out scripts/travis -d
+	eval "$(ssh-agent -s)"
+	chmod 600 scripts/travis
+	ssh-add scripts/travis
+	(cd Sensorama && fastlane ci)
+}
+
+function build_new() {
+	(cd Sensorama && fastlane beta)
+}
+
 which fastlane 2>/dev/null >/dev/null
 if [ $? -eq 0 ]; then
 	if [ ! -z "$TRAVIS" ]; then
-		(cd Sensorama && fastlane ci)
+		build_ci
 	else
-		(cd Sensorama && fastlane beta)
+		build_new
 	fi
 else
 	build_old
