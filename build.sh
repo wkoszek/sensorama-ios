@@ -30,16 +30,16 @@ function build_old() {
 	)
 }
 
+function build_new() {
+	(cd Sensorama && fastlane beta)
+}
+
 function build_ci() {
 	openssl aes-256-cbc -K $encrypted_c972abe91c70_key -iv $encrypted_c972abe91c70_iv -in scripts/travis.enc -out scripts/travis -d
 	eval "$(ssh-agent -s)"
 	chmod 600 scripts/travis
 	ssh-add scripts/travis
-	(cd Sensorama && fastlane ci)
-}
-
-function build_new() {
-	(cd Sensorama && fastlane beta)
+	build_new
 }
 
 which fastlane 2>/dev/null >/dev/null
