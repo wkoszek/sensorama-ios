@@ -34,7 +34,11 @@ function build_old() {
 
 which fastlane 2>/dev/null >/dev/null
 if [ $? -eq 0 ]; then
-	(cd Sensorama && fastlane beta)
+	if [ ! -z "$TRAVIS" ]; then
+		(cd Sensorama && fastlane ci)
+	else
+		(cd Sensorama && fastlane beta)
+	fi
 else
 	build_old
 fi

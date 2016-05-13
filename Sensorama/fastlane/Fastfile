@@ -59,7 +59,6 @@ platform :ios do
     )
   end
 
-  desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
     certs
@@ -69,6 +68,11 @@ platform :ios do
     #deliver
     crashlytics_beta
     frameit
+  end
+
+  desc "ci build on travis"
+  lane :ci do
+     build_app
   end
 
   desc "Deploy a new version to the App Store"
