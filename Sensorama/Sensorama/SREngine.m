@@ -70,7 +70,7 @@
     }
 
     SRDataPoint *newPoint = [SRDataPoint new];
-    NSLog(@"newPoint=%@", newPoint);
+    //NSLog(@"newPoint=%@", newPoint);
     [self.dataFile updateWithPoint:newPoint];
 }
 
@@ -98,21 +98,11 @@
     return handler;
 }
 
-- (NSString *)activityString:(CMMotionActivity *)activity
-{
-    NSString *ret = @"";
-    if (activity.automotive) ret = @"car";
-    if (activity.stationary) ret = @"stat";
-    if (activity.cycling)    ret = @"bike";
-    if (activity.running)    ret = @"run";
-    if (activity.walking)    ret = @"walk";
-    if (activity.unknown)    ret = @"unknown";
-    return ret;
-}
-
 - (CMMotionActivityHandler)motionActivityUpdateHandler {
     void (^handler)(CMMotionActivity *) = ^(CMMotionActivity *activity) {
-        NSString *activityString = [self activityString:activity];
+        [SRDataPoint motionActivityUpdate:activity];
+
+        NSString *activityString = [SRUtils activityString:activity];
         NSLog(@"activity Update: %@", activityString);
     };
     return handler;

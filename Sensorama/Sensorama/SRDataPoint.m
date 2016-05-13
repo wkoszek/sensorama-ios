@@ -91,6 +91,17 @@
     return pedometerData;
 }
 
++ (CMMotionActivity *)motionActivityUpdate:(CMMotionActivity *)data {
+    static CMMotionActivity *activityData = nil;
+
+    if (data != nil) {
+        activityData = data;
+    }
+
+    return activityData;
+}
+
+
 + (NSInteger) nextPointId:(NSNumber *)number {
     static NSInteger pointId = 0;
     if (number != nil) {
@@ -170,6 +181,9 @@
     self.currentCadence = [pedometerData currentCadence] ? [pedometerData currentCadence] : @(-1);
     self.floorsAscended = [pedometerData floorsAscended] ? [pedometerData floorsAscended] : @(-1);
     self.floorsDescended = [pedometerData floorsDescended] ? [pedometerData floorsDescended] : @(-1);
+
+    CMMotionActivity *activityData = [SRDataPoint motionActivityUpdate:nil];
+    self.activity = @([SRUtils activityInteger:activityData]);
 
     return self;
 }

@@ -33,6 +33,9 @@
 @property NSNumber<RLMFloat> *floorsAscended;
 @property NSNumber<RLMFloat> *floorsDescended;
 
+@property NSNumber<RLMInt> *activity;
+
+
 @property NSInteger fileId;
 @property NSInteger pointId;
 @property NSNumber<RLMDouble> *curTime;
@@ -44,6 +47,7 @@
 + (CMPedometer *)pedometerInstance;
 + (CMPedometerData *)pedometerDataUpdate:(CMPedometerData *)data;
 + (CMMotionActivityManager *)activityManager;
++ (CMMotionActivity *)motionActivityUpdate:(CMMotionActivity *)data;
 
 @end
 RLM_ARRAY_TYPE(SRDataPoint)

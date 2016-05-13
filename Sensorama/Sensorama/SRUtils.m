@@ -8,7 +8,9 @@
 // computeSHA256DigestForString method came from:
 // https://www.raywenderlich.com/6475/basic-security-in-ios-5-tutorial-part-1
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import CoreMotion;
+
 #import <Security/Security.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import <GBDeviceInfo/GBDeviceInfo.h>
@@ -99,6 +101,36 @@
 #else
     return false;
 #endif
+}
+
+
++ (NSString *)activityStringAndInt:(CMMotionActivity *)activity integer:(NSInteger *)returnInt
+{
+    NSString *retStr = @"";
+    NSInteger actInt = -1;
+    if (activity.unknown)    { retStr = @"unknown"; actInt = 0; }
+    if (activity.stationary) { retStr = @"stat";    actInt = 1; }
+    if (activity.walking)    { retStr = @"walk";    actInt = 2; }
+    if (activity.running)    { retStr = @"run";     actInt = 3; }
+    if (activity.cycling)    { retStr = @"bike";    actInt = 4; }
+    if (activity.automotive) { retStr = @"car";     actInt = 5; }
+    if (returnInt != NULL) {
+        *returnInt = actInt;
+    }
+    return retStr;
+}
+
++ (NSString *)activityString:(CMMotionActivity *)activity
+{
+    return [SRUtils activityStringAndInt:activity integer:NULL];
+}
+
+
++ (NSInteger)activityInteger:(CMMotionActivity *)activity
+{
+    NSInteger retInt = -1;
+    [SRUtils activityStringAndInt:activity integer:&retInt];
+    return retInt;
 }
 
 @end

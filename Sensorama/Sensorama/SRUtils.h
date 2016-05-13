@@ -15,5 +15,7 @@
 + (NSDictionary *)deviceInfo;
 + (NSString*)computeSHA256DigestForString:(NSString*)input;
 + (BOOL)isSimulator;
++ (NSString *)activityString:(CMMotionActivity *)activity;
++ (NSInteger)activityInteger:(CMMotionActivity *)activity;
 
 @end
