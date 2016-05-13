@@ -1,14 +1,16 @@
 language: objective-c
 osx_image: xcode7.3
 rvm:
-  - ruby-head
+  - 2.2
+  #ruby-head
 podfile: Sensorama/Podfile
 #cache:
 #  - cocoapods
 #  - directories: 
 #    - $HOME/.rvm
-before_install:
-- gem instal cocoapods
+before_script:
+- gem install bundler
+- gem install cocoapods
 - gem install fastlane
 #- rvm get stable --auto-dotfiles
 #- rvm install 2.2
