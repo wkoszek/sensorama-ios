@@ -5,3 +5,6 @@ rvm:
 podfile: Sensorama/Podfile
 script:
 - "./build.sh"
+addons:
+  ssh_known_hosts:
+  - gitlab.com
