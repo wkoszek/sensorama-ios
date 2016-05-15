@@ -25,11 +25,13 @@ platform :ios do
   desc "Fetches the provisioning profiles so you can build locally and deploy to your device"
   lane :certs do
     slack(message: "certs", success: true)
+    is_ci = ENV['TRAVIS'] ? true : false
     match(
       app_identifier: "com.koszek.Sensorama",
       type: "development",
       git_url: ENV['FASTLANE_GIT_URL'],
-      force: true
+      force: is_ci ? false : true,
+      readonly: is_ci ? true : false
     )
   end
 
