@@ -69,7 +69,7 @@ platform :ios do
     build_app
     #deliver
     crashlytics_beta
-    frameit
+    #frameit
   end
 
   desc "ci build on travis"
