@@ -3,8 +3,8 @@
 
 if [ "$1" = "bootstrap" ]; then
 	gem install bundler
-	gem install cocoapods
-	gem install fastlane
+	gem install cocoapods --pre
+	gem install fastlane --pre
 fi
 
 PROJ=Sensorama
