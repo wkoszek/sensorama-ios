@@ -32,6 +32,14 @@
 
 @implementation ActivityViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"%s", __func__);
+
+    [super viewDidAppear:animated];
+    [self.tabBarController setTitle:@"Activity"];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
