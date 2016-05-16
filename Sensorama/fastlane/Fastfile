@@ -3,6 +3,8 @@ fastlane_version "1.52.0"
 
 default_platform :ios
 
+is_ci = ENV['TRAVIS'] ? true : false
+
 def build_app
   gym(
     workspace: "Sensorama.xcworkspace",
@@ -25,7 +27,6 @@ platform :ios do
   desc "Fetches the provisioning profiles so you can build locally and deploy to your device"
   lane :certs do
     slack(message: "certs", success: true)
-    is_ci = ENV['TRAVIS'] ? true : false
     match(
       app_identifier: "com.koszek.Sensorama",
       type: "development",
@@ -65,7 +66,9 @@ platform :ios do
   lane :beta do
     certs
     sigh(development: true)
-    increment_build_number
+    if not is_ci then
+      increment_build_number
+    end
     build_app
     #deliver
     crashlytics_beta
