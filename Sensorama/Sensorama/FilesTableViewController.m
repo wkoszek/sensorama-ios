@@ -38,7 +38,6 @@
     self.tableView.tableFooterView = [UIView new];  // Trick to remove line separators
 
     SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
-    // XXXTODO
     self.filesList = [tabController.engine allRecordedFiles];
     NSLog(@"filelistZZZ=%@", self.filesList);
 
@@ -84,6 +83,7 @@
         [cell.imageView setImage:[UIImage imageNamed:@"iconFile"]];
     }
 
+    
 
     SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
     [cell.textLabel setText:[dataFile printableLabel]];
