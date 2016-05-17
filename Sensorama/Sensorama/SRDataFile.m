@@ -100,7 +100,7 @@
     dispatch_once(&(_onceToken), ^{
         [self startWithDate:[NSDate date]];
     });
-    self.dateEnd = [NSDate date];       // XXTODO: figure if we could re-use curTime
+    self.dateEnd = [NSDate date];
 }
 
 - (void) finalizeWithDate:(NSDate *)dateEnd {
