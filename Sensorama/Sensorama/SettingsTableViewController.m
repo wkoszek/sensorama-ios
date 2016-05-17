@@ -12,9 +12,15 @@
 
 @interface SettingsTableViewController ()
 @property (weak, nonatomic) NSString *versionString;
+@property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *sensorState;
+
 @end
 
 @implementation SettingsTableViewController
+
+- (IBAction)sensorStateChange:(id)sender forEvent:(UIEvent *)event {
+    NSLog(@"event Changed");
+}
 
 - (NSString *)versionString {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
@@ -55,6 +61,8 @@
         return [super tableView:tableView titleForFooterInSection:section];
     }
 }
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
