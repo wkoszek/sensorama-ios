@@ -126,7 +126,7 @@
 
 - (NSArray<SRDataFile *> *) allRecordedFiles {
     NSMutableArray *array = [NSMutableArray new];
-    for (SRDataFile *file in [[SRDataFile allObjects] sortedResultsUsingProperty:@"fileId" ascending:YES]) {
+    for (SRDataFile *file in [[SRDataFile allObjects] sortedResultsUsingProperty:@"fileId" ascending:NO]) {
         [array addObject:file];
     }
     return array;
