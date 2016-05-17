@@ -298,6 +298,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIA-sA-gA9" userLabel="switchAccelerometer">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="switchAccelerometer"/>
                                                     <color key="onTintColor" red="0.77254901960784317" green="0.066666666666666666" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="sensorStateChange:forEvent:" destination="eUA-kF-p8x" eventType="valueChanged" id="8GD-gr-Ena"/>
@@ -330,6 +331,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-G1-Ufd" userLabel="switchGyroscope">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="switchGyroscope"/>
                                                     <color key="onTintColor" red="0.77254901960784317" green="0.066666666666666666" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="sensorStateChange:forEvent:" destination="eUA-kF-p8x" eventType="valueChanged" id="MpB-B6-CAk"/>
@@ -362,6 +364,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C7Y-jd-nUr" userLabel="switchPedometer">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="switchPedometer"/>
                                                     <color key="onTintColor" red="0.77254901960784317" green="0.066666666666666666" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="sensorStateChange:forEvent:" destination="eUA-kF-p8x" eventType="valueChanged" id="nd2-3d-Frv"/>
@@ -394,6 +397,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZF-7N-wLc" userLabel="switchProximity">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="switchProximity"/>
                                                     <color key="onTintColor" red="0.77254901960784317" green="0.066666666666666666" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="sensorStateChange:forEvent:" destination="eUA-kF-p8x" eventType="valueChanged" id="5Fy-Ru-1Mz"/>
@@ -504,6 +508,12 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" selectedImage="iconSettingsActive" id="Vt4-ac-qwa"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="sensorState" destination="CIA-sA-gA9" id="IEh-8A-dVd"/>
+                        <outletCollection property="sensorState" destination="bOG-G1-Ufd" id="dco-CT-TI1"/>
+                        <outletCollection property="sensorState" destination="C7Y-jd-nUr" id="HwQ-7u-qSK"/>
+                        <outletCollection property="sensorState" destination="NZF-7N-wLc" id="qoe-f3-6pM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRn-b2-r2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

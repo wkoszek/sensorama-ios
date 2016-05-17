@@ -13,14 +13,10 @@
 @interface SettingsTableViewController ()
 @property (weak, nonatomic) NSString *versionString;
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *sensorState;
-
 @end
 
 @implementation SettingsTableViewController
 
-- (IBAction)sensorStateChange:(id)sender forEvent:(UIEvent *)event {
-    NSLog(@"event Changed");
-}
 
 - (NSString *)versionString {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
@@ -28,6 +24,15 @@
                     [infoDict objectForKey:@"CFBundleShortVersionString"],
                     [infoDict objectForKey:@"CFBundleVersion"]
             ];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
+    for (UISwitch *sw in self.sensorState) {
+        NSString *swName = [sw accessibilityIdentifier];
+        BOOL shouldBeOn = [savedSettings boolForKey:swName];
+        [sw setOn:shouldBeOn];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animate {
@@ -62,6 +67,18 @@
     }
 }
 
+
+- (IBAction)sensorStateChange:(id)sender forEvent:(UIEvent *)event {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    if ([sender isKindOfClass:[UISwitch class]]) {
+        UISwitch *sw = (UISwitch *)sender;
+        NSString *swName = [sw accessibilityIdentifier];
+        [defaults setBool:[sw isOn] forKey:swName];
+    }
+
+    NSLog(@"event %@ changed %@", event, sender);
+}
 
 
 /*
