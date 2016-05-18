@@ -20,20 +20,12 @@
     return sharedInstance;
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        _realm = [RLMRealm defaultRealm];
-    }
-    return self;
-}
-
 - (void) insertDataFile:(SRDataFile *)dataFile
 {
     RLMRealm *realm = [RLMRealm defaultRealm];
 
     [realm beginWriteTransaction];
-    [realm addObject:dataFile];
+    [realm addOrUpdateObject:dataFile];
     [realm commitWriteTransaction];
 }
 

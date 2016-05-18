@@ -13,8 +13,6 @@
 
 @interface SRDataStore : NSObject
 
-@property (readonly) RLMRealm *realm;
-
 + (SRDataStore *)sharedInstance;
 - (void) insertDataFile:(SRDataFile *)dataFile;
 - (void) insertDataPoints:(NSArray<SRDataPoint *> *) points;

@@ -13,6 +13,8 @@
 #import "SRAuth.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
+#import "SRDataFile.h"
+#import "SRDataStore.h"
 
 #import "SensoramaVars.h"
 
@@ -68,10 +70,22 @@
     uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], fileBaseName];
     uploadRequest.body = fileURL;
 
+    NSInteger fileId = [self.fileToSync fileId];
+
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
-        NSLog(@"download block");
+        NSLog(@"download block: %@", [task error]);
         if ([task error] == nil) {
+            dispatch_async([SRDataFile saveQueue], ^{
+                RLMRealm *realm = [RLMRealm defaultRealm];
+                SRDataFile *file = [SRDataFile objectForPrimaryKey:@(fileId)];
+                [realm beginWriteTransaction];
+                file.isExported = true;
+                [realm addOrUpdateObject:file];
+                [realm commitWriteTransaction];
+            });
             NSLog(@"task finished");
+        } else {
+            NSLog(@"error = %@", [[task error] localizedDescription]);
         }
         return nil;
     }];

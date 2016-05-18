@@ -19,11 +19,11 @@
 
 @synthesize configuration = _configuration;
 
-//+ (NSString *)primaryKey
-//{
-//    return @"fileId";
-//}
-//
++ (NSString *)primaryKey
+{
+    return @"fileId";
+}
+
 //+ (NSDictionary *)defaultPropertyValues
 //{
 //    return @{@"fileId": @(0) };
@@ -46,6 +46,7 @@
     _dataPoints = [NSMutableArray new];
     _dateStart = nil;
     _dateEnd = nil;
+    _isExported = NO;
     ///* need to do something about device_info */
 
      return self;
@@ -150,7 +151,7 @@
 }
 
 - (NSString *)printableLabelDetails {
-    return @"details";
+    return [NSString stringWithFormat:@"Exported: %@", self.isExported ? @"yes" : @"no"];
 }
 
 - (NSDictionary *)toDict {

@@ -27,9 +27,11 @@
 @property NSDate *dateStart;
 @property NSDate *dateEnd;
 @property NSInteger fileId;
+@property BOOL isExported;
 
 @property (nonatomic, readonly) NSMutableArray *dataPoints;
-//@property RLMArray<SRDataPoint> *dataPoints;
+
++ (dispatch_queue_t) saveQueue;
 
 - (instancetype) initWithConfiguration:(SRCfg *)cfg fileId:(NSInteger)fileId
                               userName:(NSString *)userName;
