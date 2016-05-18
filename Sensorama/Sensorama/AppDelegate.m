@@ -12,6 +12,7 @@
 #import "SRUsageStats.h"
 #import "SRAuth.h"
 #import "SRUtils.h"
+#import "SRDataStore.h"
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
@@ -59,6 +60,7 @@
 
     [SRAuth startWithLaunchOptions:launchOptions];
     [SRUsageStats eventAppOpened];
+    [SRDataStore handleMigrations];
 
     return YES;
 }

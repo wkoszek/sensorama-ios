@@ -8,6 +8,7 @@
 
 #import "SRDataStore.h"
 #import "SRDataFile.h"
+#import "SRUtils.h"
 
 @implementation SRDataStore
 
@@ -18,6 +19,26 @@
         sharedInstance = [self new];
     });
     return sharedInstance;
+}
+
++ (void) handleMigrations {
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    int currentSchemaVersion = [[SRUtils bundleVersionString] intValue];
+
+    assert(currentSchemaVersion > 60);
+
+    config.schemaVersion = currentSchemaVersion;
+
+    config.migrationBlock = ^(RLMMigration *migration, uint64_t oldSchemaVersion) {
+        if (oldSchemaVersion < 60) {
+            [migration enumerateObjects:SRDataFile.className
+                                  block:^(RLMObject *oldObject, RLMObject *newObject) {
+                                      newObject[@"isExported"] = @(false);
+                                  }];
+        }
+    };
+    [RLMRealmConfiguration setDefaultConfiguration:config];
+    [RLMRealm defaultRealm];
 }
 
 - (void) insertDataFile:(SRDataFile *)dataFile

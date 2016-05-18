@@ -14,6 +14,7 @@
 @interface SRDataStore : NSObject
 
 + (SRDataStore *)sharedInstance;
++ (void) handleMigrations;
 - (void) insertDataFile:(SRDataFile *)dataFile;
 - (void) insertDataPoints:(NSArray<SRDataPoint *> *) points;
 
