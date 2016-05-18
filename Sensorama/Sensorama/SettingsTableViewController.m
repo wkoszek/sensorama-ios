@@ -23,7 +23,11 @@
     NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
     for (UISwitch *sw in self.sensorState) {
         NSString *swName = [sw accessibilityIdentifier];
-        BOOL shouldBeOn = [savedSettings boolForKey:swName];
+
+        BOOL shouldBeOn = true;
+        if ([savedSettings objectForKey:swName] != nil) {
+            shouldBeOn = [savedSettings boolForKey:swName];
+        }
         [sw setOn:shouldBeOn];
     }
 }
