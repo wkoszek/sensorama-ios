@@ -17,7 +17,6 @@
 @property NSString *username;
 @property NSString *desc;
 @property NSString *timezone;
-/* need to do something about device_info */
 
 @property NSInteger sampleInterval;
 @property BOOL accEnabled;

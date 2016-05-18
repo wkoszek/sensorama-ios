@@ -12,6 +12,7 @@
 #import "SRDataFile.h"
 #import "SRDataStore.h"
 #import "SRDataPoint.h"
+#import "SRUtils.h"
 #import "SRDebug.h"
 #import "SRSync.h"
 
@@ -47,7 +48,6 @@
     _dateStart = nil;
     _dateEnd = nil;
     _isExported = NO;
-    ///* need to do something about device_info */
 
      return self;
 }
@@ -107,8 +107,6 @@
 - (void) finalizeWithDate:(NSDate *)dateEnd {
     SRPROBE0();
 
-    /* do something about device_info */
-    /* sensor states */
     self.dateEnd = dateEnd;
 }
 
@@ -156,16 +154,18 @@
 
 - (NSDictionary *)toDict {
     return @{
-             @"username" : self.username,
-             @"desc" : self.desc,
-             @"timezone" : self.timezone,
-             @"interval" : @(self.sampleInterval),
-             @"accEnabled" : @(self.accEnabled),
-             @"magEnabled" : @(self.magEnabled),
-             @"gyroEnabled" : @(self.gyroEnabled),
-             @"dateStart" : [self stringDateStart],
-             @"dateEnd" : [self stringDateEnd],
-             @"fileId" : @(self.fileId)
+             @"file_info" : @{
+                     @"username" : self.username,
+                     @"desc" : self.desc,
+                     @"timezone" : self.timezone,
+                     @"interval" : @(self.sampleInterval),
+                     @"accEnabled" : @(self.accEnabled),
+                     @"magEnabled" : @(self.magEnabled),
+                     @"gyroEnabled" : @(self.gyroEnabled),
+                     @"dateStart" : [self stringDateStart],
+                     @"dateEnd" : [self stringDateEnd],
+                     @"fileId" : @(self.fileId)
+            },
     };
 }
 
@@ -193,6 +193,7 @@
         [points addObject:pointDict];
     }
     [wholeFile setObject:points forKey:@"points"];
+    [wholeFile setObject:[SRUtils deviceInfo] forKey:@"device_info"];
 
     NSError *error = nil;
     NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:wholeFile
