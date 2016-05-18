@@ -8,23 +8,16 @@
 
 #import "SettingsTableViewController.h"
 #import "SRUsageStats.h"
+#import "SRUtils.h"
 
 
 @interface SettingsTableViewController ()
-@property (weak, nonatomic) NSString *versionString;
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *sensorState;
 @end
 
 @implementation SettingsTableViewController
 
 
-- (NSString *)versionString {
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    return [NSString stringWithFormat:@"Sensorama %@ (build:%@)",
-                    [infoDict objectForKey:@"CFBundleShortVersionString"],
-                    [infoDict objectForKey:@"CFBundleVersion"]
-            ];
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
@@ -61,7 +54,7 @@
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     if (section == [self.tableView numberOfSections] - 1) {
-        return (self.versionString);
+        return ([SRUtils humanSensoramaVersionString]);
     } else {
         return [super tableView:tableView titleForFooterInSection:section];
     }

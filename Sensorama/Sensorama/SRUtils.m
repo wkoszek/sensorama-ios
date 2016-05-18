@@ -133,4 +133,17 @@
     return retInt;
 }
 
++ (NSString *)bundleVersionString {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+}
+
++ (NSString *)bundleShortVersionString {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+
++ (NSString *)humanSensoramaVersionString {
+    return [NSString stringWithFormat:@"Sensorama %@ (build:%@)",
+            [SRUtils bundleShortVersionString], [SRUtils bundleVersionString]];
+}
+
 @end

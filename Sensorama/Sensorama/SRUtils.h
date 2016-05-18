@@ -18,5 +18,8 @@
 + (BOOL)isSimulator;
 + (NSString *)activityString:(CMMotionActivity *)activity;
 + (NSInteger)activityInteger:(CMMotionActivity *)activity;
++ (NSString *)bundleVersionString;
++ (NSString *)bundleShortVersionString;
++ (NSString *)humanSensoramaVersionString;
 
 @end
