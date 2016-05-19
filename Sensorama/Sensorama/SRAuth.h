@@ -23,5 +23,6 @@
 + (void) startWithLaunchOptions:(NSDictionary *)launchOptions;
 + (A0UserProfile *) currentProfile;
 + (NSString *)emailHashed;
++ (void)doAmazonLogin:(NSString *)token;
 
 @end

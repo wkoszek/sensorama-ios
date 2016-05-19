@@ -9,21 +9,13 @@
 @import UIKit;
 @import CoreMotion;
 
-
-
 #import "SREngine.h"
 #import "SRCfg.h"
-#import "SRSync.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
 #import "SRAuth.h"
 #import "SRDataFile.h"
 #import "SRDataPoint.h"
-
-#if 0
-#import "ObjCBSON/BSONSerialization.h"
-#endif
-
 
 @interface SREngine ()
 

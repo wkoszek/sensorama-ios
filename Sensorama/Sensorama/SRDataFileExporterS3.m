@@ -9,7 +9,7 @@
 #import <AWSCore/AWSCore.h>
 #import <AWSS3/AWSS3.h>
 
-#import "SRSync.h"
+#import "SRDataFileExporterS3.h"
 #import "SRAuth.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
@@ -18,50 +18,15 @@
 
 #import "SensoramaVars.h"
 
-@interface SRSync ()
-@property AWSCognitoCredentialsProvider *provider;
+@interface SRDataFileExporterS3 ()
 @end
 
-@implementation SRSync
+@implementation SRDataFileExporterS3
 
-+ (void)doAmazonLogin:(NSString *)token
+- (void)exportWithFile:(SRDataFile *)dataFile;
 {
-    AWSCognitoCredentialsProvider *provider = [[SRAuth sharedInstance] credentialsProvider];
-
-    SRPROBE1(provider);
-
-#if 0
-    // Broken for now.
-    [provider setLogins:@{ @"koszek.auth0.com" : token }];
-    [[provider getIdentityId] continueWithBlock:^id _Nullable(AWSTask * _Nonnull task) {
-        if ([task error]) {
-            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login failed");
-        } else {
-            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login complete");
-        }
-        return nil;
-    }];
-#endif
-}
-
-- (instancetype)initWithFile:(SRDataFile *)dataFile configuration:(SRCfg *)configuration
-{
-    self = [super init];
-    if (self) {
-        self.fileToSync = dataFile;
-        self.configuration = configuration;
-    }
-    return self;
-}
-
-- (instancetype) init {
-    return [self initWithFile:nil configuration:nil];
-}
-
-- (void)syncStart
-{
-    NSString *fileBaseName = [self.fileToSync fileBasePathName];
-    NSURL *fileURL = [NSURL fileURLWithPath:[self.fileToSync filePathName]];
+    NSString *fileBaseName = [dataFile fileBasePathName];
+    NSURL *fileURL = [NSURL fileURLWithPath:[dataFile filePathName]];
     SRPROBE1(fileURL);
 
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
@@ -70,7 +35,7 @@
     uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], fileBaseName];
     uploadRequest.body = fileURL;
 
-    NSInteger fileId = [self.fileToSync fileId];
+    NSInteger fileId = [dataFile fileId];
 
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
         NSLog(@"download block: %@", [task error]);

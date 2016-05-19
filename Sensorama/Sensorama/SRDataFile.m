@@ -13,7 +13,6 @@
 #import "SRDataPoint.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
-#import "SRSync.h"
 
 @implementation SRDataFile
 
