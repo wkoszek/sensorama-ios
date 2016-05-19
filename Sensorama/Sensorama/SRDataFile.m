@@ -128,7 +128,7 @@
     [self save];
     [self savePoints];
     if (doSync) {
-        [self exportWithSync:doSync];
+        [self serializeWithSync:doSync];
     }
 }
 
@@ -180,7 +180,7 @@
     return targetPath;
 }
 
-- (void) exportWithSync:(BOOL)doSync {
+- (void) serializeWithSync:(BOOL)doSync {
     SRPROBE0();
 
     NSDictionary *dataFileDict = [self toDict];
