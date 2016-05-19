@@ -51,7 +51,6 @@
 - (NSString *) printableLabelDetails;
 
 // General serialize/export methods.
-- (NSDictionary *)toDict;
 - (NSDictionary *)serializeToMemory;
 
 // Not in the persistent data model.

@@ -59,17 +59,30 @@
     [realm commitWriteTransaction];
 }
 
-- (void) serializeToFile:(NSDictionary *)fileInMemory
-                delegate:(id<SRDataFileSerializeDelegate>)delegate;
-{
-
-//    SRSync *syncFile = [[SRSync alloc] initWithFile:self configuration:self.configuration];
-//    [syncFile syncStart];
+- (void) addSerializer:(id<SRDataFileSerializeDelegate>)serializer {
 
 }
 
-- (void) serializeToFile:(NSDictionary *)fileInMemory
+- (void) addExporter:(id<SRDataFileExportDelegate>)exporter {
+
+}
+
+- (void) serializeFile:(SRDataFile *)fileInMemory
+              delegate:(id<SRDataFileSerializeDelegate>)delegate
 {
+
+    //    SRSync *syncFile = [[SRSync alloc] initWithFile:self configuration:self.configuration];
+    //    [syncFile syncStart];
+
+}
+
+
+- (void) serializeFile:(SRDataFile *)fileInMemory {
+
+}
+
+- (void) exportFiles:(NSArray<SRDataFile *> *)filesToSync {
+
 }
 
 @end
