@@ -82,7 +82,7 @@
     
     // This is an iOS5-specific method.
     // It takes in the data, how much data, and then output format, which in this case is an int array.
-    CC_SHA256(data.bytes, data.length, digest);
+    CC_SHA256(data.bytes, (CC_LONG)data.length, digest);
     
     // Setup our Objective-C output.
     NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
