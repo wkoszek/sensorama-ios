@@ -10,6 +10,7 @@
 
 #import "SRAuth.h"
 #import "SRUtils.h"
+#import "SRDebug.h"
 
 #import "SensoramaVars.h"
 
@@ -66,6 +67,28 @@
     NSString *emailStringHashed = [SRUtils computeSHA256DigestForString:emailString];
     return emailStringHashed;
 }
+
++ (void)doAmazonLogin:(NSString *)token
+{
+    AWSCognitoCredentialsProvider *provider = [[SRAuth sharedInstance] credentialsProvider];
+
+    SRPROBE1(provider);
+
+#if 0
+    // Broken for now.
+    [provider setLogins:@{ @"koszek.auth0.com" : token }];
+    [[provider getIdentityId] continueWithBlock:^id _Nullable(AWSTask * _Nonnull task) {
+        if ([task error]) {
+            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login failed");
+        } else {
+            NSLog(@"!!!!!!!!!!!!!!!!!! Amazon login complete");
+        }
+        return nil;
+    }];
+#endif
+}
+
+
 
 @end
 
