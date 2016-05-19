@@ -24,7 +24,8 @@
 
 @interface SRDataStore : NSObject
 
-@property (nonatomic) id<SRDataFileSerializeDelegate> delegate;
+@property (nonatomic) NSMutableArray <id<SRDataFileSerializeDelegate>> *serializers;
+@property (nonatomic) NSMutableArray <id<SRDataFileExportDelegate>> *exporters;
 
 + (SRDataStore *)sharedInstance;
 - (void) addSerializer:(id<SRDataFileSerializeDelegate>)serializer;

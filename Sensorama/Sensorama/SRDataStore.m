@@ -9,6 +9,7 @@
 #import "SRDataStore.h"
 #import "SRDataFile.h"
 #import "SRUtils.h"
+#import "SRDataFileSerializerJSONBZ2.h"
 
 @implementation SRDataStore
 
@@ -17,8 +18,36 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [self new];
+
+        sharedInstance.serializers = [NSMutableArray new];
+        sharedInstance.exporters = [NSMutableArray new];
+
+        SRDataFileSerializerJSONBZ2 *serializedJSONBZ2 = [SRDataFileSerializerJSONBZ2 new];
+        [sharedInstance addSerializer:serializedJSONBZ2];
     });
     return sharedInstance;
+}
+
+- (void) addSerializer:(id<SRDataFileSerializeDelegate>)serializer {
+    [self.serializers addObject:serializer];
+}
+
+- (void) addExporter:(id<SRDataFileExportDelegate>)exporter {
+    [self.exporters addObject:exporter];
+}
+
+- (void) serializeFile:(SRDataFile *)dataFile {
+    for (id<SRDataFileSerializeDelegate> delegate in self.serializers) {
+        [delegate serializeWithFile:dataFile];
+    }
+}
+
+- (void) exportFiles:(NSArray<SRDataFile *> *)filesToSync {
+    for (id<SRDataFileExportDelegate> delegate in self.exporters) {
+        for (SRDataFile *fileToSyncOne in filesToSync) {
+            [delegate exportWithFile:fileToSyncOne];
+        }
+    }
 }
 
 + (void) handleMigrations {
@@ -57,32 +86,6 @@
     [realm beginWriteTransaction];
     [realm addOrUpdateObjectsFromArray:points];
     [realm commitWriteTransaction];
-}
-
-- (void) addSerializer:(id<SRDataFileSerializeDelegate>)serializer {
-
-}
-
-- (void) addExporter:(id<SRDataFileExportDelegate>)exporter {
-
-}
-
-- (void) serializeFile:(SRDataFile *)fileInMemory
-              delegate:(id<SRDataFileSerializeDelegate>)delegate
-{
-
-    //    SRSync *syncFile = [[SRSync alloc] initWithFile:self configuration:self.configuration];
-    //    [syncFile syncStart];
-
-}
-
-
-- (void) serializeFile:(SRDataFile *)fileInMemory {
-
-}
-
-- (void) exportFiles:(NSArray<SRDataFile *> *)filesToSync {
-
 }
 
 @end
