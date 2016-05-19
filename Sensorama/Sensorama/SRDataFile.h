@@ -39,18 +39,20 @@
 - (void) startWithDate:(NSDate *)dateStart;
 - (void) updateWithPoint:(SRDataPoint *)point;
 - (void) finalizeWithDate:(NSDate *)dateEnd;
-- (void) saveWithSync:(BOOL)doSync;
+- (void) saveWithExport:(BOOL)doExport;
 - (void) save;
 - (void) savePoints;
 - (void) pruneFileCache;
+- (void) serializeWithData:(NSData *)data path:(NSString *)filePath;
 
 - (NSString *) fileBasePathName;
 - (NSString *) filePathName;
 - (NSString *) printableLabel;
 - (NSString *) printableLabelDetails;
 
-// General helper methods.
+// General serialize/export methods.
 - (NSDictionary *)toDict;
+- (NSDictionary *)serializeToMemory;
 
 // Not in the persistent data model.
 @property (nonatomic, readonly) SRCfg *configuration;

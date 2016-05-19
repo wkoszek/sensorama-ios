@@ -6,7 +6,6 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <BZipCompression/BZipCompression.h>
 #import <MPMessagePack/MPMessagePack.h>
 
 #import "SRDataFile.h"
@@ -124,11 +123,11 @@
     });
 }
 
-- (void) saveWithSync:(BOOL)doSync {
+- (void) saveWithExport:(BOOL)doExport {
     [self save];
     [self savePoints];
-    if (doSync) {
-        [self serializeWithSync:doSync];
+    if (doExport) {
+        [self serializeWithExport:doExport];
     }
 }
 
@@ -152,7 +151,7 @@
     return [NSString stringWithFormat:@"Exported: %@", self.isExported ? @"yes" : @"no"];
 }
 
-- (NSDictionary *)toDict {
+- (NSDictionary *)fileInfoDict {
     return @{
              @"file_info" : @{
                      @"username" : self.username,
@@ -180,11 +179,9 @@
     return targetPath;
 }
 
-- (void) serializeWithSync:(BOOL)doSync {
-    SRPROBE0();
-
-    NSDictionary *dataFileDict = [self toDict];
-    NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:dataFileDict];
+- (NSDictionary *)serializeToMemory {
+    NSDictionary *fileInfoDict = [self fileInfoDict];
+    NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:fileInfoDict];
 
     RLMResults<SRDataPoint *> *pointsRaw = [SRDataPoint objectsWhere:@"fileId = %d", self.fileId];
     NSMutableArray <NSDictionary *> *points = [NSMutableArray new];
@@ -195,29 +192,30 @@
     [wholeFile setObject:points forKey:@"points"];
     [wholeFile setObject:[SRUtils deviceInfo] forKey:@"device_info"];
 
-    NSError *error = nil;
-    NSData *sampleDataJSON = [NSJSONSerialization dataWithJSONObject:wholeFile
-                                                             options:NSJSONWritingPrettyPrinted error:&error];
+    return wholeFile;
+}
 
-    NSLog(@"%@", [[NSString alloc] initWithData:sampleDataJSON encoding:NSUTF8StringEncoding]);
-    NSData *compressedDataJSON = [BZipCompression compressedDataWithData:sampleDataJSON
-                                                               blockSize:BZipDefaultBlockSize
-                                                              workFactor:BZipDefaultWorkFactor
-                                                                   error:&error];
-    SRPROBE1(@([sampleDataJSON length]));
-    SRPROBE1(@([compressedDataJSON length]));
-
-    [self pruneFileCache];
-
-    NSString *outFileName = [self filePathName];
-    [self serializeWithData:compressedDataJSON path:outFileName];
-    if (doSync) {
-        SRSync *syncFile = [[SRSync alloc] initWithFile:self configuration:self.configuration];
-        [syncFile syncStart];
++ (NSArray <SRDataFile *> *) filesAll {
+    RLMResults<SRDataFile *> *allFilesResults = [SRDataFile allObjects];
+    NSMutableArray <SRDataFile *> *allFiles = [NSMutableArray new];
+    for (SRDataFile *tmpFile in allFilesResults) {
+        [allFiles addObject:tmpFile];
     }
+    return allFiles;
+}
+
+- (void) serializeWithExport:(BOOL)doExport {
+    SRPROBE0();
+
+    [[SRDataStore sharedInstance] serializeFile:self];
+    if (doExport) {
+        [[SRDataStore sharedInstance] exportFiles:@[ self ]];
+        [[SRDataStore sharedInstance] exportFiles:[SRDataFile filesAll]];
+    }
+    [self pruneFileCache];
+}
 
 #if 0
-
     NSData *sampleDataMP = [self.srContent mp_messagePack];
     NSData *compressedDataMP = [BZipCompression compressedDataWithData:sampleDataMP
                                                              blockSize:BZipDefaultBlockSize
@@ -238,7 +236,7 @@
 
 
 #endif
-}
+
 
 - (void) serializeWithData:(NSData *)data path:(NSString *)filePath {
     [data writeToFile:filePath atomically:NO];

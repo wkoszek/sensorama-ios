@@ -164,7 +164,7 @@
         [tabBarController.engine recordingStart];
         [self activateOtherTabs:NO];
     } else {
-        [tabBarController.engine recordingStopWithSync:YES];
+        [tabBarController.engine recordingStopWithExport:YES];
         [self activateOtherTabs:YES];
         filesTVC.filesList = [tabBarController.engine allRecordedFiles];
     }

@@ -14,7 +14,7 @@
 
 - (instancetype) init;
 - (void) recordingStart;
-- (void) recordingStopWithSync:(BOOL)doSync;
+- (void) recordingStopWithExport:(BOOL)doExport;
 - (void) recordingUpdate;
 - (NSArray<SRDataFile *> *) allRecordedFiles;
 

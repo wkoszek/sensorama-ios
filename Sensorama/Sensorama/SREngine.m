@@ -78,15 +78,15 @@
     [self recordingStartWithUpdates:YES];
 }
 
-- (void) recordingStopWithSync:(BOOL)doSync {
+- (void) recordingStopWithExport:(BOOL)doExport {
     [self.timer invalidate];
     self.timer = nil;
     [self.dataFile finalizeWithDate:[NSDate date]];
-    [self.dataFile saveWithSync:doSync];
+    [self.dataFile saveWithExport:doExport];
 }
 
 - (void) recordingStop {
-    [self recordingStopWithSync:YES];
+    [self recordingStopWithExport:YES];
 }
 
 
