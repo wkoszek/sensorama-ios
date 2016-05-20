@@ -194,8 +194,8 @@
     return wholeFile;
 }
 
-+ (NSArray <SRDataFile *> *) filesAll {
-    RLMResults<SRDataFile *> *allFilesResults = [SRDataFile allObjects];
++ (NSArray <SRDataFile *> *) filesWithPredicate:(NSPredicate *)predicate {
+    RLMResults<SRDataFile *> *allFilesResults = [SRDataFile objectsWithPredicate:predicate];
     NSMutableArray <SRDataFile *> *allFiles = [NSMutableArray new];
     for (SRDataFile *tmpFile in allFilesResults) {
         [allFiles addObject:tmpFile];
@@ -203,13 +203,17 @@
     return allFiles;
 }
 
++ (NSArray <SRDataFile *> *) filesNotExported {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isExported == 0"];
+    return [SRDataFile filesWithPredicate:predicate];
+}
+
 - (void) serializeWithExport:(BOOL)doExport {
     SRPROBE0();
 
     [[SRDataStore sharedInstance] serializeFile:self];
     if (doExport) {
-        [[SRDataStore sharedInstance] exportFiles:@[ self ]];
-        [[SRDataStore sharedInstance] exportFiles:[SRDataFile filesAll]];
+        [[SRDataStore sharedInstance] exportFiles:[SRDataFile filesNotExported]];
     }
     [self pruneFileCache];
 }
