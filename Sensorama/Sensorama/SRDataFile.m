@@ -195,12 +195,12 @@
 }
 
 + (NSArray <SRDataFile *> *) filesWithPredicate:(NSPredicate *)predicate {
-    RLMResults<SRDataFile *> *allFilesResults = [SRDataFile objectsWithPredicate:predicate];
-    NSMutableArray <SRDataFile *> *allFiles = [NSMutableArray new];
-    for (SRDataFile *tmpFile in allFilesResults) {
-        [allFiles addObject:tmpFile];
+    RLMResults<SRDataFile *> *filesResults = [SRDataFile objectsWithPredicate:predicate];
+    NSMutableArray <SRDataFile *> *files = [NSMutableArray new];
+    for (SRDataFile *tmpFile in filesResults) {
+        [files addObject:tmpFile];
     }
-    return allFiles;
+    return files;
 }
 
 + (NSArray <SRDataFile *> *) filesNotExported {
