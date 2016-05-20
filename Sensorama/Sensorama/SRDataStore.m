@@ -10,6 +10,7 @@
 #import "SRDataFile.h"
 #import "SRUtils.h"
 #import "SRDataFileSerializerJSONBZ2.h"
+#import "SRDataFileExporterS3.h"
 
 @implementation SRDataStore
 
@@ -24,6 +25,9 @@
 
         SRDataFileSerializerJSONBZ2 *serializedJSONBZ2 = [SRDataFileSerializerJSONBZ2 new];
         [sharedInstance addSerializer:serializedJSONBZ2];
+
+        SRDataFileExporterS3 *exporterS3 = [SRDataFileExporterS3 new];
+        [sharedInstance addExporter:exporterS3];
     });
     return sharedInstance;
 }
