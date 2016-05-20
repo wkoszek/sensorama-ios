@@ -16,8 +16,8 @@
 
 @implementation SRAuth
 
-+ (void)enableDebugging {
-    [[AWSLogger defaultLogger] setLogLevel:AWSLogLevelVerbose];
++ (void)setLogLevel:(AWSLogLevel)logLevel {
+    [[AWSLogger defaultLogger] setLogLevel:logLevel];
 }
 
 - (NSString *)cognitoPoolID {

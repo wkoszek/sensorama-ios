@@ -19,7 +19,7 @@
 @property (nonatomic) AWSCognitoCredentialsProvider *credentialsProvider;
 
 + (SRAuth *)sharedInstance;
-+ (void)enableDebugging;
++ (void) setLogLevel:(AWSLogLevel)logLevel;
 + (void) startWithLaunchOptions:(NSDictionary *)launchOptions;
 + (A0UserProfile *) currentProfile;
 + (NSString *)emailHashed;

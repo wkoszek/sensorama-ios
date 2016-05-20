@@ -19,6 +19,8 @@
 
 #import "SensoramaVars.h"
 
+static AWSLogLevel awsLogLevel = AWSLogLevelNone;
+
 @interface AppDelegate ()
 @property (nonatomic) BOOL isDevPhone;
 @end
@@ -30,7 +32,7 @@
     self.isDevPhone = [self isDevPhoneDetect];
     if (self.isDevPhone) {
         LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
-        [SRAuth enableDebugging];
+        [SRAuth setLogLevel:awsLogLevel];
     }
 
     NSBundle *mainBundle = [NSBundle mainBundle];
