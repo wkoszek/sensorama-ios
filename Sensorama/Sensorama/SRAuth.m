@@ -42,6 +42,7 @@
                                                    identityPoolId:[self cognitoPoolID]];
         AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
                                                                              credentialsProvider:_credentialsProvider];
+        configuration.allowsCellularAccess = NO;
         AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
     }
     return self;
