@@ -214,29 +214,6 @@
     [self pruneFileCache];
 }
 
-#if 0
-    NSData *sampleDataMP = [self.srContent mp_messagePack];
-    NSData *compressedDataMP = [BZipCompression compressedDataWithData:sampleDataMP
-                                                             blockSize:BZipDefaultBlockSize
-                                                            workFactor:BZipDefaultWorkFactor
-                                                                 error:&error];
-    SRPROBE1(@([sampleDataMP length]));
-    SRPROBE1(@([compressedDataMP length]));
-
-
-    NSError *errorBSON = nil;
-    NSData *sampleDataBSON = [BSONSerialization BSONDataWithDictionary:self.srContent error:&errorBSON];
-    NSData *compressedDataBSON = [BZipCompression compressedDataWithData:sampleDataBSON
-                                                               blockSize:BZipDefaultBlockSize
-                                                              workFactor:BZipDefaultWorkFactor
-                                                                   error:&error];
-    SRPROBE1(@([sampleDataBSON length]));
-    SRPROBE1(@([compressedDataBSON length]));
-
-
-#endif
-
-
 - (void) serializeWithData:(NSData *)data path:(NSString *)filePath {
     [data writeToFile:filePath atomically:NO];
 }

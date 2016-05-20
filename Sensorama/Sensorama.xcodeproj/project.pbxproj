@@ -13,6 +13,8 @@
 		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
 		5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */; };
 		57697C8F1CABCE0E00C91641 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */; };
+		577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */; };
+		577366AF1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */; };
 		577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2B811C9953BC00B2D890 /* SRAuth.m */; };
 		577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B7F1CCB5FCB00FA6E7D /* SRDataPoint.m */; };
 		577A4B821CCC65FE00FA6E7D /* PodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B811CCC65FE00FA6E7D /* PodsTests.m */; };
@@ -86,6 +88,10 @@
 		57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRDebug.h; sourceTree = "<group>"; };
 		57697C8D1CABCE0E00C91641 /* AccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewController.h; sourceTree = "<group>"; };
 		57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
+		577366AA1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeMPBZ2.h; sourceTree = "<group>"; };
+		577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileSerializeMPBZ2.m; sourceTree = "<group>"; };
+		577366AD1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeBSONBZ2.h; sourceTree = "<group>"; };
+		577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileSerializeBSONBZ2.m; sourceTree = "<group>"; };
 		577A2B801C9953BC00B2D890 /* SRAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAuth.h; sourceTree = "<group>"; };
 		577A2B811C9953BC00B2D890 /* SRAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAuth.m; sourceTree = "<group>"; };
 		577A4B7E1CCB5FCB00FA6E7D /* SRDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataPoint.h; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 				577A4B891CCC82EF00FA6E7D /* SRDataStore.m */,
 				5795E1BE1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.h */,
 				5795E1BF1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m */,
+				577366AA1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.h */,
+				577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */,
+				577366AD1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.h */,
+				577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */,
 				5735A3381C92B83D0076F979 /* SRDataFileExporterS3.h */,
 				5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */,
 			);
@@ -658,10 +668,12 @@
 				577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
 				5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */,
+				577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */,
 				5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */,
 				57697C8F1CABCE0E00C91641 /* AccountTableViewController.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
+				577366AF1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m in Sources */,
 				57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */,
 				579B6CE51CD3411E0011759B /* ActivityViewController.m in Sources */,
 				577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */,
