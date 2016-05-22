@@ -12,6 +12,7 @@
 		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
 		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
 		5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */; };
+		5758699F1CF14F3D0015C791 /* SRDataFileExporterMailgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */; };
 		57697C8F1CABCE0E00C91641 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */; };
 		577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */; };
 		577366AF1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */; };
@@ -86,6 +87,8 @@
 		5735A3381C92B83D0076F979 /* SRDataFileExporterS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterS3.h; sourceTree = "<group>"; };
 		5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterS3.m; sourceTree = "<group>"; };
 		57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRDebug.h; sourceTree = "<group>"; };
+		5758699D1CF14F3D0015C791 /* SRDataFileExporterMailgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterMailgun.h; sourceTree = "<group>"; };
+		5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterMailgun.m; sourceTree = "<group>"; };
 		57697C8D1CABCE0E00C91641 /* AccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewController.h; sourceTree = "<group>"; };
 		57697C8E1CABCE0E00C91641 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
 		577366AA1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeMPBZ2.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */,
 				5735A3381C92B83D0076F979 /* SRDataFileExporterS3.h */,
 				5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */,
+				5758699D1CF14F3D0015C791 /* SRDataFileExporterMailgun.h */,
+				5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 			files = (
 				577A4B871CCC6F9200FA6E7D /* SRDataFile.m in Sources */,
 				579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */,
+				5758699F1CF14F3D0015C791 /* SRDataFileExporterMailgun.m in Sources */,
 				5700D5E01C85A35B009405AC /* SRUtils.m in Sources */,
 				579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */,
 				57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */,
