@@ -20,6 +20,8 @@ framework module Lock {
   private header "A0FullActiveDirectoryViewController.h"
   private header "A0FullLoginViewController.h"
   private header "A0LoadingViewController.h"
+  private header "A0MFACodeViewController.h"
+  private header "A0NavigationController.h"
   private header "A0NavigationView.h"
   private header "A0PasswordFieldView.h"
   private header "A0RoundedBoxView.h"

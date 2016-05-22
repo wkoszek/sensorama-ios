@@ -14,23 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AWSCognito (2.4.1):
-    - AWSCore (= 2.4.1)
-  - AWSCore (2.4.1)
-  - AWSS3 (2.4.1):
-    - AWSCore (= 2.4.1)
+  - AWSCognito (2.4.2):
+    - AWSCore (= 2.4.2)
+  - AWSCore (2.4.2)
+  - AWSS3 (2.4.2):
+    - AWSCore (= 2.4.2)
   - BZipCompression (1.0.2)
-  - CocoaLumberjack (2.2.0):
-    - CocoaLumberjack/Default (= 2.2.0)
-    - CocoaLumberjack/Extensions (= 2.2.0)
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
+  - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
-  - DZNEmptyDataSet (1.8)
+  - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
   - GBDeviceInfo (3.8.0):
     - GBDeviceInfo/Core (= 3.8.0)
@@ -39,22 +39,22 @@ PODS:
   - JSONModel (1.2.0)
   - JTCalendar (2.1.5)
   - JWTDecode (1.0.0)
-  - Lock (1.25.0):
+  - Lock (1.26.0):
     - CocoaLumberjack (~> 2.0)
-    - Lock/Core (= 1.25.0)
-    - Lock/UI (= 1.25.0)
-    - Lock/WebView (= 1.25.0)
-  - Lock/Core (1.25.0):
+    - Lock/Core (= 1.26.0)
+    - Lock/UI (= 1.26.0)
+    - Lock/WebView (= 1.26.0)
+  - Lock/Core (1.26.0):
     - AFNetworking (~> 3.0)
     - CocoaLumberjack (~> 2.0)
-  - Lock/CoreUI (1.25.0):
+  - Lock/CoreUI (1.26.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/Core
     - Masonry (~> 0.6)
-  - Lock/UI (1.25.0):
+  - Lock/UI (1.26.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
-  - Lock/WebView (1.25.0):
+  - Lock/WebView (1.26.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - Masonry (0.6.4)
@@ -63,9 +63,9 @@ PODS:
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
-  - Realm (0.99.1):
-    - Realm/Headers (= 0.99.1)
-  - Realm/Headers (0.99.1)
+  - Realm (0.103.1):
+    - Realm/Headers (= 0.103.1)
+  - Realm/Headers (0.103.1)
   - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
@@ -88,24 +88,24 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AWSCognito: a57173a82505161bd1a9c8cfe393cea9b5b1f6bb
-  AWSCore: 9bfd632f04aaf12053e639d2a9120372844beb0d
-  AWSS3: d7a3a694ffc4010e90b14755b5b9dbf70989c117
+  AWSCognito: 87cf3dadb17eed732c1c3fe21624fa8f15ef84ec
+  AWSCore: 08cc4318682a518ad73e452900336ba54e823e03
+  AWSS3: 21bbd5d41eb175bf2fd371dc8af5339752f7f5b7
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   JTCalendar: 57a4420f12d10c93c3b28da96803e7043d1c9281
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
-  Lock: 8ebb80dda9c909d843622d5e529baf959c85d028
+  Lock: d863c3aebe57d2e8f3e5f40c9c5ba695ec2f1162
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
-  Realm: 522a0cc8e1f8755ee56d7dc16ca0fc380d045766
+  Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
 COCOAPODS: 0.39.0
