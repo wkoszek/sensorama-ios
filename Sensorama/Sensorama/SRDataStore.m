@@ -11,6 +11,7 @@
 #import "SRUtils.h"
 #import "SRDataFileSerializerJSONBZ2.h"
 #import "SRDataFileExporterS3.h"
+#import "SRDataFileExporterMailgun.h"
 
 @implementation SRDataStore
 
@@ -28,6 +29,9 @@
 
         SRDataFileExporterS3 *exporterS3 = [SRDataFileExporterS3 new];
         [sharedInstance addExporter:exporterS3];
+
+        SRDataFileExporterMailgun *exporterMailgun = [SRDataFileExporterMailgun new];
+        [sharedInstance addExporter:exporterMailgun];
     });
     return sharedInstance;
 }

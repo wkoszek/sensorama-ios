@@ -7,6 +7,8 @@
 //
 
 #import "SRDataFileExporterMailgun.h"
+#import "mailgun/Mailgun.h"
+#import "mailgun/MGMessage.h"
 
 #import "SRAuth.h"
 #import "SRUtils.h"
@@ -20,19 +22,22 @@
 
 - (void)exportWithFile:(SRDataFile *)dataFile;
 {
-#if 0
-    NSString *fileBaseName = [dataFile fileBasePathName];
-    NSURL *fileURL = [NSURL fileURLWithPath:[dataFile filePathName]];
-    SRPROBE1(fileURL);
 
-    Mailgun *mailgun = [Mailgun clientWithDomain:@"samples.mailgun.org" apiKey:@"key-3ax6xnjp29jd6fds4gc373sgvjxteol0"];
-    [mailgun sendMessageTo:@"Jay Baird <jay.baird@rackspace.com>"
-                      from:@"Excited User <someone@sample.org>"
-                   subject:@"Mailgun is awesome!"
-                      body:@"A unicode snowman for you! ☃"];
+    SRPROBE1(dataFile);
 
 
-#endif
+    MGMessage *msg = [[MGMessage alloc] initWithFrom:@"sensorama@data.sensorama.org"
+                                                  to:[[SRAuth currentProfile] email]
+                                             subject:@"Sensorama Data File"
+                                                body:@"Hello\n\nAttached is your Sensorama file\n\nSensorama"];
+
+    NSData *fileData = [[NSFileManager defaultManager] contentsAtPath:[dataFile filePathName]];
+    [msg addAttachment:fileData withName:[dataFile fileBasePathName] type:@"application/x-bzip2"];
+
+    NSLog(@"mailgun exporter");
+    NSString *apiKey = [NSString stringWithUTF8String:SENSORAMA_MAILGUN_API_KEY];
+    Mailgun *mailgun = [Mailgun clientWithDomain:@"data.sensorama.org" apiKey:apiKey];
+    [mailgun sendMessage:msg];
 }
 
 @end
