@@ -57,6 +57,8 @@ PODS:
   - Lock/WebView (1.26.0):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
+  - mailgun (1.1):
+    - AFNetworking (= 3.1.0)
   - Masonry (0.6.4)
   - MPMessagePack (1.3.5):
     - GHODictionary
@@ -81,10 +83,20 @@ DEPENDENCIES:
   - JTCalendar (~> 2.0)
   - JWTDecode
   - Lock
+  - mailgun (from `https://github.com/wkoszek/objc-mailgun`)
   - MPMessagePack
   - NSLogger
   - Realm
   - SimpleKeychain
+
+EXTERNAL SOURCES:
+  mailgun:
+    :git: https://github.com/wkoszek/objc-mailgun
+
+CHECKOUT OPTIONS:
+  mailgun:
+    :commit: 26460fd2a2afc20dd6debf4649e60c3536ffbe4c
+    :git: https://github.com/wkoszek/objc-mailgun
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -102,6 +114,7 @@ SPEC CHECKSUMS:
   JTCalendar: 57a4420f12d10c93c3b28da96803e7043d1c9281
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: d863c3aebe57d2e8f3e5f40c9c5ba695ec2f1162
+  mailgun: dec669741662edabad5d918ad9b34ebeb63742b6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034

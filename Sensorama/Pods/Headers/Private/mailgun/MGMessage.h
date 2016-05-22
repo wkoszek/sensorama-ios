@@ -1,0 +1,1 @@
+../../../mailgun/Classes/MGMessage.h

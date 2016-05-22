@@ -1,0 +1,6 @@
+framework module mailgun {
+  umbrella header "mailgun-umbrella.h"
+
+  export *
+  module * { export * }
+}

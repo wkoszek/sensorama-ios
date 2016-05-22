@@ -1,0 +1,28 @@
+{
+  "name": "mailgun",
+  "version": "1.1",
+  "summary": "The Mailgun SDK allows your Mac OS X or iOS application to connect with the programmable email platform.",
+  "homepage": "https://github.com/KomodoHQ/objc-mailgun",
+  "license": "MIT",
+  "authors": {
+    "Jay Baird": "jay.baird@rackspace.com"
+  },
+  "source": {
+    "git": "https://github.com/KomodoHQ/objc-mailgun",
+    "tag": "1.1"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.9"
+  },
+  "source_files": [
+    "Classes",
+    "Classes/*.{h,m}"
+  ],
+  "requires_arc": true,
+  "dependencies": {
+    "AFNetworking": [
+      "= 3.1.0"
+    ]
+  }
+}
