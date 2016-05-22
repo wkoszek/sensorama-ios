@@ -20,11 +20,12 @@ def mypods
   pod "MPMessagePack"
   pod 'JTCalendar', '~> 2.0'
 
+  pod 'DZNEmptyDataSet'
+
   pod "Realm"
   pod 'JSONModel'
   pod 'mailgun', :git => 'https://github.com/wkoszek/objc-mailgun'
 
-  pod 'DZNEmptyDataSet'
 end
 
 target 'Sensorama' do
