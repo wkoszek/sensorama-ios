@@ -14,7 +14,7 @@ end
 
 platform :ios do
   before_all do
-    cocoapods
+    cocoapods(repo_update: true)
   end
 
   desc "Installs FixCode which disables the \"Fix Issue\" button in Xcode"
