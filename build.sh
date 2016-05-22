@@ -5,6 +5,7 @@ if [ "$1" = "bootstrap" ]; then
 	gem install bundler
 	gem install cocoapods --pre
 	gem install fastlane --pre
+	pod repo update
 fi
 
 PROJ=Sensorama
