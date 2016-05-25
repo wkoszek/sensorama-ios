@@ -14,6 +14,7 @@
 #import <Security/Security.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import <GBDeviceInfo/GBDeviceInfo.h>
+#import "GCNetworkReachability/GCNetworkReachability.h"
 
 #import "SRUtils.h"
 #import "SRCfg.h"
@@ -144,6 +145,12 @@
 + (NSString *)humanSensoramaVersionString {
     return [NSString stringWithFormat:@"Sensorama %@ (build:%@)",
             [SRUtils bundleShortVersionString], [SRUtils bundleVersionString]];
+}
+
++ (BOOL) hasWifi {
+    GCNetworkReachability *reachability = [GCNetworkReachability reachabilityForInternetConnection];
+
+    return [reachability isReachable];
 }
 
 @end

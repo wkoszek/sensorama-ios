@@ -21,5 +21,6 @@
 + (NSString *)bundleVersionString;
 + (NSString *)bundleShortVersionString;
 + (NSString *)humanSensoramaVersionString;
++ (BOOL) hasWifi;
 
 @end

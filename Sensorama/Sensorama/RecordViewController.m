@@ -48,7 +48,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.tabBarController setTitle:@"Record"];
-    NSLog(@"%s", __func__);
+    NSLog(@"%s, hasWifi:%d", __func__, [SRUtils hasWifi]);
 
     [self customizeLoginLook];
     [self doLogin];
