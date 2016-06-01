@@ -150,7 +150,7 @@
 + (BOOL) hasWifi {
     GCNetworkReachability *reachability = [GCNetworkReachability reachabilityForInternetConnection];
 
-    return [reachability isReachable];
+    return [reachability isReachableViaWiFi];
 }
 
 @end
