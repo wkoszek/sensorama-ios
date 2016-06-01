@@ -1,0 +1,6 @@
+framework module GCNetworkReachability {
+  umbrella header "GCNetworkReachability-umbrella.h"
+
+  export *
+  module * { export * }
+}
