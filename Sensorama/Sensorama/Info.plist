@@ -102,5 +102,9 @@
 	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We use phone&apos;s sensors for providing functionality of this app</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2015-2016 by Wojciech Adam Koszek</string>
 </dict>
 </plist>
