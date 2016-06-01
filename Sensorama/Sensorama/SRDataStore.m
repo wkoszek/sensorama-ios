@@ -51,11 +51,28 @@
 }
 
 - (void) exportFiles:(NSArray<SRDataFile *> *)filesToSync {
+    if (![self exportCheckAndNotify:filesToSync]) {
+        return;
+    }
+
     for (id<SRDataFileExportDelegate> delegate in self.exporters) {
         for (SRDataFile *fileToSyncOne in filesToSync) {
             [delegate exportWithFile:fileToSyncOne];
         }
     }
+}
+
+- (BOOL) exportCheckAndNotify:(NSArray<SRDataFile *> *)filesToSync {
+    BOOL isOK = NO;
+    int howManyToExport = (int)[filesToSync count];
+
+    if (![SRUtils hasWifi]) {
+        [SRUtils notifyWarn:[NSString stringWithFormat:@"No Wi-Fi. Will export %d files later", howManyToExport]];
+    } else {
+        [SRUtils notifyOK:[NSString stringWithFormat:@"Exporting %d files now", howManyToExport]];
+        isOK = YES;
+    }
+    return isOK;
 }
 
 + (void) handleMigrations {
