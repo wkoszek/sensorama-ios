@@ -70,6 +70,7 @@ PODS:
     - Realm/Headers (= 0.103.1)
   - Realm/Headers (0.103.1)
   - SimpleKeychain (0.7.0)
+  - Whisper (3.0.0)
 
 DEPENDENCIES:
   - AWSCognito
@@ -90,6 +91,7 @@ DEPENDENCIES:
   - NSLogger
   - Realm
   - SimpleKeychain
+  - Whisper
 
 EXTERNAL SOURCES:
   mailgun:
@@ -123,5 +125,6 @@ SPEC CHECKSUMS:
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
   Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
+  Whisper: 42a3ee7c2936f861b23d41bd6cd7dfd22f102405
 
 COCOAPODS: 0.39.0

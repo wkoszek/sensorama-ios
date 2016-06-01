@@ -23,6 +23,7 @@ def mypods
   pod 'DZNEmptyDataSet'
   pod 'GCNetworkReachability'
 
+  pod 'Whisper'
   pod "Realm"
   pod 'JSONModel'
   pod 'mailgun', :git => 'https://github.com/wkoszek/objc-mailgun'

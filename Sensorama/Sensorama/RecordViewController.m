@@ -10,7 +10,9 @@
 // https://github.com/maju6406/Layer-Auth0-iOS-Example/blob/master/Code/Controllers/ViewController.m#L97
 // JWTDecode written in Swift doesn't export "isExpired" method, so I had to make it myself.
 //
+
 #import <Lock/Lock.h>
+#import "Sensorama-Swift.h"
 
 @import JWTDecode;
 

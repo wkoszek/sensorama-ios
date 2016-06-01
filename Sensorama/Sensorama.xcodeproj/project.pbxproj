@@ -21,6 +21,7 @@
 		577A4B821CCC65FE00FA6E7D /* PodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B811CCC65FE00FA6E7D /* PodsTests.m */; };
 		577A4B871CCC6F9200FA6E7D /* SRDataFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B861CCC6F9200FA6E7D /* SRDataFile.m */; };
 		577A4B8A1CCC82EF00FA6E7D /* SRDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A4B891CCC82EF00FA6E7D /* SRDataStore.m */; };
+		577DBB7C1CFEC7920034C1EA /* WhisperBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577DBB7B1CFEC7920034C1EA /* WhisperBridge.swift */; };
 		577DC8F81C4CB0E700FA02B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8F71C4CB0E700FA02B7 /* main.m */; };
 		577DC8FB1C4CB0E700FA02B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC8FA1C4CB0E700FA02B7 /* AppDelegate.m */; };
 		577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */; };
@@ -105,6 +106,8 @@
 		577A4B861CCC6F9200FA6E7D /* SRDataFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFile.m; sourceTree = "<group>"; };
 		577A4B881CCC82EF00FA6E7D /* SRDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataStore.h; sourceTree = "<group>"; };
 		577A4B891CCC82EF00FA6E7D /* SRDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataStore.m; sourceTree = "<group>"; };
+		577DBB7A1CFEC7920034C1EA /* Sensorama-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sensorama-Bridging-Header.h"; sourceTree = "<group>"; };
+		577DBB7B1CFEC7920034C1EA /* WhisperBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperBridge.swift; sourceTree = "<group>"; };
 		577DC8F31C4CB0E700FA02B7 /* Sensorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577DC8F71C4CB0E700FA02B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577DC8F91C4CB0E700FA02B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 		577DC8F61C4CB0E700FA02B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				577DBB7B1CFEC7920034C1EA /* WhisperBridge.swift */,
+				577DBB7A1CFEC7920034C1EA /* Sensorama-Bridging-Header.h */,
 				57B11EEA1CA922EF00B389EF /* contrib */,
 				577DC9021C4CB0E700FA02B7 /* Assets.xcassets */,
 				577DC9071C4CB0E700FA02B7 /* Info.plist */,
@@ -407,6 +412,7 @@
 		577DC8EB1C4CB0E600FA02B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Wojciech Adam Koszek";
 				TargetAttributes = {
@@ -673,6 +679,7 @@
 				579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */,
 				577A4B801CCB5FCB00FA6E7D /* SRDataPoint.m in Sources */,
 				57EC5FF31C88000C00243893 /* SRCfg.m in Sources */,
+				577DBB7C1CFEC7920034C1EA /* WhisperBridge.swift in Sources */,
 				5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */,
 				577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */,
 				5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */,
@@ -825,6 +832,7 @@
 			baseConfigurationReference = D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 69;
 				INFOPLIST_FILE = Sensorama/Info.plist;
@@ -833,6 +841,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sensorama/Sensorama-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -842,6 +852,7 @@
 			baseConfigurationReference = 08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 69;
 				INFOPLIST_FILE = Sensorama/Info.plist;
@@ -850,6 +861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sensorama/Sensorama-Bridging-Header.h";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
