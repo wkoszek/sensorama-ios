@@ -150,7 +150,7 @@
 + (BOOL) hasWifi {
     GCNetworkReachability *reachability = [GCNetworkReachability reachabilityForInternetConnection];
 
-    return [reachability isReachableViaWiFi];
+    return [reachability isReachableViaWiFi] != 0;
 }
 
 + (void)notifyDebugWithUserInfo:(NSDictionary *)userInfo {
