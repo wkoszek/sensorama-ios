@@ -103,6 +103,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Sensorama/NSLogger.framework"
   install_framework "Pods-Sensorama/Realm.framework"
   install_framework "Pods-Sensorama/SimpleKeychain.framework"
+  install_framework "Pods-Sensorama/Whisper.framework"
   install_framework "Pods-Sensorama/mailgun.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -125,5 +126,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Sensorama/NSLogger.framework"
   install_framework "Pods-Sensorama/Realm.framework"
   install_framework "Pods-Sensorama/SimpleKeychain.framework"
+  install_framework "Pods-Sensorama/Whisper.framework"
   install_framework "Pods-Sensorama/mailgun.framework"
 fi

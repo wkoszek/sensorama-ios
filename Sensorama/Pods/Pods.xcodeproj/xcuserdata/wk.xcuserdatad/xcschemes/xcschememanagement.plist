@@ -119,6 +119,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Whisper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>mailgun.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -132,17 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>116A0E0100F445494075B06309986441</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>12C71A8491B595A4CF3992124DB31C8C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>15277C11C63307835F56B2BADF8D3058</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,7 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>24113D16BF8258CF877FB0EE78F71524</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>25C4DCE9DCEA16C6D470F1BFAA90EDD7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39912586C031AC11AA32821ABBA672F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -168,11 +173,6 @@
 			<true/>
 		</dict>
 		<key>3B41A9B1D49827D58E203AF61D34F608</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B823F38F716078A2B181C26CC82AFC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,6 +197,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>90AAC9DF2489AAF6E7F78473A3B9B93B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>99953A8C8E46BBD5E5106542F76CE8BD</key>
 		<dict>
 			<key>primary</key>
@@ -207,17 +212,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A50D062EE8F068664A965EC14A320976</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>BAA396C4D689A02A15029B49E076FAF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C979F43EE3FBCBC3101D1F1FB65520BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CAC50B035D22756051011DF4126726C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -237,7 +242,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC80A9FCCA5D8DFCCD835D88B61FD81C</key>
+		<key>E994196E066C2A1E7763DFD96FD7AA81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC77506DB38C7E734F848561F1595242</key>
 		<dict>
 			<key>primary</key>
 			<true/>
