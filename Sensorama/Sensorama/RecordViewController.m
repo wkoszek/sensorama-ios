@@ -45,6 +45,8 @@
 
     NSLog(@"%s", __func__);
     [self setIsRecording:false initial:YES];
+
+    [self startDebugging];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -219,10 +221,63 @@
     [self setIsRecording:!self.isRecording initial:NO];
 }
 
+
+#pragma mark - Debugging
+
+- (void)startDebugging {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(sensoramaNotificationHandler:)
+                                                 name:@"SensoramaDebug"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(sensoramaNotificationHandler:)
+                                                 name:@"Sensorama"
+                                               object:nil];
+
+}
+
+- (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor {
+    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3];
+}
+
+
+- (void)sensoramaNotificationHandler:(NSNotification *)notification
+{
+    NSDictionary *userInfo = notification.userInfo;
+
+    SRPROBE1([notification name]);
+
+    if ([[notification name] isEqualToString:@"SensoramaDebug"]) {
+        // TODO
+        // textLabel
+        // display
+    }
+    if ([[notification name] isEqualToString:@"Sensorama"]) {
+        UIColor *fgColor;
+        if ([[userInfo objectForKey:@"type"] isEqualToString:@"notify"]) {
+            fgColor = [UIColor greenColor];
+        }
+        if ([[userInfo objectForKey:@"type"] isEqualToString:@"warn"]) {
+            fgColor = [UIColor yellowColor];
+        }
+        if ([[userInfo objectForKey:@"type"] isEqualToString:@"error"]) {
+            fgColor = [UIColor redColor];
+        }
+        NSString *notificationString = [userInfo objectForKey:@"text"];
+        SRPROBE2(fgColor, notificationString);
+        [self setNotifyString:notificationString fgColor:fgColor];
+    }
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 #pragma mark - Navigation

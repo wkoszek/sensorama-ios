@@ -23,4 +23,9 @@
 + (NSString *)humanSensoramaVersionString;
 + (BOOL) hasWifi;
 
++ (void) notifyOK:(NSString *)string;
++ (void) notifyWarn:(NSString *)string;
++ (void) notifyError:(NSString *)string;
++ (void) notifyDebugWithUserInfo:(NSDictionary *)userInfo;
+
 @end

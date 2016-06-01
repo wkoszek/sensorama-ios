@@ -153,4 +153,33 @@
     return [reachability isReachableViaWiFi];
 }
 
++ (void)notifyDebugWithUserInfo:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SensoramaDebug"
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
+
++ (void)notifyWithUserInfo:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"Sensorama"
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
++ (void) notifyOK:(NSString *)string {
+    NSDictionary *userInfo = @{ @"type": @"notify", @"text": string };
+    [SRUtils notifyWithUserInfo:userInfo];
+}
+
++ (void) notifyWarn:(NSString *)string {
+    NSDictionary *userInfo = @{ @"type": @"warn", @"text": string };
+    [SRUtils notifyWithUserInfo:userInfo];
+}
+
++ (void) notifyError:(NSString *)string {
+    NSDictionary *userInfo = @{ @"type": @"error", @"text": string };
+    [SRUtils notifyWithUserInfo:userInfo];
+}
+
+
 @end

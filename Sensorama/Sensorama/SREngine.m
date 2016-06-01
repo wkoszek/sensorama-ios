@@ -56,14 +56,20 @@
 }
 
 - (void)recordingUpdate {
+    static int updateCount = 0;
+
     SRPROBE0();
     if (self.timer == nil) {
         NSLog(@"stopped!");
     }
 
     SRDataPoint *newPoint = [SRDataPoint new];
+    updateCount++;
     //NSLog(@"newPoint=%@", newPoint);
     [self.dataFile updateWithPoint:newPoint];
+
+    NSDictionary *userInfo = @{ @"msg": [NSString stringWithFormat:@"point %d", updateCount] };
+    [SRUtils notifyDebugWithUserInfo:userInfo];
 }
 
 - (void) recordingStart {
