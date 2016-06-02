@@ -21,7 +21,9 @@
 + (NSString *)bundleVersionString;
 + (NSString *)bundleShortVersionString;
 + (NSString *)humanSensoramaVersionString;
+
 + (BOOL) hasWifi;
++ (BOOL) isDeveloperMode;
 
 + (void) notifyOK:(NSString *)string;
 + (void) notifyWarn:(NSString *)string;

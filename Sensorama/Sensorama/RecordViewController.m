@@ -47,8 +47,14 @@
     [self.debugMessagesLabel setHidden:YES];
     NSLog(@"%s", __func__);
     [self setIsRecording:false initial:YES];
-
+    [self hideViewsIfNecessary];
     [self startDebugging];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self hideViewsIfNecessary];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -59,6 +65,12 @@
     [self customizeLoginLook];
     [self doLogin];
     [SRUsageStats eventAppRecord];
+}
+
+- (void) hideViewsIfNecessary {
+    if (![SRUtils isDeveloperMode]) {
+        [self.debugMessagesLabel setHidden:YES];
+    }
 }
 
 - (void)customizeLoginLook {

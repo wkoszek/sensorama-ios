@@ -9,10 +9,11 @@
 #import "SettingsTableViewController.h"
 #import "SRUsageStats.h"
 #import "SRUtils.h"
+#import "SRDebug.h"
 
 
 @interface SettingsTableViewController ()
-@property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *sensorState;
+@property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *settingsState;
 @end
 
 @implementation SettingsTableViewController
@@ -21,14 +22,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
-    for (UISwitch *sw in self.sensorState) {
+    for (UISwitch *sw in self.settingsState) {
         NSString *swName = [sw accessibilityIdentifier];
+        NSNumber *yesOrNo = @([sw tag]);
 
-        // XXXTODO: disable the developer options by default
-
-        BOOL shouldBeOn = true;
+        BOOL shouldBeOn = [yesOrNo boolValue];
         if ([savedSettings objectForKey:swName] != nil) {
             shouldBeOn = [savedSettings boolForKey:swName];
+        } else {
+            [savedSettings setObject:@(shouldBeOn) forKey:swName];
         }
         [sw setOn:shouldBeOn];
     }

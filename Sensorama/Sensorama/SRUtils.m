@@ -181,5 +181,11 @@
     [SRUtils notifyWithUserInfo:userInfo];
 }
 
++ (BOOL) isDeveloperMode {
+    NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
+    NSString *switchEnableDeveloperName = @"switchEnableDeveloper";
+    return [[savedSettings objectForKey:switchEnableDeveloperName] boolValue];
+}
+
 
 @end
