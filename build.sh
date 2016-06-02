@@ -32,6 +32,7 @@ function build_old() {
 }
 
 function build_new() {
+	export PATH=`pwd`/scripts/git-hack:$PATH
 	(cd Sensorama && fastlane beta)
 }
 

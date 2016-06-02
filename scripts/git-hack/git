@@ -1,0 +1,13 @@
+#!/bin/sh
+
+GIT=/usr/local/bin/git
+#if [ $# -ge 1 ]; then
+#	if [ "$1" = "commit" ]; then
+#		echo "# fixing author/email"
+#		$GIT config --local user.name "Wojciech Adam Koszek"
+#		$GIT config --local user.email wojciech@koszek.com
+#	fi
+#fi
+
+$GIT -c user.name="Wojciech Adam Koszek" -c user.email="wojciech@koszek.com" "$@"
+
