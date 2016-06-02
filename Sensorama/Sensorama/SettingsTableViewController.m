@@ -24,6 +24,8 @@
     for (UISwitch *sw in self.sensorState) {
         NSString *swName = [sw accessibilityIdentifier];
 
+        // XXXTODO: disable the developer options by default
+
         BOOL shouldBeOn = true;
         if ([savedSettings objectForKey:swName] != nil) {
             shouldBeOn = [savedSettings boolForKey:swName];

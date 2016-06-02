@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
 
 @property (weak,   nonatomic) IBOutlet UIView *recordView;
+@property (weak, nonatomic) IBOutlet UILabel *debugMessagesLabel;
 
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CGFloat savedCornerRadius;
@@ -43,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self.debugMessagesLabel setHidden:YES];
     NSLog(@"%s", __func__);
     [self setIsRecording:false initial:YES];
 
@@ -244,13 +246,13 @@
 - (void)sensoramaNotificationHandler:(NSNotification *)notification
 {
     NSDictionary *userInfo = notification.userInfo;
+    NSString *notificationString = [userInfo objectForKey:@"text"];
 
     SRPROBE1([notification name]);
 
     if ([[notification name] isEqualToString:@"SensoramaDebug"]) {
-        // TODO
-        // textLabel
-        // display
+        [self.debugMessagesLabel setHidden:NO];
+        [self.debugMessagesLabel setText:notificationString];
     }
     if ([[notification name] isEqualToString:@"Sensorama"]) {
         UIColor *fgColor;
@@ -263,7 +265,6 @@
         if ([[userInfo objectForKey:@"type"] isEqualToString:@"error"]) {
             fgColor = [UIColor redColor];
         }
-        NSString *notificationString = [userInfo objectForKey:@"text"];
         SRPROBE2(fgColor, notificationString);
         [self setNotifyString:notificationString fgColor:fgColor];
     }

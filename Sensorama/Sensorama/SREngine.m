@@ -68,7 +68,7 @@
     //NSLog(@"newPoint=%@", newPoint);
     [self.dataFile updateWithPoint:newPoint];
 
-    NSDictionary *userInfo = @{ @"msg": [NSString stringWithFormat:@"point %d", updateCount] };
+    NSDictionary *userInfo = @{ @"text": [NSString stringWithFormat:@"point %d", updateCount] };
     [SRUtils notifyDebugWithUserInfo:userInfo];
 }
 
