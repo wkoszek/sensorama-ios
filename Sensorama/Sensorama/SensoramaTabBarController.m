@@ -7,6 +7,7 @@
 //
 
 #import "SensoramaTabBarController.h"
+#import "ActivityViewController.h"
 
 @interface SensoramaTabBarController ()
 
@@ -19,6 +20,15 @@
     [super viewDidLoad];
     self.engine = [SREngine new];
     // Do any additional setup after loading the view.
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSMutableArray *viewControllers = [self.viewControllers mutableCopy];
+    NSInteger idxToRemove = [self viewControllerIndexByClass:[ActivityViewController class]];
+    [viewControllers removeObjectAtIndex:idxToRemove];
+    self.viewControllers = viewControllers;
 }
 
 - (id) viewControllerByClass:(id)objClass {
