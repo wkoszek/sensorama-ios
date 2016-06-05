@@ -51,7 +51,6 @@
     NSLog(@"email=%@", profile.email);
 
     [self.logoutCell.detailTextLabel setText:profile.email];
-
 }
 
 - (void)viewDidLoad {

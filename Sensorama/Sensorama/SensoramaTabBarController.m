@@ -8,7 +8,6 @@
 
 #import "SensoramaTabBarController.h"
 #import "ActivityViewController.h"
-#import "AccountTableViewController.h"
 
 @interface SensoramaTabBarController ()
 
