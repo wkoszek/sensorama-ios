@@ -26,6 +26,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+#if 0
     NSMutableArray *viewControllers = [self.viewControllers mutableCopy];
     NSInteger idxToRemove = [self viewControllerIndexByClass:[ActivityViewController class]];
     [viewControllers removeObjectAtIndex:idxToRemove];
@@ -35,6 +36,7 @@
     NSInteger idxToRemove2 = [self viewControllerIndexByClass:[AccountTableViewController class]];
     [viewControllers removeObjectAtIndex:idxToRemove2];
     self.viewControllers = viewControllers;
+#endif
 }
 
 - (id) viewControllerByClass:(id)objClass {

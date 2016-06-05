@@ -10,10 +10,15 @@
 #import "SRUsageStats.h"
 #import "SRUtils.h"
 #import "SRDebug.h"
+#import "SRAuth.h"
+#import "SensoramaTabBarController.h"
+#import "RecordViewController.h"
 
 
 @interface SettingsTableViewController ()
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *settingsState;
+@property (weak, nonatomic) IBOutlet UITableViewCell *logoutCell;
+
 @end
 
 @implementation SettingsTableViewController
@@ -39,6 +44,14 @@
 - (void) viewDidAppear:(BOOL)animate {
     [super viewDidAppear:animate];
     [self.tabBarController setTitle:@"Settings"];
+
+    A0UserProfile *profile = [SRAuth currentProfile];
+
+
+    NSLog(@"email=%@", profile.email);
+
+    [self.logoutCell.detailTextLabel setText:profile.email];
+
 }
 
 - (void)viewDidLoad {
@@ -54,17 +67,25 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     if (section == [self.tableView numberOfSections] - 1) {
         return ([SRUtils humanSensoramaVersionString]);
     } else {
         return [super tableView:tableView titleForFooterInSection:section];
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if (cell == self.logoutCell) {
+        NSLog(@"logoutButton");
+        [self.logoutCell setSelected:NO];
+        [self logout];
+        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
+        [stvc setSelectedIndex:0];
     }
 }
 
@@ -80,5 +101,14 @@
 
     NSLog(@"event %@ changed %@", event, sender);
 }
+
+- (void) logout {
+    NSLog(@"logout triggered");
+    SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
+    RecordViewController *rvc = [stvc viewControllerByClass:[RecordViewController class]];
+    [rvc logoutAuth0];
+}
+
+
 
 @end
