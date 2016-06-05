@@ -233,7 +233,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xIJ-UF-APB" userLabel="emailLabel">
-                                                    <rect key="frame" x="15" y="12" width="152" height="20"/>
+                                                    <rect key="frame" x="15" y="12" width="51" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -241,7 +241,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gob-iF-Bed" userLabel="detailLabel">
-                                                    <rect key="frame" x="499" y="12" width="66" height="20"/>
+                                                    <rect key="frame" x="526" y="12" width="39" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -449,19 +449,22 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="tag" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AWS S3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-Om-b7b" userLabel="AWS S3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AWS S3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-Om-b7b" userLabel="AWS S3">
                                                     <rect key="frame" x="15" y="11" width="112" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="nAh-eD-Iy1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="top" secondItem="Nwd-Y4-b3r" secondAttribute="topMargin" constant="3" id="57U-CH-8QQ"/>
-                                                <constraint firstItem="O2G-w7-5b4" firstAttribute="centerY" secondItem="zrE-Om-b7b" secondAttribute="centerY" id="AFJ-jO-Brn"/>
-                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="leading" secondItem="Nwd-Y4-b3r" secondAttribute="leadingMargin" id="NU0-yA-17T"/>
+                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="centerY" secondItem="O2G-w7-5b4" secondAttribute="centerY" id="0hA-JP-o5G"/>
+                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="leading" secondItem="Nwd-Y4-b3r" secondAttribute="leadingMargin" id="42p-n4-8LR"/>
+                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="top" secondItem="Nwd-Y4-b3r" secondAttribute="topMargin" constant="3" id="Mnd-LY-OOa"/>
                                                 <constraint firstItem="O2G-w7-5b4" firstAttribute="trailing" secondItem="Nwd-Y4-b3r" secondAttribute="trailingMargin" id="NZX-CR-phD"/>
-                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="centerY" secondItem="Nwd-Y4-b3r" secondAttribute="centerY" id="VZR-S4-yZQ"/>
+                                                <constraint firstItem="zrE-Om-b7b" firstAttribute="centerY" secondItem="Nwd-Y4-b3r" secondAttribute="centerY" id="OWG-kD-jQZ"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="8" left="15" bottom="8" right="8"/>
                                         </tableViewCellContentView>
@@ -482,19 +485,22 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="tag" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez5-7q-Jvd" userLabel="E-mail">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez5-7q-Jvd" userLabel="E-mail">
                                                     <rect key="frame" x="15" y="11" width="112" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="kVI-Yx-Jta"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="w0D-kZ-5q8" firstAttribute="centerY" secondItem="ez5-7q-Jvd" secondAttribute="centerY" id="3bv-L0-oSd"/>
-                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="centerY" secondItem="rCG-gp-vb3" secondAttribute="centerY" id="5OW-4Z-JEB"/>
-                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="leading" secondItem="rCG-gp-vb3" secondAttribute="leadingMargin" id="8eg-WL-xcr"/>
-                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="top" secondItem="rCG-gp-vb3" secondAttribute="topMargin" constant="3" id="N6J-We-lUI"/>
                                                 <constraint firstItem="w0D-kZ-5q8" firstAttribute="trailing" secondItem="rCG-gp-vb3" secondAttribute="trailingMargin" id="Q0z-Du-df7"/>
+                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="top" secondItem="rCG-gp-vb3" secondAttribute="topMargin" constant="3" id="UoD-E6-sqy"/>
+                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="centerY" secondItem="w0D-kZ-5q8" secondAttribute="centerY" id="fW9-ZB-elP"/>
+                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="centerY" secondItem="rCG-gp-vb3" secondAttribute="centerY" id="hWq-rp-c1r"/>
+                                                <constraint firstItem="ez5-7q-Jvd" firstAttribute="leading" secondItem="rCG-gp-vb3" secondAttribute="leadingMargin" id="ncz-fB-OZi"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="8" left="15" bottom="8" right="8"/>
                                         </tableViewCellContentView>
@@ -560,6 +566,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="0EY-nB-hfS" kind="show" id="c06-gr-ZQU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellPrivacy" editingAccessoryType="disclosureIndicator" textLabel="odM-sB-dO4" style="IBUITableViewCellStyleDefault" id="XhF-HZ-1V1">
                                         <rect key="frame" x="0.0" y="809" width="600" height="44"/>
@@ -577,6 +586,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mKB-3m-MmM" kind="show" id="YCa-tm-vif"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -663,7 +675,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-H0-ReD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dx-H0-ReD">
                                 <rect key="frame" x="20" y="72" width="560" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -673,10 +685,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="top" secondItem="pfw-PV-5UY" secondAttribute="bottom" constant="8" symbolic="YES" id="8U6-gE-EpO"/>
-                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="trailing" secondItem="BSP-nn-13M" secondAttribute="trailingMargin" id="MaH-gC-IWQ"/>
-                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="leading" secondItem="BSP-nn-13M" secondAttribute="leadingMargin" id="Zxp-g7-zJU"/>
-                            <constraint firstItem="47o-Qa-RVt" firstAttribute="top" secondItem="6Dx-H0-ReD" secondAttribute="bottom" constant="8" symbolic="YES" id="xcN-Uk-P6K"/>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="leading" secondItem="BSP-nn-13M" secondAttribute="leadingMargin" id="8SR-eO-HiA"/>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="trailing" secondItem="BSP-nn-13M" secondAttribute="trailingMargin" id="BTl-4h-eKV"/>
+                            <constraint firstItem="6Dx-H0-ReD" firstAttribute="top" secondItem="pfw-PV-5UY" secondAttribute="bottom" constant="8" symbolic="YES" id="eEA-un-mb1"/>
+                            <constraint firstItem="47o-Qa-RVt" firstAttribute="top" secondItem="6Dx-H0-ReD" secondAttribute="bottom" constant="8" symbolic="YES" id="eJE-m5-2Ss"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -696,7 +708,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bES-2J-PPv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bES-2J-PPv">
                                 <rect key="frame" x="20" y="72" width="560" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -706,10 +718,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="trailing" secondItem="afj-ta-9sW" secondAttribute="trailingMargin" id="J1Q-pB-UiM"/>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="leading" secondItem="afj-ta-9sW" secondAttribute="leadingMargin" id="Rxr-fd-8Zx"/>
-                            <constraint firstItem="3v7-Vp-z73" firstAttribute="top" secondItem="bES-2J-PPv" secondAttribute="bottom" constant="8" symbolic="YES" id="WGD-h9-YP3"/>
-                            <constraint firstItem="bES-2J-PPv" firstAttribute="top" secondItem="HwG-r5-tu8" secondAttribute="bottom" constant="8" symbolic="YES" id="oQh-9M-iad"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="trailing" secondItem="afj-ta-9sW" secondAttribute="trailingMargin" id="KEU-Yd-em3"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="top" secondItem="HwG-r5-tu8" secondAttribute="bottom" constant="8" symbolic="YES" id="ask-Rc-IgD"/>
+                            <constraint firstItem="3v7-Vp-z73" firstAttribute="top" secondItem="bES-2J-PPv" secondAttribute="bottom" constant="8" symbolic="YES" id="b8R-zO-beq"/>
+                            <constraint firstItem="bES-2J-PPv" firstAttribute="leading" secondItem="afj-ta-9sW" secondAttribute="leadingMargin" id="qbj-LW-1sh"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
