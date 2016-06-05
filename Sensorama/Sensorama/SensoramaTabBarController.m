@@ -8,6 +8,7 @@
 
 #import "SensoramaTabBarController.h"
 #import "ActivityViewController.h"
+#import "AccountTableViewController.h"
 
 @interface SensoramaTabBarController ()
 
@@ -28,6 +29,11 @@
     NSMutableArray *viewControllers = [self.viewControllers mutableCopy];
     NSInteger idxToRemove = [self viewControllerIndexByClass:[ActivityViewController class]];
     [viewControllers removeObjectAtIndex:idxToRemove];
+    self.viewControllers = viewControllers;
+
+    // XXugleee
+    NSInteger idxToRemove2 = [self viewControllerIndexByClass:[AccountTableViewController class]];
+    [viewControllers removeObjectAtIndex:idxToRemove2];
     self.viewControllers = viewControllers;
 }
 
