@@ -633,7 +633,7 @@
         <!--Frequency-->
         <scene sceneID="UYb-wB-egL">
             <objects>
-                <viewController title="privacy" id="8Ta-BC-Yc5" userLabel="Frequency" sceneMemberID="viewController">
+                <viewController title="Sampling frequency" id="8Ta-BC-Yc5" userLabel="Frequency" customClass="FrequencyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ncy-CS-TYX"/>
                         <viewControllerLayoutGuide type="bottom" id="DGe-y4-muQ"/>
@@ -671,6 +671,9 @@
                             <constraint firstItem="DGe-y4-muQ" firstAttribute="top" secondItem="AIz-cy-EGK" secondAttribute="bottom" constant="411" id="prL-Lq-9m5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="frequencyTextField" destination="AIz-cy-EGK" id="zl8-w0-UB9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUL-Ww-1yt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
