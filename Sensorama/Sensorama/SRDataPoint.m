@@ -44,6 +44,8 @@
              @"cad"  : self.currentCadence,
              @"fla"  : self.floorsAscended,
              @"fld"  : self.floorsDescended,
+             @"act"  : self.activity,
+             @"bat"  : self.batteryLevel,
              @"fileId" : @(self.fileId),
              @"curTime" : self.curTime
     };
@@ -184,6 +186,8 @@
 
     CMMotionActivity *activityData = [SRDataPoint motionActivityUpdate:nil];
     self.activity = @([SRUtils activityInteger:activityData]);
+
+    self.batteryLevel = @([[UIDevice currentDevice] batteryLevel]);
 
     return self;
 }
