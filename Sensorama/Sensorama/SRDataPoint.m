@@ -34,6 +34,7 @@
 #pragma mark - JSON helper methods
 
 - (NSDictionary *) toDict {
+    NSString *batteryStateString = [SRUtils batteryLevelString:[self.batteryState integerValue]];
     return @{
              @"acc"  : @[ self.accX, self.accY, self.accZ ],
              @"mag"  : @[ self.magX, self.magY, self.magZ ],
@@ -46,6 +47,7 @@
              @"fld"  : self.floorsDescended,
              @"act"  : self.activity,
              @"bat"  : self.batteryLevel,
+             @"bst"  : batteryStateString,
              @"fileId" : @(self.fileId),
              @"curTime" : self.curTime
     };
@@ -187,7 +189,9 @@
     CMMotionActivity *activityData = [SRDataPoint motionActivityUpdate:nil];
     self.activity = @([SRUtils activityInteger:activityData]);
 
+    UIDeviceBatteryState batState = [[UIDevice currentDevice] batteryState];
     self.batteryLevel = @([[UIDevice currentDevice] batteryLevel]);
+    self.batteryState = @([SRUtils batteryInteger:batState]);
 
     return self;
 }

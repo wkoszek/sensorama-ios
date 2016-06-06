@@ -34,6 +34,7 @@
 @property NSNumber<RLMFloat> *floorsDescended;
 
 @property NSNumber<RLMFloat> *batteryLevel;
+@property NSNumber<RLMFloat> *batteryState;
 
 @property NSNumber<RLMInt> *activity;
 

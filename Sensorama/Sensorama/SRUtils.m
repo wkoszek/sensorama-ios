@@ -134,6 +134,35 @@
     return retInt;
 }
 
++ (NSString *)batteryLevelStringToInt:(UIDeviceBatteryState)state integer:(NSInteger *)returnInt {
+    NSString *retStr = @"";
+    NSInteger batInt = -1;
+
+    if (state == UIDeviceBatteryStateUnknown)   { retStr = @"unk"; batInt = 0; }
+    if (state == UIDeviceBatteryStateUnplugged) { retStr = @"upl"; batInt = 0; }
+    if (state == UIDeviceBatteryStateCharging)  { retStr = @"chr"; batInt = 0; }
+    if (state == UIDeviceBatteryStateFull)      { retStr = @"ful"; batInt = 0; }
+
+    if (returnInt != NULL) {
+        *returnInt = batInt;
+    }
+    return retStr;
+}
+
++ (NSInteger)batteryInteger:(UIDeviceBatteryState)state
+{
+    NSInteger retInt = -1;
+    [SRUtils batteryLevelStringToInt:state integer:&retInt];
+    return retInt;
+}
+
+
++ (NSString *)batteryLevelString:(UIDeviceBatteryState)state
+{
+    return [SRUtils batteryLevelStringToInt:state integer:NULL];
+}
+
+
 + (NSString *)bundleVersionString {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }

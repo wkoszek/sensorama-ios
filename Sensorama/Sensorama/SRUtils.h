@@ -18,6 +18,11 @@
 + (BOOL)isSimulator;
 + (NSString *)activityString:(CMMotionActivity *)activity;
 + (NSInteger)activityInteger:(CMMotionActivity *)activity;
+
++ (NSInteger)batteryInteger:(UIDeviceBatteryState)state;
++ (NSString *)batteryLevelString:(UIDeviceBatteryState)state;
+
+
 + (NSString *)bundleVersionString;
 + (NSString *)bundleShortVersionString;
 + (NSString *)humanSensoramaVersionString;
