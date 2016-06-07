@@ -16,10 +16,12 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <GroundControl/NSUserDefaults+GroundControl.h>
 
 #import "SensoramaVars.h"
 
 static AWSLogLevel awsLogLevel = AWSLogLevelNone;
+static const char *sensoramaAppURL = "https://raw.githubusercontent.com/wkoszek/sensorama-ios/master/assets/Sensorama.plist";
 
 @interface AppDelegate ()
 @property (nonatomic) BOOL isDevPhone;
@@ -42,6 +44,14 @@ static AWSLogLevel awsLogLevel = AWSLogLevelNone;
     NSString *Auth0ClientID = [NSString stringWithUTF8String:AUTH0CLIENTID];
     NSString *Auth0Domain = [NSString stringWithUTF8String:AUTH0DOMAIN];
     NSString *Auth0URLScheme = [NSString stringWithUTF8String:AUTH0_URLSCHEME];
+
+    NSURL *cfgURL = [NSURL URLWithString:[NSString stringWithUTF8String:sensoramaAppURL]];
+    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:cfgURL
+                                                           success:^(NSDictionary *dict) {
+                                                               NSLog(@"dict=%@", dict);
+                                                           } failure:^(NSError *error) {
+                                                               NSLog(@"error=%@", error);
+                                                           }];
 
     // Below I replace whole bunch of secrets for 3rd party frameworks,
     // so that everything in Sensorama can be open-sourced and actively

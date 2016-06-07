@@ -1,0 +1,6 @@
+framework module GroundControl {
+  umbrella header "GroundControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

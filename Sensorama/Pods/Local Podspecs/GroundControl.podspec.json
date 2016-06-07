@@ -1,0 +1,27 @@
+{
+  "name": "GroundControl",
+  "version": "3.0.0",
+  "license": "MIT",
+  "summary": "Remote configuration for iOS.",
+  "homepage": "https://github.com/gshahbazian/GroundControl",
+  "social_media_url": "https://twitter.com/mattt",
+  "authors": {
+    "Mattt Thompson": "m@mattt.me"
+  },
+  "source": {
+    "git": "https://github.com/gshahbazian/GroundControl.git",
+    "tag": "3.0.0"
+  },
+  "source_files": "GroundControl",
+  "requires_arc": true,
+  "platforms": {
+    "ios": "6.0",
+    "osx": "10.8",
+    "tvos": "9.0"
+  },
+  "dependencies": {
+    "AFNetworking": [
+
+    ]
+  }
+}
