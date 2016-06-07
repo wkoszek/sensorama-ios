@@ -626,33 +626,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency (ms)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBm-6d-kfF">
-                                <rect key="frame" x="223" y="72" width="154" height="35"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="250" clearsOnBeginEditing="YES" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="AIz-cy-EGK">
+                                <rect key="frame" x="250" y="72" width="100" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="msS-9A-az6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="250" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIz-cy-EGK">
-                                <rect key="frame" x="223" y="115" width="99" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="Zw0-VI-mjp"/>
-                                    <constraint firstAttribute="height" constant="30" id="c2m-0e-dlO"/>
+                                    <constraint firstAttribute="height" constant="58" id="NW9-JF-6gh"/>
+                                    <constraint firstAttribute="width" constant="100" id="UfY-kK-jwo"/>
                                 </constraints>
                                 <color key="textColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JBm-6d-kfF" firstAttribute="centerX" secondItem="LG9-6L-MOa" secondAttribute="centerX" id="6fv-OR-TUQ"/>
-                            <constraint firstItem="AIz-cy-EGK" firstAttribute="top" secondItem="JBm-6d-kfF" secondAttribute="bottom" constant="8" symbolic="YES" id="McS-eN-iRy"/>
-                            <constraint firstItem="JBm-6d-kfF" firstAttribute="top" secondItem="Ncy-CS-TYX" secondAttribute="bottom" constant="8" symbolic="YES" id="VFc-T9-NBi"/>
-                            <constraint firstItem="AIz-cy-EGK" firstAttribute="leading" secondItem="JBm-6d-kfF" secondAttribute="leading" id="XTg-qr-G2g"/>
-                            <constraint firstItem="DGe-y4-muQ" firstAttribute="top" secondItem="AIz-cy-EGK" secondAttribute="bottom" constant="411" id="prL-Lq-9m5"/>
+                            <constraint firstItem="AIz-cy-EGK" firstAttribute="centerX" secondItem="LG9-6L-MOa" secondAttribute="centerX" id="beP-E5-3b1"/>
+                            <constraint firstItem="AIz-cy-EGK" firstAttribute="top" secondItem="Ncy-CS-TYX" secondAttribute="bottom" constant="8" symbolic="YES" id="vxj-2N-pBO"/>
                         </constraints>
                     </view>
                     <connections>
