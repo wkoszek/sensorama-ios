@@ -251,7 +251,8 @@
 }
 
 - (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor {
-    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3];
+    UIImage *img = [UIImage imageNamed:@"iconFile"];
+    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[img]];
 }
 
 

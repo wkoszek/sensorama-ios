@@ -12,8 +12,10 @@ import Whisper
                                textColor: UIColor,
                                backgroundColor: UIColor,
                                toNavigationController: UINavigationController,
-                               silenceAfter: NSTimeInterval) {
-        let message = Message(title: text, textColor: textColor, backgroundColor: backgroundColor)
+                               silenceAfter: NSTimeInterval,
+                               images: [UIImage]?) {
+        let message = Message(title: text, textColor: textColor, backgroundColor: backgroundColor, images: images)
+
         Whisper(message, to: toNavigationController, action: .Present)
 
         if silenceAfter > 0.1 {
