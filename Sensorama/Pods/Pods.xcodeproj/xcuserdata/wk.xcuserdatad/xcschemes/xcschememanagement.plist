@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FontAwesome+iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GBDeviceInfo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -132,6 +137,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0B9ECEEFA5BF5F1B4D3499063E973C56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0BF8569A1D17D47E1A86EB020383E8D1</key>
 		<dict>
 			<key>primary</key>
@@ -152,17 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24113D16BF8258CF877FB0EE78F71524</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>25C4DCE9DCEA16C6D470F1BFAA90EDD7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>39912586C031AC11AA32821ABBA672F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,6 +182,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>540E0EBF1C9C2606E34B1B822E55CD24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59EF3A5EBF4016CD33E2425403263A19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>74CC32C58E7AE782A588581C72E199BB</key>
 		<dict>
 			<key>primary</key>
@@ -197,11 +207,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90AAC9DF2489AAF6E7F78473A3B9B93B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>99953A8C8E46BBD5E5106542F76CE8BD</key>
 		<dict>
 			<key>primary</key>
@@ -212,17 +217,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A970CF52A1A9D10C95893009B7D03529</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BAA396C4D689A02A15029B49E076FAF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C979F43EE3FBCBC3101D1F1FB65520BB</key>
+		<key>BDB1BB7E266562F4ADA237CC1464B373</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAC50B035D22756051011DF4126726C8</key>
+		<key>C609C028C811BCEAC23FD82118295EDA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C979F43EE3FBCBC3101D1F1FB65520BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -242,12 +257,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E994196E066C2A1E7763DFD96FD7AA81</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC77506DB38C7E734F848561F1595242</key>
+		<key>ED9498D3A01197603341532E5A99179E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
