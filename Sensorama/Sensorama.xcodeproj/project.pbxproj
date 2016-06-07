@@ -13,6 +13,7 @@
 		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
 		5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */; };
 		5758699F1CF14F3D0015C791 /* SRDataFileExporterMailgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */; };
+		57587A791D06B1700010DCD0 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57587A781D06B1700010DCD0 /* FontAwesome.ttf */; };
 		577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */; };
 		577366AF1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 577366AE1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m */; };
 		577A2B821C9953BC00B2D890 /* SRAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A2B811C9953BC00B2D890 /* SRAuth.m */; };
@@ -91,6 +92,7 @@
 		5758699D1CF14F3D0015C791 /* SRDataFileExporterMailgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterMailgun.h; sourceTree = "<group>"; };
 		5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterMailgun.m; sourceTree = "<group>"; };
 		57587A761D06AC830010DCD0 /* FontAwesome_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome_iOS.framework; path = "../../../../Users/wk/Library/Developer/Xcode/DerivedData/Sensorama-exycbqmwaecqkudjzuzfrlpolovg/Build/Products/Debug-iphonesimulator/FontAwesome_iOS.framework"; sourceTree = "<group>"; };
+		57587A781D06B1700010DCD0 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../Pods/FontAwesome+iOS/Resources/FontAwesome.ttf"; sourceTree = "<group>"; };
 		577366AA1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeMPBZ2.h; sourceTree = "<group>"; };
 		577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileSerializeMPBZ2.m; sourceTree = "<group>"; };
 		577366AD1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeBSONBZ2.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		577DC8F61C4CB0E700FA02B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57587A781D06B1700010DCD0 /* FontAwesome.ttf */,
 				577DBB7B1CFEC7920034C1EA /* WhisperBridge.swift */,
 				577DBB7A1CFEC7920034C1EA /* Sensorama-Bridging-Header.h */,
 				57B11EEA1CA922EF00B389EF /* contrib */,
@@ -459,6 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57587A791D06B1700010DCD0 /* FontAwesome.ttf in Resources */,
 				57B11EEB1CA922EF00B389EF /* contrib in Resources */,
 				577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */,
 				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,

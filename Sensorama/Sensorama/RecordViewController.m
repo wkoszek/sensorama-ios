@@ -251,12 +251,13 @@
 
 }
 
-- (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor {
-    UIImage *github = [UIImage imageWithIcon:@"fa-github" backgroundColor:[UIColor purpleColor] iconColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:255] iconScale:2.f andSize:CGSizeMake(7, 7)];
-
-    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[github]];
+- (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor image:(UIImage *)image {
+    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[image]];
 }
 
+- (UIImage *) faImageWithName:(NSString *)name {
+    return [UIImage imageWithIcon:name backgroundColor:[SRUtils mainColor] iconColor:[UIColor whiteColor] iconScale:1.0f andSize:CGSizeMake(20, 20)];
+}
 
 - (void)sensoramaNotificationHandler:(NSNotification *)notification
 {
@@ -270,18 +271,19 @@
         [self.debugMessagesLabel setText:notificationString];
     }
     if ([[notification name] isEqualToString:@"Sensorama"]) {
-        UIColor *fgColor;
+        UIColor *fgColor = [UIColor whiteColor];
+        UIImage *image = nil;
         if ([[userInfo objectForKey:@"type"] isEqualToString:@"notify"]) {
-            fgColor = [UIColor greenColor];
+            image = [self faImageWithName:@"icon-ok"];
         }
         if ([[userInfo objectForKey:@"type"] isEqualToString:@"warn"]) {
-            fgColor = [UIColor yellowColor];
+            image = [self faImageWithName:@"icon-warning-sign"];
         }
         if ([[userInfo objectForKey:@"type"] isEqualToString:@"error"]) {
-            fgColor = [UIColor redColor];
+            image = [self faImageWithName:@"icon-thumbs-down"];
         }
         SRPROBE2(fgColor, notificationString);
-        [self setNotifyString:notificationString fgColor:fgColor];
+        [self setNotifyString:notificationString fgColor:fgColor image:image];
     }
 }
 

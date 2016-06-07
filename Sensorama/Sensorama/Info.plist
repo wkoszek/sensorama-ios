@@ -106,5 +106,9 @@
 	<string>We use phone&apos;s sensors for providing functionality of this app</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright 2015-2016 by Wojciech Adam Koszek</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome.ttf</string>
+	</array>
 </dict>
 </plist>
