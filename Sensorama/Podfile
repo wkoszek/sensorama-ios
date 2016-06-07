@@ -23,6 +23,7 @@ def mypods
   pod 'DZNEmptyDataSet'
   pod 'GCNetworkReachability'
 
+  pod 'FontAwesome+iOS'
   pod 'Whisper'
   pod "Realm"
   pod 'JSONModel'

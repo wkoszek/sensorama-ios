@@ -12,6 +12,7 @@
 //
 
 #import <Lock/Lock.h>
+#import "FontAwesome_iOS/UIImage+FontAwesome.h"
 #import "Sensorama-Swift.h"
 
 @import JWTDecode;
@@ -251,8 +252,9 @@
 }
 
 - (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor {
-    UIImage *img = [UIImage imageNamed:@"iconFile"];
-    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[img]];
+    UIImage *github = [UIImage imageWithIcon:@"fa-github" backgroundColor:[UIColor purpleColor] iconColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:255] iconScale:2.f andSize:CGSizeMake(7, 7)];
+
+    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[github]];
 }
 
 

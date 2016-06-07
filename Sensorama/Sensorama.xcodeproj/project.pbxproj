@@ -90,6 +90,7 @@
 		57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRDebug.h; sourceTree = "<group>"; };
 		5758699D1CF14F3D0015C791 /* SRDataFileExporterMailgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterMailgun.h; sourceTree = "<group>"; };
 		5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterMailgun.m; sourceTree = "<group>"; };
+		57587A761D06AC830010DCD0 /* FontAwesome_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome_iOS.framework; path = "../../../../Users/wk/Library/Developer/Xcode/DerivedData/Sensorama-exycbqmwaecqkudjzuzfrlpolovg/Build/Products/Debug-iphonesimulator/FontAwesome_iOS.framework"; sourceTree = "<group>"; };
 		577366AA1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeMPBZ2.h; sourceTree = "<group>"; };
 		577366AB1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileSerializeMPBZ2.m; sourceTree = "<group>"; };
 		577366AD1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializeBSONBZ2.h; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		C9188546ED92D4026C0F8BA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57587A761D06AC830010DCD0 /* FontAwesome_iOS.framework */,
 				14D2D52FEFE6F52AD8E15623 /* Pods.framework */,
 				158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */,
 				A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */,

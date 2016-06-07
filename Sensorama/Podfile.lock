@@ -32,6 +32,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
+  - FontAwesome+iOS (0.1.4)
   - GBDeviceInfo (3.8.0):
     - GBDeviceInfo/Core (= 3.8.0)
   - GBDeviceInfo/Core (3.8.0)
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - Crashlytics
   - DZNEmptyDataSet
   - Fabric
+  - FontAwesome+iOS
   - GBDeviceInfo (~> 3.5)
   - GCNetworkReachability
   - JSONModel
@@ -112,6 +114,7 @@ SPEC CHECKSUMS:
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FontAwesome+iOS: 9070b682a9255ca0fdc34bcfb129ad0ba2b73b87
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
   GCNetworkReachability: 2a7dd53d362220326b3e38df68c91b3ef84418d1
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
