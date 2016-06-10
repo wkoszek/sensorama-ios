@@ -22,22 +22,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-#if 0
-    NSMutableArray *viewControllers = [self.viewControllers mutableCopy];
-    NSInteger idxToRemove = [self viewControllerIndexByClass:[ActivityViewController class]];
-    [viewControllers removeObjectAtIndex:idxToRemove];
-    self.viewControllers = viewControllers;
-
-    // XXugleee
-    NSInteger idxToRemove2 = [self viewControllerIndexByClass:[AccountTableViewController class]];
-    [viewControllers removeObjectAtIndex:idxToRemove2];
-    self.viewControllers = viewControllers;
-#endif
-}
-
 - (id) viewControllerByClass:(id)objClass {
     for (UIViewController *uivc in self.viewControllers) {
         if ([uivc isKindOfClass:objClass]) {
