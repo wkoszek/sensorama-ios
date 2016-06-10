@@ -22,6 +22,14 @@
     toolbar.items = [NSArray arrayWithObject:barButton];
 
     self.frequencyTextField.inputAccessoryView = toolbar;
+
+    [self.frequencyTextField addTarget:self
+                  action:@selector(frequencyUpdated)
+        forControlEvents:UIControlEventEditingDidEnd];
+}
+
+- (void) frequencyUpdated {
+    NSLog(@"%s", __func__);
 }
 
 @end
