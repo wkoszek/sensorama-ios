@@ -74,6 +74,8 @@ static const char *sensoramaAppURL = "http://labs.koszek.com:9494/defaults.plist
     [SRUsageStats eventAppOpened];
     [SRDataStore handleMigrations];
 
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES]; // don't turn of the screen
+
     return YES;
 }
 
