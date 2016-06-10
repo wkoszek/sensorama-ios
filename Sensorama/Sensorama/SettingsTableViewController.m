@@ -102,6 +102,12 @@
     [rvc logoutAuth0];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SRPROBE0();
+}
 
+- (IBAction)unwindToSettings:(UIStoryboardSegue *)unwindSegue {
+    SRPROBE0();
+}
 
 @end

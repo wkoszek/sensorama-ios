@@ -30,6 +30,7 @@
 
 - (void) frequencyUpdated {
     NSLog(@"%s", __func__);
+    [self performSegueWithIdentifier:@"unwindToSettings" sender:self];
 }
 
 @end

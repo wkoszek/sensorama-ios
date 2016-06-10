@@ -635,6 +635,9 @@
                                 <color key="textColor" red="0.7725490196" green="0.066666666669999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <segue destination="RYl-Mk-Tna" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettings:" id="PDb-Rw-rPg"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -648,6 +651,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUL-Ww-1yt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RYl-Mk-Tna" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2180" y="434"/>
         </scene>
