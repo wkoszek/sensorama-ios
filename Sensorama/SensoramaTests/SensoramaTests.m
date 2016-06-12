@@ -43,7 +43,7 @@
 
 
 - (void)dbTearDown {
-    RLMRealm *realm = [[SRDataStore sharedInstance] realm];
+    RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     [realm deleteAllObjects];
     [realm commitWriteTransaction];
@@ -94,7 +94,7 @@
 
 - (void) testSRDataFileWithPoints {
     SRDataFile *file = [self helperMakeDataFileWithPoints];
-    [file saveWithSync:NO];
+    [file saveWithExport:NO];
 
     RLMResults<SRDataFile *> *files = [SRDataFile allObjects];
     XCTAssert([files count] == 1);
@@ -105,18 +105,18 @@
 
 - (void) testSRDataFileSync {
     SRDataFile *dataFile = [self helperMakeDataFileWithPoints];
-    [dataFile saveWithSync:YES];
+    [dataFile saveWithExport:YES];
 }
 
 - (void)testBasicPointMake {
     SRDataPoint *dp = [SRDataPoint new];
-    SRDataStore *dataStore = [SRDataStore sharedInstance];
+    RLMRealm *realm = [RLMRealm defaultRealm];
 
     WAIT_INIT();
     dispatch_sync(self.waitQueue, ^{
-        [dataStore.realm beginWriteTransaction];
-        [dataStore.realm addObject:dp];
-        [dataStore.realm commitWriteTransaction];
+        [realm beginWriteTransaction];
+        [realm addObject:dp];
+        [realm commitWriteTransaction];
         WAIT_DONE();
     });
     WAIT_LOOP();
@@ -129,7 +129,7 @@
     for (int i = 0; i < 10; i++) {
         [engine recordingUpdate];
     }
-    [engine recordingStopWithSync:NO];
+    [engine recordingStopWithExport:NO];
 }
 
 - (void)testEngineOneHour {
@@ -141,7 +141,7 @@
         [engine recordingUpdate];
     }
     dispatch_sync(self.waitQueue, ^{
-        [engine recordingStopWithSync:NO];
+        [engine recordingStopWithExport:NO];
         WAIT_DONE();
     });
 
@@ -209,9 +209,7 @@
 
 - (void)testDataStoreBasic {
     NSArray *points = [self makeDataPointsWithFileId:13 howMany:10];
-
-    RLMRealm *realm = [[SRDataStore sharedInstance] realm];
-
+    RLMRealm *realm = [RLMRealm defaultRealm];
 
     dispatch_sync(self.waitQueue, ^{
         [realm beginWriteTransaction];
