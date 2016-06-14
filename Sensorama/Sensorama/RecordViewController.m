@@ -8,7 +8,6 @@
 // http://stackoverflow.com/questions/5948167/uiview-animatewithduration-doesnt-animate-cornerradius-variation
 // Re-login implementation stolen from:
 // https://github.com/maju6406/Layer-Auth0-iOS-Example/blob/master/Code/Controllers/ViewController.m#L97
-// JWTDecode written in Swift doesn't export "isExpired" method, so I had to make it myself.
 //
 
 #import <Lock/Lock.h>
@@ -156,6 +155,8 @@
     [store clearAll];
 }
 
+// Get rid of this once https://github.com/auth0/JWTDecode.swift/pull/25
+// hits the production
 - (BOOL)isJWTTokenExpired:(A0JWT *)jwt
 {
     NSDate *date = [jwt expiresAt];
@@ -287,16 +288,10 @@
     }
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 #pragma mark - Navigation
 
