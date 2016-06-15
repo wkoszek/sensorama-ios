@@ -602,6 +602,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="frequencySamplingLabel" destination="cER-6t-CqJ" id="Iq9-lC-RQh"/>
                         <outlet property="logoutCell" destination="BlA-DW-5p8" id="Itd-BV-d5M"/>
                         <outletCollection property="settingsState" destination="CIA-sA-gA9" id="IEh-8A-dVd"/>
                         <outletCollection property="settingsState" destination="bOG-G1-Ufd" id="dco-CT-TI1"/>

@@ -13,11 +13,14 @@
 #import "SRAuth.h"
 #import "SensoramaTabBarController.h"
 #import "RecordViewController.h"
+#import "FrequencyViewController.h"
+#import "SRCfg.h"
 
 
 @interface SettingsTableViewController ()
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *settingsState;
 @property (weak, nonatomic) IBOutlet UITableViewCell *logoutCell;
+@property (weak, nonatomic) IBOutlet UILabel *frequencySamplingLabel;
 
 @end
 
@@ -104,10 +107,26 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SRPROBE0();
+    if ([segue.destinationViewController isKindOfClass:[FrequencyViewController class]]) {
+        FrequencyViewController *freqVC = (FrequencyViewController *)segue.destinationViewController;
+        NSString *stringWithoutMs = [self.frequencySamplingLabel.text
+                                        stringByReplacingOccurrencesOfString:@"ms" withString:@""];
+        freqVC.frequencyValue = @([stringWithoutMs integerValue]);
+    }
 }
 
 - (IBAction)unwindToSettings:(UIStoryboardSegue *)unwindSegue {
     SRPROBE0();
+    if ([unwindSegue.sourceViewController isKindOfClass:[FrequencyViewController class]]) {
+        FrequencyViewController *freqVC = (FrequencyViewController *)unwindSegue.sourceViewController;
+        NSLog(@"GOT HERE %@", freqVC.frequencyValue);
+
+        NSString *stringWithMs = [NSString stringWithFormat:@"%@ms", freqVC.frequencyValue];
+        [self.frequencySamplingLabel setText:stringWithMs];
+
+        SRCfg *cfg = [SRCfg defaultConfiguration];
+        cfg.sampleInterval = [freqVC.frequencyValue integerValue];
+    }
 }
 
 @end

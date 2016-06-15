@@ -47,7 +47,7 @@
 
     self.timer = nil;
     if (enableUpdates) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25 //self.configuration.sampleInterval / 1000
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:(0.001 * self.configuration.sampleInterval)
                                          target:self
                                        selector:@selector(recordingUpdate)
                                        userInfo:nil

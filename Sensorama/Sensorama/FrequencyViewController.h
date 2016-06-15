@@ -10,4 +10,6 @@
 
 @interface FrequencyViewController : UIViewController
 
+@property NSNumber *frequencyValue;
+
 @end

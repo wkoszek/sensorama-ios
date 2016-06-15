@@ -7,6 +7,7 @@
 //
 
 #import "FrequencyViewController.h"
+#import "SRDebug.h"
 
 @interface FrequencyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *frequencyTextField;
@@ -28,9 +29,17 @@
         forControlEvents:UIControlEventEditingDidEnd];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return [[self.frequencyTextField text] integerValue] > 0;
+}
+
 - (void) frequencyUpdated {
-    NSLog(@"%s", __func__);
-    [self performSegueWithIdentifier:@"unwindToSettings" sender:self];
+    self.frequencyValue = @([[self.frequencyTextField text] integerValue]);
+    NSLog(@"%s: %@", __func__, self.frequencyValue);
+
+    if ([self shouldPerformSegueWithIdentifier:@"unwindToSettings" sender:self]) {
+        [self performSegueWithIdentifier:@"unwindToSettings" sender:self];
+    }
 }
 
 @end
