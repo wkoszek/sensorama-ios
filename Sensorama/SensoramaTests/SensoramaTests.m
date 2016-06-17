@@ -184,7 +184,7 @@
             WAIT_DONE();
         });
 
-        NSLog(@"%d/%d", ti, transNumber);
+        NSLog(@"%d/%d", (int)ti, (int)transNumber);
     }
     WAIT_LOOP();
 }
