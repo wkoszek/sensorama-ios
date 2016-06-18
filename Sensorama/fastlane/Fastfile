@@ -70,7 +70,7 @@ platform :ios do
       increment_build_number
     end
     build_app
-    scan(scheme: "SensoramaTests")
+    scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
     crashlytics_beta
     #frameit
