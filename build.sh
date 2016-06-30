@@ -1,6 +1,15 @@
 #!/bin/sh
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
+# Do `git pull` to make sure we're running the latest code and
+# to make sure we have the SSH key added, so that we know that
+# fastlane, when run, will quite likely succeed.
+git pull
+if [ $? -ne 0 ]; then
+	echo "failed on 'git pull' quiting"
+	exit 1
+fi
+
 if [ "$1" = "bootstrap" ]; then
 	gem install bundler
 	gem install cocoapods --pre
