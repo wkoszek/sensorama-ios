@@ -11,6 +11,7 @@
 @import Foundation;
 
 #import "Realm/Realm.h"
+#import "SRCfg.h"
 
 @interface SRDataPoint : RLMObject
 
@@ -43,8 +44,7 @@
 @property NSInteger pointId;
 @property NSNumber<RLMDouble> *curTime;
 
-- (instancetype) initWithTime:(NSTimeInterval)timeVal;
-- (instancetype) init;
+- (instancetype) initWithConfiguration:(SRCfg *)configuration;
 - (NSDictionary *)toDict;
 + (CMMotionManager *)motionManager;
 + (CMPedometer *)pedometerInstance;

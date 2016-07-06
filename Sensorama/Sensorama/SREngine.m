@@ -63,7 +63,7 @@
         NSLog(@"stopped!");
     }
 
-    SRDataPoint *newPoint = [SRDataPoint new];
+    SRDataPoint *newPoint = [[SRDataPoint alloc] initWithConfiguration:self.configuration];
     updateCount++;
     //NSLog(@"newPoint=%@", newPoint);
     [self.dataFile updateWithPoint:newPoint];

@@ -10,6 +10,7 @@
 
 #import "SRDataPoint.h"
 #import "SRUtils.h"
+#import "SRCfg.h"
 
 @implementation SRDataPoint
 
@@ -153,7 +154,7 @@
 
 #pragma mark - initializer
 
-- (instancetype) initWithTime:(NSTimeInterval)timeVal {
+- (instancetype) initWithConfiguration:(SRCfg *)config time:(NSTimeInterval)timeVal {
     self = [super init];
     if (!self) {
         return self;
@@ -196,8 +197,8 @@
     return self;
 }
 
-- (instancetype) init {
-    return [self initWithTime:CACurrentMediaTime()];
+- (instancetype) initWithConfiguration:(SRCfg *)config {
+    return [self initWithConfiguration:config time:CACurrentMediaTime()];
 }
 
 @end
