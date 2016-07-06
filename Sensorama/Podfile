@@ -20,6 +20,7 @@ def mypods
   pod "MPMessagePack"
   pod 'JTCalendar', '~> 2.0'
 
+  pod 'InAppSettingsKit'
   pod 'DZNEmptyDataSet'
   pod 'GCNetworkReachability'
   pod 'GroundControl', :git => 'https://github.com/wkoszek/GroundControl.git'
