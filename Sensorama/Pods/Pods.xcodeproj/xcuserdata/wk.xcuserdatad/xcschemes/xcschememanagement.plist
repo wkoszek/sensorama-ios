@@ -64,6 +64,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>InAppSettingsKit-InAppSettingsKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>InAppSettingsKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -157,17 +167,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1729BAB8428D312983F37BC25935FF3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1C64796D879013CACFB0CD65D3FCEA9D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>24077BBD3146B6032DE590091BB06A60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,17 +197,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>411F92B7CDBE6E7FCDD0EB79C430F639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DB63B8780DFADA8C9F8E476BDE37F02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5067EE4AC4A5D842EB213C371E66AF30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6240C536EFC2E0D84488708BBD762455</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>69732072F62BBCD5D3DF2592BA77B493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C8E4522CA62626DEF26F9685D92FA39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6CB56D77E06592DE11DEA8D51B7FDB98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>74CC32C58E7AE782A588581C72E199BB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>74CD037716AD257203C112795D39F0B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -218,11 +248,6 @@
 			<true/>
 		</dict>
 		<key>99953A8C8E46BBD5E5106542F76CE8BD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>99DC9719AEDEA77C3C087353BC4DDBA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -247,11 +272,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBD083C08193B5781F2B804E0604BC96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CFABCF590B06C0F9D4CC041CBE9421FE</key>
 		<dict>
 			<key>primary</key>
@@ -267,7 +287,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F05CA4CAB9B4F03F984006B37DA1C941</key>
+		<key>E91D633130F1702F196094F1463BB325</key>
 		<dict>
 			<key>primary</key>
 			<true/>
