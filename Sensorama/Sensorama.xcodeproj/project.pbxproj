@@ -30,6 +30,7 @@
 		577DC9111C4CB0E700FA02B7 /* SensoramaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC9101C4CB0E700FA02B7 /* SensoramaTests.m */; };
 		577DC91C1C4CB0E700FA02B7 /* SensoramaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 577DC91B1C4CB0E700FA02B7 /* SensoramaUITests.m */; };
 		5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795E1BF1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m */; };
+		5797A3781D2E179E00B13CB2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5797A3771D2E179E00B13CB2 /* Settings.bundle */; };
 		579B6CE51CD3411E0011759B /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579B6CE41CD3411E0011759B /* ActivityViewController.m */; };
 		579F210F1D0415E5002E42F4 /* FrequencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F210E1D0415E5002E42F4 /* FrequencyViewController.m */; };
 		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
@@ -125,6 +126,7 @@
 		577DC91D1C4CB0E700FA02B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5795E1BE1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileSerializerJSONBZ2.h; sourceTree = "<group>"; };
 		5795E1BF1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileSerializerJSONBZ2.m; sourceTree = "<group>"; };
+		5797A3771D2E179E00B13CB2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		579B6CE31CD3411E0011759B /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		579B6CE41CD3411E0011759B /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		579F210D1D0415E5002E42F4 /* FrequencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyViewController.h; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				5797A3771D2E179E00B13CB2 /* Settings.bundle */,
 				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
 				577A4B8B1CCC9D7E00FA6E7D /* Model */,
 				578EDD221CC7543C00BC62B5 /* Views */,
@@ -466,6 +469,7 @@
 				57B11EEB1CA922EF00B389EF /* contrib in Resources */,
 				577DC9061C4CB0E700FA02B7 /* LaunchScreen.storyboard in Resources */,
 				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,
+				5797A3781D2E179E00B13CB2 /* Settings.bundle in Resources */,
 				577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
