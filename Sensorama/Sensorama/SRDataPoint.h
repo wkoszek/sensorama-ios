@@ -45,6 +45,7 @@
 @property NSNumber<RLMDouble> *curTime;
 
 - (instancetype) initWithConfiguration:(SRCfg *)configuration;
+- (instancetype) initWithConfiguration:(SRCfg *)config time:(NSTimeInterval)timeVal;
 - (NSDictionary *)toDict;
 + (CMMotionManager *)motionManager;
 + (CMPedometer *)pedometerInstance;
