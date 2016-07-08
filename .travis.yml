@@ -5,6 +5,7 @@ rvm:
 - 2.2
 podfile: Sensorama/Podfile
 script:
+- cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
 - ./build.sh bootstrap
 - ./build.sh
 addons:
