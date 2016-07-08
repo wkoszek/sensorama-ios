@@ -85,10 +85,13 @@
 }
 
 - (SRDataFile *) helperMakeDataFileWithPoints {
+    SRCfg *srCfg = [SRCfg defaultConfiguration];
     SRDataFile *file = [SRDataFile new];
-    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10250]];
-    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10500]];
-    [file updateWithPoint:[[SRDataPoint alloc] initWithTime:10750]];
+
+    [file updateWithPoint:[[SRDataPoint alloc] initWithConfiguration:srCfg time:10250]];
+    [file updateWithPoint:[[SRDataPoint alloc] initWithConfiguration:srCfg time:10500]];
+    [file updateWithPoint:[[SRDataPoint alloc] initWithConfiguration:srCfg time:10750]];
+
     return file;
 }
 
