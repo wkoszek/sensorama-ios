@@ -201,4 +201,9 @@
     return [self initWithConfiguration:config time:CACurrentMediaTime()];
 }
 
+- (instancetype) init {
+    return [self initWithConfiguration:[SRCfg defaultConfiguration]];
+}
+
+
 @end
