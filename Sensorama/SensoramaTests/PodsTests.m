@@ -33,11 +33,4 @@
     [super tearDown];
 }
 
-- (void)testJSONSerialize {
-    Bleh *bleh = [Bleh new];
-    bleh.point = [SRDataPoint new];
-    NSString *string = [bleh toJSONString];
-    NSLog(@"JSON string=%@", string);
-}
-
 @end
