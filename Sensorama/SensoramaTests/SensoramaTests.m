@@ -232,7 +232,7 @@
 }
 
 - (void)testBasicPointJSONSerialize {
-    SRDataPoint *dp = [SRDataPoint new];
+    SRDataPoint *dp = [[SRDataPoint alloc] initWithConfiguration:[SRCfg defaultConfiguration]];
     NSLog(@"dp=%@", [dp toDict]);
 }
 
