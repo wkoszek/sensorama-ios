@@ -16,7 +16,6 @@
 #import "FrequencyViewController.h"
 #import "SRCfg.h"
 
-
 @interface SettingsTableViewController ()
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *settingsState;
 @property (weak, nonatomic) IBOutlet UITableViewCell *logoutCell;
@@ -26,7 +25,25 @@
 
 @implementation SettingsTableViewController
 
+- (void) viewDidLoad {
+    [super viewDidLoad];
 
+    self.neverShowPrivacySettings = YES;
+    self.showCreditsFooter = NO;
+
+    [SRUsageStats eventAppSettings];
+}
+
+- (void) viewDidAppear:(BOOL)animate {
+    [super viewDidAppear:animate];
+    [self.tabBarController setTitle:@"Settings"];
+
+    A0UserProfile *profile = [SRAuth currentProfile];
+
+    NSLog(@"email=%@", profile.email);
+}
+
+#if 0
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
@@ -42,25 +59,6 @@
         }
         [sw setOn:shouldBeOn];
     }
-}
-
-- (void) viewDidAppear:(BOOL)animate {
-    [super viewDidAppear:animate];
-    [self.tabBarController setTitle:@"Settings"];
-
-    A0UserProfile *profile = [SRAuth currentProfile];
-
-
-    NSLog(@"email=%@", profile.email);
-
-    [self.logoutCell.detailTextLabel setText:profile.email];
-}
-
-- (void)viewDidLoad {
-    NSLog(@"%s", __func__);
-    [super viewDidLoad];
-
-    [SRUsageStats eventAppSettings];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
@@ -84,6 +82,7 @@
         [stvc setSelectedIndex:0];
     }
 }
+
 
 
 - (IBAction)sensorStateChange:(id)sender forEvent:(UIEvent *)event {
@@ -128,5 +127,8 @@
         cfg.sampleInterval = [freqVC.frequencyValue integerValue];
     }
 }
+
+#endif
+
 
 @end
