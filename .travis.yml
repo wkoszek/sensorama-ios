@@ -5,8 +5,8 @@ rvm:
 - 2.2
 podfile: Sensorama/Podfile
 script:
-- cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace && cd ..
-#- cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
+#- cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace && cd ..
+- cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests && cd ..
 - ./build.sh bootstrap
 - ./build.sh
 addons:
