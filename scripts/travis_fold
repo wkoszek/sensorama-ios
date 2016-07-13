@@ -1,0 +1,1 @@
+echo -en "travis_fold:$1:$2\\r"
