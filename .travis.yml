@@ -5,6 +5,7 @@ rvm:
 - 2.2
 podfile: Sensorama/Podfile
 script:
+- cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
 - ./scripts/travis_fold start bootstrapping
 - ./build.sh bootstrap
 - ./scripts/travis_fold end bootstrapping
