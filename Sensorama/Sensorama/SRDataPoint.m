@@ -27,11 +27,6 @@
     return @"pointId";
 }
 
-//+ (NSDictionary *)defaultPropertyValues
-//{
-//    return @{@"pointId": @(-1) };
-//}
-
 #pragma mark - JSON helper methods
 
 - (NSDictionary *) toDict {

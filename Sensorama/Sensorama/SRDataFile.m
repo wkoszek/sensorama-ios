@@ -23,11 +23,6 @@
     return @"fileId";
 }
 
-//+ (NSDictionary *)defaultPropertyValues
-//{
-//    return @{@"fileId": @(0) };
-//}
-
 - (instancetype) initWithConfiguration:(SRCfg *)cfg fileId:(NSInteger)fileId
                               userName:(NSString *)userName {
     self = [super init];
