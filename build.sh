@@ -11,12 +11,12 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ "$1" = "bootstrap" ]; then
+	pod repo update
 	gem update
 	gem cleanup
 	gem install bundler
 	gem install cocoapods --pre
 	gem install fastlane --pre
-	pod repo update
 fi
 
 PROJ=Sensorama
