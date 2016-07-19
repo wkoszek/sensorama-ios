@@ -12,6 +12,7 @@ fi
 
 if [ "$1" = "bootstrap" ]; then
 	gem update
+	gem cleanup
 	gem install bundler
 	gem install cocoapods --pre
 	gem install fastlane --pre
