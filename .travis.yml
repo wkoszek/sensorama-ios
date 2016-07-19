@@ -5,13 +5,7 @@ rvm:
 - 2.2
 podfile: Sensorama/Podfile
 script:
-- cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
-- ./scripts/travis_fold start bootstrapping
-- ./build.sh bootstrap
-- ./scripts/travis_fold end bootstrapping
-- cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace
-- cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
-- ./build.sh
+- ./scripts/travis_script.sh
 addons:
   ssh_known_hosts:
   - gitlab.com
