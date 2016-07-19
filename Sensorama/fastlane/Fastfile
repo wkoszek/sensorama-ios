@@ -77,7 +77,7 @@ platform :ios do
   end
 
   desc "Deploy a new version to the App Store"
-  lane :appstore do
+  lane :release do
     # match(type: "appstore")
     # snapshot
     gym(scheme: "Sensorama") # Build your app - more options available
