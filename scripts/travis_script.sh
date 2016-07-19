@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -xe
+
 # This is meant to be run from top-level dir. of sensorama-ios
 
 cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
