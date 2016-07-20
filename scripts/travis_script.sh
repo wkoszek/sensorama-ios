@@ -12,6 +12,7 @@ travis_fold() {
 
 cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
 travis_fold start bootstrapping
+echo "This line is a LABEL"
 ./build.sh bootstrap
 travis_fold end bootstrapping
 cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace
