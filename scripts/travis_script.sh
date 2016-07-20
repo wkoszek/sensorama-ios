@@ -21,5 +21,5 @@ cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd .
 
 travis_block "BOOTSTRAPPING" "./build.sh bootstrap"
 travis_block "WORKSPACE LIST" "cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace && cd .."
-travis_block "SCAN" "cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests"
+travis_block "SCAN" "cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests && cd .."
 travis_block "BUILDING" "./build.sh"
