@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -xe
+set -xe
 
 # This is meant to be run from top-level dir. of sensorama-ios
 
