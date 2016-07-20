@@ -5,7 +5,8 @@ rvm:
 - 2.2
 podfile: Sensorama/Podfile
 script:
-- ./scripts/travis_script.sh
+#- ./scripts/travis_script.sh
+- ./scripts/script_with_folds
 addons:
   ssh_known_hosts:
   - gitlab.com
