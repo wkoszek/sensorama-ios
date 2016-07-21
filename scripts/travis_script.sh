@@ -2,6 +2,8 @@
 
 set -xe
 
+TMP=/tmp/.travis_fold_name
+
 # This is meant to be run from top-level dir. of sensorama-ios
 
 travis_fold() {
@@ -10,16 +12,38 @@ travis_fold() {
   echo -en "travis_fold:${action}:${name}\r"
 }
 
-travis_block() {
+travis_fold_start() {
   travis_fold start $1
-  echo "$1"
-  $2
-  travis_fold end $1
+  echo $1
+  /bin/echo -n $1 > $TMP
 }
 
-cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
+travis_fold_end() {
+  travis_fold end `cat ${TMP}`
+}
 
-travis_block "BOOTSTRAPPING" "./build.sh bootstrap"
-travis_block "WORKSPACE LIST" "cd Sensorama && xcrun xcodebuild -list -workspace ./Sensorama.xcworkspace && cd .."
-travis_block "SCAN" "cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests && cd .."
-travis_block "BUILDING" "./build.sh"
+#--------------------------------------------------------------------------------
+
+(
+  travis_fold_start BOOSTRAPPING
+  ./build.sh bootstrap
+  travis_fold_end
+)
+
+(
+  travis_fold_start WORKSPACE_LIST
+  cd Sensorama/ && xcrun xcodebuild -list -workspace Sensorama.xcworkspace
+  travis_fold_end
+)
+
+(
+  travis_fold_start SCAN
+  cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
+  travis_fold_end
+)
+
+(
+  travis_fold_start BUILDING
+  ./build.sh
+  travis_fold_end
+)
