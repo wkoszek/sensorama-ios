@@ -38,7 +38,7 @@ travis_fold_end() {
 
 (
   travis_fold_start XCODEBUILD_TEST
-  xcodebuild -workspace Sensorama.xcworkspace \
+  cd Sensorama/ && xcodebuild -workspace Sensorama.xcworkspace \
         -scheme "SensoramaTests" \
 	-sdk iphonesimulator \
 	-destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' \
