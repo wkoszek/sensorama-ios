@@ -880,12 +880,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					x86_64,
+					"$(ARCHS_STANDARD)",
+				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SensoramaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Debug;
 		};
@@ -893,12 +898,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					x86_64,
+					"$(ARCHS_STANDARD)",
+				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SensoramaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.SensoramaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sensorama.app/Sensorama";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 			};
 			name = Release;
 		};
