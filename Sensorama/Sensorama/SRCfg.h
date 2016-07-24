@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #define SENSORAMA_MAIN_COLOR 0xc51162
 #define SENSORAMA_DATE_FORMAT @"YYYYMMdd-HHmmss"

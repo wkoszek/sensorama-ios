@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "JSONModel/JSONModel.h"
 
+#import "SRCfg.h"
 #import "SREngine.h"
 #import "SRDataStore.h"
 #import "SRDataPoint.h"

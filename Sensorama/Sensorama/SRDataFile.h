@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Realm/Realm.h"
 
-#import "SRCfg.h"
 #import "SRDataPoint.h"
+
+@class SRCfg;
 
 @interface SRDataFile : RLMObject
 
