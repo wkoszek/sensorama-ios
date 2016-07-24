@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D6DF7BD602C25196CAF8CDF9'
+               BlueprintIdentifier = '696542F22472A48891CC0E30'
                BlueprintName = 'GroundControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'GroundControl.framework'>
