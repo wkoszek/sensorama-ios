@@ -24,11 +24,11 @@ travis_fold_end() {
 
 #--------------------------------------------------------------------------------
 
-(
-  travis_fold_start BOOSTRAPPING
-  ./build.sh bootstrap
-  travis_fold_end
-)
+#(
+#  travis_fold_start BOOSTRAPPING
+#  ./build.sh bootstrap
+#  travis_fold_end
+#)
 
 (
   travis_fold_start WORKSPACE_LIST
@@ -41,7 +41,7 @@ travis_fold_end() {
   cd Sensorama/ && xcodebuild -workspace Sensorama.xcworkspace \
         -scheme "SensoramaTests" \
 	-sdk iphonesimulator \
-	-destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' \
+	-destination 'platform=iOS Simulator,name=iPhone 6' \
 	test | xcpretty
   travis_fold_end
 )
