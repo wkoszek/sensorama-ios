@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AWSCognito (2.4.5):
-    - AWSCore (= 2.4.5)
-  - AWSCore (2.4.5)
-  - AWSS3 (2.4.5):
-    - AWSCore (= 2.4.5)
+  - AWSCognito (2.4.6):
+    - AWSCore (= 2.4.6)
+  - AWSCore (2.4.6)
+  - AWSS3 (2.4.6):
+    - AWSCore (= 2.4.6)
   - BZipCompression (1.0.2)
   - CocoaLumberjack (2.3.0):
     - CocoaLumberjack/Default (= 2.3.0)
@@ -42,7 +42,7 @@ PODS:
     - AFNetworking
   - InAppSettingsKit (2.7.1)
   - JSONModel (1.3.0)
-  - JTCalendar (2.1.7)
+  - JTCalendar (2.1.9)
   - JWTDecode (1.0.0)
   - Lock (1.26.1):
     - CocoaLumberjack (~> 2.0)
@@ -65,7 +65,7 @@ PODS:
   - mailgun (1.1):
     - AFNetworking (= 3.1.0)
   - Masonry (0.6.4)
-  - MPMessagePack (1.3.5):
+  - MPMessagePack (1.3.9):
     - GHODictionary
   - NSLogger (1.7.0):
     - NSLogger/Standard (= 1.7.0)
@@ -116,9 +116,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AWSCognito: 96e1762404831ffb87f67c87a5ee68fde543bb69
-  AWSCore: 2f356385bcea9b81ea47f9be0228c71697d9597d
-  AWSS3: 8f73b439f12c4aaaea39fbec87f67a1f1e15bd42
+  AWSCognito: 761e811df8ec3d418274ad4248b4ac2e4727e65b
+  AWSCore: 402048153597591f2ec54b0f650b88dfb3a1b6ef
+  AWSS3: 3ded64fc949e6b95e4ad80d8bee3a97199033c4e
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
@@ -131,12 +131,12 @@ SPEC CHECKSUMS:
   GroundControl: e4e8ef3b402509611ab2d0c023ebf8842fe080bd
   InAppSettingsKit: 2b9fcdb82cdff2f99c51cae544e9f4df0df7afbf
   JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
-  JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
+  JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   Lock: d981a23c9ea7d2a77d7637ea83826b751df4e2f2
   mailgun: dec669741662edabad5d918ad9b34ebeb63742b6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
-  MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
+  MPMessagePack: 72a28f42e5de500050a15f9d1e3757a23838bfe8
   NSLogger: daa17368272ddf10a0850c218fe49de23b50f2eb
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
