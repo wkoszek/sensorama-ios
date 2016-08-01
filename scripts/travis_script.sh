@@ -54,6 +54,6 @@ travis_fold_end() {
 
 (
   travis_fold_start BUILDING
-  ./build.sh
+  ./build.sh fastlane
   travis_fold_end
 )
