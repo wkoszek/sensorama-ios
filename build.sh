@@ -36,6 +36,7 @@ function ci_env_init() {
 	eval "$(ssh-agent -s)"
 	chmod 600 scripts/travis
 	ssh-add scripts/travis
+	pod repo update
 }
 
 function tools_bootstrap () {
