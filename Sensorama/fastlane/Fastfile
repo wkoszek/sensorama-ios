@@ -68,7 +68,7 @@ platform :ios do
     end
     #commit_version_bump(xcodeproj: "Sensorama.xcodeproj")
     build_app
-    scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
+    #scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
     crashlytics_beta
     #frameit
