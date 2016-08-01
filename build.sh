@@ -60,4 +60,6 @@ elif [ "$ARG1" = "fastlane" ]; then
 	build_fastlane
 elif [ "$ARG1" = "normal" ]; then
 	build_normal
+else
+	echo "build.sh [bootstrap|fastlane|normal]"
 fi
