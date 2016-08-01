@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D3EFC76AA6BA696FF77838E6'
+               BlueprintIdentifier = '4DB63B8780DFADA8C9F8E476BDE37F02'
                BlueprintName = 'InAppSettingsKit-InAppSettingsKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'InAppSettingsKit.bundle'>

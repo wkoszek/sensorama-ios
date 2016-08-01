@@ -14,11 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AWSCognito (2.4.2):
-    - AWSCore (= 2.4.2)
-  - AWSCore (2.4.2)
-  - AWSS3 (2.4.2):
-    - AWSCore (= 2.4.2)
+  - AWSCognito (2.4.5):
+    - AWSCore (= 2.4.5)
+  - AWSCore (2.4.5)
+  - AWSS3 (2.4.5):
+    - AWSCore (= 2.4.5)
   - BZipCompression (1.0.2)
   - CocoaLumberjack (2.3.0):
     - CocoaLumberjack/Default (= 2.3.0)
@@ -28,7 +28,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
@@ -41,25 +41,25 @@ PODS:
   - GroundControl (3.0.0):
     - AFNetworking
   - InAppSettingsKit (2.7.1)
-  - JSONModel (1.2.0)
-  - JTCalendar (2.1.5)
+  - JSONModel (1.3.0)
+  - JTCalendar (2.1.7)
   - JWTDecode (1.0.0)
-  - Lock (1.26.0):
+  - Lock (1.26.1):
     - CocoaLumberjack (~> 2.0)
-    - Lock/Core (= 1.26.0)
-    - Lock/UI (= 1.26.0)
-    - Lock/WebView (= 1.26.0)
-  - Lock/Core (1.26.0):
+    - Lock/Core (= 1.26.1)
+    - Lock/UI (= 1.26.1)
+    - Lock/WebView (= 1.26.1)
+  - Lock/Core (1.26.1):
     - AFNetworking (~> 3.0)
     - CocoaLumberjack (~> 2.0)
-  - Lock/CoreUI (1.26.0):
+  - Lock/CoreUI (1.26.1):
     - CocoaLumberjack (~> 2.0)
     - Lock/Core
     - Masonry (~> 0.6)
-  - Lock/UI (1.26.0):
+  - Lock/UI (1.26.1):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
-  - Lock/WebView (1.26.0):
+  - Lock/WebView (1.26.1):
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - mailgun (1.1):
@@ -67,12 +67,12 @@ PODS:
   - Masonry (0.6.4)
   - MPMessagePack (1.3.5):
     - GHODictionary
-  - NSLogger (1.5.1):
-    - NSLogger/Standard (= 1.5.1)
-  - NSLogger/Standard (1.5.1)
-  - Realm (0.103.1):
-    - Realm/Headers (= 0.103.1)
-  - Realm/Headers (0.103.1)
+  - NSLogger (1.7.0):
+    - NSLogger/Standard (= 1.7.0)
+  - NSLogger/Standard (1.7.0)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
   - SimpleKeychain (0.7.0)
   - Whisper (3.0.0)
 
@@ -116,12 +116,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AWSCognito: 87cf3dadb17eed732c1c3fe21624fa8f15ef84ec
-  AWSCore: 08cc4318682a518ad73e452900336ba54e823e03
-  AWSS3: 21bbd5d41eb175bf2fd371dc8af5339752f7f5b7
+  AWSCognito: 96e1762404831ffb87f67c87a5ee68fde543bb69
+  AWSCore: 2f356385bcea9b81ea47f9be0228c71697d9597d
+  AWSS3: 8f73b439f12c4aaaea39fbec87f67a1f1e15bd42
   BZipCompression: e0f96508e60eb93b5f5d4c7de1eb3dd0ac4f9ae9
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   FontAwesome+iOS: 9070b682a9255ca0fdc34bcfb129ad0ba2b73b87
@@ -130,16 +130,18 @@ SPEC CHECKSUMS:
   GHODictionary: 1f7873492445e0f33ac19575a358c3c91926b564
   GroundControl: e4e8ef3b402509611ab2d0c023ebf8842fe080bd
   InAppSettingsKit: 2b9fcdb82cdff2f99c51cae544e9f4df0df7afbf
-  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
-  JTCalendar: 57a4420f12d10c93c3b28da96803e7043d1c9281
+  JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
+  JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
-  Lock: d863c3aebe57d2e8f3e5f40c9c5ba695ec2f1162
+  Lock: d981a23c9ea7d2a77d7637ea83826b751df4e2f2
   mailgun: dec669741662edabad5d918ad9b34ebeb63742b6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MPMessagePack: 7c9c9cdee049b62e3578ee423ba451fa406bbd08
-  NSLogger: 5ed223a2436df96244e033be750656dacdeec034
-  Realm: 9ed57109332e95bdc48a7caedff80b70c51d5ef4
+  NSLogger: daa17368272ddf10a0850c218fe49de23b50f2eb
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   Whisper: 42a3ee7c2936f861b23d41bd6cd7dfd22f102405
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 31c72bc0a297ced47db305039de07f2e2f59bf4f
+
+COCOAPODS: 1.0.1

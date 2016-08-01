@@ -1,1 +1,0 @@
-../../../AWSCognito/AWSCognito/Internal/AWSCognitoRecord_Internal.h

@@ -65,10 +65,9 @@
     if(_manager.settings.pageViewHaveWeekDaysView && !_weekDayView){
         _weekDayView = [_manager.delegateManager buildWeekDayView];
         [self addSubview:_weekDayView];
-        
-        _weekDayView.manager = _manager;
-        [_weekDayView reload];
     }
+    _weekDayView.manager = _manager;
+    [_weekDayView reload];
     
     if(!_weeksViews){
         _weeksViews = [NSMutableArray new];
@@ -122,6 +121,8 @@
 
 - (void)layoutSubviews
 {    
+    [super layoutSubviews];
+
     if(!_weeksViews){
         return;
     }
