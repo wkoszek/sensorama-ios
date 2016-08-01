@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16C4D2BEC24C8620CEBA6F66 /* Pods_SensoramaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8E490AAE9A3116E655C955 /* Pods_SensoramaTests.framework */; };
 		5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700D5DC1C85A0C6009405AC /* RecordViewController.m */; };
 		5700D5E01C85A35B009405AC /* SRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5700D5DF1C85A35B009405AC /* SRUtils.m */; };
 		570103361C781954005BA5C6 /* SensoramaVars.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 570103341C78171C005BA5C6 /* SensoramaVars.h */; };
-		5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */; };
 		5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */; };
 		5758699F1CF14F3D0015C791 /* SRDataFileExporterMailgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */; };
 		57587A791D06B1700010DCD0 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57587A781D06B1700010DCD0 /* FontAwesome.ttf */; };
@@ -42,8 +42,8 @@
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
 		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
-		5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */; };
-		66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */; };
+		C8C4CF2585F13EC7079DD48C /* Pods_SensoramaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C66B30E44C9C36CD67F5F9 /* Pods_SensoramaUITests.framework */; };
+		F9B52F8653FF22073FDB6E14 /* Pods_Sensorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BC0FB61FA756607F9CF2A3 /* Pods_Sensorama.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +77,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.release.xcconfig"; sourceTree = "<group>"; };
+		128680184B9E10D578F7036F /* Pods-Sensorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.release.xcconfig"; sourceTree = "<group>"; };
 		14D2D52FEFE6F52AD8E15623 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sensorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.release.xcconfig"; sourceTree = "<group>"; };
+		38C66B30E44C9C36CD67F5F9 /* Pods_SensoramaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		420EC43AAA7D2F2D5935820C /* Pods-SensoramaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.release.xcconfig"; sourceTree = "<group>"; };
 		5700D5DB1C85A0C6009405AC /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		5700D5DC1C85A0C6009405AC /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		5700D5DE1C85A35B009405AC /* SRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUtils.h; sourceTree = "<group>"; };
@@ -148,11 +147,12 @@
 		57EC5FF21C88000C00243893 /* SRCfg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCfg.m; sourceTree = "<group>"; };
 		57EC5FFB1C89650D00243893 /* SensoramaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensoramaTabBarController.h; sourceTree = "<group>"; };
 		57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensoramaTabBarController.m; sourceTree = "<group>"; };
-		88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.debug.xcconfig"; sourceTree = "<group>"; };
-		EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6398FE9F54D5D2E732BED5AE /* Pods-SensoramaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8B8E490AAE9A3116E655C955 /* Pods_SensoramaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensoramaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2BC0FB61FA756607F9CF2A3 /* Pods_Sensorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sensorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C022F9F21E99B640F0679FC0 /* Pods-SensoramaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1BDFEE3A90F35FFEA4112E0 /* Pods-SensoramaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensoramaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E857729FD961FCB0B912B8F6 /* Pods-Sensorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sensorama.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D28C1C84DBDCD31DEEC87D0 /* Pods_Sensorama.framework in Frameworks */,
+				F9B52F8653FF22073FDB6E14 /* Pods_Sensorama.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66609AEB062942D709133801 /* Pods_SensoramaTests.framework in Frameworks */,
+				16C4D2BEC24C8620CEBA6F66 /* Pods_SensoramaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5730B9FDC56CB76C1CDC9162 /* Pods_SensoramaUITests.framework in Frameworks */,
+				C8C4CF2585F13EC7079DD48C /* Pods_SensoramaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +230,7 @@
 				577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */,
 				577DC8F41C4CB0E700FA02B7 /* Products */,
 				C9188546ED92D4026C0F8BA3 /* Frameworks */,
-				B0669C08DCF32542E0AAF659 /* Pods */,
+				C424D77877D924663579CCC2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -320,15 +320,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		B0669C08DCF32542E0AAF659 /* Pods */ = {
+		C424D77877D924663579CCC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */,
-				08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */,
-				EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */,
-				3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */,
-				88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */,
-				285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */,
+				E857729FD961FCB0B912B8F6 /* Pods-Sensorama.debug.xcconfig */,
+				128680184B9E10D578F7036F /* Pods-Sensorama.release.xcconfig */,
+				E1BDFEE3A90F35FFEA4112E0 /* Pods-SensoramaTests.debug.xcconfig */,
+				420EC43AAA7D2F2D5935820C /* Pods-SensoramaTests.release.xcconfig */,
+				C022F9F21E99B640F0679FC0 /* Pods-SensoramaUITests.debug.xcconfig */,
+				6398FE9F54D5D2E732BED5AE /* Pods-SensoramaUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -338,9 +338,9 @@
 			children = (
 				57587A761D06AC830010DCD0 /* FontAwesome_iOS.framework */,
 				14D2D52FEFE6F52AD8E15623 /* Pods.framework */,
-				158C74F5DA9AB2C588F90234 /* Pods_Sensorama.framework */,
-				A53020199A0AD319780EF990 /* Pods_SensoramaTests.framework */,
-				ABCEAB95BBD7A989F38B0DD6 /* Pods_SensoramaUITests.framework */,
+				A2BC0FB61FA756607F9CF2A3 /* Pods_Sensorama.framework */,
+				8B8E490AAE9A3116E655C955 /* Pods_SensoramaTests.framework */,
+				38C66B30E44C9C36CD67F5F9 /* Pods_SensoramaUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -352,16 +352,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9201C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "Sensorama" */;
 			buildPhases = (
-				DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */,
+				68FBF4C3CF7AF7A436F53E0B /* [CP] Check Pods Manifest.lock */,
 				570103321C76EFAC005BA5C6 /* ShellScript */,
 				570103331C771B98005BA5C6 /* CopyFiles */,
 				577DC8EF1C4CB0E700FA02B7 /* Sources */,
 				577DC8F01C4CB0E700FA02B7 /* Frameworks */,
 				577DC8F11C4CB0E700FA02B7 /* Resources */,
 				5782D4221C747FAB00627263 /* Run Script */,
-				322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */,
-				E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */,
-				A28EAE6B2C114349373EF78C /* Embed Pods Frameworks */,
+				CAD49C5F8BEAEBF43866B17F /* [CP] Embed Pods Frameworks */,
+				8B06740A6737D8128EA5D5B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,13 +375,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9231C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaTests" */;
 			buildPhases = (
-				17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */,
+				E4BB00B2D5D5E5EE5AF7965E /* [CP] Check Pods Manifest.lock */,
 				577DC9081C4CB0E700FA02B7 /* Sources */,
 				577DC9091C4CB0E700FA02B7 /* Frameworks */,
 				577DC90A1C4CB0E700FA02B7 /* Resources */,
-				4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */,
-				DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */,
-				E47A6744135066BD28F8C679 /* Embed Pods Frameworks */,
+				86DD60CBFFF356A330033E3F /* [CP] Embed Pods Frameworks */,
+				5D1D6B29463AD1622ECCB0BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,11 +396,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577DC9261C4CB0E700FA02B7 /* Build configuration list for PBXNativeTarget "SensoramaUITests" */;
 			buildPhases = (
-				C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */,
+				461E23CCA266E56271378E40 /* [CP] Check Pods Manifest.lock */,
 				577DC9131C4CB0E700FA02B7 /* Sources */,
 				577DC9141C4CB0E700FA02B7 /* Frameworks */,
 				577DC9151C4CB0E700FA02B7 /* Resources */,
-				5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */,
+				AA63156C0B57D5E50EC55687 /* [CP] Embed Pods Frameworks */,
+				1DB0E4623F1C3AF67D28C1D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -491,49 +490,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17E920D71639B1100E29D5F3 /* 📦 Check Pods Manifest.lock */ = {
+		1DB0E4623F1C3AF67D28C1D3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		461E23CCA266E56271378E40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		322707BDD69736227C915617 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E12B395E4A080C43F83A96F /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		570103321C76EFAC005BA5C6 /* ShellScript */ = {
@@ -564,74 +548,14 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"SENSORAMA: -------------------\"\nsource ~/.profile\n\"${PODS_ROOT}\"/../../scripts/fabric.sh\n";
 		};
-		5E6558FBA3E2E4C82E33D32F /* 📦 Copy Pods Resources */ = {
+		5D1D6B29463AD1622ECCB0BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A28EAE6B2C114349373EF78C /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C009B5E5CCED947A9BEBF0A5 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DDE48401AC51A3EC5EF8BFC6 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DF0A20BA250F9C4ECFFA50A9 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,14 +563,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0E010AFED24FBE34024912E /* 📦 Copy Pods Resources */ = {
+		68FBF4C3CF7AF7A436F53E0B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86DD60CBFFF356A330033E3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B06740A6737D8128EA5D5B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,19 +608,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E47A6744135066BD28F8C679 /* Embed Pods Frameworks */ = {
+		AA63156C0B57D5E50EC55687 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaTests/Pods-SensoramaTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensoramaUITests/Pods-SensoramaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAD49C5F8BEAEBF43866B17F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sensorama/Pods-Sensorama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BB00B2D5D5E5EE5AF7965E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -839,12 +823,12 @@
 		};
 		577DC9211C4CB0E700FA02B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3592264C75D45B9A5136B5B /* Pods-Sensorama.debug.xcconfig */;
+			baseConfigurationReference = E857729FD961FCB0B912B8F6 /* Pods-Sensorama.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 91;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -859,12 +843,12 @@
 		};
 		577DC9221C4CB0E700FA02B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08E0F4238BAE6C65EFCBCB61 /* Pods-Sensorama.release.xcconfig */;
+			baseConfigurationReference = 128680184B9E10D578F7036F /* Pods-Sensorama.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 91;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -878,7 +862,7 @@
 		};
 		577DC9241C4CB0E700FA02B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB98888AE13C446822A4B76B /* Pods-SensoramaTests.debug.xcconfig */;
+			baseConfigurationReference = E1BDFEE3A90F35FFEA4112E0 /* Pods-SensoramaTests.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					x86_64,
@@ -896,7 +880,7 @@
 		};
 		577DC9251C4CB0E700FA02B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B6C0FE83DCF8B4D0B2E2D70 /* Pods-SensoramaTests.release.xcconfig */;
+			baseConfigurationReference = 420EC43AAA7D2F2D5935820C /* Pods-SensoramaTests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					x86_64,
@@ -914,7 +898,7 @@
 		};
 		577DC9271C4CB0E700FA02B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88EFEDCAB892A56187C2670B /* Pods-SensoramaUITests.debug.xcconfig */;
+			baseConfigurationReference = C022F9F21E99B640F0679FC0 /* Pods-SensoramaUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SensoramaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -927,7 +911,7 @@
 		};
 		577DC9281C4CB0E700FA02B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 285D4FA5CA450C922F3D12F2 /* Pods-SensoramaUITests.release.xcconfig */;
+			baseConfigurationReference = 6398FE9F54D5D2E732BED5AE /* Pods-SensoramaUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SensoramaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
