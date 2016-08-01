@@ -13,9 +13,6 @@ def build_app
 end
 
 platform :ios do
-  before_all do
-    cocoapods(repo_update: true)
-  end
 
   desc "Installs FixCode which disables the \"Fix Issue\" button in Xcode"
   lane :xcode do
@@ -69,6 +66,7 @@ platform :ios do
     if not is_ci then
       increment_build_number
     end
+    #commit_version_bump(xcodeproj: "Sensorama.xcodeproj")
     build_app
     scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
