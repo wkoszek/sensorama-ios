@@ -1,15 +1,7 @@
 #!/bin/sh
 # Copyright 2015 by Wojciech A. Koszek <wojciech@koszek.com>
 
-if [ "$1" = "bootstrap" ]; then
-	gem update
-	gem cleanup
-	gem install bundler
-	gem install cocoapods --pre
-	gem install fastlane --pre
-	pod repo update
-	exit 0
-fi
+ARG1=$1
 
 PROJ=Sensorama
 TOOL=xcodebuild
@@ -22,7 +14,7 @@ if [ "x${TRAVIS}" != "x" ]; then
 	OPTS='CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='
 fi
 
-function build_old() {
+function build_normal() {
 	(
 		cd ${PROJ}
 
@@ -34,26 +26,38 @@ function build_old() {
 	)
 }
 
-function build_new() {
+function build_fastlane() {
 	export PATH=`pwd`/scripts/git-hack:$PATH
 	(cd Sensorama && fastlane beta)
 }
 
-function build_ci() {
+function ci_env_init() {
 	openssl aes-256-cbc -K $encrypted_c972abe91c70_key -iv $encrypted_c972abe91c70_iv -in scripts/travis.enc -out scripts/travis -d
 	eval "$(ssh-agent -s)"
 	chmod 600 scripts/travis
 	ssh-add scripts/travis
-	build_new
 }
 
-which fastlane 2>/dev/null >/dev/null
-if [ $? -eq 0 ]; then
-	if [ ! -z "$TRAVIS" ]; then
-		build_ci
-	else
-		build_new
-	fi
-else
-	build_old
+function tools_bootstrap () {
+	gem update
+	gem cleanup
+	gem install bundler
+	gem install cocoapods --pre
+	gem install fastlane --pre
+	pod repo update
+	exit 0
+}
+
+if [ ! -z "$TRAVIS" ]; then
+	echo "# will init CI environment"
+	ci_env_init
+	echo "# CI environment initialized"
+fi
+
+if   [ "$ARG1" = "bootstrap" ]; then
+	tools_bootstrap
+elif [ "$ARG1" = "fastlane" ]; then
+	build_fastlane
+elif [ "$ARG1" = "normal" ]; then
+	build_normal
 fi
