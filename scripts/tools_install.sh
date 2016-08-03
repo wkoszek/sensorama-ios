@@ -18,6 +18,6 @@ TOOLS+=" gym"
 TOOLS+=" match"
 TOOLS+=" scan"
 
-for T in ${TOOLS}; do
-	gem $1 $T
-done
+gem $* $T
+#for T in ${TOOLS}; do
+#done
