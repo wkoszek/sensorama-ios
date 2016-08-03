@@ -46,11 +46,11 @@ travis_fold_end() {
   travis_fold_end
 )
 
-(
-  travis_fold_start SCAN
-  cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
-  travis_fold_end
-)
+#(
+#  travis_fold_start SCAN
+#  cd Sensorama && scan --workspace Sensorama.xcworkspace --scheme SensoramaTests
+#  travis_fold_end
+#)
 
 (
   travis_fold_start BUILDING
