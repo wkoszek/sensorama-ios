@@ -8,6 +8,7 @@ script:
 - gem install fastlane --pre
 - fastlane -v
 - scan -v
+- cd Sensorama && xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
 - cd Sensorama && ../scripts/reproduce_test_issues
 #- ./scripts/travis_script.sh
 #- ./scripts/script_with_folds
