@@ -1,1 +1,1 @@
-set -o pipefail && env NSUnbufferedIO=YES xcodebuild OPTS='CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=' -workspace Sensorama.xcworkspace -scheme SensoramaTests build test | tee '/tmp/SensoramaTests-SensoramaTests.log' | xcpretty
+set -o pipefail && env NSUnbufferedIO=YES xcodebuild CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= -workspace Sensorama.xcworkspace -scheme SensoramaTests build test | tee '/tmp/SensoramaTests-SensoramaTests.log' | xcpretty
