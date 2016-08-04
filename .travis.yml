@@ -4,6 +4,8 @@ cache: cocoapods
 rvm:
 - 2.2
 script:
+- gem update
+- gem install fastlane --pre
 - fastlane -v
 - scan -v
 - cd Sensorama && ../scripts/reproduce_test_issues
