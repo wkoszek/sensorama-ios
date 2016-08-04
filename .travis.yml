@@ -4,7 +4,8 @@ cache: cocoapods
 rvm:
 - 2.2
 script:
-- ./scripts/travis_script.sh
+- cd Sensorama && ../scripts/reproduce_test_issues
+#- ./scripts/travis_script.sh
 #- ./scripts/script_with_folds
 addons:
   ssh_known_hosts:
