@@ -4,6 +4,8 @@ cache: cocoapods
 rvm:
 - 2.2
 script:
+- fastlane -v
+- scan -v
 - cd Sensorama && ../scripts/reproduce_test_issues
 #- ./scripts/travis_script.sh
 #- ./scripts/script_with_folds
