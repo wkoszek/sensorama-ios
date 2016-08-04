@@ -1,1 +1,1 @@
-set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Sensorama.xcworkspace -scheme SensoramaTests -destination 'platform=iOS Simulator,id=9A682211-B4F7-4361-A909-3707CCFAD396' build test | tee '/Users/wk/Library/Logs/scan/SensoramaTests-SensoramaTests.log' | xcpretty
+set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace Sensorama.xcworkspace -scheme SensoramaTests -destination 'platform=iOS Simulator' build test | tee '/tmp/SensoramaTests-SensoramaTests.log' | xcpretty
