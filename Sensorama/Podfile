@@ -35,12 +35,11 @@ end
 
 target 'Sensorama' do
   mypods
+  target :SensoramaTests do
+    inherit! :search_paths
+  end
+  target 'SensoramaUITests' do
+    inherit! :search_paths
+  end
 end
 
-target :SensoramaTests do
-  mypods
-end
-
-target 'SensoramaUITests' do
-  mypods
-end
