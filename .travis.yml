@@ -4,13 +4,13 @@ cache: cocoapods
 rvm:
 - 2.2
 script:
-- gem update
-- gem install fastlane --pre
-- fastlane -v
-- scan -v
-- cd Sensorama && xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
-- cd Sensorama && ../scripts/reproduce_test_issues
-#- ./scripts/travis_script.sh
+#- gem update
+#- gem install fastlane --pre
+#- fastlane -v
+#- scan -v
+#- cd Sensorama && xcodebuild -list -workspace Sensorama.xcworkspace && cd ..
+#- cd Sensorama && ../scripts/reproduce_test_issues
+- ./scripts/travis_script.sh
 #- ./scripts/script_with_folds
 addons:
   ssh_known_hosts:
