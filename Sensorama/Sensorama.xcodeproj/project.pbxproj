@@ -532,7 +532,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pwd\nsource ~/.profile\n$(PWD)/../scripts/gen_files.sh > Sensorama/SensoramaVars.h";
+			shellScript = "pwd\n[ -e ~/.profile ] && source ~/.profile\n$(PWD)/../scripts/gen_files.sh > Sensorama/SensoramaVars.h";
 		};
 		5782D4221C747FAB00627263 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -546,7 +546,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"SENSORAMA: -------------------\"\nsource ~/.profile\n\"${PODS_ROOT}\"/../../scripts/fabric.sh\n";
+			shellScript = "echo \"SENSORAMA: -------------------\"\n[ -e ~/.profile ] && source ~/.profile\n\"${PODS_ROOT}\"/../../scripts/fabric.sh\n";
 		};
 		5D1D6B29463AD1622ECCB0BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
