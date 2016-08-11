@@ -26,6 +26,26 @@ function build_normal() {
 	)
 }
 
+function test_normal() {
+	(
+		cd ${PROJ}
+
+		xcodebuild -workspace ${PROJ}.xcworkspace \
+			-scheme "${PROJ}Tests" \
+			-sdk iphonesimulator \
+			-destination 'platform=iOS Simulator,name=iPhone 6' \
+			test | xcpretty
+	)
+}
+
+function test_fastlane() {
+	(
+		cd ${PROJ}
+
+		scan --workspace ${PROJ}.xcworkspace --scheme ${PROJ}Tests
+	)
+}
+
 function build_fastlane() {
 	export PATH=`pwd`/scripts/git-hack:$PATH
 	(cd Sensorama && fastlane beta)
@@ -56,6 +76,10 @@ elif [ "$ARG1" = "fastlane" ]; then
 	build_fastlane
 elif [ "$ARG1" = "normal" ]; then
 	build_normal
+elif [ "$ARG1" = "test_normal" ]; then
+	test_normal
+elif [ "$ARG1" = "test_fastlane" ]; then
+	test_fastlane
 else
 	echo "build.sh [bootstrap|fastlane|normal]"
 fi
