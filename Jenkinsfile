@@ -1,6 +1,4 @@
 node {
-	stage 'Stage 1'
-	echo 'Hello World 1'
-	stage 'Stage 2'
-	echo 'Hello World 2'
+	stage 'Get Sensorama-iOS source code'
+	git url: "https://github.com/wkoszek/sensorama-ios.git"
 }
