@@ -14,6 +14,10 @@ if [ "x${TRAVIS}" != "x" ]; then
 	OPTS='CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='
 fi
 
+if [ "$BUILD_JOBS" != "" ]; then
+	OPTS="$OPTS -IDEBuildOperationMaxNumberOfConcurrentCompileTasks=${BUILD_JOBS}"
+fi
+
 function build_normal() {
 	(
 		cd ${PROJ}
