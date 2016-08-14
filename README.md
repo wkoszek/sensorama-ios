@@ -9,7 +9,22 @@ This is an iOS version of the [http://www.sensorama.org](Sensorama project).
 To build this application you must have a Apple Mac computer with XCode 7
 and Command Line extensions installed. To build the application, run:
 
-	./build.sh
+	./build.sh normal
+
+to build using `xcodebuild` (most of the users will want that). To run a
+suite of regression tests, run:
+
+	./build.sh test_normal
+
+Sensorama uses Fastlane tools for build and release process and this is what
+we use to deploy Sensorama for production. If you're setup with the
+`fastlane` you can do:
+
+	./build.sh fastlane
+
+and for tests, you can do:
+
+	./build.sh test_fastlane
 
 # Author
 
