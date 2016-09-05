@@ -5,7 +5,7 @@
 //  Sensorama
 //
 
-#import <NSLogger/NSLogger.h>
+//#import <NSLogger/NSLogger.h>
 #import <Lock/Lock.h>
 
 #import "AppDelegate.h"
@@ -33,7 +33,7 @@ static const char *sensoramaAppURL = "http://labs.koszek.com:9494/defaults.plist
 
     self.isDevPhone = [self isDevPhoneDetect];
     if (self.isDevPhone) {
-        LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
+//        LoggerApp(1, @"Started logging on %@ (at %@)", [self deviceName], [NSDate new]);
         [SRAuth setLogLevel:awsLogLevel];
     }
 

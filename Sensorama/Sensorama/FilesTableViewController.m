@@ -14,6 +14,7 @@
 #import "SRUtils.h"
 #import "SRDataStore.h"
 #import "SRCfg.h"
+#import "SRDebug.h"
 
 
 @interface FilesTableViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
@@ -66,7 +67,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"here");
     NSString *cellName = @"filesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
     if (cell == nil) {
@@ -83,11 +83,10 @@
         [cell.imageView setImage:[UIImage imageNamed:@"iconFile"]];
     }
 
-    
-
     SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
     [cell.textLabel setText:[dataFile printableLabel]];
     [cell.detailTextLabel setText:[dataFile printableLabelDetails]];
+    SRPROBE1([dataFile printableLabel]);
 
     return cell;
 }

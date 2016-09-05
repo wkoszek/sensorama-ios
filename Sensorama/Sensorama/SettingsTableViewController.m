@@ -28,6 +28,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    SRPROBE0();
+
     self.neverShowPrivacySettings = YES;
     self.showCreditsFooter = NO;
 
@@ -36,6 +38,9 @@
 
 - (void) viewDidAppear:(BOOL)animate {
     [super viewDidAppear:animate];
+
+    SRPROBE0();
+
     [self.tabBarController setTitle:@"Settings"];
 
     A0UserProfile *profile = [SRAuth currentProfile];
