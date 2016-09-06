@@ -27,9 +27,11 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
-			<string>email@domain.com</string>
+			<string>Logout</string>
 			<key>Key</key>
-			<string>TItle</string>
+			<string>ButtonLogout</string>
+			<key>FooterText</key>
+			<string>Currently logged in as wkoszek@gmail.com</string>
 		</dict>
 		<dict>
 			<key>Type</key>
