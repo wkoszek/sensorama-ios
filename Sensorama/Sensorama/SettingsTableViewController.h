@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "InAppSettingsKit/IASKAppSettingsViewController.h"
+#import "InAppSettingsKit/IASKSettingsReader.h"
 
-@interface SettingsTableViewController : IASKAppSettingsViewController
+
+@interface SettingsTableViewController : IASKAppSettingsViewController <IASKSettingsDelegate>
 
 @end
