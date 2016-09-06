@@ -32,6 +32,8 @@
 			<string>ButtonLogout</string>
 			<key>FooterText</key>
 			<string>Currently logged in as wkoszek@gmail.com</string>
+			<key>IASKSubtitle</key>
+			<string>with subtitle</string>
 		</dict>
 		<dict>
 			<key>Type</key>
