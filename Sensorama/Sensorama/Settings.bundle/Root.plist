@@ -18,6 +18,8 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
+			<key>Key</key>
+			<string>ButtonLogout</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
