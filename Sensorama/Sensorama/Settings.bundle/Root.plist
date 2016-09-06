@@ -143,35 +143,43 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
+			<string>IASKOpenURLSpecifier</string>
 			<key>Title</key>
 			<string>Privacy</string>
 			<key>Key</key>
 			<string>TItle</string>
+			<key>File</key>
+			<string>http://www.sensorama.org/privacy/</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
+			<string>IASKOpenURLSpecifier</string>
 			<key>Title</key>
 			<string>Terms of Service</string>
 			<key>Key</key>
 			<string>TItle</string>
+			<key>File</key>
+			<string>http://www.sensorama.org/termsofservice/</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
+			<string>IASKOpenURLSpecifier</string>
 			<key>Title</key>
 			<string>About</string>
 			<key>Key</key>
 			<string>TItle</string>
+			<key>File</key>
+			<string>http://www.sensorama.org/about/</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
+			<string>IASKOpenURLSpecifier</string>
 			<key>Title</key>
 			<string>Credits</string>
 			<key>Key</key>
 			<string>TItle</string>
+			<key>File</key>
+			<string>http://www.sensorama.org/credits/</string>
 		</dict>
 	</array>
 </dict>
