@@ -14,13 +14,14 @@
 #import "SensoramaTabBarController.h"
 #import "RecordViewController.h"
 #import "FrequencyViewController.h"
+#import "InAppSettingsKit/IASKSettingsReader.h"
+
 #import "SRCfg.h"
 
-@interface SettingsTableViewController ()
+@interface SettingsTableViewController () <IASKViewController, UITextViewDelegate>
 @property (strong, nonatomic) IBOutletCollection(UISwitch) NSArray *settingsState;
 @property (weak, nonatomic) IBOutlet UITableViewCell *logoutCell;
 @property (weak, nonatomic) IBOutlet UILabel *frequencySamplingLabel;
-
 @end
 
 @implementation SettingsTableViewController
@@ -28,10 +29,15 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.tintColor = [UIColor blueColor];
+    UISwitch.appearance.tintColor = [SRUtils mainColor];
+    UISwitch.appearance.onTintColor = [SRUtils mainColor];
+
     SRPROBE0();
 
     self.neverShowPrivacySettings = YES;
     self.showCreditsFooter = NO;
+    self.delegate = self;
 
     [SRUsageStats eventAppSettings];
 }
@@ -48,24 +54,51 @@
     NSLog(@"email=%@", profile.email);
 }
 
-#if 0
+- (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 
-- (void)viewWillAppear:(BOOL)animated {
-    NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
-    for (UISwitch *sw in self.settingsState) {
-        NSString *swName = [sw accessibilityIdentifier];
-        NSNumber *yesOrNo = @([sw tag]);
+    SRPROBE1(@"***********************************************");
+}
 
-        BOOL shouldBeOn = [yesOrNo boolValue];
-        if ([savedSettings objectForKey:swName] != nil) {
-            shouldBeOn = [savedSettings boolForKey:swName];
-        } else {
-            [savedSettings setObject:@(shouldBeOn) forKey:swName];
-        }
-        [sw setOn:shouldBeOn];
+// MARK: Logout button handling
+
+- (CGFloat)settingsViewController:(id<IASKViewController>)settingsViewController
+                        tableView:(UITableView *)tableView
+        heightForHeaderForSection:(NSInteger)section {
+
+    NSString* key = [self.settingsReader keyForSection:section];
+    if ([key isEqualToString:@"ButtonLogout"]) {
+        return [UIImage imageNamed:@"iconProfile"].size.height + 25;
+    }
+    return 55;
+}
+
+- (UIView *)settingsViewController:(id<IASKViewController>)settingsViewController
+                         tableView:(UITableView *)tableView
+           viewForHeaderForSection:(NSInteger)section {
+    NSString* key = [settingsViewController.settingsReader keyForSection:section];
+    if ([key isEqualToString:@"ButtonLogout"]) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iconProfile"]];
+        imageView.contentMode = UIViewContentModeCenter;
+        return imageView;
+    }
+    return nil;
+}
+
+- (void)settingsViewController:(IASKAppSettingsViewController*)sender buttonTappedForSpecifier:(IASKSpecifier*)specifier {
+    SRPROBE0();
+    if ([specifier.key isEqualToString:@"ButtonLogout"]) {
+        SRPROBE0();
+        NSString *newTitle = [[[NSUserDefaults standardUserDefaults] objectForKey:specifier.key] isEqualToString:@"Logout"] ? @"Login" : @"Logout";
+        [[NSUserDefaults standardUserDefaults] setObject:newTitle forKey:specifier.key];
+        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
+        RecordViewController *rvc = [stvc viewControllerByClass:[RecordViewController class]];
+        [rvc logoutAuth0];
+        [stvc setSelectedIndex:0];
     }
 }
 
+// Version on the bottom of the screen
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     if (section == [self.tableView numberOfSections] - 1) {
@@ -74,66 +107,6 @@
         return [super tableView:tableView titleForFooterInSection:section];
     }
 }
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell == self.logoutCell) {
-        NSLog(@"logoutButton");
-        [self.logoutCell setSelected:NO];
-        [self logout];
-        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
-        [stvc setSelectedIndex:0];
-    }
-}
-
-
-
-- (IBAction)sensorStateChange:(id)sender forEvent:(UIEvent *)event {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    if ([sender isKindOfClass:[UISwitch class]]) {
-        UISwitch *sw = (UISwitch *)sender;
-        NSString *swName = [sw accessibilityIdentifier];
-        [defaults setBool:[sw isOn] forKey:swName];
-    }
-
-    NSLog(@"event %@ changed %@", event, sender);
-}
-
-- (void) logout {
-    NSLog(@"logout triggered");
-    SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
-    RecordViewController *rvc = [stvc viewControllerByClass:[RecordViewController class]];
-    [rvc logoutAuth0];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SRPROBE0();
-    if ([segue.destinationViewController isKindOfClass:[FrequencyViewController class]]) {
-        FrequencyViewController *freqVC = (FrequencyViewController *)segue.destinationViewController;
-        NSString *stringWithoutMs = [self.frequencySamplingLabel.text
-                                        stringByReplacingOccurrencesOfString:@"ms" withString:@""];
-        freqVC.frequencyValue = @([stringWithoutMs integerValue]);
-    }
-}
-
-- (IBAction)unwindToSettings:(UIStoryboardSegue *)unwindSegue {
-    SRPROBE0();
-    if ([unwindSegue.sourceViewController isKindOfClass:[FrequencyViewController class]]) {
-        FrequencyViewController *freqVC = (FrequencyViewController *)unwindSegue.sourceViewController;
-        NSLog(@"GOT HERE %@", freqVC.frequencyValue);
-
-        NSString *stringWithMs = [NSString stringWithFormat:@"%@ms", freqVC.frequencyValue];
-        [self.frequencySamplingLabel setText:stringWithMs];
-
-        SRCfg *cfg = [SRCfg defaultConfiguration];
-        cfg.sampleInterval = [freqVC.frequencyValue integerValue];
-    }
-}
-
-#endif
 
 
 @end

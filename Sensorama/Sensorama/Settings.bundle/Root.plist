@@ -27,7 +27,7 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
+			<string>IASKButtonSpecifier</string>
 			<key>Title</key>
 			<string>Logout</string>
 			<key>Key</key>
