@@ -212,7 +212,7 @@
 
 + (BOOL) isDeveloperMode {
     NSUserDefaults *savedSettings = [NSUserDefaults standardUserDefaults];
-    NSString *switchEnableDeveloperName = @"switchEnableDeveloper";
+    NSString *switchEnableDeveloperName = @"developerMode";
     return [[savedSettings objectForKey:switchEnableDeveloperName] boolValue];
 }
 
