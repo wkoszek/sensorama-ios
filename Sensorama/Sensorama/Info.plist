@@ -71,7 +71,7 @@
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
-			<key>labs.koszek.com</key>
+			<key>cfg.sensorama.org</key>
 			<dict>
 				<key>NSTemporaryThirdPartyExceptionAllowsInsecureHTTPLoads</key>
 				<true/>

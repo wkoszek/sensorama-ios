@@ -21,7 +21,7 @@
 #import "SensoramaVars.h"
 
 static AWSLogLevel awsLogLevel = AWSLogLevelNone;
-static const char *sensoramaAppURL = "http://labs.koszek.com:9494/defaults.plist";
+static const char *sensoramaAppURL = "http://cfg.sensorama.org/_/Sensorama.plist";
 
 @interface AppDelegate ()
 @property (nonatomic) BOOL isDevPhone;
