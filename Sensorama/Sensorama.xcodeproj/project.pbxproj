@@ -39,6 +39,7 @@
 		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
 		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
 		57B11EEB1CA922EF00B389EF /* contrib in Resources */ = {isa = PBXBuildFile; fileRef = 57B11EEA1CA922EF00B389EF /* contrib */; };
+		57DA722A1D86404E00C7AFC3 /* Sensorama.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57DA72291D86404E00C7AFC3 /* Sensorama.plist */; };
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
 		57EC5FFD1C89650D00243893 /* SensoramaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FFC1C89650D00243893 /* SensoramaTabBarController.m */; };
@@ -141,6 +142,7 @@
 		579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
 		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		57B11EEA1CA922EF00B389EF /* contrib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contrib; sourceTree = SOURCE_ROOT; };
+		57DA72291D86404E00C7AFC3 /* Sensorama.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sensorama.plist; path = ../../assets/Sensorama.plist; sourceTree = "<group>"; };
 		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
 		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
 		57EC5FF11C88000C00243893 /* SRCfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCfg.h; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		577DC8F61C4CB0E700FA02B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57DA72291D86404E00C7AFC3 /* Sensorama.plist */,
 				57587A781D06B1700010DCD0 /* FontAwesome.ttf */,
 				577DBB7B1CFEC7920034C1EA /* WhisperBridge.swift */,
 				577DBB7A1CFEC7920034C1EA /* Sensorama-Bridging-Header.h */,
@@ -470,6 +473,7 @@
 				577DC9031C4CB0E700FA02B7 /* Assets.xcassets in Resources */,
 				5797A3781D2E179E00B13CB2 /* Settings.bundle in Resources */,
 				577DC9011C4CB0E700FA02B7 /* Main.storyboard in Resources */,
+				57DA722A1D86404E00C7AFC3 /* Sensorama.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
