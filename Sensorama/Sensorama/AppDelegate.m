@@ -44,14 +44,27 @@ static const char *sensoramaAppURL = "http://cfg.sensorama.org/_/Sensorama.plist
     NSString *Auth0ClientID = [NSString stringWithUTF8String:AUTH0CLIENTID];
     NSString *Auth0Domain = [NSString stringWithUTF8String:AUTH0DOMAIN];
     NSString *Auth0URLScheme = [NSString stringWithUTF8String:AUTH0_URLSCHEME];
+    NSURL *localSettingsURL = [mainBundle URLForResource:@"Sensorama" withExtension:@"plist"];
+    NSURL *remoteSettingsURL = [NSURL URLWithString:[NSString stringWithUTF8String:sensoramaAppURL]];
 
-    NSURL *cfgURL = [NSURL URLWithString:[NSString stringWithUTF8String:sensoramaAppURL]];
-    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:cfgURL
-                                                           success:^(NSDictionary *dict) {
-                                                               NSLog(@"dict=%@", dict);
-                                                           } failure:^(NSError *error) {
-                                                               NSLog(@"error=%@", error);
-                                                           }];
+    NSLog(@"before=%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+
+    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:localSettingsURL
+      success:^(NSDictionary *defaults) {
+        NSLog(@"registerDefaultsWithURL (local) OK = %@", defaults);
+        NSLog(@"defaultAfterLocal=%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+        [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:remoteSettingsURL
+                success:^(NSDictionary *dict) {
+                    NSLog(@"registerDefaultsWithURL (remote) OK = %@", dict);
+                    NSLog(@"defaultAfterRemote=%@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+                }
+                failure:^(NSError *error) {
+                    NSLog(@"registerDefaultsWithURL (remote) failed! Error: %@", error);
+                }];
+    } failure:^(NSError *error) {
+        NSLog(@"registerDefaultsWithURL (local) failed! Error: %@", error);
+        abort();
+    }];
 
     // Below I replace whole bunch of secrets for 3rd party frameworks,
     // so that everything in Sensorama can be open-sourced and actively
