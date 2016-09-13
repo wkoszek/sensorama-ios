@@ -29,6 +29,12 @@
     NSURL *fileURL = [NSURL fileURLWithPath:[dataFile filePathName]];
     SRPROBE1(fileURL);
 
+    NSString *exportS3 = [[NSUserDefaults standardUserDefaults] objectForKey:@"exportS3"];
+    if ([exportS3 boolValue] == 0) {
+        NSLog(@"exportS3 == 0, skipping saving in the cloud");
+        return;
+    }
+
     AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
     AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
     uploadRequest.bucket = @"sensorama-data";
