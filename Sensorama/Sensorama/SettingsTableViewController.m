@@ -11,6 +11,7 @@
 #import "SRUtils.h"
 #import "SRDebug.h"
 #import "SRAuth.h"
+#import "SRCfg.h"
 #import "SensoramaTabBarController.h"
 #import "RecordViewController.h"
 #import "FrequencyViewController.h"
@@ -40,6 +41,11 @@
     self.delegate = self;
 
     [SRUsageStats eventAppSettings];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(settingsChanged:)
+                                                 name:kIASKAppSettingChanged
+                                               object:nil];
 }
 
 - (void) viewDidAppear:(BOOL)animate {
@@ -108,5 +114,20 @@
     }
 }
 
+- (void)settingsChanged:(NSNotification *)notification {
+
+    NSArray *allChangedSettings = notification.userInfo.allKeys;
+    NSLog(@"changed = %@", allChangedSettings);
+
+    for (NSString *oneChangedSetting in allChangedSettings) {
+        if ([oneChangedSetting isEqualToString:@"samplingFrequency"]) {
+            NSString *samplingFrequency = [[NSUserDefaults standardUserDefaults] objectForKey:oneChangedSetting];
+            if (samplingFrequency) {
+                SRCfg *cfg = [SRCfg defaultConfiguration];
+                cfg.sampleInterval = [samplingFrequency integerValue];
+            }
+        }
+    }
+}
 
 @end

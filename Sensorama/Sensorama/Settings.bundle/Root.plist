@@ -95,7 +95,9 @@
 			<key>Title</key>
 			<string>Frequency</string>
 			<key>Key</key>
-			<string>Frequency</string>
+			<string>samplingFrequency</string>
+			<key>DefaultValue</key>
+			<string>100</string>
 		</dict>
 		<dict>
 			<key>Type</key>

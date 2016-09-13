@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Frequency</key>
+	<key>samplingFrequency</key>
 	<integer>100</integer>
 	<key>developerMode</key>
 	<integer>0</integer>
