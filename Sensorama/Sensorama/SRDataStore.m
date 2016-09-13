@@ -55,8 +55,8 @@
         return;
     }
 
-    for (id<SRDataFileExportDelegate> delegate in self.exporters) {
-        for (SRDataFile *fileToSyncOne in filesToSync) {
+    for (SRDataFile *fileToSyncOne in filesToSync) {
+        for (id<SRDataFileExportDelegate> delegate in self.exporters) {
             [delegate exportWithFile:fileToSyncOne];
         }
     }
