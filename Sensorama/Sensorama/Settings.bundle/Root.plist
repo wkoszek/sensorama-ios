@@ -107,16 +107,6 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Cloud (AWS S3)</string>
-			<key>Key</key>
-			<string>exportS3</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
 			<string>Email</string>
 			<key>Key</key>
 			<string>exportEmail</string>
