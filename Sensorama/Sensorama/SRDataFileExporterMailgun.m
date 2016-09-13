@@ -25,6 +25,11 @@
 
     SRPROBE1(dataFile);
 
+    NSString *exportMail = [[NSUserDefaults standardUserDefaults] objectForKey:@"exportEmail"];
+    if ([exportMail boolValue] == 0) {
+        NSLog(@"exportMail == 0, skipping sending email");
+        return;
+    }
 
     MGMessage *msg = [[MGMessage alloc] initWithFrom:@"sensorama@data.sensorama.org"
                                                   to:[[SRAuth currentProfile] email]
