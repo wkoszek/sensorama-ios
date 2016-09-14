@@ -1,3 +1,9 @@
+# Copyright 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+#
+# Below are the libraries used. Without them, Sensorama wouldn't have
+# existed.
+#
+
 use_frameworks!
 platform :ios, '8.0'
 

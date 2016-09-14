@@ -145,7 +145,7 @@
 			<key>Key</key>
 			<string>TItle</string>
 			<key>File</key>
-			<string>http://www.sensorama.org/privacy/</string>
+			<string>https://github.com/wkoszek/sensorama-ios/blob/master/PRIVACY.md</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -155,7 +155,7 @@
 			<key>Key</key>
 			<string>TItle</string>
 			<key>File</key>
-			<string>http://www.sensorama.org/termsofservice/</string>
+			<string>https://github.com/wkoszek/sensorama-ios/blob/master/TERMS.md</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -165,7 +165,7 @@
 			<key>Key</key>
 			<string>TItle</string>
 			<key>File</key>
-			<string>http://www.sensorama.org/about/</string>
+			<string>https://github.com/wkoszek/sensorama-ios/blob/master/DESIGN.md</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -175,7 +175,7 @@
 			<key>Key</key>
 			<string>TItle</string>
 			<key>File</key>
-			<string>http://www.sensorama.org/credits/</string>
+			<string>https://github.com/wkoszek/sensorama-ios/blob/master/Sensorama/Podfile</string>
 		</dict>
 	</array>
 </dict>
