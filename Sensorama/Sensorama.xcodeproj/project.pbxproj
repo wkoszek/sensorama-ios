@@ -38,6 +38,7 @@
 		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
 		579FAB611C86FAA700E06DF9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB601C86FAA600E06DF9 /* AboutViewController.m */; };
 		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
+		57ADDAFE1D8A745800CDD729 /* FilesDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDAFD1D8A745800CDD729 /* FilesDetailTableViewController.m */; };
 		57B11EEB1CA922EF00B389EF /* contrib in Resources */ = {isa = PBXBuildFile; fileRef = 57B11EEA1CA922EF00B389EF /* contrib */; };
 		57DA722A1D86404E00C7AFC3 /* Sensorama.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57DA72291D86404E00C7AFC3 /* Sensorama.plist */; };
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
@@ -141,6 +142,8 @@
 		579FAB601C86FAA600E06DF9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
 		579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		57ADDAFC1D8A745800CDD729 /* FilesDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesDetailTableViewController.h; sourceTree = "<group>"; };
+		57ADDAFD1D8A745800CDD729 /* FilesDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesDetailTableViewController.m; sourceTree = "<group>"; };
 		57B11EEA1CA922EF00B389EF /* contrib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contrib; sourceTree = SOURCE_ROOT; };
 		57DA72291D86404E00C7AFC3 /* Sensorama.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sensorama.plist; path = ../../assets/Sensorama.plist; sourceTree = "<group>"; };
 		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				579B6CE41CD3411E0011759B /* ActivityViewController.m */,
 				579FAB531C86B56200E06DF9 /* FilesTableViewController.h */,
 				579FAB541C86B56200E06DF9 /* FilesTableViewController.m */,
+				57ADDAFC1D8A745800CDD729 /* FilesDetailTableViewController.h */,
+				57ADDAFD1D8A745800CDD729 /* FilesDetailTableViewController.m */,
 				579FAB5F1C86FAA600E06DF9 /* AboutViewController.h */,
 				579FAB601C86FAA600E06DF9 /* AboutViewController.m */,
 				579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */,
@@ -680,6 +685,7 @@
 				577DBB7C1CFEC7920034C1EA /* WhisperBridge.swift in Sources */,
 				5735A33A1C92B83D0076F979 /* SRDataFileExporterS3.m in Sources */,
 				577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */,
+				57ADDAFE1D8A745800CDD729 /* FilesDetailTableViewController.m in Sources */,
 				5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */,
 				579F210F1D0415E5002E42F4 /* FrequencyViewController.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,

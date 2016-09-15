@@ -162,4 +162,10 @@
     NSLog(@"%s",__FUNCTION__);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"XXX %@ %@", segue, sender);
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 @end
