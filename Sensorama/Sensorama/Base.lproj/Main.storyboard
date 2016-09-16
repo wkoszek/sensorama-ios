@@ -117,7 +117,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="9bg-Jd-LiT"/>
+                    <navigationItem key="navigationItem" title="Files" id="9bg-Jd-LiT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lty-yT-mKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="-480" y="711"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="J98-SY-oRc">
             <objects>
-                <tableViewController id="0rZ-Qv-VEs" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="0rZ-Qv-VEs" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="wlO-aA-YB2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="0rZ-Qv-VEs" id="ZOC-ty-KRA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4jj-Jv-fB0"/>
+                    <navigationItem key="navigationItem" title="Settings" id="4jj-Jv-fB0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lkc-4T-1an" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="-2892" y="-610"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Activity-->
         <scene sceneID="Wu5-MA-ar4">
             <objects>
-                <viewController id="yT8-Rh-cux" customClass="ActivityViewController" sceneMemberID="viewController">
+                <viewController title="Activity" id="yT8-Rh-cux" customClass="ActivityViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mrf-lI-uQG"/>
                         <viewControllerLayoutGuide type="bottom" id="MtE-zX-9Zv"/>
@@ -245,7 +245,7 @@
                             <constraint firstItem="46x-OF-mRj" firstAttribute="top" secondItem="Mrf-lI-uQG" secondAttribute="bottom" constant="8" id="t6U-HW-bJG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Q7L-1b-TXW"/>
+                    <navigationItem key="navigationItem" title="Activity" id="Q7L-1b-TXW"/>
                     <connections>
                         <outlet property="calendarContentView" destination="mbI-DU-VPY" id="4fS-S4-IIf"/>
                         <outlet property="calendarMenuView" destination="46x-OF-mRj" id="bAN-cW-z7X"/>
@@ -775,7 +775,7 @@
         <!--Record-->
         <scene sceneID="Ydx-qT-na4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etW-j0-kEg" sceneMemberID="viewController">
+                <navigationController title="Record" automaticallyAdjustsScrollViewInsets="NO" id="etW-j0-kEg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" selectedImage="iconRecordActive" id="jtH-Hn-VPz" userLabel="Record"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KXM-HD-aD8">
@@ -794,7 +794,7 @@
         <!--Files-->
         <scene sceneID="6Fo-CW-izk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mKB-E1-0sk" sceneMemberID="viewController">
+                <navigationController title="Files" automaticallyAdjustsScrollViewInsets="NO" id="mKB-E1-0sk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Files" image="iconFiles" selectedImage="iconFilesActive" id="r6e-5G-Cyv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mdz-QV-fV1">
@@ -813,7 +813,7 @@
         <!--Settings-->
         <scene sceneID="moF-pd-FbD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IPR-tM-xQ8" sceneMemberID="viewController">
+                <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="IPR-tM-xQ8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" selectedImage="iconSettingsActive" id="f7r-PS-7rk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l3B-op-Hf6">
@@ -832,7 +832,7 @@
         <!--Activity-->
         <scene sceneID="iba-db-12i">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fUU-cF-hpF" sceneMemberID="viewController">
+                <navigationController title="Activity" automaticallyAdjustsScrollViewInsets="NO" id="fUU-cF-hpF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" image="iconActivityInactive" selectedImage="iconActivity" id="mBG-RD-JlU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJF-6v-BKT">
