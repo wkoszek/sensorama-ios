@@ -27,7 +27,6 @@
     NSLog(@"%s", __func__);
 
     [super viewDidAppear:animated];
-    [self.tabBarController setTitle:@"Files"];
     [self.tableView reloadData];
 }
 

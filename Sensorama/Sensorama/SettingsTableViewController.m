@@ -30,7 +30,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationController.navigationBar.tintColor = [UIColor blueColor];
     UISwitch.appearance.tintColor = [SRUtils mainColor];
     UISwitch.appearance.onTintColor = [SRUtils mainColor];
 
