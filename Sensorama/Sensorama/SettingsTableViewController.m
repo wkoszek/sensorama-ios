@@ -97,7 +97,7 @@
         SRPROBE0();
         NSString *newTitle = [[[NSUserDefaults standardUserDefaults] objectForKey:specifier.key] isEqualToString:@"Logout"] ? @"Login" : @"Logout";
         [[NSUserDefaults standardUserDefaults] setObject:newTitle forKey:specifier.key];
-        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController;
+        SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.navigationController.parentViewController;
         RecordViewController *rvc = [stvc viewControllerByClass:[RecordViewController class]];
         [rvc logoutAuth0];
         [stvc setSelectedIndex:0];

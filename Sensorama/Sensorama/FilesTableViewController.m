@@ -38,7 +38,7 @@
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.tableFooterView = [UIView new];  // Trick to remove line separators
 
-    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.parentViewController;
+    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.navigationController.parentViewController;
     self.filesList = [tabController.engine allRecordedFiles];
     NSLog(@"filelistZZZ=%@", self.filesList);
 

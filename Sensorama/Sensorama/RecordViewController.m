@@ -168,7 +168,7 @@
 
 - (void)setIsRecording:(BOOL)isRecording initial:(BOOL)isInitial
 {
-    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.parentViewController;
+    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.navigationController.parentViewController;
     FilesTableViewController *filesTVC = [tabBarController viewControllerByClass:[FilesTableViewController class]];
 
     SRPROBE1(filesTVC);
@@ -190,15 +190,15 @@
 }
 
 - (void)activateOtherTabs:(BOOL)activateFlag {
-    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.parentViewController;
+    SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.parentViewController.parentViewController;
     NSInteger viewIndexToKeep = [tabBarController viewControllerIndexByClass:[RecordViewController class]];
 
     NSInteger curTabItem = 0;
-    for (UITabBarItem *tbi in [tabBarController viewControllers]) {
+    for (UINavigationController *nvci in [tabBarController viewControllers]) {
         if (viewIndexToKeep == curTabItem) {
             continue;
         }
-        [tbi setEnabled:activateFlag];
+        [nvci.tabBarItem setEnabled:activateFlag];
     }
 }
 
