@@ -85,7 +85,6 @@
     SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
     [cell.textLabel setText:[dataFile printableLabel]];
     [cell.detailTextLabel setText:[dataFile printableLabelDetails]];
-    SRPROBE1([dataFile printableLabel]);
 
     return cell;
 }
@@ -163,7 +162,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"XXX %@ %@", segue, sender);
     self.hidesBottomBarWhenPushed = NO;
 }
 
