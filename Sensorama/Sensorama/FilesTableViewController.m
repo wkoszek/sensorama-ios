@@ -160,9 +160,12 @@
     NSLog(@"%s",__FUNCTION__);
 }
 
+#pragma mark - Segue handling
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.hidesBottomBarWhenPushed = NO;
+
+
 }
 
 @end
