@@ -30,7 +30,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
-    UISwitch.appearance.tintColor = [SRUtils mainColor];
     UISwitch.appearance.onTintColor = [SRUtils mainColor];
 
     SRPROBE0();
