@@ -33,7 +33,7 @@
     NSString *filePath = [self.dataFile filePathName];
     NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
     NSNumber *fileSize = [fileAttributes objectForKey:NSFileSize];
-    NSTimeInterval timeDiff = [self.dataFile.dateStart timeIntervalSinceDate:self.dataFile.dateEnd];
+    NSTimeInterval timeDiff = [self.dataFile.dateEnd timeIntervalSinceDate:self.dataFile.dateStart];
 
     [self.titleValue  setText:[self.dataFile printableLabel]];
     [self.sizeValue   setText:[NSString stringWithFormat:@"%@", fileSize]];
