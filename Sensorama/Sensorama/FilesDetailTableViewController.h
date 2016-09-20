@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRDataFile.h"
 
 @interface FilesDetailTableViewController : UITableViewController
+
+@property (nonatomic) SRDataFile *dataFile;
 
 @end

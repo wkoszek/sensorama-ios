@@ -44,9 +44,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fileDetailsIdentifier" forIndexPath:indexPath];
-    
 
-    [cell.textLabel setText:[NSString stringWithFormat:@"label_%d", arc4random() % 100]];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@_%d", self.dataFile.desc, arc4random() % 100]];
 
     return cell;
 }

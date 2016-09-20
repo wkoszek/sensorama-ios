@@ -9,6 +9,7 @@
 #import "DZNEmptyDataSet/UIScrollView+EmptyDataSet.h"
 
 #import "FilesTableViewController.h"
+#import "FilesDetailTableViewController.h"
 #import "SensoramaTabBarController.h"
 #import "SRUsageStats.h"
 #import "SRUtils.h"
@@ -164,8 +165,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        FilesDetailTableViewController *fdvc = (FilesDetailTableViewController *)segue.destinationViewController;
 
-
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *whichItemIndex = [self.tableView indexPathForCell:cell];
+        NSInteger whichItem = [whichItemIndex row];
+        SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
+        fdvc.dataFile = dataFile;
+        NSLog(@"segue=%@, sender=%@ index=%@", segue, sender, dataFile);
+    }
 }
 
 @end
