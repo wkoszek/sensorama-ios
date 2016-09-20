@@ -9,6 +9,9 @@
 #import "FilesDetailTableViewController.h"
 
 @interface FilesDetailTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleValue;
+@property (weak, nonatomic) IBOutlet UILabel *sizeValue;
+@property (weak, nonatomic) IBOutlet UILabel *lengthValue;
 
 @end
 
@@ -24,21 +27,35 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSString *filePath = [self.dataFile filePathName];
+    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
+    NSNumber *fileSize = [fileAttributes objectForKey:NSFileSize];
+    NSTimeInterval timeDiff = [self.dataFile.dateStart timeIntervalSinceDate:self.dataFile.dateEnd];
+
+    [self.titleValue  setText:[self.dataFile printableLabel]];
+    [self.sizeValue   setText:[NSString stringWithFormat:@"%@", fileSize]];
+    [self.lengthValue setText:[NSString stringWithFormat:@"%d", (int)timeDiff]];
+
+    NSLog(@"viewWillAppear");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#if 0
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) return 2;
-    if (section == 1) return 3;
-    if (section == 2) return 4;
     return 1;
 }
 
@@ -49,6 +66,7 @@
 
     return cell;
 }
+#endif
 
 /*
 // Override to support conditional editing of the table view.
