@@ -33,11 +33,4 @@
     [self.lengthValue setText:[NSString stringWithFormat:@"%d", (int)timeDiff]];
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        return nil;
-    }
-    return indexPath;
-}
-
 @end
