@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleValue;
 @property (weak, nonatomic) IBOutlet UILabel *sizeValue;
 @property (weak, nonatomic) IBOutlet UILabel *lengthValue;
-
 @end
 
 @implementation FilesDetailTableViewController
@@ -32,8 +31,6 @@
     [self.titleValue  setText:[self.dataFile printableLabel]];
     [self.sizeValue   setText:[NSString stringWithFormat:@"%@", fileSize]];
     [self.lengthValue setText:[NSString stringWithFormat:@"%d", (int)timeDiff]];
-
-    NSLog(@"viewWillAppear");
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
