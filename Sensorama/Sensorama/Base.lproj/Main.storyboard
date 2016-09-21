@@ -82,7 +82,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="bhZ-bT-7WX" detailTextLabel="4V4-Vr-7Hv" style="IBUITableViewCellStyleValue1" id="GEe-XF-fe3">
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GEe-XF-fe3" id="kzg-6B-E1B">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="GEe-XF-fe3" id="kzg-6B-E1B">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -243,7 +243,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lty-yT-mKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1202" y="711"/>
+            <point key="canvasLocation" x="-1186" y="745"/>
         </scene>
         <!--Files Detail Table View Controller-->
         <scene sceneID="zFG-JM-FOh">
