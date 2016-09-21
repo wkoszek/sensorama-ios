@@ -22,19 +22,10 @@
     // Do any additional setup after loading the view.
 }
 
-- (id) viewControllerByClass:(id)objClass {
-    for (UIViewController *uivc in self.viewControllers) {
-        if ([uivc isKindOfClass:objClass]) {
-            return uivc;
-        }
-    }
-    return nil;
-}
-
 - (NSInteger) viewControllerIndexByClass:(id)objClass {
     NSInteger idx = 0;
     for (UIViewController *uivc in self.viewControllers) {
-        if ([uivc isKindOfClass:objClass]) {
+        if ([uivc.childViewControllers[0] isKindOfClass:objClass]) {
             return idx;
         }
         idx += 1;

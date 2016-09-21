@@ -310,7 +310,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lkc-4T-1an" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1202" y="1397"/>
+            <point key="canvasLocation" x="-1202" y="1571"/>
         </scene>
         <!--Sensorama Tab Bar Controller-->
         <scene sceneID="aci-h7-Ljv">
@@ -336,7 +336,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZ0-6O-QNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2892" y="-610"/>
+            <point key="canvasLocation" x="-3262" y="568"/>
         </scene>
         <!--Activity-->
         <scene sceneID="Wu5-MA-ar4">
@@ -939,7 +939,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTu-hc-F7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1910" y="711"/>
+            <point key="canvasLocation" x="-1934" y="745"/>
         </scene>
         <!--Settings-->
         <scene sceneID="moF-pd-FbD">
@@ -958,7 +958,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaJ-uu-xiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1901" y="1397"/>
+            <point key="canvasLocation" x="-1934" y="1571"/>
         </scene>
         <!--Activity-->
         <scene sceneID="iba-db-12i">

@@ -94,7 +94,7 @@
     if ([specifier.key isEqualToString:@"ButtonLogout"]) {
         SRPROBE0();
         SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.navigationController.parentViewController;
-        RecordViewController *rvc = [stvc viewControllerByClass:[RecordViewController class]];
+        RecordViewController *rvc = stvc.viewControllers[0].childViewControllers[0];
         [rvc logoutAuth0];
         [stvc setSelectedIndex:0];
     }

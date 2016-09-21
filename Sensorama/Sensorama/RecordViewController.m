@@ -168,9 +168,6 @@
 - (void)setIsRecording:(BOOL)isRecording initial:(BOOL)isInitial
 {
     SensoramaTabBarController *tabBarController = (SensoramaTabBarController *)self.navigationController.parentViewController;
-    FilesTableViewController *filesTVC = [tabBarController viewControllerByClass:[FilesTableViewController class]];
-
-    SRPROBE1(filesTVC);
 
     [self makeStartStopTransition:isRecording];
     _isRecording = isRecording;
@@ -184,7 +181,6 @@
     } else {
         [tabBarController.engine recordingStopWithExport:YES];
         [self activateOtherTabs:YES];
-        filesTVC.filesList = [tabBarController.engine allRecordedFiles];
     }
 }
 
