@@ -24,11 +24,21 @@
 
 @implementation FilesTableViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    SensoramaTabBarController *stvc = (SensoramaTabBarController *)self.parentViewController.tabBarController;
+
+    self.filesList = [stvc.engine allRecordedFiles];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"%s", __func__);
 
     [super viewDidAppear:animated];
-    [self.tableView reloadData];
+
+   [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -37,10 +47,6 @@
     self.tableView.emptyDataSetSource = self;
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.tableFooterView = [UIView new];  // Trick to remove line separators
-
-    SensoramaTabBarController *tabController = (SensoramaTabBarController *)self.navigationController.parentViewController;
-    self.filesList = [tabController.engine allRecordedFiles];
-    NSLog(@"filelistZZZ=%@", self.filesList);
 
     [SRUsageStats eventAppFiles];
 
