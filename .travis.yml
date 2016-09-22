@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode7.3
 cache: cocoapods
 rvm:
-- 2.2
+- 2.2.4
 script:
 #- gem update
 #- gem install fastlane --pre
