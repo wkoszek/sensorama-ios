@@ -167,6 +167,20 @@
     NSLog(@"%s",__FUNCTION__);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"segue");
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        FilesDetailTableViewController *fdvc = (FilesDetailTableViewController *)segue.destinationViewController;
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *whichItemIndex = [self.tableView indexPathForCell:cell];
+        NSInteger whichItem = [whichItemIndex row];
+        SRDataFile *dataFile = [self.filesList objectAtIndex:whichItem];
+        fdvc.dataFile = dataFile;
+        NSLog(@"segue=%@, sender=%@ index=%@", segue, sender, dataFile);
+    }
+}
+
 - (IBAction)unwindToContainerVC:(UIStoryboardSegue *)segue {
 
 }

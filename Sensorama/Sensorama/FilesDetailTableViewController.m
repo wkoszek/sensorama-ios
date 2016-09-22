@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.clearsSelectionOnViewWillAppear = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,24 +39,37 @@
 {
     if ([indexPath section] == 1 && [indexPath row] == 0) { // Delete
         NSLog(@"Delete");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File will be deleted"
-                                                        message:@"Are you sure?"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Yes"
-                                              otherButtonTitles:@"No", nil];
-        [alert show];
-    }
-}
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) { // YES
-        NSLog(@"will delete file");
-        [self.dataFile deleteFile];
-        [self performSegueWithIdentifier:@"fromDetailToFiles" sender:self];
-    } else {                // NO
-        NSLog(@"didn't delete");
-    }
-}
+        UIAlertController *alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Will delete file"
+                                      message:@"Are you sure?"
+                                      preferredStyle:UIAlertControllerStyleAlert];
 
+        UIAlertAction* actionYes = [UIAlertAction
+                             actionWithTitle:@"Yes"
+                             style:UIAlertActionStyleDestructive
+                             handler:^(UIAlertAction * action)
+                             {
+                                 NSLog(@"yes delete");
+                                 [self.dataFile deleteFile];
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                                 [self performSegueWithIdentifier:@"fromDetailToFiles" sender:self];
+                             }];
+        UIAlertAction* actionNo = [UIAlertAction
+                            actionWithTitle:@"No"
+                            style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action)
+                            {
+                                NSLog(@"no delete");
+                                [self dismissViewControllerAnimated:YES completion:nil];
+                            }];
+        [alert addAction:actionYes];
+        [alert addAction:actionNo];
+
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO animated:NO];
+}
 
 @end
