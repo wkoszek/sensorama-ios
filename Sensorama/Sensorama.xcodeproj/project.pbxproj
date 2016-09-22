@@ -428,7 +428,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Wojciech Adam Koszek";
 				TargetAttributes = {
 					577DC8F21C4CB0E700FA02B7 = {
@@ -874,10 +874,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1BDFEE3A90F35FFEA4112E0 /* Pods-SensoramaTests.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					"$(ARCHS_STANDARD)",
-				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SensoramaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -892,10 +888,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 420EC43AAA7D2F2D5935820C /* Pods-SensoramaTests.release.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					"$(ARCHS_STANDARD)",
-				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SensoramaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
