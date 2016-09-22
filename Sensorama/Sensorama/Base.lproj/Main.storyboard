@@ -184,9 +184,11 @@
                         <outlet property="lengthValue" destination="asq-eq-ybB" id="6Sv-ah-vWt"/>
                         <outlet property="sizeValue" destination="llw-dr-wU1" id="Mh3-eC-38e"/>
                         <outlet property="titleValue" destination="4V4-Vr-7Hv" id="t4P-9p-iDq"/>
+                        <segue destination="gQy-qg-1Nu" kind="unwind" identifier="fromDetailToFiles" unwindAction="unwindToContainerVC:" id="pyT-mU-b6m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMp-p3-423" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gQy-qg-1Nu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="196" y="711"/>
         </scene>

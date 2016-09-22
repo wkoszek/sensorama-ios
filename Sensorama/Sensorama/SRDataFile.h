@@ -45,6 +45,7 @@
 - (void) savePoints;
 - (void) pruneFileCache;
 - (void) serializeWithData:(NSData *)data path:(NSString *)filePath;
+- (void) deleteFile;
 
 - (NSString *) fileBasePathName;
 - (NSString *) filePathName;

@@ -33,4 +33,28 @@
     [self.lengthValue setText:[NSString stringWithFormat:@"%d", (int)timeDiff]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath section] == 1 && [indexPath row] == 0) { // Delete
+        NSLog(@"Delete");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File will be deleted"
+                                                        message:@"Are you sure?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Yes"
+                                              otherButtonTitles:@"No", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) { // YES
+        NSLog(@"will delete file");
+        [self.dataFile deleteFile];
+        [self performSegueWithIdentifier:@"fromDetailToFiles" sender:self];
+    } else {                // NO
+        NSLog(@"didn't delete");
+    }
+}
+
+
 @end

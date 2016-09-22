@@ -174,6 +174,10 @@
     return targetPath;
 }
 
+- (void) deleteFile {
+    [[NSFileManager defaultManager] removeItemAtPath:[self filePathName] error:nil];
+}
+
 - (NSDictionary *)serializeToMemory {
     NSDictionary *fileInfoDict = [self fileInfoDict];
     NSMutableDictionary *wholeFile = [[NSMutableDictionary alloc] initWithDictionary:fileInfoDict];
