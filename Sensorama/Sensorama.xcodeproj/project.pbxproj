@@ -91,6 +91,7 @@
 		5735A3381C92B83D0076F979 /* SRDataFileExporterS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterS3.h; sourceTree = "<group>"; };
 		5735A3391C92B83D0076F979 /* SRDataFileExporterS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterS3.m; sourceTree = "<group>"; };
 		57422FFE1CB9F1F9009C4DF6 /* SRDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRDebug.h; sourceTree = "<group>"; };
+		5751BF611D98CF1F00A15557 /* Sensorama.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sensorama.entitlements; sourceTree = "<group>"; };
 		5758699D1CF14F3D0015C791 /* SRDataFileExporterMailgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDataFileExporterMailgun.h; sourceTree = "<group>"; };
 		5758699E1CF14F3D0015C791 /* SRDataFileExporterMailgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDataFileExporterMailgun.m; sourceTree = "<group>"; };
 		57587A761D06AC830010DCD0 /* FontAwesome_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome_iOS.framework; path = "../../../../Users/wk/Library/Developer/Xcode/DerivedData/Sensorama-exycbqmwaecqkudjzuzfrlpolovg/Build/Products/Debug-iphonesimulator/FontAwesome_iOS.framework"; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 		577DC8F51C4CB0E700FA02B7 /* Sensorama */ = {
 			isa = PBXGroup;
 			children = (
+				5751BF611D98CF1F00A15557 /* Sensorama.entitlements */,
 				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
 				5797A3771D2E179E00B13CB2 /* Settings.bundle */,
@@ -435,6 +437,11 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = QQ5A9Q7C7Z;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					577DC90B1C4CB0E700FA02B7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -844,6 +851,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sensorama/Sensorama.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 103;
 				INFOPLIST_FILE = Sensorama/Info.plist;
@@ -866,6 +874,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sensorama/Sensorama.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 103;
 				INFOPLIST_FILE = Sensorama/Info.plist;
