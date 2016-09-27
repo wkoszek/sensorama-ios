@@ -253,9 +253,9 @@
 		577DC8F51C4CB0E700FA02B7 /* Sensorama */ = {
 			isa = PBXGroup;
 			children = (
-				5751BF611D98CF1F00A15557 /* Sensorama.entitlements */,
 				577DC9041C4CB0E700FA02B7 /* LaunchScreen.storyboard */,
 				577DC8FF1C4CB0E700FA02B7 /* Main.storyboard */,
+				5751BF611D98CF1F00A15557 /* Sensorama.entitlements */,
 				5797A3771D2E179E00B13CB2 /* Settings.bundle */,
 				577DC8F61C4CB0E700FA02B7 /* Supporting Files */,
 				577A4B8B1CCC9D7E00FA6E7D /* Model */,
