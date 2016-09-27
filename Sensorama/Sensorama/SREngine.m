@@ -59,9 +59,6 @@
     static int updateCount = 0;
 
     SRPROBE0();
-    if (self.timer == nil) {
-        NSLog(@"stopped!");
-    }
 
     SRDataPoint *newPoint = [[SRDataPoint alloc] initWithConfiguration:self.configuration];
     updateCount++;
