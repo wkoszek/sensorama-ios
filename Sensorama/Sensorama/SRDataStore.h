@@ -34,7 +34,10 @@
 + (void) handleMigrations;
 
 - (void) insertDataFile:(SRDataFile *)dataFile;
-- (void) insertDataPoints:(NSArray<SRDataPoint *> *) points;
+- (void) removeDataFile:(SRDataFile *)dataFile;
+
+- (void) insertDataPoints:(NSArray<SRDataPoint *> *)points;
+- (void) removeDataPoints:(NSArray<SRDataPoint *> *)points;
 
 - (void) serializeFile:(SRDataFile *)fileInMemory;
 - (void) exportFiles:(NSArray <SRDataFile *> *)filesToSync;

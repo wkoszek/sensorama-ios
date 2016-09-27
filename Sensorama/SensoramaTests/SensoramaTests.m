@@ -200,7 +200,7 @@
 
 #pragma mark - Basic datastore functionality
 
-- (NSArray *)makeDataPointsWithFileId:(int)fileId howMany:(NSInteger)howMany {
+- (NSArray *)makeDataPointsWithFileId:(NSInteger)fileId howMany:(NSInteger)howMany {
     NSMutableArray *points = [NSMutableArray new];
     for (int pi = 0; pi < howMany; pi++) {
         SRDataPoint *dp = [SRDataPoint new];
@@ -211,19 +211,53 @@
     return points;
 }
 
-- (void)testDataStoreBasic {
-    NSArray *points = [self makeDataPointsWithFileId:13 howMany:10];
-    RLMRealm *realm = [RLMRealm defaultRealm];
+- (int)helpHowManyPointsWithFileId:(NSInteger)fileId
+{
+    RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId = %ld", fileId];
 
+    return ((int)[dataPoints count]);
+}
+
+- (void)helperFileMakerWithId:(NSInteger)fileId howManyPoints:(NSInteger)howManyPoints {
+
+    SRDataFile *file = [[SRDataFile alloc] initWithConfiguration:[SRCfg defaultConfiguration]
+                                                          fileId:fileId
+                                                        userName:@""];
+    [file save];
+
+    NSArray *points = [self makeDataPointsWithFileId:fileId howMany:howManyPoints];
+    RLMRealm *realm = [RLMRealm defaultRealm];
     dispatch_sync(self.waitQueue, ^{
         [realm beginWriteTransaction];
         [realm addOrUpdateObjectsFromArray:points];
         [realm commitWriteTransaction];
     });
 
-    RLMResults<SRDataPoint *> *dataPoints = [SRDataPoint objectsWhere:@"fileId = 13"];
+    XCTAssert([self helpHowManyPointsWithFileId:fileId] == howManyPoints);
+}
 
-    XCTAssert([dataPoints count] == 10);
+- (void)testDataStoreBasic {
+    [self helperFileMakerWithId:13 howManyPoints:10];
+}
+
+- (void)testMake3Files {
+    [self helperFileMakerWithId:17 howManyPoints:10];
+    [self helperFileMakerWithId:18 howManyPoints:11];
+    [self helperFileMakerWithId:19 howManyPoints:12];
+}
+
+- (void)testMake3FilesRemove1 {
+    [self helperFileMakerWithId:17 howManyPoints:10];
+    [self helperFileMakerWithId:18 howManyPoints:11];
+    [self helperFileMakerWithId:19 howManyPoints:12];
+
+    RLMResults<SRDataFile *> *files_before = [SRDataFile objectsWhere:@"fileId = 18"];
+    XCTAssertEqual([files_before count], 1);
+
+    [[SRDataStore sharedInstance] removeDataFile:files_before[0]];
+
+    RLMResults<SRDataFile *> *files_after = [SRDataFile objectsWhere:@"fileId = 18"];
+    XCTAssertEqual([files_after count], 0);
 }
 
 - (void)testBasicPointJSONSerialize {

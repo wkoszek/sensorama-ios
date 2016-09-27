@@ -176,6 +176,7 @@
 
 - (void) deleteFile {
     [[NSFileManager defaultManager] removeItemAtPath:[self filePathName] error:nil];
+    [[SRDataStore sharedInstance] removeDataFile:self];
 }
 
 - (NSDictionary *)serializeToMemory {

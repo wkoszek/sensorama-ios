@@ -95,22 +95,46 @@
     [RLMRealm defaultRealm];
 }
 
-- (void) insertDataFile:(SRDataFile *)dataFile
-{
+- (void) insertOrRemoveDataFile:(SRDataFile *)dataFile willRemove:(BOOL)willRemove {
     RLMRealm *realm = [RLMRealm defaultRealm];
 
     [realm beginWriteTransaction];
-    [realm addOrUpdateObject:dataFile];
+    if (willRemove) {
+        [realm deleteObject:dataFile];
+    } else {
+        [realm addOrUpdateObject:dataFile];
+    }
     [realm commitWriteTransaction];
 }
 
-- (void) insertDataPoints:(NSArray<SRDataPoint *> *) points
-{
+- (void) insertDataFile:(SRDataFile *)dataFile {
+    [self insertOrRemoveDataFile:dataFile willRemove:NO];
+}
+
+- (void) removeDataFile:(SRDataFile *)dataFile {
+    NSInteger fileId = dataFile.fileId;
+    [self insertOrRemoveDataFile:dataFile willRemove:YES];
+    [self removeDataPoints:(NSArray *)[SRDataPoint objectsWhere:@"fileId = %d", fileId]];
+}
+
+- (void) insertOrRemoveDataPoints:(NSArray<SRDataPoint *> *) points willRemove:(BOOL)willRemove {
     RLMRealm *realm = [RLMRealm defaultRealm];
 
     [realm beginWriteTransaction];
-    [realm addOrUpdateObjectsFromArray:points];
+    if (willRemove) {
+        [realm deleteObjects:points];
+    } else {
+        [realm addOrUpdateObjectsFromArray:points];
+    }
     [realm commitWriteTransaction];
+}
+
+- (void) insertDataPoints:(NSArray<SRDataPoint *> *)points {
+    [self insertOrRemoveDataPoints:points willRemove:NO];
+}
+
+- (void) removeDataPoints:(NSArray<SRDataPoint *> *)points {
+    [self insertOrRemoveDataPoints:points willRemove:YES];
 }
 
 @end
