@@ -217,13 +217,7 @@
 
     dispatch_sync(self.waitQueue, ^{
         [realm beginWriteTransaction];
-#if 0
-        [realm addObject:points[0]];
-        [realm addObject:points[1]];
-        [realm addObject:points[2]];
-#else
         [realm addOrUpdateObjectsFromArray:points];
-#endif
         [realm commitWriteTransaction];
     });
 
