@@ -25,7 +25,7 @@ platform :ios do
   lane :certs do
     slack(message: "certs", success: true)
     match(
-      app_identifier: "com.koszek.Sensorama",
+      app_identifier: "com.koszek.Sensorama.develop",
       type: "development",
       git_url: ENV['FASTLANE_GIT_URL'],
       force: is_ci ? false : true,
@@ -37,7 +37,7 @@ platform :ios do
     slack(message: "appmake", success: true)
     produce(
        username: 'wkoszek@freebsd.org',
-       app_identifier: 'com.koszek.Sensorama',
+       app_identifier: 'com.koszek.Sensorama.develop',
        app_name: 'Sensorama',
        language: 'English',
        app_version: '1.0',
