@@ -41,20 +41,11 @@
     uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], fileBaseName];
     uploadRequest.body = fileURL;
 
-    NSInteger fileId = [dataFile fileId];
-
+    __block SRDataFile *tmpDataFile = dataFile;
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
         NSLog(@"download block: %@", [task error]);
         if ([task error] == nil) {
-            dispatch_async([SRDataFile saveQueue], ^{
-                RLMRealm *realm = [RLMRealm defaultRealm];
-                SRDataFile *file = [SRDataFile objectForPrimaryKey:@(fileId)];
-                [realm beginWriteTransaction];
-                file.isExported = true;
-                [realm addOrUpdateObject:file];
-                [realm commitWriteTransaction];
-            });
-            NSLog(@"task finished");
+            [[SRDataStore sharedInstance] markExportedFile:tmpDataFile];
         } else {
             NSLog(@"error = %@", [[task error] localizedDescription]);
         }

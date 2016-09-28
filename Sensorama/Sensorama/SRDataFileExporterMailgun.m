@@ -39,10 +39,15 @@
     NSData *fileData = [[NSFileManager defaultManager] contentsAtPath:[dataFile filePathName]];
     [msg addAttachment:fileData withName:[dataFile fileBasePathName] type:@"application/x-bzip2"];
 
-    NSLog(@"mailgun exporter");
     NSString *apiKey = [NSString stringWithUTF8String:SENSORAMA_MAILGUN_API_KEY];
     Mailgun *mailgun = [Mailgun clientWithDomain:@"data.sensorama.org" apiKey:apiKey];
-    [mailgun sendMessage:msg];
+
+    __block SRDataFile *tmpDataFile = dataFile;
+    [mailgun sendMessage:msg success:^(NSString *messageId) {
+        [[SRDataStore sharedInstance] markExportedFile:tmpDataFile];
+    } failure:^(NSError *error) {
+        NSLog(@"failure to export! file=%@", dataFile);
+    }];
 }
 
 @end

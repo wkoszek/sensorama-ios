@@ -75,6 +75,17 @@
     return isOK;
 }
 
+- (void) markExportedFile:(SRDataFile *)dataFile {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults<SRDataFile *> *results = [SRDataFile objectsWhere:@"fileId = %ld", dataFile.fileId];
+    SRDataFile *fileToMark = results[0];
+    [realm beginWriteTransaction];
+    fileToMark.isExported = true;
+    [realm addOrUpdateObject:fileToMark];
+    [realm commitWriteTransaction];
+    NSLog(@"File should be marked as exported");
+}
+
 + (void) handleMigrations {
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
     int currentSchemaVersion = [[SRUtils bundleVersionString] intValue];
