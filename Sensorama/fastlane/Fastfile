@@ -77,8 +77,14 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-    # match(type: "appstore")
     # snapshot
+    match(
+      app_identifier: "com.koszek.Sensorama.master",
+      type: "appstore",
+      git_url: ENV['FASTLANE_GIT_URL'],
+      force: is_ci ? false : true,
+      readonly: is_ci ? true : false
+    )
     gym(scheme: "Sensorama") # Build your app - more options available
     deliver(force: true)
   end

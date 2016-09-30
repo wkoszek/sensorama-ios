@@ -1,3 +1,3 @@
 # vim: ai ts=2 sts=2 et sw=2 ft=ruby
-app_identifier "com.koszek.Sensorama"
+app_identifier "com.koszek.Sensorama.master"
 username "wkoszek@freebsd.org"
