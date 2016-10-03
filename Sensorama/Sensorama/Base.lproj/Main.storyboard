@@ -356,7 +356,7 @@
                 <navigationController title="Record" automaticallyAdjustsScrollViewInsets="NO" id="etW-j0-kEg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Record" image="iconRecord" selectedImage="iconRecordActive" id="jtH-Hn-VPz" userLabel="Record"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KXM-HD-aD8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KXM-HD-aD8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -375,7 +375,7 @@
                 <navigationController title="Files" automaticallyAdjustsScrollViewInsets="NO" id="mKB-E1-0sk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Files" image="iconFiles" selectedImage="iconFilesActive" id="r6e-5G-Cyv"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mdz-QV-fV1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mdz-QV-fV1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -394,7 +394,7 @@
                 <navigationController title="Settings" automaticallyAdjustsScrollViewInsets="NO" id="IPR-tM-xQ8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="iconSettings" selectedImage="iconSettingsActive" id="f7r-PS-7rk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l3B-op-Hf6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="l3B-op-Hf6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -413,7 +413,7 @@
                 <navigationController title="Activity" automaticallyAdjustsScrollViewInsets="NO" id="fUU-cF-hpF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" image="iconActivityInactive" selectedImage="iconActivity" id="mBG-RD-JlU"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJF-6v-BKT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tJF-6v-BKT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
