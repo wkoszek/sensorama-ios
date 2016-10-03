@@ -1101,6 +1101,7 @@
 				57DA1C871DA25246003E6DD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
