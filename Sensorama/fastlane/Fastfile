@@ -65,7 +65,7 @@ platform :ios do
     sigh(development: true)
     if not is_ci then
       increment_build_number
-      commit_version_bump(xcodeproj: "Sensorama.xcodeproj", force: true)
+      commit_version_bump(xcodeproj: "Sensorama.xcodeproj")
     end
     badge
     build_app
