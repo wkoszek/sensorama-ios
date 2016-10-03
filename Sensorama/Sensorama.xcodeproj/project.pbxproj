@@ -40,6 +40,8 @@
 		579FAB641C86FABC00E06DF9 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */; };
 		57ADDAFE1D8A745800CDD729 /* FilesDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDAFD1D8A745800CDD729 /* FilesDetailTableViewController.m */; };
 		57B11EEB1CA922EF00B389EF /* contrib in Resources */ = {isa = PBXBuildFile; fileRef = 57B11EEA1CA922EF00B389EF /* contrib */; };
+		57DA1C821DA25246003E6DD2 /* SensoramaScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA1C811DA25246003E6DD2 /* SensoramaScreenshots.swift */; };
+		57DA1C8A1DA2527C003E6DD2 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA1C891DA2527C003E6DD2 /* SnapshotHelper.swift */; };
 		57DA722A1D86404E00C7AFC3 /* Sensorama.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57DA72291D86404E00C7AFC3 /* Sensorama.plist */; };
 		57EC5FF01C87F5CA00243893 /* SREngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FEF1C87F5CA00243893 /* SREngine.m */; };
 		57EC5FF31C88000C00243893 /* SRCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EC5FF21C88000C00243893 /* SRCfg.m */; };
@@ -57,6 +59,13 @@
 			remoteInfo = Sensorama;
 		};
 		577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577DC8F21C4CB0E700FA02B7;
+			remoteInfo = Sensorama;
+		};
+		57DA1C841DA25246003E6DD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 577DC8EB1C4CB0E600FA02B7 /* Project object */;
 			proxyType = 1;
@@ -146,6 +155,10 @@
 		57ADDAFC1D8A745800CDD729 /* FilesDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesDetailTableViewController.h; sourceTree = "<group>"; };
 		57ADDAFD1D8A745800CDD729 /* FilesDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesDetailTableViewController.m; sourceTree = "<group>"; };
 		57B11EEA1CA922EF00B389EF /* contrib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contrib; sourceTree = SOURCE_ROOT; };
+		57DA1C7F1DA25246003E6DD2 /* SensoramaScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensoramaScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DA1C811DA25246003E6DD2 /* SensoramaScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensoramaScreenshots.swift; sourceTree = "<group>"; };
+		57DA1C831DA25246003E6DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DA1C891DA2527C003E6DD2 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		57DA72291D86404E00C7AFC3 /* Sensorama.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sensorama.plist; path = ../../assets/Sensorama.plist; sourceTree = "<group>"; };
 		57EC5FEE1C87F5CA00243893 /* SREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SREngine.h; sourceTree = "<group>"; };
 		57EC5FEF1C87F5CA00243893 /* SREngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SREngine.m; sourceTree = "<group>"; };
@@ -183,6 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C4CF2585F13EC7079DD48C /* Pods_SensoramaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57DA1C7C1DA25246003E6DD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +254,7 @@
 				577DC8F51C4CB0E700FA02B7 /* Sensorama */,
 				577DC90F1C4CB0E700FA02B7 /* SensoramaTests */,
 				577DC91A1C4CB0E700FA02B7 /* SensoramaUITests */,
+				57DA1C801DA25246003E6DD2 /* SensoramaScreenshots */,
 				577DC8F41C4CB0E700FA02B7 /* Products */,
 				C9188546ED92D4026C0F8BA3 /* Frameworks */,
 				C424D77877D924663579CCC2 /* Pods */,
@@ -246,6 +267,7 @@
 				577DC8F31C4CB0E700FA02B7 /* Sensorama.app */,
 				577DC90C1C4CB0E700FA02B7 /* SensoramaTests.xctest */,
 				577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */,
+				57DA1C7F1DA25246003E6DD2 /* SensoramaScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +350,16 @@
 				579F210E1D0415E5002E42F4 /* FrequencyViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		57DA1C801DA25246003E6DD2 /* SensoramaScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				57DA1C891DA2527C003E6DD2 /* SnapshotHelper.swift */,
+				57DA1C811DA25246003E6DD2 /* SensoramaScreenshots.swift */,
+				57DA1C831DA25246003E6DD2 /* Info.plist */,
+			);
+			path = SensoramaScreenshots;
 			sourceTree = "<group>";
 		};
 		C424D77877D924663579CCC2 /* Pods */ = {
@@ -423,13 +455,31 @@
 			productReference = 577DC9171C4CB0E700FA02B7 /* SensoramaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		57DA1C7E1DA25246003E6DD2 /* SensoramaScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57DA1C881DA25246003E6DD2 /* Build configuration list for PBXNativeTarget "SensoramaScreenshots" */;
+			buildPhases = (
+				57DA1C7B1DA25246003E6DD2 /* Sources */,
+				57DA1C7C1DA25246003E6DD2 /* Frameworks */,
+				57DA1C7D1DA25246003E6DD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57DA1C851DA25246003E6DD2 /* PBXTargetDependency */,
+			);
+			name = SensoramaScreenshots;
+			productName = SensoramaScreenshots;
+			productReference = 57DA1C7F1DA25246003E6DD2 /* SensoramaScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		577DC8EB1C4CB0E600FA02B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Wojciech Adam Koszek";
 				TargetAttributes = {
@@ -453,6 +503,11 @@
 						DevelopmentTeam = 3DHC3EAFWW;
 						TestTargetID = 577DC8F21C4CB0E700FA02B7;
 					};
+					57DA1C7E1DA25246003E6DD2 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 577DC8F21C4CB0E700FA02B7;
+					};
 				};
 			};
 			buildConfigurationList = 577DC8EE1C4CB0E600FA02B7 /* Build configuration list for PBXProject "Sensorama" */;
@@ -471,6 +526,7 @@
 				577DC8F21C4CB0E700FA02B7 /* Sensorama */,
 				577DC90B1C4CB0E700FA02B7 /* SensoramaTests */,
 				577DC9161C4CB0E700FA02B7 /* SensoramaUITests */,
+				57DA1C7E1DA25246003E6DD2 /* SensoramaScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -498,6 +554,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		577DC9151C4CB0E700FA02B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57DA1C7D1DA25246003E6DD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -722,6 +785,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57DA1C7B1DA25246003E6DD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DA1C821DA25246003E6DD2 /* SensoramaScreenshots.swift in Sources */,
+				57DA1C8A1DA2527C003E6DD2 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -734,6 +806,11 @@
 			isa = PBXTargetDependency;
 			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
 			targetProxy = 577DC9181C4CB0E700FA02B7 /* PBXContainerItemProxy */;
+		};
+		57DA1C851DA25246003E6DD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577DC8F21C4CB0E700FA02B7 /* Sensorama */;
+			targetProxy = 57DA1C841DA25246003E6DD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -853,7 +930,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sensorama/Sensorama.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 113;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -876,7 +953,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sensorama/Sensorama.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 112;
+				CURRENT_PROJECT_VERSION = 113;
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -943,6 +1020,41 @@
 			};
 			name = Release;
 		};
+		57DA1C861DA25246003E6DD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SensoramaScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.sensorama.SensoramaScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Sensorama;
+			};
+			name = Debug;
+		};
+		57DA1C871DA25246003E6DD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = SensoramaScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.sensorama.SensoramaScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Sensorama;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -981,6 +1093,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		57DA1C881DA25246003E6DD2 /* Build configuration list for PBXNativeTarget "SensoramaScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57DA1C861DA25246003E6DD2 /* Debug */,
+				57DA1C871DA25246003E6DD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

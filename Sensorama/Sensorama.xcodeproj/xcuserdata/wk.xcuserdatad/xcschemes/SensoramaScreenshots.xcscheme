@@ -14,9 +14,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "577DC9161C4CB0E700FA02B7"
-               BuildableName = "SensoramaUITests.xctest"
-               BlueprintName = "SensoramaUITests"
+               BlueprintIdentifier = "57DA1C7E1DA25246003E6DD2"
+               BuildableName = "SensoramaScreenshots.xctest"
+               BlueprintName = "SensoramaScreenshots"
                ReferencedContainer = "container:Sensorama.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "577DC9161C4CB0E700FA02B7"
-               BuildableName = "SensoramaUITests.xctest"
-               BlueprintName = "SensoramaUITests"
+               BlueprintIdentifier = "57DA1C7E1DA25246003E6DD2"
+               BuildableName = "SensoramaScreenshots.xctest"
+               BlueprintName = "SensoramaScreenshots"
                ReferencedContainer = "container:Sensorama.xcodeproj">
             </BuildableReference>
          </TestableReference>

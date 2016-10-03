@@ -95,7 +95,12 @@
     NSLog(@"keychain=%@", keychain);
     NSLog(@"profile=%@", profile);
     NSLog(@"idToken=%@", idToken);
-    
+
+    if ([[[NSProcessInfo processInfo] environment] objectForKey:@"DEBUG_SCREENSHOTS"] ||
+            ([[[NSProcessInfo processInfo] arguments] containsObject:@"-ui_testing"] )) {
+        return;
+    }
+
     if (idToken) {
         NSError *error = nil;
         A0JWT *jwt = [A0JWT decode:idToken error:&error];
