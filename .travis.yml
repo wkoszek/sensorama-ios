@@ -4,14 +4,18 @@ cache: cocoapods
 rvm:
 - 2.2.4
 
-# HACK TO FIX:
-# https://github.com/fastlane/fastlane/issues/6203
 before_install:
+  # HACK TO FIX:
+  # https://github.com/fastlane/fastlane/issues/6203
   # Force bundler 1.12.5 because version 1.13 has issues, see https://github.com/fastlane/fastlane/issues/6065#issuecomment-246044617
   - gem uninstall bundler -v '>1.12.5' --force || echo "bundler >1.12.5 is not installed"
   - gem install bundler -v 1.12.5 --no-rdoc --no-ri --no-document --quiet
   - gem cleanup
   - gem install badge
+
+  # This should somehow land in scripts/bootstrap.sh soon
+  - brew install imagemagick
+
 
 script:
 #- gem update
