@@ -55,6 +55,12 @@ function build_fastlane() {
 	(cd Sensorama && fastlane beta)
 }
 
+function build_fastlane_release() {
+	export PATH=`pwd`/scripts/git-hack:$PATH
+	(cd Sensorama && FASTLANE_ITUNES_TRANSPORTER_USE_SHELL_SCRIPT=1 fastlane release)
+}
+
+
 function ci_env_init() {
 	openssl aes-256-cbc -K $encrypted_c972abe91c70_key -iv $encrypted_c972abe91c70_iv -in scripts/travis.enc -out scripts/travis -d
 	eval "$(ssh-agent -s)"
@@ -78,6 +84,8 @@ if   [ "$ARG1" = "bootstrap" ]; then
 	tools_bootstrap
 elif [ "$ARG1" = "fastlane" ]; then
 	build_fastlane
+elif [ "$ARG1" = "fastlane_release" ]; then
+	build_fastlane_release
 elif [ "$ARG1" = "normal" ]; then
 	build_normal
 elif [ "$ARG1" = "test_normal" ]; then
