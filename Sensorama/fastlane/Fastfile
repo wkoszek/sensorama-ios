@@ -5,13 +5,6 @@ default_platform :ios
 
 is_ci = ENV['TRAVIS'] ? true : false
 
-def build_app
-  gym(
-    workspace: "Sensorama.xcworkspace",
-    scheme: "Sensorama"
-  )
-end
-
 platform :ios do
 
   desc "Installs FixCode which disables the \"Fix Issue\" button in Xcode"
@@ -68,7 +61,10 @@ platform :ios do
       commit_version_bump(xcodeproj: "Sensorama.xcodeproj")
     end
     badge
-    build_app
+    gym(
+      workspace: "Sensorama.xcworkspace",
+      scheme: "Sensorama"
+    )
     #scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
     crashlytics_beta
@@ -77,6 +73,10 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
+    if not is_ci then
+      increment_build_number
+      commit_version_bump(xcodeproj: "Sensorama.xcodeproj")
+    end
     update_app_identifier(
       app_identifier: "com.koszek.Sensorama.master",
       plist_path: "Sensorama/Info.plist"
@@ -88,7 +88,10 @@ platform :ios do
       force: is_ci ? false : true,
       readonly: is_ci ? true : false
     )
-    gym(scheme: "Sensorama") # Build your app - more options available
+    gym(
+      workspace: "Sensorama.xcworkspace",
+      scheme: "Sensorama"
+    )
     deliver(force: true)
   end
 
