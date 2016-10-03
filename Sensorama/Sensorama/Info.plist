@@ -27,12 +27,12 @@
 			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>PUT_YOUR_URL_SCHEME_SECRET_IN_DOT_PROFILE</string>
+				<string>PUTYOURURLSCHEMESECRET</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>110</string>
+	<string>111</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
