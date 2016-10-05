@@ -4,6 +4,8 @@
 //  AppDelegate.m
 //  Sensorama
 //
+// Code from SO:
+// https://stackoverflow.com/questions/8430777/programatically-get-path-to-application-support-folder/8430843#8430843
 
 //#import <NSLogger/NSLogger.h>
 #import <Lock/Lock.h>
@@ -86,6 +88,16 @@ static const char *sensoramaAppURL = "http://cfg.sensorama.org/_/Sensorama.plist
     [SRAuth startWithLaunchOptions:launchOptions];
     [SRUsageStats eventAppOpened];
     [SRDataStore handleMigrations];
+
+#if 0
+    RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *appSupportDirPath = [paths firstObject];
+    NSString *realmPath = [appSupportDirPath stringByAppendingPathComponent:@"default.realm"];
+    configuration.fileURL = [NSURL fileURLWithPath:realmPath];
+    [RLMRealmConfiguration setDefaultConfiguration:configuration];
+    NSLog(@"XXXX path=%@ realmURL: '%@'", realmPath, configuration.fileURL);
+#endif
 
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES]; // don't turn of the screen
 
