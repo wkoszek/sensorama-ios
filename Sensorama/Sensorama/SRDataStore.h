@@ -42,7 +42,6 @@
 - (void) serializeFile:(SRDataFile *)fileInMemory;
 - (void) exportFiles:(NSArray <SRDataFile *> *)filesToSync;
 
-- (void) markExportedFile:(SRDataFile *)dataFile;
 - (void) markExportedFileId:(NSInteger)fileId;
 
 
