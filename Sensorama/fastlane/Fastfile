@@ -72,7 +72,7 @@ platform :ios do
     #scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
     crashlytics_beta
-    `git checkout ../Sensorama/Assets.xcassets/AppIcon.appiconset/`
+    `git checkout Sensorama/Assets.xcassets/AppIcon.appiconset/`
     #frameit
   end
 
