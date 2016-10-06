@@ -41,11 +41,11 @@
     uploadRequest.key = [NSString stringWithFormat:@"%@/%@", [SRAuth emailHashed], fileBaseName];
     uploadRequest.body = fileURL;
 
-    __block SRDataFile *tmpDataFile = dataFile;
+    NSInteger fileId = dataFile.fileId;
     [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
         NSLog(@"download block: %@", [task error]);
         if ([task error] == nil) {
-            [[SRDataStore sharedInstance] markExportedFile:tmpDataFile];
+            [[SRDataStore sharedInstance] markExportedFileId:fileId];
         } else {
             NSLog(@"error = %@", [[task error] localizedDescription]);
         }

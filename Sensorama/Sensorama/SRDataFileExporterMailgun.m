@@ -42,9 +42,9 @@
     NSString *apiKey = [NSString stringWithUTF8String:SENSORAMA_MAILGUN_API_KEY];
     Mailgun *mailgun = [Mailgun clientWithDomain:@"data.sensorama.org" apiKey:apiKey];
 
-    __block SRDataFile *tmpDataFile = dataFile;
+    NSInteger fileId = dataFile.fileId;
     [mailgun sendMessage:msg success:^(NSString *messageId) {
-        [[SRDataStore sharedInstance] markExportedFile:tmpDataFile];
+        [[SRDataStore sharedInstance] markExportedFileId:fileId];
     } failure:^(NSError *error) {
         NSLog(@"failure to export! file=%@", dataFile);
     }];

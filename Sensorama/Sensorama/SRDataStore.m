@@ -75,9 +75,9 @@
     return isOK;
 }
 
-- (void) markExportedFile:(SRDataFile *)dataFile {
+- (void) markExportedFileId:(NSInteger)fileId {
     RLMRealm *realm = [RLMRealm defaultRealm];
-    RLMResults<SRDataFile *> *results = [SRDataFile objectsWhere:@"fileId = %ld", dataFile.fileId];
+    RLMResults<SRDataFile *> *results = [SRDataFile objectsWhere:@"fileId = %ld", fileId];
     SRDataFile *fileToMark = results[0];
     [realm beginWriteTransaction];
     fileToMark.isExported = true;
