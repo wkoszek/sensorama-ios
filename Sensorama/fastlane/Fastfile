@@ -18,7 +18,7 @@ platform :ios do
   lane :certs do
     slack(message: "certs", success: true)
     match(
-      app_identifier: "com.koszek.Sensorama.develop",
+      app_identifier: "com.koszek.Sensorama",
       type: "development",
       git_url: ENV['FASTLANE_GIT_URL'],
       force: is_ci ? false : true,
@@ -30,7 +30,7 @@ platform :ios do
     slack(message: "appmake", success: true)
     produce(
        username: 'wkoszek@freebsd.org',
-       app_identifier: 'com.koszek.Sensorama.develop',
+       app_identifier: 'com.koszek.Sensorama',
        app_name: 'Sensorama',
        language: 'English',
        app_version: '1.0',
@@ -55,6 +55,10 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     certs
+    update_app_identifier(
+      app_identifier: "com.koszek.Sensorama",
+      plist_path: "Sensorama/Info.plist"
+    )
     sigh(development: true)
     if not is_ci then
       increment_build_number
@@ -68,6 +72,7 @@ platform :ios do
     #scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
     crashlytics_beta
+    `git checkout Sensorama/Sensorama/Assets.xcassets/AppIcon.appiconset/`
     #frameit
   end
 
