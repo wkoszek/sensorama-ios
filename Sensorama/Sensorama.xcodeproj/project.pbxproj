@@ -928,7 +928,7 @@
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama.master;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sensorama/Sensorama-Bridging-Header.h";
@@ -951,7 +951,7 @@
 				INFOPLIST_FILE = Sensorama/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koszek.Sensorama.master;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "$(sigh_com.koszek.Sensorama_development)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sensorama/Sensorama-Bridging-Header.h";
