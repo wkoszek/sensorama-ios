@@ -7,25 +7,6 @@ is_ci = ENV['TRAVIS'] ? true : false
 
 platform :ios do
 
-  desc "Installs FixCode which disables the \"Fix Issue\" button in Xcode"
-  lane :xcode do
-    install_xcode_plugin(
-      url: "https://github.com/fastlane/FixCode/releases/download/0.2.0/FixCode.xcplugin.zip"
-    )
-  end
-
-  desc "Fetches the provisioning profiles so you can build locally and deploy to your device"
-  lane :certs do
-    slack(message: "certs", success: true)
-    match(
-      app_identifier: "com.koszek.Sensorama",
-      type: "development",
-      git_url: ENV['FASTLANE_GIT_URL'],
-      force: is_ci ? false : true,
-      readonly: is_ci ? true : false
-    )
-  end
-
   lane :appmake do
     slack(message: "appmake", success: true)
     produce(
@@ -43,18 +24,17 @@ platform :ios do
     scan
   end
 
-  desc "Deliver to Crashlytics"
-  lane :crashlytics_beta do
-    crashlytics(
-       api_token: ENV['FABRIC_API_KEY'],
-       build_secret:  ENV['FABRIC_BUILD_SECRET'],
-       groups: 'sensorama-testers'
-    )
-  end
 
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    certs
+    slack(message: "certs", success: true)
+    match(
+      app_identifier: "com.koszek.Sensorama",
+      type: "development",
+      git_url: ENV['FASTLANE_GIT_URL'],
+      force: is_ci ? false : true,
+      readonly: is_ci ? true : false
+    )
     update_app_identifier(
       app_identifier: "com.koszek.Sensorama",
       plist_path: "Sensorama/Info.plist"
@@ -71,7 +51,11 @@ platform :ios do
     )
     #scan(scheme: "SensoramaTests", workspace: "Sensorama.xcworkspace")
     #deliver
-    crashlytics_beta
+    crashlytics(
+       api_token: ENV['FABRIC_API_KEY'],
+       build_secret:  ENV['FABRIC_BUILD_SECRET'],
+       groups: 'sensorama-testers'
+    )
     `git checkout Sensorama/Assets.xcassets/AppIcon.appiconset/`
     #frameit
   end
