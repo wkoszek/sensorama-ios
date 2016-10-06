@@ -14,7 +14,6 @@
 #import "SRCfg.h"
 #import "SensoramaTabBarController.h"
 #import "RecordViewController.h"
-#import "FrequencyViewController.h"
 #import "InAppSettingsKit/IASKSettingsReader.h"
 
 #import "SRCfg.h"

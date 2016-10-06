@@ -32,7 +32,6 @@
 		5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5795E1BF1CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m */; };
 		5797A3781D2E179E00B13CB2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5797A3771D2E179E00B13CB2 /* Settings.bundle */; };
 		579B6CE51CD3411E0011759B /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579B6CE41CD3411E0011759B /* ActivityViewController.m */; };
-		579F210F1D0415E5002E42F4 /* FrequencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F210E1D0415E5002E42F4 /* FrequencyViewController.m */; };
 		579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB541C86B56200E06DF9 /* FilesTableViewController.m */; };
 		579FAB581C86B57400E06DF9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */; };
 		579FAB5E1C86F64F00E06DF9 /* SRUsageStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 579FAB5D1C86F64F00E06DF9 /* SRUsageStats.m */; };
@@ -140,8 +139,6 @@
 		5797A3771D2E179E00B13CB2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		579B6CE31CD3411E0011759B /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		579B6CE41CD3411E0011759B /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
-		579F210D1D0415E5002E42F4 /* FrequencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyViewController.h; sourceTree = "<group>"; };
-		579F210E1D0415E5002E42F4 /* FrequencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyViewController.m; sourceTree = "<group>"; };
 		579FAB531C86B56200E06DF9 /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
 		579FAB541C86B56200E06DF9 /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		579FAB561C86B57400E06DF9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -346,8 +343,6 @@
 				579FAB571C86B57400E06DF9 /* SettingsTableViewController.m */,
 				579FAB621C86FABC00E06DF9 /* PrivacyViewController.h */,
 				579FAB631C86FABC00E06DF9 /* PrivacyViewController.m */,
-				579F210D1D0415E5002E42F4 /* FrequencyViewController.h */,
-				579F210E1D0415E5002E42F4 /* FrequencyViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -758,7 +753,6 @@
 				577366AC1CEECBC00044C4CC /* SRDataFileSerializeMPBZ2.m in Sources */,
 				57ADDAFE1D8A745800CDD729 /* FilesDetailTableViewController.m in Sources */,
 				5795E1C11CED9E5200E62599 /* SRDataFileSerializerJSONBZ2.m in Sources */,
-				579F210F1D0415E5002E42F4 /* FrequencyViewController.m in Sources */,
 				5700D5DD1C85A0C6009405AC /* RecordViewController.m in Sources */,
 				579FAB551C86B56200E06DF9 /* FilesTableViewController.m in Sources */,
 				577366AF1CEECD890044C4CC /* SRDataFileSerializeBSONBZ2.m in Sources */,
