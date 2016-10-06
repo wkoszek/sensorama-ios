@@ -87,17 +87,7 @@ static const char *sensoramaAppURL = "http://cfg.sensorama.org/_/Sensorama.plist
 
     [SRAuth startWithLaunchOptions:launchOptions];
     [SRUsageStats eventAppOpened];
-    [SRDataStore handleMigrations];
-
-#if 0
-    RLMRealmConfiguration *configuration = [RLMRealmConfiguration defaultConfiguration];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *appSupportDirPath = [paths firstObject];
-    NSString *realmPath = [appSupportDirPath stringByAppendingPathComponent:@"default.realm"];
-    configuration.fileURL = [NSURL fileURLWithPath:realmPath];
-    [RLMRealmConfiguration setDefaultConfiguration:configuration];
-    NSLog(@"XXXX path=%@ realmURL: '%@'", realmPath, configuration.fileURL);
-#endif
+    [SRDataStore initAndHandleMigrations];
 
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES]; // don't turn of the screen
 

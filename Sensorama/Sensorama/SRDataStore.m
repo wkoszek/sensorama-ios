@@ -86,8 +86,16 @@
     NSLog(@"File should be marked as exported");
 }
 
-+ (void) handleMigrations {
++ (void) initAndHandleMigrations {
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *appSupportDirPath = [paths firstObject];
+    [[NSFileManager defaultManager] createDirectoryAtPath:appSupportDirPath withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *realmPath = [appSupportDirPath stringByAppendingPathComponent:@"default.realm"];
+    config.fileURL = [NSURL fileURLWithPath:realmPath];
+    [RLMRealmConfiguration setDefaultConfiguration:config];
+    NSLog(@"XXXX path=%@ realmURL: '%@'", realmPath, config.fileURL);
+
     int currentSchemaVersion = [[SRUtils bundleVersionString] intValue];
 
     assert(currentSchemaVersion > 60);

@@ -76,8 +76,7 @@
 				<key>NSTemporaryThirdPartyExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-			        <true/>
-
+				<true/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
@@ -109,7 +108,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIFileSharingEnabled</key>
-	<false/>
+	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>NSMotionUsageDescription</key>

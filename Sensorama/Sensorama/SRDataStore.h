@@ -31,7 +31,7 @@
 - (void) addSerializer:(id<SRDataFileSerializeDelegate>)serializer;
 - (void) addExporter:(id<SRDataFileExportDelegate>)exporter;
 
-+ (void) handleMigrations;
++ (void) initAndHandleMigrations;
 
 - (void) insertDataFile:(SRDataFile *)dataFile;
 - (void) removeDataFile:(SRDataFile *)dataFile;
