@@ -1,10 +1,9 @@
 //
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
+//
 //  RecordViewController.h
-//  
-//
-//  Created by Wojciech Koszek (home) on 3/1/16.
-//
-//
+//  Sensorama
 
 #import <UIKit/UIKit.h>
 

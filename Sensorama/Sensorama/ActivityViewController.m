@@ -1,10 +1,9 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  ActivityViewController.m
 //  Sensorama
-//
-//  Created by Wojciech Adam Koszek (h) on 29/04/2016.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
+
 //  Most of this file is from JTCalendar example code `BasicViewController.m`
 //  Created by Jonathan Tribouharet.
 //

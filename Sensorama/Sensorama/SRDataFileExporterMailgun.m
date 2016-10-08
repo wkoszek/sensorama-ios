@@ -1,10 +1,9 @@
 //
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
+//
 //  SRDataFileExporterMailgun.m
 //  Sensorama
-//
-//  Created by Wojciech Adam Koszek (h) on 20/05/2016.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
 
 #import "SRDataFileExporterMailgun.h"
 #import "mailgun/Mailgun.h"

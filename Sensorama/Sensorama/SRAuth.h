@@ -1,10 +1,9 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  SRAuth.h
 //  Sensorama
-//
-//  Created by Wojciech Koszek (home) on 3/16/16.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 #import "SimpleKeychain/A0SimpleKeychain.h"

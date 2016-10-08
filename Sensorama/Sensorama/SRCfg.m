@@ -1,10 +1,8 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  SRCfg.m
 //  Sensorama
-//
-//  Created by Wojciech Koszek (home) on 3/2/16.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
 
 #include <time.h>
 #include <xlocale.h>

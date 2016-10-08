@@ -1,10 +1,10 @@
 //
-//  SRSync.h
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
+//
+//  SRDataFileExporterS3.h
 //  Sensorama
-//
-//  Created by Wojciech Koszek (home) on 3/11/16.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
+
 
 @import Foundation;
 

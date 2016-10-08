@@ -1,10 +1,8 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  SRDebug.h
 //  Sensorama
-//
-//  Created by Wojciech Adam Koszek (h) on 09/04/2016.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
 
 #ifndef SRDebug_h
 #define SRDebug_h

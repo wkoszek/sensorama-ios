@@ -1,10 +1,10 @@
 //
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
+//
 //  SRDataFile.h
 //  Sensorama
-//
-//  Created by Wojciech Adam Koszek (h) on 23/04/2016.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 #import "Realm/Realm.h"

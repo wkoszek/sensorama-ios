@@ -1,10 +1,8 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  FilesTableViewController.m
 //  Sensorama
-//
-//  Created by Wojciech Koszek (home) on 3/1/16.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
 
 #import "DZNEmptyDataSet/UIScrollView+EmptyDataSet.h"
 

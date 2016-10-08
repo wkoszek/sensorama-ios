@@ -1,9 +1,8 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  SRUtils.m
 //  Sensorama
-//
-//  Created by Wojciech Koszek (home) on 3/1/16.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
 //
 // computeSHA256DigestForString method came from:
 // https://www.raywenderlich.com/6475/basic-security-in-ios-5-tutorial-part-1

@@ -1,10 +1,9 @@
+// Copyright © 2016 Wojciech Adam Koszek <wojciech@koszek.com>
+// All rights reserved.
 //
 //  SRUnitTestLoop.h
 //  Sensorama
-//
-//  Created by Wojciech Adam Koszek (h) on 23/04/2016.
-//  Copyright © 2016 Wojciech Adam Koszek. All rights reserved.
-//
+
 
 #ifndef SRUnitTestLoop_h
 #define SRUnitTestLoop_h
