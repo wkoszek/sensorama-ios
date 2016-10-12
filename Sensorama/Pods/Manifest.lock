@@ -31,6 +31,9 @@ PODS:
   - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - DZNEmptyDataSet (1.8.1)
+  - EAIntroView (2.9.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
   - Fabric (1.6.7)
   - FontAwesome+iOS (0.1.4)
   - GBDeviceInfo (3.8.0):
@@ -83,6 +86,7 @@ DEPENDENCIES:
   - BZipCompression (~> 1.0.0)
   - Crashlytics
   - DZNEmptyDataSet
+  - EAIntroView
   - Fabric
   - FontAwesome+iOS
   - GBDeviceInfo (~> 3.5)
@@ -123,6 +127,8 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   FontAwesome+iOS: 9070b682a9255ca0fdc34bcfb129ad0ba2b73b87
   GBDeviceInfo: 614c1088c04a634593e3ab51e5b884a0bb1b7e50
@@ -142,6 +148,6 @@ SPEC CHECKSUMS:
   SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
   Whisper: 42a3ee7c2936f861b23d41bd6cd7dfd22f102405
 
-PODFILE CHECKSUM: 6cd84f3752fc8e350468865381d669dc94d6ebc1
+PODFILE CHECKSUM: 56fe79014cc21a992a948c87f6a0cf4844a3c484
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.0.rc.2

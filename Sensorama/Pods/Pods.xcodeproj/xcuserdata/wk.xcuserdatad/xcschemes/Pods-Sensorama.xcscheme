@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBB3760D887A78EE45C879DD6F447F74"
+               BlueprintIdentifier = "C80478AD159A37992A6BE3F339F69A16"
                BuildableName = "Pods_Sensorama.framework"
                BlueprintName = "Pods-Sensorama"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CBB3760D887A78EE45C879DD6F447F74"
+            BlueprintIdentifier = "C80478AD159A37992A6BE3F339F69A16"
             BuildableName = "Pods_Sensorama.framework"
             BlueprintName = "Pods-Sensorama"
             ReferencedContainer = "container:Pods.xcodeproj">

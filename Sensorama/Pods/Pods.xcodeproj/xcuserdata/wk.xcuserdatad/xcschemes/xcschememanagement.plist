@@ -8,209 +8,166 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>AWSCognito.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>AWSCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>AWSS3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>BZipCompression.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
+		</dict>
+		<key>EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EARestrictedScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FontAwesome+iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>GBDeviceInfo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>GCNetworkReachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
 		<key>GHODictionary.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>12</integer>
 		</dict>
 		<key>GroundControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>13</integer>
 		</dict>
 		<key>InAppSettingsKit-InAppSettingsKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 		<key>InAppSettingsKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>14</integer>
 		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>16</integer>
 		</dict>
 		<key>JTCalendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>17</integer>
 		</dict>
 		<key>JWTDecode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>18</integer>
 		</dict>
 		<key>Lock-Auth0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>20</integer>
 		</dict>
 		<key>Lock.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>19</integer>
 		</dict>
 		<key>MPMessagePack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>23</integer>
 		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>22</integer>
 		</dict>
 		<key>NSLogger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>24</integer>
 		</dict>
 		<key>Pods-Sensorama.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>25</integer>
 		</dict>
 		<key>Pods-SensoramaTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>26</integer>
 		</dict>
 		<key>Pods-SensoramaUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>27</integer>
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>28</integer>
 		</dict>
 		<key>SimpleKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>29</integer>
 		</dict>
 		<key>Whisper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>30</integer>
 		</dict>
 		<key>mailgun.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>21</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0DCFF0064C941F1655ED1C8B3E0E17C5</key>
+		<key>022977ACC7766CC8E6F414E6685B5EF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>07E4E107D7424F0B55C384FC31AFB70B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -260,11 +217,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E49E2E8B12276105156867305D88A7F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5A2DB76FE860D5D148621EAD5B1606DD</key>
 		<dict>
 			<key>primary</key>
@@ -290,11 +242,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>882B127C4B3D34AD84CDA1B0515E386A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8A2E8FED01C8A6BC8ADFCF3C3B78368F</key>
 		<dict>
 			<key>primary</key>
@@ -310,6 +257,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AB045440E0FF21FA9AA0E0A151C95FDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AF21780C841830BE5AD3F34076925612</key>
 		<dict>
 			<key>primary</key>
@@ -320,12 +272,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C979F43EE3FBCBC3101D1F1FB65520BB</key>
+		<key>C80478AD159A37992A6BE3F339F69A16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBB3760D887A78EE45C879DD6F447F74</key>
+		<key>C979F43EE3FBCBC3101D1F1FB65520BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -340,12 +292,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D8BF146EAE696DCA97C90C51BE045947</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DE479E4186454105FB6CA9FAEA62AF0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E348FCBA05BAF1A05FC88F0FE0C929B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F579D545C570DEF521110B6987CC090D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

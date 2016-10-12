@@ -36,6 +36,7 @@ def mypods
   pod "Realm"
   pod 'JSONModel'
   pod 'mailgun', :git => 'https://github.com/wkoszek/objc-mailgun'
+  pod 'EAIntroView'
 
 end
 

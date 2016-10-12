@@ -11,6 +11,8 @@
 
 #import <Lock/Lock.h>
 #import "FontAwesome_iOS/UIImage+FontAwesome.h"
+#import "EAIntroView/EAIntroView.h"
+
 #import "Sensorama-Swift.h"
 
 @import JWTDecode;
@@ -26,7 +28,7 @@
 #import "SimpleKeychain/A0SimpleKeychain.h"
 #import "../contrib/libextobjc/extobjc/EXTScope.h"
 
-@interface RecordViewController ()
+@interface RecordViewController () <EAIntroDelegate>
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureStartStop;
 
 @property (weak,   nonatomic) IBOutlet UIView *recordView;
@@ -35,6 +37,9 @@
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic) CGFloat savedCornerRadius;
 @property (nonatomic) NSString *idToken;
+
+@property (nonatomic) UIView *rootView;
+
 
 @end
 
