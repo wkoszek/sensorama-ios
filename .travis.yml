@@ -12,6 +12,8 @@ before_install:
   - gem install bundler -v 1.12.5 --no-rdoc --no-ri --no-document --quiet
   - gem cleanup
   - gem install badge
+  - gem install cocoapods --pre
+  - gem install fastlane --pre
 
   # This should somehow land in scripts/bootstrap.sh soon
   - brew install imagemagick
