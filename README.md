@@ -4,6 +4,8 @@
 
 This is an iOS version of the [http://www.sensorama.org](Sensorama project).
 
+<a href="https://itunes.apple.com/us/app/sensorama/id1159788831?mt=8" style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:130px;height:40px;background-size:contain;"></a>
+
 # How to build
 
 To build this application you must have a Apple Mac computer with XCode 7
