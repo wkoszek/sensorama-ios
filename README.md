@@ -4,7 +4,7 @@
 
 This is an iOS version of the [http://www.sensorama.org](Sensorama project).
 
-(![Sensorama](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg "Sensorama"))[https://itunes.apple.com/us/app/sensorama/id1159788831?mt=8]
+[![Sensorama](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg "Sensorama")](https://itunes.apple.com/us/app/sensorama/id1159788831?mt=8)
 
 # How to build
 
