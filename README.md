@@ -6,6 +6,8 @@ This is an iOS version of the [http://www.sensorama.org](Sensorama project).
 
 [![Sensorama](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg "Sensorama")](https://itunes.apple.com/us/app/sensorama/id1159788831?mt=8)
 
+Sensorama is a data science platform. As of now (Nov, 2016) it captures the data from your phone sensors after you press "Record". Sensorama samples iPhone sensors at a given frequency and stores them on your phone, in the internal database. After you press Stop, the recorded sample is stored in a compressed JSON file and e-mailed to you. Sensorama developers (aka.: me) get the copy of this file too, for research/calibration/testing/development purposes.
+
 # How to build
 
 To build this application you must have a Apple Mac computer with XCode 7
