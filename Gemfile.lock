@@ -9,6 +9,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     babosa (1.0.2)
+    badge (0.5.0)
+      fastimage (~> 1.6.3)
+      fastlane_core (>= 0.44.0, < 1.0.0)
+      mini_magick (~> 4.5.1)
     cert (1.4.3)
       fastlane_core (>= 0.52.1, < 1.0.0)
       spaceship (>= 0.34.2, < 1.0.0)
@@ -236,7 +240,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  badge
   fastlane
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
