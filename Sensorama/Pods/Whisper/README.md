@@ -5,6 +5,7 @@
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Whisper.svg?style=flat)](http://cocoadocs.org/docsets/Whisper)
 [![Platform](https://img.shields.io/cocoapods/p/Whisper.svg?style=flat)](http://cocoadocs.org/docsets/Whisper)
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 ## Description :leaves:
 
@@ -34,7 +35,7 @@ All the sounds are fully customizable, from colors to fonts.
 
 Shouts have an optional action that will be called if the user taps on it, and you'll even get a message when the Shout is gone. Finally, if you want to set how long the Shout should be displayed, you have a duration property.
 
-In Whisper, there is no need to think about scroll view insets anymore, this will be handled automatically. As and added bonus, when transitioning from one view controller to another, the next controllers offset will be adjusted like you would except. It just works!
+In Whisper, there is no need to think about scroll view insets anymore, this will be handled automatically. As and added bonus, when transitioning from one view controller to another, the next controllers offset will be adjusted like you would expect. It just works!
 
 ## Usage
 
@@ -46,20 +47,22 @@ The usage of the component is so simple, you just create a message in the case o
 let message = Message(title: "Enter your message here.", backgroundColor: UIColor.redColor())
 
 // Show and hide a message after delay
-Whisper(message, to: navigationController, action: .Show)
+show(whisper: message, to: navigationController, action: .Show)
 
 // Present a permanent message
-Whisper(message, to: navigationController, action: .Present)
+show(whisper: message, to: navigationController, action: .Present)
 
 // Hide a message
-Silent(navigationController)
+hide(whisperFrom: navigationController)
 ```
 
 ##### For a Shout:
 
 ```swift
 let announcement = Announcement(title: "Your title", subtitle: "Your subtitle", image: UIImage(named: "avatar"))
-Shout(announcement, to: self)
+show(shout: announcement, to: navigationController, completion: {
+  print("The shout was silent.")
+})
 ```
 
 ##### For a Whistle:
@@ -68,13 +71,13 @@ Shout(announcement, to: self)
 let murmur = Murmur(title: "This is a small whistle...")
 
 // Show and hide a message after delay
-Whistle(murmur) // Whistle(murmur, action: .Show(1.5))
+show(whistle: murmur, action: .Show(0.5))
 
 // Present a permanent status bar message
-Whistle(murmur, action: .Present)
+show(whistle: murmur, action: .Present)
 
 // Hide a message
-Calm()
+hide(whistleAfter: 3)
 ```
 
 If you want to use **Whisper** with Objective-C, you can find information about it [here](https://github.com/hyperoslo/Whisper/wiki/Using-Whisper-in-Objective-C).

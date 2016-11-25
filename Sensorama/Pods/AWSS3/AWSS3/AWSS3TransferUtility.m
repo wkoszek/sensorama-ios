@@ -218,7 +218,14 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
 
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:_sessionIdentifier];
         configuration.allowsCellularAccess = serviceConfiguration.allowsCellularAccess;
-        configuration.timeoutIntervalForResource = AWSS3TransferUtilityTimeoutIntervalForResource;
+        if(serviceConfiguration.timeoutIntervalForResource > 0){
+            configuration.timeoutIntervalForResource = serviceConfiguration.timeoutIntervalForResource;
+        }else{
+            configuration.timeoutIntervalForResource = AWSS3TransferUtilityTimeoutIntervalForResource;
+        }
+        if(serviceConfiguration.timeoutIntervalForRequest > 0){
+            configuration.timeoutIntervalForRequest = serviceConfiguration.timeoutIntervalForRequest;
+        }
         configuration.sharedContainerIdentifier = serviceConfiguration.sharedContainerIdentifier;
         
         _session = [NSURLSession sessionWithConfiguration:configuration
@@ -289,6 +296,14 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
                                               contentType:(NSString *)contentType
                                                expression:(AWSS3TransferUtilityUploadExpression *)expression
                                          completionHander:(AWSS3TransferUtilityUploadCompletionHandlerBlock)completionHandler {
+    if ([bucket length] == 0) {
+        NSInteger errorCode = (self.transferUtilityConfiguration.isAccelerateModeEnabled) ?
+                                    AWSS3PresignedURLErrorInvalidBucketNameForAccelerateModeEnabled : AWSS3PresignedURLErrorInvalidBucketName;
+        return [AWSTask taskWithError:[NSError errorWithDomain:AWSS3PresignedURLErrorDomain
+                                                          code:errorCode
+                                                      userInfo:nil]];
+    }
+
     if (!expression) {
         expression = [AWSS3TransferUtilityUploadExpression new];
     }
