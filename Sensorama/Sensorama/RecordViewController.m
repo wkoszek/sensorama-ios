@@ -84,7 +84,9 @@
 
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2]];
     [intro setDelegate:self];
+#ifdef TODO
     [intro showInView:self.view animateDuration:0.0];
+#endif
 //----------------------------------------
 
 
