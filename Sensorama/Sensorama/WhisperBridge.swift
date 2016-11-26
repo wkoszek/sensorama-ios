@@ -12,14 +12,11 @@ import Whisper
                                textColor: UIColor,
                                backgroundColor: UIColor,
                                toNavigationController: UINavigationController,
-                               silenceAfter: NSTimeInterval,
+                               silenceAfter: TimeInterval,
                                images: [UIImage]?) {
         let message = Message(title: text, textColor: textColor, backgroundColor: backgroundColor, images: images)
 
-        Whisper(message, to: toNavigationController, action: .Present)
-
-        if silenceAfter > 0.1 {
-            Silent(toNavigationController, after: silenceAfter)
-        }
+        // Show and hide a message after delay
+        show(whisper: message, to: toNavigationController, action: WhisperAction.show)
     }
 }

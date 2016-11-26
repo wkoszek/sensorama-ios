@@ -130,7 +130,7 @@
 
     if (idToken) {
         NSError *error = nil;
-        A0JWT *jwt = [A0JWT decode:idToken error:&error];
+        A0JWT *jwt = [A0JWT decodeWithJwt:idToken error:&error];
         
         if ([self isJWTTokenExpired:jwt]) {
             NSLog(@"Auth0 token has expired, refreshing.");
@@ -280,7 +280,7 @@
 }
 
 - (void)setNotifyString:(NSString *)debugString fgColor:(UIColor *)fgColor image:(UIImage *)image {
-    [WhisperBridge whisper:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[image]];
+    [WhisperBridge whisperWithText:debugString textColor:fgColor backgroundColor:[SRUtils mainColor] toNavigationController:self.navigationController silenceAfter:3 images:@[image]];
 }
 
 - (UIImage *) faImageWithName:(NSString *)name {
