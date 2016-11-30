@@ -30,6 +30,11 @@ and for tests, you can do:
 
 	./build.sh test_fastlane
 
+# Tools
+
+Jetbrain offered me an Open Source License for the whole suite of their
+products, and it's great. Their website: https://www.jetbrains.com/
+
 # Author
 
 - Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
