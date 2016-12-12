@@ -62,6 +62,6 @@ products, and it's great. Their website: https://www.jetbrains.com/
 # Author
 
 - Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
-- [http://www.koszek.com](http://www.koszek.com)
+- Website: [http://www.koszek.com](http://www.koszek.com)
 - Twitter: https://twitter.com/wkoszek
 - LinkedIn: https://www.linkedin.com/in/wkoszek
