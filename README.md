@@ -56,15 +56,29 @@ and for tests, you can do:
 
 # Help wanted
 
+Projects/tickets are present in the Issues/Projects database on
+GitHub:
+
+- https://github.com/wkoszek/sensorama-ios/issues
+- https://github.com/wkoszek/sensorama-ios/projects/1
+
 If you want to help out, I have some projects for you. I'd offer a bit of my
 time if you offer to contribute. Some of them:
 
 - do a code review
 - do a security audit
 - improve onboarding (use EAIntro extension)
+- move us to Carthage
 - improve tests for Sensorama
 - move us to ZIP compression
 - make a backend for Sensorama
+
+Contact me before in case you want to work on something.
+
+# Known issues
+
+Sensor switches are untested. The "logout" screen has "with subtitle" in it
+(should have e-mail).
 
 # Tools
 
