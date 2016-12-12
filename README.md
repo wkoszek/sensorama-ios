@@ -54,6 +54,18 @@ and for tests, you can do:
 
 	./build.sh test_fastlane
 
+# Help wanted
+
+If you want to help out, I have some projects for you. I'd offer a bit of my
+time if you offer to contribute. Some of them:
+
+- do a code review
+- do a security audit
+- improve onboarding (use EAIntro extension)
+- improve tests for Sensorama
+- move us to ZIP compression
+- make a backend for Sensorama
+
 # Tools
 
 Jetbrains offered me an Open Source License for the whole suite of their
