@@ -54,6 +54,13 @@ and for tests, you can do:
 
 	./build.sh test_fastlane
 
+# Usability tests
+
+I've made some usability tests with paper prototypes for Sensorama. See them
+on my YouTube channel:
+
+https://www.youtube.com/playlist?list=PLYIpNoYQkEXBjQ2BhXewddPoLsJIZ5maC
+
 # Help wanted
 
 Projects/tickets are present in the Issues/Projects database on
