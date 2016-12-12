@@ -1,5 +1,11 @@
 # YouTube video description template
 
+## Tags
+
+ios, software, development, usability, engineering, sensors
+
+## Description
+
 This video shows a early usability test for the Sensorama iOS
 (http://www.sensorama.org). The person being interviewed is anonymous. The
 phone was iPhone 6s. Tests conducted in the cafe shop, in real-world
