@@ -93,5 +93,5 @@ elif [ "$ARG1" = "test_normal" ]; then
 elif [ "$ARG1" = "test_fastlane" ]; then
 	test_fastlane
 else
-	echo "build.sh [bootstrap|fastlane|normal]"
+	echo "build.sh [bootstrap|fastlane|normal|fastlane_release|test_normal|test_fastlane]"
 fi
