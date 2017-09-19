@@ -177,6 +177,16 @@
 			<key>File</key>
 			<string>https://github.com/wkoszek/sensorama-ios/blob/master/Sensorama/Podfile</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>IASKOpenURLSpecifier</string>
+			<key>Title</key>
+			<string>Crash it!</string>
+			<key>Key</key>
+			<string>TItle</string>
+			<key>File</key>
+			<string>crashit://crash_this_app</string>
+		</dict>
 	</array>
 </dict>
 </plist>

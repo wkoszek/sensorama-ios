@@ -104,6 +104,11 @@ static const char *sensoramaAppURL = "http://cfg.sensorama.org/_/Sensorama.plist
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     NSLog(@"%s", __func__);
+    NSString *urlString = [url absoluteString];
+    if ([urlString hasPrefix:@"crashit://"]) {
+        NSLog(@"will crash app now!!!");
+        [[Crashlytics sharedInstance] crash];
+    }
     A0Lock *lock = [[SRAuth sharedInstance] lock];
     return [lock handleURL:url sourceApplication:sourceApplication];
 }
