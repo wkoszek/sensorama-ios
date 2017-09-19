@@ -5,3 +5,4 @@ source "https://rubygems.org"
 # gem "rails"
 gem "fastlane", '2.56'
 gem "badge"
+gem "scan"
