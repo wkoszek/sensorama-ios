@@ -3,5 +3,5 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem "fastlane"
+gem "fastlane", '2.56'
 gem "badge"
