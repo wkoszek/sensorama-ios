@@ -6,6 +6,10 @@ mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 
+# This protects against multiple targets copying the same framework dependency at the same time. The solution
+# was originally proposed here: https://lists.samba.org/archive/rsync/2008-February/020158.html
+RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
+
 install_framework()
 {
   if [ -r "${BUILT_PRODUCTS_DIR}/$1" ]; then
@@ -23,9 +27,9 @@ install_framework()
       source="$(readlink "${source}")"
   fi
 
-  # use filter instead of exclude so missing patterns dont' throw errors
-  echo "rsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${destination}\""
-  rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${destination}"
+  # Use filter instead of exclude so missing patterns don't throw errors.
+  echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${destination}\""
+  rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${destination}"
 
   local basename
   basename="$(basename -s .framework "$1")"
@@ -54,12 +58,21 @@ install_framework()
   fi
 }
 
+# Copies the dSYM of a vendored framework
+install_dsym() {
+  local source="$1"
+  if [ -r "$source" ]; then
+    echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${source}\" \"${DWARF_DSYM_FOLDER_PATH}\""
+    rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${source}" "${DWARF_DSYM_FOLDER_PATH}"
+  fi
+}
+
 # Signs a framework with the provided identity
 code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1""
+    local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements '$1'"
 
     if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
@@ -76,7 +89,7 @@ strip_invalid_archs() {
   archs="$(lipo -info "$binary" | rev | cut -d ':' -f1 | rev)"
   stripped=""
   for arch in $archs; do
-    if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
+    if ! [[ "${ARCHS}" == *"$arch"* ]]; then
       # Strip non-valid architectures in-place
       lipo -remove "$arch" -output "$binary" "$binary" || exit 1
       stripped="$stripped $arch"
@@ -89,58 +102,58 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSCognito/AWSCognito.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/BZipCompression/BZipCompression.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EAIntroView/EAIntroView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EARestrictedScrollView/EARestrictedScrollView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FontAwesome+iOS/FontAwesome_iOS.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GBDeviceInfo/GBDeviceInfo.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GCNetworkReachability/GCNetworkReachability.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GHODictionary/GHODictionary.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroundControl/GroundControl.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/InAppSettingsKit/InAppSettingsKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSONModel/JSONModel.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JTCalendar/JTCalendar.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JWTDecode/JWTDecode.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Lock/Lock.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MPMessagePack/MPMessagePack.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NSLogger/NSLogger.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SimpleKeychain/SimpleKeychain.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Whisper/Whisper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/mailgun/mailgun.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BZipCompression/BZipCompression.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FontAwesome+iOS/FontAwesome_iOS.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GBDeviceInfo/GBDeviceInfo.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GCNetworkReachability/GCNetworkReachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GHODictionary/GHODictionary.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GroundControl/GroundControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/InAppSettingsKit/InAppSettingsKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JTCalendar/JTCalendar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Lock/Lock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MPMessagePack/MPMessagePack.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NSLogger/NSLogger.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/mailgun/mailgun.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSCognito/AWSCognito.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/BZipCompression/BZipCompression.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DZNEmptyDataSet/DZNEmptyDataSet.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EAIntroView/EAIntroView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EARestrictedScrollView/EARestrictedScrollView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FontAwesome+iOS/FontAwesome_iOS.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GBDeviceInfo/GBDeviceInfo.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GCNetworkReachability/GCNetworkReachability.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GHODictionary/GHODictionary.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/GroundControl/GroundControl.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/InAppSettingsKit/InAppSettingsKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JSONModel/JSONModel.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JTCalendar/JTCalendar.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/JWTDecode/JWTDecode.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Lock/Lock.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MPMessagePack/MPMessagePack.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NSLogger/NSLogger.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SimpleKeychain/SimpleKeychain.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Whisper/Whisper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/mailgun/mailgun.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BZipCompression/BZipCompression.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FontAwesome+iOS/FontAwesome_iOS.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GBDeviceInfo/GBDeviceInfo.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GCNetworkReachability/GCNetworkReachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GHODictionary/GHODictionary.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GroundControl/GroundControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/InAppSettingsKit/InAppSettingsKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JTCalendar/JTCalendar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Lock/Lock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MPMessagePack/MPMessagePack.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NSLogger/NSLogger.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/mailgun/mailgun.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
